@@ -1,0 +1,261 @@
+,difficulty,lang_src,lang_tgt,text,text_len,result,confidence_score,mean_beam_prob,min_beam_prob,mean_length_ratio,num_chunks,outlier_chunks
+0,easy,fra_Latn,eng_Latn,"C'est lui aussi qui était à la base du dernier processeur, le sphéro.",69,"It was also the basis of the latest processor, the sphere.",0.6079942849693936,0.608,0.608,0.8182,1,0
+1,easy,fra_Latn,por_Latn,"C'est lui aussi qui était à la base du dernier processeur, le sphéro.",69,"Ele também foi a base do último processador, a esfera.",0.6819704849992565,0.682,0.682,0.7727,1,0
+2,easy,fra_Latn,spa_Latn,"C'est lui aussi qui était à la base du dernier processeur, le sphéro.",69,"También fue la base del último procesador, la esfera.",0.6832382115083351,0.6832,0.6832,0.7273,1,0
+3,easy,fra_Latn,ita_Latn,"C'est lui aussi qui était à la base du dernier processeur, le sphéro.",69,"Anche lui era alla base dell'ultimo processore, la sfera.",0.6579502746119493,0.658,0.658,0.8182,1,0
+4,easy,fra_Latn,eng_Latn,Tous les ordinateurs en étaient équipés.,40,All the computers were equipped with it.,0.639464797531485,0.6395,0.6395,1.0909,1,0
+5,easy,fra_Latn,por_Latn,Tous les ordinateurs en étaient équipés.,40,Todos os computadores estavam equipados com ele.,0.6555223571772877,0.6555,0.6555,1.1818,1,0
+6,easy,fra_Latn,spa_Latn,Tous les ordinateurs en étaient équipés.,40,Todas las computadoras estaban equipadas.,0.6477057077451056,0.6477,0.6477,1.0,1,0
+7,easy,fra_Latn,ita_Latn,Tous les ordinateurs en étaient équipés.,40,Tutti i computer ne erano dotati.,0.6144469331314129,0.6144,0.6144,1.0,1,0
+8,easy,fra_Latn,eng_Latn,David avait dû s'asseoir lorsqu'il avait entendu le prénom Florence.,68,David must have sat down when he heard the name Florence.,0.7594316916503644,0.7594,0.7594,0.7143,1,0
+9,easy,fra_Latn,por_Latn,David avait dû s'asseoir lorsqu'il avait entendu le prénom Florence.,68,David deve ter se sentado quando ouviu o nome Florence.,0.7028831180245835,0.7029,0.7029,0.7619,1,0
+10,easy,fra_Latn,spa_Latn,David avait dû s'asseoir lorsqu'il avait entendu le prénom Florence.,68,David debe haberse sentado cuando oyó el nombre Florence.,0.6476680484249064,0.6477,0.6477,0.7619,1,0
+11,easy,fra_Latn,ita_Latn,David avait dû s'asseoir lorsqu'il avait entendu le prénom Florence.,68,David deve essersi seduto quando ha sentito il nome Florence.,0.619623096791178,0.6196,0.6196,0.7619,1,0
+12,easy,fra_Latn,eng_Latn,Il était devenu blanc un instant.,33,He had turned white for a moment.,0.6331861223850009,0.6332,0.6332,1.2222,1,0
+13,easy,fra_Latn,por_Latn,Il était devenu blanc un instant.,33,Ele tinha ficado branco por um instante.,0.5955951749288471,0.5956,0.5956,1.4444,1,0
+14,easy,fra_Latn,spa_Latn,Il était devenu blanc un instant.,33,Se había vuelto blanco un instante.,0.6405344568461586,0.6405,0.6405,1.3333,1,0
+15,easy,fra_Latn,ita_Latn,Il était devenu blanc un instant.,33,Era diventato bianco per un momento.,0.6486366327468162,0.6486,0.6486,1.2222,1,0
+16,easy,fra_Latn,eng_Latn,Ce n'était pas un adversaire ordinaire.,39,He wasn't an ordinary opponent.,0.6589065669138687,0.6589,0.6589,0.8,1,0
+17,easy,fra_Latn,por_Latn,Ce n'était pas un adversaire ordinaire.,39,Ele não era um adversário comum.,0.7501823349850693,0.7502,0.7502,0.7333,1,0
+18,easy,fra_Latn,spa_Latn,Ce n'était pas un adversaire ordinaire.,39,No era un adversario común.,0.6634595971296422,0.6635,0.6635,0.6667,1,0
+19,easy,fra_Latn,ita_Latn,Ce n'était pas un adversaire ordinaire.,39,Non era un comune avversario.,0.650435289160302,0.6504,0.6504,0.7333,1,0
+20,easy,fra_Latn,eng_Latn,"Aujourd'hui, c'est une sorte de virus qui a pris place sur tous les ordinateurs de la planète.",94,"Today, it's a kind of virus that has spread to every computer on the planet.",0.6570996027504277,0.6571,0.6571,0.7857,1,0
+21,easy,fra_Latn,por_Latn,"Aujourd'hui, c'est une sorte de virus qui a pris place sur tous les ordinateurs de la planète.",94,"Hoje, é uma espécie de vírus que se espalhou por todos os computadores do planeta.",0.7353942788703012,0.7354,0.7354,0.8929,1,0
+22,easy,fra_Latn,spa_Latn,"Aujourd'hui, c'est une sorte de virus qui a pris place sur tous les ordinateurs de la planète.",94,"Hoy en día, es una especie de virus que ha llegado a todos los ordenadores del planeta.",0.6957473552636895,0.6957,0.6957,0.8214,1,0
+23,easy,fra_Latn,ita_Latn,"Aujourd'hui, c'est une sorte de virus qui a pris place sur tous les ordinateurs de la planète.",94,Oggi è una specie di virus che si è diffuso su tutti i computer del pianeta.,0.7401856573890763,0.7402,0.7402,0.7857,1,0
+24,easy,fra_Latn,eng_Latn,"Mais parfois, il met le nez dedans et s'amuse d'avoir un jour eu des idées aussi géniales.",90,But sometimes he puts his nose in it and has fun having such great ideas.,0.5530108141293816,0.553,0.553,0.6897,1,0
+25,easy,fra_Latn,por_Latn,"Mais parfois, il met le nez dedans et s'amuse d'avoir un jour eu des idées aussi géniales.",90,"Mas, às vezes, ele põe o nariz dentro e se diverte por ter tido ideias tão fantásticas.",0.5366493288935753,0.5366,0.5366,0.9655,1,0
+26,easy,fra_Latn,spa_Latn,"Mais parfois, il met le nez dedans et s'amuse d'avoir un jour eu des idées aussi géniales.",90,Pero a veces se pone la nariz dentro y se divierte de haber tenido ideas tan geniales.,0.6157738373612234,0.6158,0.6158,0.8276,1,0
+27,easy,fra_Latn,ita_Latn,"Mais parfois, il met le nez dedans et s'amuse d'avoir un jour eu des idées aussi géniales.",90,Ma a volte si mette il naso dentro e si diverte di avere avuto un'idea così brillante.,0.5003101585683681,0.5003,0.5003,0.8621,1,0
+28,hard,fra_Latn,eng_Latn,Le chien mange le et puis après rien.,37,The dog eats it and then after nothing.,0.6203989412241611,0.6204,0.6204,1.1818,1,0
+29,hard,fra_Latn,por_Latn,Le chien mange le et puis après rien.,37,O cão come-o e depois nada.,0.6415547578625207,0.6416,0.6416,1.1818,1,0
+30,hard,fra_Latn,spa_Latn,Le chien mange le et puis après rien.,37,El perro lo come y luego después de nada.,0.6043077050476579,0.6043,0.6043,1.1818,1,0
+31,hard,fra_Latn,ita_Latn,Le chien mange le et puis après rien.,37,Il cane lo mangia e poi dopo niente.,0.5642199937262447,0.5642,0.5642,1.1818,1,0
+32,hard,fra_Latn,eng_Latn,Elle parti hier demain viendra pas.,35,She left yesterday and won't be back tomorrow.,0.6367766807101581,0.6368,0.6368,1.4,1,0
+33,hard,fra_Latn,por_Latn,Elle parti hier demain viendra pas.,35,"Ela partiu ontem, amanhã não virá.",0.6472902445672948,0.6473,0.6473,1.3,1,0
+34,hard,fra_Latn,spa_Latn,Elle parti hier demain viendra pas.,35,Se fue ayer y mañana no vendrá.,0.6731176226308525,0.6731,0.6731,1.2,1,0
+35,hard,fra_Latn,ita_Latn,Elle parti hier demain viendra pas.,35,"Se n'è andata ieri, domani non verrà.",0.667504884775509,0.6675,0.6675,1.5,1,0
+36,hard,fra_Latn,eng_Latn,Les voitures rouge bleu mange dormir vite.,42,The red-blue cars eat fast asleep.,0.5637977573345925,0.5638,0.5638,1.1667,1,0
+37,hard,fra_Latn,por_Latn,Les voitures rouge bleu mange dormir vite.,42,Os carros vermelhos e azuis adormecem rapidamente.,0.6582782487661891,0.6583,0.6583,1.3333,1,0
+38,hard,fra_Latn,spa_Latn,Les voitures rouge bleu mange dormir vite.,42,Los coches rojos y azules se duermen rápido.,0.7156425340677756,0.7156,0.7156,1.3333,1,0
+39,hard,fra_Latn,ita_Latn,Les voitures rouge bleu mange dormir vite.,42,Le auto rosse e azzurre dormono velocemente.,0.6995194120680946,0.6995,0.6995,1.4167,1,0
+40,hard,fra_Latn,eng_Latn,J'ai le truc là le machin tu vois pas le ?,42,I've got that thing right there. Don't you see it?,0.5487126135594061,0.5487,0.5487,1.2667,1,0
+41,hard,fra_Latn,por_Latn,J'ai le truc là le machin tu vois pas le ?,42,"Eu tenho a coisa aqui, não vês?",0.36965275409136134,0.3697,0.3697,0.8667,1,0
+42,hard,fra_Latn,spa_Latn,J'ai le truc là le machin tu vois pas le ?,42,"Tengo esa cosa en la máquina, ¿no la ves?",0.3857732685309808,0.3858,0.3858,1.0,1,0
+43,hard,fra_Latn,ita_Latn,J'ai le truc là le machin tu vois pas le ?,42,Ho quel trucco. Non lo vedi?,0.45497007688524016,0.455,0.455,0.8,1,0
+44,hard,fra_Latn,eng_Latn,Bnjour comant allez vou aujordhui?,34,How are you going today?,0.4489480379149501,0.4489,0.4489,0.6923,1,0
+45,hard,fra_Latn,por_Latn,Bnjour comant allez vou aujordhui?,34,Como é que vais hoje?,0.36437858020354413,0.3644,0.3644,0.6923,1,0
+46,hard,fra_Latn,spa_Latn,Bnjour comant allez vou aujordhui?,34,¿Cómo vas a ir hoy?,0.4317601230724609,0.4318,0.4318,0.7692,1,0
+47,hard,fra_Latn,ita_Latn,Bnjour comant allez vou aujordhui?,34,Come stai andando oggi?,0.3989718923595757,0.399,0.399,0.6154,1,0
+48,hard,fra_Latn,eng_Latn,jai manj é du pain avek du beurrre hier soirr,45,I ate a loaf of bread and a glass of beer last night.,0.49656447259949654,0.4966,0.4966,1.2,1,0
+49,hard,fra_Latn,por_Latn,jai manj é du pain avek du beurrre hier soirr,45,Jai manj é pão com cerveja ontem à noite,0.49307416378079727,0.4931,0.4931,0.9333,1,0
+50,hard,fra_Latn,spa_Latn,jai manj é du pain avek du beurrre hier soirr,45,Hoy comió pan con la cerveza anoche.,0.4586299101420882,0.4586,0.4586,0.9333,1,0
+51,hard,fra_Latn,ita_Latn,jai manj é du pain avek du beurrre hier soirr,45,ho mangiato del pane con il burro ieri sera,0.5690170957823772,0.569,0.569,0.9333,1,0
+52,hard,fra_Latn,eng_Latn,lé zenfan joue dan la jardin,28,Le zenfan plays dan in the garden,0.6557554250656353,0.6558,0.6558,1.2,1,0
+53,hard,fra_Latn,por_Latn,lé zenfan joue dan la jardin,28,Le zenfan joga dan o jardim,0.6623901868741655,0.6624,0.6624,1.1,1,0
+54,hard,fra_Latn,spa_Latn,lé zenfan joue dan la jardin,28,le zenfan juega en el jardín,0.6652676341378404,0.6653,0.6653,1.2,1,0
+55,hard,fra_Latn,ita_Latn,lé zenfan joue dan la jardin,28,Le zenfan gioca nel giardino,0.6338547710015792,0.6339,0.6339,1.2,1,0
+56,hard,fra_Latn,eng_Latn,Je veux aller au supermercado comprar some things für mich.,59,I want to go to the supermarket and buy some things for myself.,0.7118462010469875,0.7118,0.7118,1.2,1,0
+57,hard,fra_Latn,por_Latn,Je veux aller au supermercado comprar some things für mich.,59,Quero ir ao supermercado comprar algumas coisas para mim.,0.7493757866104827,0.7494,0.7494,1.0,1,0
+58,hard,fra_Latn,spa_Latn,Je veux aller au supermercado comprar some things für mich.,59,Quiero ir al supermercado a comprar algunas cosas para mí.,0.7932307045522566,0.7932,0.7932,1.0667,1,0
+59,hard,fra_Latn,ita_Latn,Je veux aller au supermercado comprar some things für mich.,59,Voglio andare al supermercato a comprare alcune cose per me.,0.7448433481409205,0.7448,0.7448,1.1333,1,0
+60,hard,fra_Latn,eng_Latn,Il a dit que he doesn't want to venir demain con nosotros.,58,He said he doesn't want to come tomorrow with us.,0.8426982748166609,0.8427,0.8427,0.9412,1,0
+61,hard,fra_Latn,por_Latn,Il a dit que he doesn't want to venir demain con nosotros.,58,Ele disse que ele não quer vir amanhã com nós.,0.8084306078894257,0.8084,0.8084,0.8235,1,0
+62,hard,fra_Latn,spa_Latn,Il a dit que he doesn't want to venir demain con nosotros.,58,Dijo que no quiere venir mañana con nosotros.,0.8318673387675505,0.8319,0.8319,0.7059,1,0
+63,hard,fra_Latn,ita_Latn,Il a dit que he doesn't want to venir demain con nosotros.,58,Ha detto che non vuole venire domani con noi.,0.8285508423348323,0.8286,0.8286,0.7647,1,0
+64,hard,fra_Latn,eng_Latn,"Buongiorno, je suis sehr müde aujourd'hui obrigado.",51,"Good morning, I'm very tired today.",0.6524669446768354,0.6525,0.6525,0.8125,1,0
+65,hard,fra_Latn,por_Latn,"Buongiorno, je suis sehr müde aujourd'hui obrigado.",51,"Bom dia, estou muito cansado hoje obrigado.",0.739600215905725,0.7396,0.7396,0.8125,1,0
+66,hard,fra_Latn,spa_Latn,"Buongiorno, je suis sehr müde aujourd'hui obrigado.",51,"Buongiorno, estoy muy cansado hoy obrigado.",0.7146250045268973,0.7146,0.7146,0.875,1,0
+67,hard,fra_Latn,ita_Latn,"Buongiorno, je suis sehr müde aujourd'hui obrigado.",51,"Buongiorno, oggi sono molto stanco.",0.6980106959924419,0.698,0.698,0.8125,1,0
+68,hard,fra_Latn,eng_Latn,le le le le le le chat chat chat mange mange mange mange.,57,The cat the cat eats eat.,0.33303031531205124,0.333,0.333,0.8125,1,0
+69,hard,fra_Latn,por_Latn,le le le le le le chat chat chat mange mange mange mange.,57,"O gato o gato come, o gatinho come.",0.3073093426933842,0.3073,0.3073,0.875,1,0
+70,hard,fra_Latn,spa_Latn,le le le le le le chat chat chat mange mange mange mange.,57,"El gatito, el gato. El gato come.",0.2692464717520106,0.2692,0.2692,0.875,1,0
+71,hard,fra_Latn,ita_Latn,le le le le le le chat chat chat mange mange mange mange.,57,Il gattino il gatto mangia mangi mangiare mangi.,0.26253127573173957,0.2625,0.2625,1.25,1,0
+72,hard,fra_Latn,eng_Latn,oui oui oui oui oui oui oui oui oui oui,39,Yes yes Yes,0.21741540969754863,0.2174,0.2174,0.6667,1,0
+73,hard,fra_Latn,por_Latn,oui oui oui oui oui oui oui oui oui oui,39,sim Sim sim,0.15537282187914875,0.1554,0.1554,0.6667,1,0
+74,hard,fra_Latn,spa_Latn,oui oui oui oui oui oui oui oui oui oui,39,Sí sí sí Sí Sí Si Sí,0.1859515327972358,0.186,0.186,0.8333,1,0
+75,hard,fra_Latn,ita_Latn,oui oui oui oui oui oui oui oui oui oui,39,Sì sì sì si è,0.16410442961459693,0.1641,0.1641,0.6667,1,0
+76,hard,fra_Latn,eng_Latn,??? !!! ... ??? !!!,19,What do you mean ? What ? - What ? You know what ? - What ? What do you mean ? What ? - What ? - What ? - What ?,0.32291103391982146,0.3327,0.3001,2.1,10,0
+77,hard,fra_Latn,por_Latn,??? !!! ... ??? !!!,19,"O que é isso? O que é isso? - O que é isso? O que é isso? - Não , não . O que é isso? O que é isso? - O que é isso? - O que é isso? - O que é isso?",0.34702600364595393,0.3556,0.327,2.8,10,0
+78,hard,fra_Latn,spa_Latn,??? !!! ... ??? !!!,19,¿Qué es eso? ¿Cuál es el problema? ¡Eso es todo! ¿Qué es eso? ¿ Qué es eso ? ¿Qué es eso? ¿Cuál es el problema? ¡Eso es todo! ¡Eso es todo! ¡Eso es todo!,0.3641786364809348,0.378,0.3318,2.9333,10,0
+79,hard,fra_Latn,ita_Latn,??? !!! ... ??? !!!,19,- Cosa ? - Cosa? - Cosa? Non è così! - Cosa ? - Cosa ? - Cosa? - Cosa? - Cosa? - Cosa?,0.2579603935481361,0.2705,0.2288,2.0333,10,0
+80,hard,fra_Latn,eng_Latn,azerty qsdfgh wxcvbn poiuyt,27,aserty qsdfgh wxcvbn poiuyt,0.6313119178914013,0.6313,0.6313,1.0625,1,0
+81,hard,fra_Latn,por_Latn,azerty qsdfgh wxcvbn poiuyt,27,azerty qsdfgh wxcvbn poiuyt,0.7347015412212502,0.7347,0.7347,1.0625,1,0
+82,hard,fra_Latn,spa_Latn,azerty qsdfgh wxcvbn poiuyt,27,azerty qsdfgh wxcvbn poiuyt,0.7097944168528307,0.7098,0.7098,1.0625,1,0
+83,hard,fra_Latn,ita_Latn,azerty qsdfgh wxcvbn poiuyt,27,azerty qsdfgh wxcvbn poiuyt,0.766214647636159,0.7662,0.7662,1.0625,1,0
+84,hard,fra_Latn,eng_Latn,Il voud,7,He wants to,0.5591300335496325,0.5591,0.5591,1.5,1,0
+85,hard,fra_Latn,por_Latn,Il voud,7,Ele quer,0.5296892381671138,0.5297,0.5297,1.25,1,0
+86,hard,fra_Latn,spa_Latn,Il voud,7,Él quiere,0.5308354961506245,0.5308,0.5308,1.25,1,0
+87,hard,fra_Latn,ita_Latn,Il voud,7,Vuole,0.47985066031935386,0.4799,0.4799,1.25,1,0
+88,hard,fra_Latn,eng_Latn,Les enfa,8,The Facts,0.46785872549882423,0.4679,0.4679,1.2,1,0
+89,hard,fra_Latn,por_Latn,Les enfa,8,Os fatos,0.29977627629937986,0.2998,0.2998,1.2,1,0
+90,hard,fra_Latn,spa_Latn,Les enfa,8,Los hechos,0.39197560094626993,0.392,0.392,1.2,1,0
+91,hard,fra_Latn,ita_Latn,Les enfa,8,Le faccende,0.28255254568826454,0.2826,0.2826,1.4,1,0
+92,easy,eng_Latn,fra_Latn,The committee approved the new regulations yesterday.,53,Le comité a approuvé les nouveaux règlements hier.,0.7017338287245292,0.7017,0.7017,1.5,1,0
+93,easy,eng_Latn,por_Latn,The committee approved the new regulations yesterday.,53,A comissão aprovou ontem os novos regulamentos.,0.6627736437556404,0.6628,0.6628,1.4,1,0
+94,easy,eng_Latn,spa_Latn,The committee approved the new regulations yesterday.,53,El comité aprobó ayer las nuevas regulaciones.,0.6322772024064239,0.6323,0.6323,1.3,1,0
+95,easy,eng_Latn,ita_Latn,The committee approved the new regulations yesterday.,53,La commissione ha approvato i nuovi regolamenti ieri.,0.7114727935393925,0.7115,0.7115,1.4,1,0
+96,easy,eng_Latn,fra_Latn,She opened the window and looked out at the garden.,51,Elle ouvrit la fenêtre et regarda le jardin.,0.8441132746876991,0.8441,0.8441,1.3077,1,0
+97,easy,eng_Latn,por_Latn,She opened the window and looked out at the garden.,51,Ela abriu a janela e olhou para o jardim.,0.9177982214639976,0.9178,0.9178,1.3077,1,0
+98,easy,eng_Latn,spa_Latn,She opened the window and looked out at the garden.,51,Ella abrió la ventana y miró hacia el jardín.,0.8472160599588692,0.8472,0.8472,1.3077,1,0
+99,easy,eng_Latn,ita_Latn,She opened the window and looked out at the garden.,51,Aprì la finestra e guardò fuori al giardino.,0.761031387579665,0.761,0.761,1.2308,1,0
+100,easy,eng_Latn,fra_Latn,The report was submitted before the deadline.,45,Le rapport a été soumis avant la date limite.,0.7564215544855399,0.7564,0.7564,1.1818,1,0
+101,easy,eng_Latn,por_Latn,The report was submitted before the deadline.,45,O relatório foi apresentado antes do prazo.,0.7832023150963826,0.7832,0.7832,1.0909,1,0
+102,easy,eng_Latn,spa_Latn,The report was submitted before the deadline.,45,El informe se presentó antes de la fecha límite.,0.7384302595719467,0.7384,0.7384,1.1818,1,0
+103,easy,eng_Latn,ita_Latn,The report was submitted before the deadline.,45,La relazione è stata presentata prima della scadenza.,0.8010115843174211,0.801,0.801,1.2727,1,0
+104,easy,eng_Latn,fra_Latn,Children learn languages much faster than adults.,49,Les enfants apprennent des langues beaucoup plus vite que les adultes.,0.8322740696404977,0.8323,0.8323,1.8,1,0
+105,easy,eng_Latn,por_Latn,Children learn languages much faster than adults.,49,As crianças aprendem idiomas muito mais rápido do que os adultos.,0.8034583508341294,0.8035,0.8035,1.7,1,0
+106,easy,eng_Latn,spa_Latn,Children learn languages much faster than adults.,49,Los niños aprenden idiomas mucho más rápido que los adultos.,0.8680228419232214,0.868,0.868,1.6,1,0
+107,easy,eng_Latn,ita_Latn,Children learn languages much faster than adults.,49,I bambini imparano le lingue molto più velocemente degli adulti.,0.8588179092646673,0.8588,0.8588,1.8,1,0
+108,easy,eng_Latn,fra_Latn,The train arrives at platform seven at half past nine.,54,Le train arrive à la plate-forme 7 à neuf heures et demie.,0.687379736861673,0.6874,0.6874,1.4286,1,0
+109,easy,eng_Latn,por_Latn,The train arrives at platform seven at half past nine.,54,O trem chega à plataforma sete às nove e meia.,0.7537820204956961,0.7538,0.7538,1.0714,1,0
+110,easy,eng_Latn,spa_Latn,The train arrives at platform seven at half past nine.,54,El tren llega a la plataforma siete a las nueve y media.,0.8488617705665253,0.8489,0.8489,1.1429,1,0
+111,easy,eng_Latn,ita_Latn,The train arrives at platform seven at half past nine.,54,Il treno arriva alla piattaforma sette alle nove e mezza.,0.7663819320935734,0.7664,0.7664,1.2857,1,0
+112,hard,eng_Latn,fra_Latn,The dog eat the and then nothing after.,39,Le chien le mange et rien après.,0.5426760924063733,0.5427,0.5427,1.0,1,0
+113,hard,eng_Latn,por_Latn,The dog eat the and then nothing after.,39,O cão come e depois nada.,0.6625946735436223,0.6626,0.6626,1.0,1,0
+114,hard,eng_Latn,spa_Latn,The dog eat the and then nothing after.,39,El perro lo come y luego nada después.,0.588504901543041,0.5885,0.5885,1.0909,1,0
+115,hard,eng_Latn,ita_Latn,The dog eat the and then nothing after.,39,Il cane lo mangia e poi niente dopo.,0.6087429417671908,0.6087,0.6087,1.1818,1,0
+116,hard,eng_Latn,fra_Latn,She go yesterday tomorrow will not came.,40,"Elle est partie hier, demain ne viendra pas.",0.701543564426179,0.7015,0.7015,1.4,1,0
+117,hard,eng_Latn,por_Latn,She go yesterday tomorrow will not came.,40,"Ela foi ontem, amanhã não virá.",0.7118159495704244,0.7118,0.7118,1.2,1,0
+118,hard,eng_Latn,spa_Latn,She go yesterday tomorrow will not came.,40,Se fue ayer y mañana no vendrá.,0.7194832353886479,0.7195,0.7195,1.2,1,0
+119,hard,eng_Latn,ita_Latn,She go yesterday tomorrow will not came.,40,"Se è andata ieri, domani non verrà.",0.6471983885218636,0.6472,0.6472,1.3,1,0
+120,hard,eng_Latn,fra_Latn,Cars red blue eats sleeping fast.,33,Les voitures rouges et bleues mangent en dormant rapidement.,0.6367272843916704,0.6367,0.6367,1.7273,1,0
+121,hard,eng_Latn,por_Latn,Cars red blue eats sleeping fast.,33,Carros vermelhos e azuis comem dormindo rápido.,0.6142304691367798,0.6142,0.6142,1.4545,1,0
+122,hard,eng_Latn,spa_Latn,Cars red blue eats sleeping fast.,33,Los autos rojos y azules comen durmiendo rápido.,0.6036600247250177,0.6037,0.6037,1.4545,1,0
+123,hard,eng_Latn,ita_Latn,Cars red blue eats sleeping fast.,33,Le auto rosse e azzurre mangiano dormendo velocemente.,0.6970113811352766,0.697,0.697,1.7273,1,0
+124,hard,eng_Latn,fra_Latn,I have the thing there the thingy you see not the?,50,J'ai cette chose là-bas. Cette chose que tu ne vois pas ?,0.5298088461737829,0.5298,0.5298,1.3333,1,0
+125,hard,eng_Latn,por_Latn,I have the thing there the thingy you see not the?,50,Tenho a coisa ali. A coisa que não vês?,0.5276390824980628,0.5276,0.5276,1.0,1,0
+126,hard,eng_Latn,spa_Latn,I have the thing there the thingy you see not the?,50,¿Tengo la cosa ahí? ¿La cosa que no ves?,0.5297263996426885,0.5297,0.5297,1.1333,1,0
+127,hard,eng_Latn,ita_Latn,I have the thing there the thingy you see not the?,50,"Ho la cosa lì, quella cosa che non vedi?",0.49991596356145396,0.4999,0.4999,0.9333,1,0
+128,hard,eng_Latn,fra_Latn,Helo hw r u todey i am fin thenk yuo,36,"Aujourd'hui, j'ai fini de penser à toi.",0.42217098848407447,0.4222,0.4222,1.0,1,0
+129,hard,eng_Latn,por_Latn,Helo hw r u todey i am fin thenk yuo,36,"Bom dia, estou bem.",0.39693613572551545,0.3969,0.3969,0.5294,1,0
+130,hard,eng_Latn,spa_Latn,Helo hw r u todey i am fin thenk yuo,36,"Hola, hoy estoy bien.",0.36806047382715457,0.3681,0.3681,0.5294,1,0
+131,hard,eng_Latn,ita_Latn,Helo hw r u todey i am fin thenk yuo,36,"Ciao, oggi sto bene.",0.29941331005865746,0.2994,0.2994,0.5294,1,0
+132,hard,eng_Latn,fra_Latn,i eted bred wit buttr last nigt,31,J' ai été élevé avec de l' ingéniosité la nuit dernière.,0.4441311510042143,0.4441,0.4441,1.6667,1,0
+133,hard,eng_Latn,por_Latn,i eted bred wit buttr last nigt,31,"Eu fui criado com sabedoria , mas a última noite .",0.40504737067664903,0.405,0.405,1.4167,1,0
+134,hard,eng_Latn,spa_Latn,i eted bred wit buttr last nigt,31,La última noche me crié con la sabiduría .,0.31720430602269534,0.3172,0.3172,1.3333,1,0
+135,hard,eng_Latn,ita_Latn,i eted bred wit buttr last nigt,31,L'ultima notte ho avuto un po' d' ingegneria .,0.3013946867748266,0.3014,0.3014,1.5833,1,0
+136,hard,eng_Latn,fra_Latn,teh childs playz in teh gardn,29,Les enfants jouent au thé jardin.,0.5899932649953366,0.59,0.59,1.0909,1,0
+137,hard,eng_Latn,por_Latn,teh childs playz in teh gardn,29,As crianças brincam no Te Garden .,0.4000741914749832,0.4001,0.4001,1.0909,1,0
+138,hard,eng_Latn,spa_Latn,teh childs playz in teh gardn,29,Los niños juegan en Teh Gardn.,0.5205520427516802,0.5206,0.5206,1.0909,1,0
+139,hard,eng_Latn,ita_Latn,teh childs playz in teh gardn,29,I bambini giocano a Teh Garden .,0.4706322562436054,0.4706,0.4706,1.0,1,0
+140,hard,eng_Latn,fra_Latn,I want to aller au supermercado kaufen some Sachen for me.,58,Je veux aller au supermarché acheter un peu de Sachen pour moi.,0.6581826953494674,0.6582,0.6582,1.1111,1,0
+141,hard,eng_Latn,por_Latn,I want to aller au supermercado kaufen some Sachen for me.,58,Quero ir ao supermercado comprar um Sachen para mim.,0.5829736756455486,0.583,0.583,0.8889,1,0
+142,hard,eng_Latn,spa_Latn,I want to aller au supermercado kaufen some Sachen for me.,58,Quiero ir al supermercado a comprar un poco de Sachen para mí.,0.6258333030117262,0.6258,0.6258,1.0556,1,0
+143,hard,eng_Latn,ita_Latn,I want to aller au supermercado kaufen some Sachen for me.,58,Voglio andare al supermercato a comprare un po' di Sachen per me.,0.6276524651897301,0.6277,0.6277,1.1667,1,0
+144,hard,eng_Latn,fra_Latn,He said que il ne want pas to come mañana avec nous.,52,Il a dit qu'il ne voulait pas venir demain avec nous.,0.8032974450811972,0.8033,0.8033,1.1333,1,0
+145,hard,eng_Latn,por_Latn,He said que il ne want pas to come mañana avec nous.,52,Ele disse que não quer vir amanhã connosco.,0.7285347749788459,0.7285,0.7285,0.8,1,0
+146,hard,eng_Latn,spa_Latn,He said que il ne want pas to come mañana avec nous.,52,Dijo que no quería venir mañana con nosotros.,0.7723517901954422,0.7724,0.7724,0.8,1,0
+147,hard,eng_Latn,ita_Latn,He said que il ne want pas to come mañana avec nous.,52,Ha detto che non vuole venire domani con noi.,0.7835183026129224,0.7835,0.7835,0.8667,1,0
+148,hard,eng_Latn,fra_Latn,"Buongiorno, I am sehr müde today obrigado.",42,"Bonjour, je suis très fatigué aujourd'hui.",0.7313576913343138,0.7314,0.7314,1.1429,1,0
+149,hard,eng_Latn,por_Latn,"Buongiorno, I am sehr müde today obrigado.",42,"Bom dia, estou muito cansado hoje obrigado.",0.7026697158469773,0.7027,0.7027,0.9286,1,0
+150,hard,eng_Latn,spa_Latn,"Buongiorno, I am sehr müde today obrigado.",42,"Buongiorno, estoy muy cansado hoy obrigado.",0.7233299978737359,0.7233,0.7233,1.0,1,0
+151,hard,eng_Latn,ita_Latn,"Buongiorno, I am sehr müde today obrigado.",42,"Buongiorno, sono molto stanco oggi obrigado.",0.7214494072661741,0.7214,0.7214,1.0,1,0
+152,hard,eng_Latn,fra_Latn,the the the the cat cat cat eats eats eats eats.,48,"Le chat, le chat mange, il mange.",0.34671959451779844,0.3467,0.3467,0.7222,1,0
+153,hard,eng_Latn,por_Latn,the the the the cat cat cat eats eats eats eats.,48,"O que o gato come, o gatinho come.",0.41559194557235263,0.4156,0.4156,0.7778,1,0
+154,hard,eng_Latn,spa_Latn,the the the the cat cat cat eats eats eats eats.,48,"El gatito, el gato... El gato come.",0.28297487390546816,0.283,0.283,0.7778,1,0
+155,hard,eng_Latn,ita_Latn,the the the the cat cat cat eats eats eats eats.,48,"Il gatto, il gattino mangia.",0.2645430573742183,0.2645,0.2645,0.7778,1,0
+156,hard,eng_Latn,fra_Latn,yes yes yes yes yes yes yes yes yes yes,39,Oui oui Oui,0.2562490322769655,0.2562,0.2562,0.6667,1,0
+157,hard,eng_Latn,por_Latn,yes yes yes yes yes yes yes yes yes yes,39,"Sim, sim, Sim.",0.1928832998145279,0.1929,0.1929,0.75,1,0
+158,hard,eng_Latn,spa_Latn,yes yes yes yes yes yes yes yes yes yes,39,Sí sí sí Sí Sí,0.22987554437265734,0.2299,0.2299,0.6667,1,0
+159,hard,eng_Latn,ita_Latn,yes yes yes yes yes yes yes yes yes yes,39,Si ' si ' sì sì si' sì,0.17015756367758195,0.1702,0.1702,1.0,1,0
+160,hard,eng_Latn,fra_Latn,??? !!! ... ??? !!!,19,Je ne sais pas . Je ne sais pas. Je vous en prie ! Je vous en prie ! C' est ça ? Je ne sais pas . Je ne sais pas. Je vous en prie ! Je vous en prie ! Je vous en prie !,0.3410746445117983,0.3541,0.3107,2.6667,10,0
+161,hard,eng_Latn,por_Latn,??? !!! ... ??? !!!,19,"- Não . O que é isso? - Não , não . O que é isso ? - Não . - Não . O que é isso? - Não , não . - Não , não . - Não , não .",0.33749514895669686,0.3435,0.3236,2.4667,10,0
+162,hard,eng_Latn,spa_Latn,??? !!! ... ??? !!!,19,¿ Qué es eso ? ¿Cuál es el problema? ¿ Qué es eso ? ¿ Qué es eso ? ¿ Por qué no ? ¿ Qué es eso ? ¿Cuál es el problema? ¿ Qué es eso ? ¿ Qué es eso ? ¿ Qué es eso ?,0.37096512533476644,0.3826,0.3439,2.8,10,0
+163,hard,eng_Latn,ita_Latn,??? !!! ... ??? !!!,19,"- Cosa ? - Cosa? - Non lo so . - No , no ! - Cosa ? - Cosa ? - Cosa? - Non lo so . - Non lo so . - Non lo so .",0.2753753302583739,0.2949,0.2297,2.3333,10,0
+164,hard,eng_Latn,fra_Latn,asdfgh qwerty zxcvbn poiuyt,27,à titre d'exemplaire Qwerty zxcvbn poiuyt,0.44580913456611426,0.4458,0.4458,1.375,1,0
+165,hard,eng_Latn,por_Latn,asdfgh qwerty zxcvbn poiuyt,27,Asdfgh qwerty zxcvbn poiuyt,0.6994726114384252,0.6995,0.6995,1.0625,1,0
+166,hard,eng_Latn,spa_Latn,asdfgh qwerty zxcvbn poiuyt,27,Asdfgh qwerty zxcvbn poiuyt,0.6599145356972883,0.6599,0.6599,1.0625,1,0
+167,hard,eng_Latn,ita_Latn,asdfgh qwerty zxcvbn poiuyt,27,Asdfgh qwerty zxcvbn poiuyt,0.6866210242565888,0.6866,0.6866,1.0625,1,0
+168,hard,eng_Latn,fra_Latn,She wan,7,Elle veut,0.44683038635238703,0.4468,0.4468,1.25,1,0
+169,hard,eng_Latn,por_Latn,She wan,7,Ela vai,0.3579193130590589,0.3579,0.3579,1.25,1,0
+170,hard,eng_Latn,spa_Latn,She wan,7,Ella quiere,0.5307327701634893,0.5307,0.5307,1.25,1,0
+171,hard,eng_Latn,ita_Latn,She wan,7,Lei vuole,0.36863912915182334,0.3686,0.3686,1.25,1,0
+172,hard,eng_Latn,fra_Latn,The chil,8,Le chilli,0.3390141883882851,0.339,0.339,1.5,1,0
+173,hard,eng_Latn,por_Latn,The chil,8,O chil,0.342741878940655,0.3427,0.3427,1.25,1,0
+174,hard,eng_Latn,spa_Latn,The chil,8,El chil,0.40882561667342954,0.4088,0.4088,1.25,1,0
+175,hard,eng_Latn,ita_Latn,The chil,8,Il chillo,0.35709546096822165,0.3571,0.3571,1.5,1,0
+176,easy,por_Latn,eng_Latn,O relatório foi entregue antes do prazo estipulado.,51,The report was delivered before the deadline.,0.6225787709554134,0.6226,0.6226,0.8571,1,0
+177,easy,por_Latn,fra_Latn,O relatório foi entregue antes do prazo estipulado.,51,Le rapport a été livré avant le délai prévu.,0.6884460350468922,0.6884,0.6884,1.0,1,0
+178,easy,por_Latn,spa_Latn,O relatório foi entregue antes do prazo estipulado.,51,El informe se entregó antes del plazo estipulado.,0.6912831072881923,0.6913,0.6913,1.0714,1,0
+179,easy,por_Latn,ita_Latn,O relatório foi entregue antes do prazo estipulado.,51,La relazione è stata consegnata prima del termine previsto.,0.7038702935419112,0.7039,0.7039,1.0714,1,0
+180,easy,por_Latn,eng_Latn,As crianças aprendem idiomas muito mais rápido do que os adultos.,65,Children learn languages much faster than adults.,0.8520921256947392,0.8521,0.8521,0.6875,1,0
+181,easy,por_Latn,fra_Latn,As crianças aprendem idiomas muito mais rápido do que os adultos.,65,Les enfants apprennent des langues beaucoup plus vite que les adultes.,0.844663249868912,0.8447,0.8447,1.125,1,0
+182,easy,por_Latn,spa_Latn,As crianças aprendem idiomas muito mais rápido do que os adultos.,65,Los niños aprenden idiomas mucho más rápido que los adultos.,0.8721673106157057,0.8722,0.8722,1.0,1,0
+183,easy,por_Latn,ita_Latn,As crianças aprendem idiomas muito mais rápido do que os adultos.,65,I bambini imparano le lingue molto più velocemente degli adulti.,0.8668947904520811,0.8669,0.8669,1.125,1,0
+184,easy,por_Latn,eng_Latn,O trem chega à plataforma sete às nove e meia.,46,The train arrives at platform seven at 9:30.,0.7164003708712477,0.7164,0.7164,0.9286,1,0
+185,easy,por_Latn,fra_Latn,O trem chega à plataforma sete às nove e meia.,46,Le train arrive à la plate-forme à sept heures et demie.,0.6640169053383345,0.664,0.664,1.2857,1,0
+186,easy,por_Latn,spa_Latn,O trem chega à plataforma sete às nove e meia.,46,El tren llega a la plataforma a las siete y media.,0.8073054964334033,0.8073,0.8073,1.0714,1,0
+187,easy,por_Latn,ita_Latn,O trem chega à plataforma sete às nove e meia.,46,Il treno arriva alla piattaforma alle sette e nove e mezza.,0.7234795320822726,0.7235,0.7235,1.3571,1,0
+188,easy,por_Latn,eng_Latn,Ela abriu a janela e olhou para o jardim.,41,She opened the window and looked into the garden.,0.7803115162019627,0.7803,0.7803,0.8125,1,0
+189,easy,por_Latn,fra_Latn,Ela abriu a janela e olhou para o jardim.,41,Elle ouvrit la fenêtre et regarda le jardin.,0.8466155359125042,0.8466,0.8466,1.0625,1,0
+190,easy,por_Latn,spa_Latn,Ela abriu a janela e olhou para o jardim.,41,Ella abrió la ventana y miró al jardín.,0.8517982370848295,0.8518,0.8518,1.0,1,0
+191,easy,por_Latn,ita_Latn,Ela abriu a janela e olhou para o jardim.,41,Ha aperto la finestra e ha guardato il giardino.,0.7894298566993967,0.7894,0.7894,1.0625,1,0
+192,easy,por_Latn,eng_Latn,O comitê aprovou os novos regulamentos ontem.,45,The committee approved the new regulations yesterday.,0.7564706775368916,0.7565,0.7565,0.7857,1,0
+193,easy,por_Latn,fra_Latn,O comitê aprovou os novos regulamentos ontem.,45,Le comité a approuvé les nouveaux règlements hier.,0.7306130562023546,0.7306,0.7306,1.0714,1,0
+194,easy,por_Latn,spa_Latn,O comitê aprovou os novos regulamentos ontem.,45,El comité aprobó el nuevo reglamento ayer.,0.7170773913360106,0.7171,0.7171,0.8571,1,0
+195,easy,por_Latn,ita_Latn,O comitê aprovou os novos regulamentos ontem.,45,Il comitato ha approvato i nuovi regolamenti ieri.,0.7460650425651169,0.7461,0.7461,1.0,1,0
+196,hard,por_Latn,eng_Latn,O cachorro come o e depois nada mais.,37,The dog eats it and then nothing else.,0.7010359646024906,0.701,0.701,1.0,1,0
+197,hard,por_Latn,fra_Latn,O cachorro come o e depois nada mais.,37,"Le chien le mange, puis rien d'autre.",0.6411439280113191,0.6411,0.6411,1.0769,1,0
+198,hard,por_Latn,spa_Latn,O cachorro come o e depois nada mais.,37,El perro lo come y después nada más.,0.6789904398528954,0.679,0.679,0.9231,1,0
+199,hard,por_Latn,ita_Latn,O cachorro come o e depois nada mais.,37,Il cane lo mangia e poi nient'altro.,0.6634536060477404,0.6635,0.6635,1.1538,1,0
+200,hard,por_Latn,eng_Latn,Ela foi ontem amanhã não virá.,30,She went yesterday. She won't come tomorrow.,0.6414709229222921,0.6415,0.6415,1.4,1,0
+201,hard,por_Latn,fra_Latn,Ela foi ontem amanhã não virá.,30,Elle est partie hier. Elle ne reviendra pas demain.,0.6869522757266773,0.687,0.687,1.5,1,0
+202,hard,por_Latn,spa_Latn,Ela foi ontem amanhã não virá.,30,"Ella fue ayer, mañana no volverá.",0.6577988364041947,0.6578,0.6578,1.2,1,0
+203,hard,por_Latn,ita_Latn,Ela foi ontem amanhã não virá.,30,"È andata ieri, domani non verrà.",0.6225984017071509,0.6226,0.6226,1.2,1,0
+204,hard,por_Latn,eng_Latn,Os carros vermelho azul come dormir rápido.,43,The red and blue cars eat fast sleep.,0.5516798301402631,0.5517,0.5517,1.0,1,0
+205,hard,por_Latn,fra_Latn,Os carros vermelho azul come dormir rápido.,43,Les voitures rouges et bleues s'endorment rapidement.,0.7300487188799417,0.73,0.73,1.5833,1,0
+206,hard,por_Latn,spa_Latn,Os carros vermelho azul come dormir rápido.,43,Los coches rojos y azules se duermen rápidamente.,0.6884286571210163,0.6884,0.6884,1.4167,1,0
+207,hard,por_Latn,ita_Latn,Os carros vermelho azul come dormir rápido.,43,Le auto rosse e azzurre dormono velocemente.,0.6787583986537294,0.6788,0.6788,1.4167,1,0
+208,hard,por_Latn,eng_Latn,Eu tenho a coisa lá o negócio sabe não o?,41,I've got the thing there business you know don't you?,0.5913174603117861,0.5913,0.5913,1.2857,1,0
+209,hard,por_Latn,fra_Latn,Eu tenho a coisa lá o negócio sabe não o?,41,J'ai la chose là-bas l'affaire sait pas il?,0.5419309640748156,0.5419,0.5419,1.3571,1,0
+210,hard,por_Latn,spa_Latn,Eu tenho a coisa lá o negócio sabe não o?,41,Tengo la cosa allí el negocio sabe no lo?,0.6098064620647432,0.6098,0.6098,0.9286,1,0
+211,hard,por_Latn,ita_Latn,Eu tenho a coisa lá o negócio sabe não o?,41,Ho la cosa là l'affare sa non lo?,0.5617263644223183,0.5617,0.5617,1.0714,1,0
+212,hard,por_Latn,eng_Latn,Oi comu vai vce hoj eu to bien obrigdo,38,"Hey , come on . I 'll be fine . Thank you .",0.4375500964525152,0.4376,0.4376,1.2143,1,0
+213,hard,por_Latn,fra_Latn,Oi comu vai vce hoj eu to bien obrigdo,38,Je vous remercie,0.4542271808151509,0.4542,0.4542,0.5714,1,0
+214,hard,por_Latn,spa_Latn,Oi comu vai vce hoj eu to bien obrigdo,38,Hola Como vas hoy te voy bien gracias,0.44005405660930624,0.4401,0.4401,0.7857,1,0
+215,hard,por_Latn,ita_Latn,Oi comu vai vce hoj eu to bien obrigdo,38,Ciao come va oggi ti ringrazio,0.4750943922886274,0.4751,0.4751,0.7857,1,0
+216,hard,por_Latn,eng_Latn,eu comi pao com manteiga onte de note,37,I ate pao with butter last night.,0.5790518960655229,0.5791,0.5791,1.0,1,0
+217,hard,por_Latn,fra_Latn,eu comi pao com manteiga onte de note,37,J'ai mangé du paon avec du beurre hier soir.,0.6258948366286469,0.6259,0.6259,1.5,1,0
+218,hard,por_Latn,spa_Latn,eu comi pao com manteiga onte de note,37,Yo comí pao con mantequilla anoche.,0.5274248589184745,0.5274,0.5274,1.1667,1,0
+219,hard,por_Latn,ita_Latn,eu comi pao com manteiga onte de note,37,Ho mangiato il pao con il burro ieri notte.,0.4880492968796683,0.488,0.488,1.25,1,0
+220,hard,por_Latn,eng_Latn,as criansa brinca no jardin,27,The child plays in the garden,0.572416714492308,0.5724,0.5724,1.0,1,0
+221,hard,por_Latn,fra_Latn,as criansa brinca no jardin,27,l'enfant joue dans le jardin,0.6823390642010329,0.6823,0.6823,1.1,1,0
+222,hard,por_Latn,spa_Latn,as criansa brinca no jardin,27,la niña juega en el jardín,0.7156910351500642,0.7157,0.7157,1.1,1,0
+223,hard,por_Latn,ita_Latn,as criansa brinca no jardin,27,La bambina gioca in giardino,0.6986874535393144,0.6987,0.6987,1.2,1,0
+224,hard,por_Latn,eng_Latn,Eu quero go to the supermercado acheter some Sachen para mim.,61,I want to go to the supermarket buy some Sachen for me.,0.810842002259791,0.8108,0.8108,1.0,1,0
+225,hard,por_Latn,fra_Latn,Eu quero go to the supermercado acheter some Sachen para mim.,61,Je veux aller au supermarché acheter un peu de Sachen pour moi.,0.7825814390463004,0.7826,0.7826,1.1111,1,0
+226,hard,por_Latn,spa_Latn,Eu quero go to the supermercado acheter some Sachen para mim.,61,Quiero ir al supermercado a comprar algo de Sachen para mí.,0.7748632941894459,0.7749,0.7749,1.0,1,0
+227,hard,por_Latn,ita_Latn,Eu quero go to the supermercado acheter some Sachen para mim.,61,Voglio andare al supermercato acquistare qualche Sachen per me.,0.769092152122669,0.7691,0.7691,1.0,1,0
+228,hard,por_Latn,eng_Latn,Ele disse que he doesn't want to vir amanhã avec nous.,54,He said he doesn't want to come tomorrow with us.,0.8681012676321493,0.8681,0.8681,1.0,1,0
+229,hard,por_Latn,fra_Latn,Ele disse que he doesn't want to vir amanhã avec nous.,54,Il a dit qu'il ne veut pas venir demain avec nous.,0.8405233067438778,0.8405,0.8405,1.0625,1,0
+230,hard,por_Latn,spa_Latn,Ele disse que he doesn't want to vir amanhã avec nous.,54,Dijo que no quiere venir mañana con nosotros.,0.7988673634561786,0.7989,0.7989,0.75,1,0
+231,hard,por_Latn,ita_Latn,Ele disse que he doesn't want to vir amanhã avec nous.,54,Ha detto che non vuole venire domani con noi.,0.828739849769931,0.8287,0.8287,0.8125,1,0
+232,hard,por_Latn,eng_Latn,"Buongiorno, eu sou sehr müde hoje obrigado.",43,"Good morning, I'm very tired today. Thank you.",0.7079133618858401,0.7079,0.7079,1.1429,1,0
+233,hard,por_Latn,fra_Latn,"Buongiorno, eu sou sehr müde hoje obrigado.",43,"Bonjour, je suis très fatigué aujourd'hui merci.",0.7246744571043691,0.7247,0.7247,1.2143,1,0
+234,hard,por_Latn,spa_Latn,"Buongiorno, eu sou sehr müde hoje obrigado.",43,"Buongiorno, estoy muy cansado hoy gracias.",0.6113070315840178,0.6113,0.6113,1.0,1,0
+235,hard,por_Latn,ita_Latn,"Buongiorno, eu sou sehr müde hoje obrigado.",43,"Buongiorno, sono molto stanco oggi grazie.",0.6796627527016978,0.6797,0.6797,1.0,1,0
+236,hard,por_Latn,eng_Latn,o o o o o gato gato gato come come come come.,45,The cat the cat eats.,0.35095694653345477,0.351,0.351,0.6667,1,0
+237,hard,por_Latn,fra_Latn,o o o o o gato gato gato come come come come.,45,"Le chat, le chat mange, il mange.",0.33896310939503754,0.339,0.339,0.8667,1,0
+238,hard,por_Latn,spa_Latn,o o o o o gato gato gato come come come come.,45,El gato o el gato se come.,0.35062073555946327,0.3506,0.3506,0.8,1,0
+239,hard,por_Latn,ita_Latn,o o o o o gato gato gato come come come come.,45,O o o il gatto Gatto gatti mangia mangi mangie mangi.,0.2743262022012361,0.2743,0.2743,1.4,1,0
+240,hard,por_Latn,eng_Latn,sim sim sim sim sim sim sim sim sim sim,39,Yes yes yeah,0.21653993270855765,0.2165,0.2165,0.6667,1,0
+241,hard,por_Latn,fra_Latn,sim sim sim sim sim sim sim sim sim sim,39,Oui oui Oui,0.23678363165633015,0.2368,0.2368,0.6667,1,0
+242,hard,por_Latn,spa_Latn,sim sim sim sim sim sim sim sim sim sim,39,Sí sí sí si sí,0.2321979810585525,0.2322,0.2322,0.6667,1,0
+243,hard,por_Latn,ita_Latn,sim sim sim sim sim sim sim sim sim sim,39,"Sì, sì, si', sì",0.1787305728303068,0.1787,0.1787,0.8333,1,0
+244,hard,por_Latn,eng_Latn,??? !!! ... ??? !!!,19,What 's going on ? What 's the matter ? - What ? What 's the matter ? - What ? What 's going on ? What 's the matter ? - What ? - What ? - What ?,0.3378685927251976,0.3539,0.3005,2.5,10,0
+245,hard,por_Latn,fra_Latn,??? !!! ... ??? !!!,19,Je vous en prie . Je vous en prie. Je vous en prie ! Je vous en prie ! Je vous en prie . Je vous en prie . Je vous en prie. Je vous en prie ! Je vous en prie ! Je vous en prie !,0.37132479079293057,0.3886,0.3311,2.6667,10,0
+246,hard,por_Latn,spa_Latn,??? !!! ... ??? !!!,19,¿ Qué es eso ? ¿Qué es eso? ¿ Qué es eso ? ¿ Qué es eso ? ¿ Por qué no ? ¿ Qué es eso ? ¿Qué es eso? ¿ Qué es eso ? ¿ Qué es eso ? ¿ Qué es eso ?,0.3827134630030488,0.3998,0.3428,2.6667,10,0
+247,hard,por_Latn,ita_Latn,??? !!! ... ??? !!!,19,"- Cosa ? Cosa? - Cosa ? - No , no ! - Cosa ? - Cosa ? Cosa? - Cosa ? - Cosa ? - Cosa ?",0.2725840972840277,0.288,0.2365,2.0,10,0
+248,hard,por_Latn,eng_Latn,asdfgh qwerty zxcvbn poiuyt,27,asdfgh qwerty zxcvbn poiuyt,0.6675092811862525,0.6675,0.6675,1.0625,1,0
+249,hard,por_Latn,fra_Latn,asdfgh qwerty zxcvbn poiuyt,27,"à l'heure actuelle, il n'y a pas de différence entre les deux pays.",0.2420376871781204,0.242,0.242,1.5,1,0
+250,hard,por_Latn,spa_Latn,asdfgh qwerty zxcvbn poiuyt,27,Asdfgh qwerty zxcvbn poiuyt,0.7040271138551977,0.704,0.704,1.0625,1,0
+251,hard,por_Latn,ita_Latn,asdfgh qwerty zxcvbn poiuyt,27,Asdfgh qwerty zxcvbn poiuyt,0.7134763968479139,0.7135,0.7135,1.0625,1,0
+252,hard,por_Latn,eng_Latn,Ela quer,8,She wants to,0.5774464895516465,0.5774,0.5774,1.5,1,0
+253,hard,por_Latn,fra_Latn,Ela quer,8,Elle veut,0.7559698801995204,0.756,0.756,1.25,1,0
+254,hard,por_Latn,spa_Latn,Ela quer,8,Ella quiere,0.7716177308642158,0.7716,0.7716,1.25,1,0
+255,hard,por_Latn,ita_Latn,Ela quer,8,Lei vuole,0.5847250258333972,0.5847,0.5847,1.25,1,0
+256,hard,por_Latn,eng_Latn,As crian,8,The children,0.466045856232384,0.466,0.466,1.25,1,0
+257,hard,por_Latn,fra_Latn,As crian,8,Les enfants,0.6777095894094131,0.6777,0.6777,1.25,1,0
+258,hard,por_Latn,spa_Latn,As crian,8,Los niños,0.5850259834010861,0.585,0.585,1.25,1,0
+259,hard,por_Latn,ita_Latn,As crian,8,I bambini,0.5760889703061851,0.5761,0.5761,1.25,1,0

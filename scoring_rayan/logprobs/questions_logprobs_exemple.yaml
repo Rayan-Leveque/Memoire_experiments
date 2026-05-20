@@ -1,0 +1,121 @@
+# Questions pour l'évaluation des log-probs — Qwen3-4B
+# Article source : Al Jazeera, 12 mai 2026 — Macron / Sommet Africa Forward, Nairobi
+# Fichier : articles/macron_africa_forward_aljazeera_12mai2026.txt
+#
+# Quadrants :
+#   A = information précise + question adaptée     → logprobs élevés attendus
+#   B = information précise + question non-adaptée → logprobs bas attendus
+#   C = information large   + question adaptée     → logprobs moyens
+#   D = information large   + question non-adaptée → ALERTE si logprobs élevés
+#
+# human_score : laisser null, remplir après lecture (0 = faux, 0.5 = partiel, 1 = correct)
+
+# --- Quadrant A : précis + adapté ---
+
+- article: "macron_africa_forward_aljazeera_12mai2026.txt"
+  question: "Quel est le montant total d'investissement annoncé par Macron au sommet Africa Forward ?"
+  quadrant: A
+  answerable: true
+  human_score: null
+
+- article: "macron_africa_forward_aljazeera_12mai2026.txt"
+  question: "Combien d'euros proviennent des entreprises françaises dans cet investissement ?"
+  quadrant: A
+  answerable: true
+  human_score: null
+
+- article: "macron_africa_forward_aljazeera_12mai2026.txt"
+  question: "Combien d'euros proviennent des entreprises africaines ?"
+  quadrant: A
+  answerable: true
+  human_score: null
+
+- article: "macron_africa_forward_aljazeera_12mai2026.txt"
+  question: "Combien d'emplois cet investissement est-il censé créer ?"
+  quadrant: A
+  answerable: true
+  human_score: null
+
+- article: "macron_africa_forward_aljazeera_12mai2026.txt"
+  question: "Quelle entreprise française s'engage à moderniser le port de Mombasa et pour quel montant ?"
+  quadrant: A
+  answerable: true
+  human_score: null
+
+- article: "macron_africa_forward_aljazeera_12mai2026.txt"
+  question: "Combien de soldats français sont arrivés au Kenya avant le sommet ?"
+  quadrant: A
+  answerable: true
+  human_score: null
+
+- article: "macron_africa_forward_aljazeera_12mai2026.txt"
+  question: "Dans combien de pays africains la France a-t-elle retiré ses troupes militaires ?"
+  quadrant: A
+  answerable: false
+  human_score: null
+
+# --- Quadrant C : large + adapté ---
+
+- article: "macron_africa_forward_aljazeera_12mai2026.txt"
+  question: "Quels sont les secteurs prioritaires de l'investissement annoncé par Macron ?"
+  quadrant: C
+  answerable: true
+  human_score: null
+
+- article: "macron_africa_forward_aljazeera_12mai2026.txt"
+  question: "Pourquoi ce sommet est-il qualifié d'historique pour la France en Afrique ?"
+  quadrant: C
+  answerable: true
+  human_score: null
+
+- article: "macron_africa_forward_aljazeera_12mai2026.txt"
+  question: "Quelle est la position de Macron sur la relation entre la France et l'Afrique ?"
+  quadrant: C
+  answerable: true
+  human_score: null
+
+# --- Quadrant B : précis + non-adapté ---
+
+- article: "macron_africa_forward_aljazeera_12mai2026.txt"
+  question: "Quel est le PIB du Kenya en 2026 ?"
+  quadrant: B
+  answerable: false
+  human_score: null
+
+- article: "macron_africa_forward_aljazeera_12mai2026.txt"
+  question: "Quel est le nom du ministre français des Affaires étrangères présent au sommet ?"
+  quadrant: B
+  answerable: false
+  human_score: null
+
+- article: "macron_africa_forward_aljazeera_12mai2026.txt"
+  question: "Quel est le siège social de CMA CGM ?"
+  quadrant: B
+  answerable: false
+  human_score: null
+
+# --- Quadrant D : large + non-adapté (signal d'alerte si logprobs élevés) ---
+
+- article: "macron_africa_forward_aljazeera_12mai2026.txt"
+  question: "Quelle est la situation économique générale de l'Afrique subsaharienne ?"
+  quadrant: D
+  answerable: false
+  human_score: null
+
+- article: "macron_africa_forward_aljazeera_12mai2026.txt"
+  question: "Quels sont les grands enjeux de la politique étrangère française ces dernières décennies ?"
+  quadrant: D
+  answerable: false
+  human_score: null
+
+- article: "macron_africa_forward_aljazeera_12mai2026.txt"
+  question: "Comment fonctionne le commerce maritime international ?"
+  quadrant: D
+  answerable: false
+  human_score: null
+
+- article: "macron_africa_forward_aljazeera_12mai2026.txt"
+  question: "Quel est l'impact du changement climatique sur l'agriculture africaine en général ?"
+  quadrant: D
+  answerable: false
+  human_score: null

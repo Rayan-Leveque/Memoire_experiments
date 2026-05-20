@@ -1,0 +1,38 @@
+\begin{thebibliography}{1}
+
+\bibitem{caswell2020language}
+Isaac Caswell et~al.
+\newblock Language {ID} in the wild.
+\newblock In {\em COLING 2020}, 2020.
+
+\bibitem{fomicheva2020unsupervised}
+Marina Fomicheva et~al.
+\newblock Unsupervised quality estimation for neural machine translation.
+\newblock {\em TACL}, 8:539--555, 2020.
+
+\bibitem{guo2017calibration}
+Chuan Guo et~al.
+\newblock On calibration of modern neural networks.
+\newblock In {\em ICML 2017}, 2017.
+
+\bibitem{joulin2017bag}
+Armand Joulin et~al.
+\newblock Bag of tricks for efficient text classification.
+\newblock {\em arXiv:1607.01759}, 2016.
+
+\bibitem{nllb2022}
+{NLLB Team} et~al.
+\newblock No language left behind.
+\newblock {\em arXiv:2207.04672}, 2022.
+
+\bibitem{ott2018analyzing}
+Myle Ott et~al.
+\newblock Analyzing uncertainty in neural machine translation.
+\newblock In {\em ICML 2018}, 2018.
+
+\bibitem{radford2022whisper}
+Alec Radford et~al.
+\newblock Robust speech recognition via large-scale weak supervision.
+\newblock {\em arXiv:2212.04356}, 2022.
+
+\end{thebibliography}

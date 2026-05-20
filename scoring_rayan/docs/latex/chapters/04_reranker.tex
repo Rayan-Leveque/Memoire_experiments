@@ -1,0 +1,70 @@
+\chapter{Reranker}
+
+\section{Identification}
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Modèle         & \texttt{BAAI/bge-reranker-v2-m3} (CrossEncoder) \\
+Statut scoring & \textbf{Implémenté} \\
+Fichier        & \texttt{DataPipelines/Reranker.py} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Fonctionnalité}
+
+Le reranker reçoit les 25 chunks candidats des embeddings et les reclasse par
+pertinence à la question en traitant chaque paire (question, chunk) ensemble.
+Il filtre les chunks sous le seuil \texttt{minimum\_acceptable\_score = 0.05}
+selon la méthode de sélection configurée (\texttt{smart}, \texttt{kmeans},
+\texttt{top}, \texttt{top\_kmeans}).
+
+\section{Fonction de scoring de confiance}
+
+\noindent\textit{Implémentation dans \texttt{DataPipelines/Reranker.py}.}
+
+\medskip
+Le cross-encoder produit un logit $l_i$ par paire (question, chunk), converti
+en score $\tilde{s}_i = \sigma(l_i) \in (0,1)$.
+
+Le score de confiance actuel est une moyenne pondérée entre la moyenne des
+chunks retenus et le plus faible d'entre eux :
+
+\begin{equation}
+  s_{\text{reranker}}
+  = 0.7 \cdot \bar{s} + 0.3 \cdot \min_{i \in \mathcal{I}} \tilde{s}_i
+  \label{eq:reranker}
+\end{equation}
+
+\noindent\textbf{Cette formule est temporaire.} La pondération 0.7/0.3 n'a
+pas été validée empiriquement. Elle ne tient pas compte de la taille du corpus :
+avec peu de documents disponibles, le système peut retenir des chunks
+faiblement pertinents faute de mieux, ce que le score ne reflète pas.
+
+\textbf{Cas particuliers.}
+\begin{itemize}
+  \item $|\mathcal{I}| = 0$ : $s = 0.0$ (aucun candidat retenu).
+  \item $|\mathcal{I}| = 1$, fast path : $s = 0.5$ (non mesuré par convention).
+\end{itemize}
+
+\paragraph{Seuils.}
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+$s \geq 0.70$ & Bons candidats & Réponse LLM probablement pertinente \\
+$0.40 \leq s < 0.70$ & Pertinence moyenne & Vérification recommandée \\
+$s < 0.40$ & Peu pertinent & Avertissement \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent Ces seuils sont provisoires et non calibrés.
+
+\textbf{Métadonnées loguées :} \texttt{num\_selected}, \texttt{mean\_score},
+\texttt{min\_score}, \texttt{max\_score}, \texttt{per\_index\_scores}.
+
+
+\noindent\textit{Tests de régression automatisés :
+\texttt{Tests/test\_reranker\_regression.py}.}

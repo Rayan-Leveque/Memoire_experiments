@@ -1,0 +1,181 @@
+\chapter{LLM --- Grand Modèle de Langage (Qwen3)}
+
+\section{Identification}
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Config active  & \texttt{Qwen3-4B-Instruct-ctx-8k-30-user} \\
+Modèle         & \texttt{Qwen/Qwen3-4B} \\
+Backend        & vLLM \\
+Contexte       & 8\,000 tokens \\
+Statut scoring & \textbf{À implémenter} \\
+Fichier        & \texttt{DataPipelines/LlmModel.py} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Fonctionnalité}
+
+Le LLM est le composant de génération finale : réponses aux enquêteurs,
+résumés, extraction d'entités, graphe de connaissances.
+
+\section{Pourquoi les log-probs seuls sont insuffisants}
+
+Pour un LLM instruit par RLHF/DPO, la probabilité de séquence
+$P(\hat{y}|x) = \prod_t P(y_t | y_{<t}, x)$ est :
+\begin{enumerate}
+  \item \textbf{Mal calibrée} post-RLHF (scores absolus peu interprétables).
+  \item \textbf{Biaisée par la longueur} : les réponses courtes ont
+        mécaniquement des log-probs plus élevés.
+  \item \textbf{Non discriminante des hallucinations} : un modèle peut être
+        très confiant en générant une information fausse.
+\end{enumerate}
+
+Le score de confiance du LLM ne doit pas être interprété comme une
+probabilité de vérité. Il est utilisé comme un signal de triage pour détecter
+les réponses nécessitant une relecture humaine.
+
+\section{Approche de scoring proposée}
+
+\paragraph{Signal 1 --- \textit{Retrieval quality}.}
+
+On mesure si les chunks fournis au LLM contiennent les éléments nécessaires
+pour répondre à la question.
+
+\begin{equation}
+  s_{\text{retrieval}}(q, C)
+  = \mathbb{1}[\text{gold chunk} \in C_{1:k}]
+  \label{eq:llm_retrieval}
+\end{equation}
+
+En absence de dataset annoté, ce signal est estimé par inspection humaine sur
+un échantillon de questions.
+
+\paragraph{Signal 2 --- \textit{Groundedness}.}
+
+La réponse est découpée en affirmations atomiques. Chaque affirmation est
+classée comme \textit{supported}, \textit{unsupported} ou \textit{contradicted}
+par les chunks fournis.
+
+\begin{equation}
+  s_{\text{groundedness}}(\hat{y}, C)
+  = \frac{\#\text{\textit{supported claims}}}{\#\text{\textit{total claims}}}
+  \label{eq:llm_groundedness}
+\end{equation}
+
+\begin{equation}
+  r_{\text{contradiction}}(\hat{y}, C)
+  = \frac{\#\text{\textit{contradicted claims}}}{\#\text{\textit{total claims}}}
+  \label{eq:llm_contradiction}
+\end{equation}
+
+\paragraph{Signal 3 --- \textit{Abstention}.}
+
+Le système doit refuser de conclure lorsque les documents ne contiennent pas
+l'information demandée.
+
+\begin{equation}
+  s_{\text{abstain}}
+  = \mathbb{1}[
+    \text{réponse absente des documents}
+    \Rightarrow
+    \text{\textit{abstention} ou réponse qualifiée}
+  ]
+  \label{eq:llm_abstain}
+\end{equation}
+
+\paragraph{Score de triage.}
+
+\begin{equation}
+  s_{\text{triage}}
+  = \min\!\Bigl(1,\;
+    \alpha\, s_{\text{groundedness}}
+    + \beta\, s_{\text{retrieval}}
+    - \lambda\, r_{\text{contradiction}}
+  \Bigr) \cdot s_{\text{abstain}}
+  \label{eq:llm_triage}
+\end{equation}
+
+avec $\alpha + \beta = 1$, $\lambda \geq 0$.
+Le facteur $s_{\text{abstain}} \in \{0, 1\}$ agit comme un veto :
+si le système devait s'abstenir et ne l'a pas fait, le score est nul.
+Les coefficients $\alpha, \beta, \lambda$ ne sont pas fixés a priori ;
+ils doivent être calibrés sur le dataset de validation~\cite{guo2017calibration}.
+
+\paragraph{Règle opérationnelle.}
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+\textbf{Condition} & \textbf{Interprétation} & \textbf{Action} \\
+\midrule
+Preuve absente                        & Réponse \textit{ungrounded}  & \textit{Abstention} obligatoire \\
+Contradiction détectée                & Risque élevé                 & Relecture humaine \\
+$s_{\text{groundedness}} < 0.8$       & \textit{Grounding} insuffisant & Relecture humaine \\
+Toutes les \textit{claims} supportées & Réponse exploitable          & Citation obligatoire \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Validation empirique}
+
+\subsection*{Dataset cible}
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Affaires            & $\sim$10 cas réels anonymisés \\
+Documents           & $\sim$50 documents au total \\
+Questions annotées  & schéma ci-dessous \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{verbatim}
+{
+  "case_id":          "affaire_001",
+  "question":         "Quel véhicule était impliqué ?",
+  "reference_answer": "Un Renault Clio immatriculé AB-123-CD",
+  "golden_chunks":    ["chunk_002", "chunk_006"],
+  "answerable":       true,
+  "ambiguous":        false
+}
+\end{verbatim}
+
+Le dataset doit être constitué et verrouillé avant tout réglage des seuils
+et coefficients.
+
+\noindent\textbf{Champs calculés à l'évaluation} (non dans le dataset statique) :
+\texttt{retrieved\_chunks}, \texttt{generated\_answer}, \texttt{abstained},
+\texttt{human\_score} (jugement humain 0--1, proxy pour $s_{\text{groundedness}}$
+en l'absence d'annotation \textit{claim}-level).
+
+\subsection*{Métriques}
+
+\begin{itemize}
+  \item \textbf{Retrieval hit@k} : le chunk annoté pertinent est-il dans
+        les $k$ chunks fournis au LLM ?
+  \item \textbf{Exactitude de réponse} : réponse correcte, partielle,
+        incorrecte ou abstention (jugement humain).
+  \item \textbf{\textit{Unsupported claims rate}} : proportion d'affirmations
+        absentes des sources.
+  \item \textbf{\textit{Contradiction rate}} : proportion d'affirmations
+        contredites par les sources.
+  \item \textbf{\textit{Abstention} correcte} : le système refuse-t-il de
+        conclure sur les questions négatives et ambiguës ?
+\end{itemize}
+
+\noindent\textbf{Statut actuel :} validation manuelle exploratoire uniquement.
+Le système ne doit pas être présenté comme calibré tant que ce dataset
+n'a pas été constitué.
+
+
+% Pour les logs probs, on prend des articles existant, et on va chercher des infomrations precises, chercher des elements precis, quand on sait que la reponse est la, quelle est le comportement de logs probs, quand la reposne nest pas la 
+% qunad la question est mla posé, qu'est-ce qui se passe, 
+% on fait une vingtaine de questions et le but s'est de voir comment se comporte le logsprobs,
+% la quesiton n'est pas adapté au texte, et les logs probs sont élevé -> c'est pas bon 
+% prendre des articles de journaux Emmanuel, et poser des questions sur les faits, les personnes, les lieux, et voir comment se comporte les logs probs, est ce que le score de confiance est corrélé avec la qualité de la réponse
+% Soit infomration precises, soit large, question pas adaptée vs question adaptée 
+
+

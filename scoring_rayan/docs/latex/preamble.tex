@@ -1,0 +1,74 @@
+% preamble.tex — Dossier scoring de confiance IDeXtend
+% Style : report 11pt, Computer Modern, proche du rendu LaTeX classique
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{csquotes}
+
+% Mise en page
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=3cm, right=2.5cm]{geometry}
+
+% Mathématiques
+\usepackage{amsmath, amssymb}
+
+% Tableaux
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+
+% Figures
+\usepackage{graphicx}
+
+% Couleurs et surlignage
+\usepackage[table]{xcolor}
+\usepackage{soul}
+
+% Commandes de surlignage (compatibles avec soul)
+\newcommand{\hlConnu}[1]{\sethlcolor{gray!40}\hl{#1}}
+\newcommand{\hlNouveau}[1]{\sethlcolor{green!35}\hl{#1}}
+\newcommand{\hlHorsSujet}[1]{\sethlcolor{yellow!60}\hl{#1}}
+\newcommand{\hlInverifiable}[1]{\sethlcolor{orange!50}\hl{#1}}
+\newcommand{\hlIncorrect}[1]{\sethlcolor{red!40}\hl{#1}}
+
+% Code source
+\usepackage{listings}
+\lstset{
+  basicstyle=\small\ttfamily,
+  breaklines=true,
+  frame=single,
+  numbers=left,
+  numberstyle=\tiny,
+  backgroundcolor=\color{gray!8},
+  xleftmargin=1.5em,
+  framexleftmargin=1.5em,
+}
+
+% Hyperliens
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=black,
+  urlcolor=black,
+}
+
+% En-têtes et pieds de page
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\leftmark}
+\fancyhead[LO]{\rightmark}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% Encadrés simples (tcolorbox n'est pas requis — on utilise minipage + fbox)
+\newenvironment{encadre}[1][]{%
+  \medskip\noindent
+  \begin{minipage}{\linewidth}
+  \hrule\medskip
+  \ifx&#1&\else{\small\textit{#1}}\par\smallskip\fi
+}{%
+  \medskip\hrule
+  \end{minipage}\medskip
+}

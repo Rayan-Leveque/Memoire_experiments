@@ -1,0 +1,113 @@
+\chapter{OCR --- Reconnaissance Optique de Caractères}
+
+\section{Identification}
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+\textbf{Champ} & \textbf{Valeur} \\
+\midrule
+Modèle actif    & QwenVL 2.5-7B (vLLM) \\
+Statut scoring  & À implémenter \\
+Fichier         & \texttt{DataPipelines/VLMModel.py} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Fonctionnalité}
+
+Le composant OCR convertit les images en texte exploitable. Il est déclenché
+sur chaque n\oe ud image portant le flag \texttt{OCR\_FLAG}. Le texte produit
+est découpé en chunks, vectorisé par BGE-M3, traduit si nécessaire, puis
+indexé pour la recherche.
+
+\textbf{Entrée.} Image binaire (JPEG, PNG, BMP) $> 100 \times 100$ px, ratio
+max/min $< 10$.\\
+\textbf{Sortie.} Texte brut multi-lignes, ordre de lecture reconstitué.
+
+\section{Modèles évalués}
+
+\begin{center}
+\begin{tabular}{llll}
+\toprule
+\textbf{Modèle} & \textbf{Version} & \textbf{Benchmarké} & \textbf{Retenu} \\
+\midrule
+EasyOCR + Tesseract & 1.7 + 5.x & Non (legacy)   & Non \\
+QwenVL 2.5-7B       & 7B Q8     & Non            & Oui \\
+Marker              & TDB       & Non        & Non \\
+Docling (IBM)       & TDB       & Non        & Non \\
+InternVL 3.5-7B     & TDB       & Non        & Non \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Protocole d'évaluation}
+
+\noindent\textbf{Métriques.} TBD.
+
+\noindent\textbf{Dataset à constituer.}  TBD 
+
+\section{Fonction de scoring de confiance}
+
+\subsection{Mode legacy --- EasyOCR + Tesseract}
+
+%Soit $W^{+} = \{w_i : c_i \geq 0\}$ les mots détectés avec score Tesseract
+%non nul.
+
+% \begin{equation}
+%   s_{\text{legacy}}(x, \hat{y})
+%   = \frac{1}{|W^{+}|} \sum_{i \in W^{+}} \frac{c_i}{100}
+%   \;\in [0, 1]
+%   \label{eq:ocr_legacy}
+% \end{equation}
+
+% La rotation de l'image retient la transcription maximisant ce score.
+TBD
+\subsection{Mode VLM / QwenVL (actif) --- Proposition}
+
+% Le VLM ne produit pas de scores par token via l'API actuelle. Deux approches
+% sont proposées.
+
+% \paragraph{Option A --- Confiance verbalisée (recommandée).}
+% Ajout d'une instruction de post-génération~:
+% \textit{\og Transcris le texte. Termine par : CONFIANCE: <entier 0--100>.\fg{}}
+
+% \begin{equation}
+%   s_{\text{VLM}}(x, \hat{y})
+%   = \frac{c_{\text{verb}}}{100} \cdot \delta_{\text{format}}
+%   \;\in [0, 1]
+%   \label{eq:ocr_vlm}
+% \end{equation}
+
+% où $\delta_{\text{format}} = 1$ si le token CONFIANCE est présent et
+% parseable, $0.5$ sinon.
+
+% \paragraph{Option B --- Self-Consistency ($K$ inférences).}
+
+% \begin{equation}
+%   s_{\text{SC}}(x)
+%   = 1 - \frac{1}{K(K-1)} \sum_{i \neq j} \mathrm{NED}(\hat{y}_i, \hat{y}_j)
+%   \;\in [0, 1]
+%   \label{eq:ocr_sc}
+% \end{equation}
+
+% Coût : $K \times$ latence.
+TBD
+\paragraph{Seuils provisoires.}
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+\textbf{Plage} & \textbf{Interprétation} & \textbf{Action} \\
+\midrule
+TBD           & Confiance moyenne & Relecture recommandée \\
+TBD           & Haute confiance  & Exploitable \\
+TBD           & Faible confiance  & Relecture obligatoire \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Justification scientifique}
+
+\section{Validation empirique}
+

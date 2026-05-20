@@ -1,0 +1,58 @@
+\chapter{Embeddings --- Représentation vectorielle}
+
+\section{Identification}
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Modèle         & \texttt{BAAI/bge-m3} \\
+Dimension      & 1\,024 \\
+Statut scoring & À implémenter \\
+Fichier        & \texttt{DataPipelines/EmbeddingsModel.py} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Fonctionnalité}
+
+Le modèle d'embeddings encode chunks et questions en vecteurs denses.
+La documentation du benchmark de sélection est dans
+\texttt{documentation\_pierre/choosing\_embeddings.md}.
+
+\section{Benchmark (extrait)}
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+\textbf{Modèle} & \textbf{Position moy. réponse} & \textbf{Retenu} \\
+\midrule
+paraphrase-multilingual-MiniLM-L12-v2 & 31    & Non \\
+\textbf{BAAI/bge-m3}                  & \textbf{4.7} & \textbf{Oui} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent Score = rang moyen de la réponse correcte (plus bas = mieux).
+Protocole \og needle in the haystack\fg{}, 4 langues, script
+\texttt{evaluate\_embeddings.py}.
+
+\section{Scoring de confiance}
+
+\texttt{EmbeddingsModel} est un encodeur pur : il produit un vecteur,
+sans score de confiance associé. Le retrieval est effectué en aval par
+\texttt{CypherHandler.search\_embeddings()} dans \texttt{LargeLanguageHandler/rag.py}.
+
+Un \texttt{compute\_confidence()} au niveau de l'encodeur n'a pas de sens.
+La qualité du retrieval est évaluée via le benchmark existant (position moyenne
+de la réponse correcte, script \texttt{evaluate\_embeddings.py}) et via la
+métrique \textbf{retrieval hit@k} du dataset d'évaluation LLM (chapitre~5).
+
+
+% Daniel : variation de phrase, utilisation de synonyme, et avoir un score pour l'embedding 
+% Comparaison d'embeddings : pouruqoi est-ce qu'on a choisi celui-ci ? 
+% L'embeddings est un sous produit, l'utilsateur ne le voit pas directement, c'est un composant intermédiaire.
+% il n'a pas besoin de savoir 
+
+
+% Par contre embedding d'image si,
+% -> score de match entre la query est l'image, 

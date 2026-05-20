@@ -1,0 +1,80 @@
+\chapter{Détection automatique de langue}
+
+\section{Identification}
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Modèle         & \texttt{facebook/fasttext-language-identification} \\
+Nb langues     & 217 \\
+Statut scoring & \textbf{Implémenté} \\
+Fichier        & \texttt{DataPipelines/LanguageDetection.py} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Fonctionnalité}
+
+Premier composant de la chaîne : détermine si une traduction est nécessaire.
+Déclenché sur les 700 premiers + 1500--2500 caractères du texte. Retourne le
+code langue BCP-47 FLORES-200 (ex.\ \texttt{fra\_Latn}, \texttt{ara\_Arab}).
+
+\section{Fonction de scoring de confiance}
+
+\noindent\textit{Implémentation dans
+\texttt{LanguageDetection.compute\_confidence()}.}
+
+\medskip
+FastText applique un softmax sur 217 classes. Le score de confiance est
+directement la probabilité de la langue prédite :
+
+\begin{equation}
+  s_{\text{LID}}(x)
+  = P(\hat{l} \mid x)
+  = \max_{l \in \mathcal{L}} P(l \mid x)
+  \;\in (0, 1]
+  \label{eq:lid}
+\end{equation}
+
+Les top-2 prédictions sont stockées dans les métadonnées pour auditabilité.
+
+\paragraph{Seuils.}
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+$s \geq 0.90$ & Langue certaine & Décision automatique fiable \\
+$0.60 \leq s < 0.90$ & Langue probable & Logging, surveiller \\
+$s < 0.60$ & Détection ambiguë & Ne pas traduire automatiquement \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Métadonnées loguées :} \texttt{detected\_lang},
+\texttt{top\_k} (liste des 2 meilleures prédictions avec scores).
+
+\section{Justification scientifique}
+
+FastText, probabilités softmax~\cite{joulin2017bag} ;
+cas difficiles (code-switching, dialectes)~\cite{caswell2020language}.
+
+\section{Validation empirique}
+
+Aucun dataset d'évaluation annoté n'est disponible à ce jour. Le
+\texttt{compute\_confidence()} est actuellement validé par inspection manuelle
+sur des cas réels et des scénarios limites (\textit{smoke testing}).
+
+\noindent\textbf{Métriques à mesurer lors de la constitution du dataset :}
+\begin{itemize}
+  \item Corrélation entre le score de confiance et la bonne classification ;
+  \item Calibration (ECE) : un score de confiance de 0.8 correspond-il à
+    environ 80\,\% de réussite sur le dataset ?
+  \item Pouvoir discriminant (AUC-ROC) : le score sépare-t-il les prédictions
+    correctes des incorrectes ?
+\end{itemize}
+
+\noindent\textbf{Statut :} \textit{À implémenter.}
+
+\paragraph{Stress tests à conduire.}
+Textes bilingues mélangés, textes très courts ($< 20$ caractères), arabe
+dialectal levantin, translittération arabe en latin.

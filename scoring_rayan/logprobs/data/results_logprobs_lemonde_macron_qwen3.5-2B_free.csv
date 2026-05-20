@@ -1,0 +1,54 @@
+model,prompt_variant,article,question,quadrant,quadrant_label,answerable,mean_logprob,answer,abstained,human_score
+Qwen/Qwen3.5-2B,free,macron_africa_forward_lemonde_12mai2026.txt,Quel est le montant de l'accord signé par CMA CGM au sommet Africa Forward ?,A,précis + adapté,True,-0.1885,"Selon le contexte fourni, l'accord signé par le patron de l'armateur CMA CGM, Rodolphe Saadé, au sommet Africa Forward, a une valeur de **700 millions d'euros**. Il s'agit d'un accord de partenariat stratégique visant à développer des infrastructures logistiques et de transport.",False,
+Qwen/Qwen3.5-2B,free,macron_africa_forward_lemonde_12mai2026.txt,Quel est le montant total des investissements français en Afrique annoncés au sommet ?,A,précis + adapté,True,-0.1859,"D'après le texte fourni, le montant total des investissements français en Afrique annoncés au sommet de Nairobi est de **21 milliards d'euros** (7 milliards d'investissements français + 9 milliards d'investissements africains).",False,
+Qwen/Qwen3.5-2B,free,macron_africa_forward_lemonde_12mai2026.txt,Quel est le montant total des investissements africains annoncés au sommet ?,A,précis + adapté,True,-0.1834,"Selon l'article, le montant total des investissements africains annoncés au sommet est de **9 milliards d'euros**.
+
+Ceci est indiqué dans la phrase : « Au total, 14 milliards d'investissements français en Afrique et **9 milliards d'investissements africains** ont été annoncés. »",False,
+Qwen/Qwen3.5-2B,free,macron_africa_forward_lemonde_12mai2026.txt,Combien de chefs d'entreprise ont participé au sommet Africa Forward ?,A,précis + adapté,True,-0.152,"Selon l'article, 1 500 chefs d'entreprises ont participé au sommet Africa Forward.",False,
+Qwen/Qwen3.5-2B,free,macron_africa_forward_lemonde_12mai2026.txt,Quand Donald Trump a-t-il fermé l'agence d'aide au développement américaine ?,A,précis + adapté,True,-0.1058,"Selon le texte fourni, Donald Trump a fermé l'agence d'aide au développement américaine en juillet 2025.",False,
+Qwen/Qwen3.5-2B,free,macron_africa_forward_lemonde_12mai2026.txt,De quel pourcentage la France a-t-elle réduit son budget d'aide au développement entre 2024 et 2025 ?,A,précis + adapté,True,-0.1051,"Selon le texte fourni, la France a réduit son budget d'aide au développement de **10 %** entre 2024 et 2025.",False,
+Qwen/Qwen3.5-2B,free,macron_africa_forward_lemonde_12mai2026.txt,Combien de morts la répression des manifestations au Kenya a-t-elle causées ?,A,précis + adapté,True,-0.135,"Selon le texte fourni, la répression des manifestations au Kenya a fait plus de **150 morts**.",False,
+Qwen/Qwen3.5-2B,free,macron_africa_forward_lemonde_12mai2026.txt,Combien de pays africains ont officiellement signé des accords de défense avec la France lors de ce sommet ?,A,précis + adapté,False,-0.2687,"D'après le texte fourni, il n'est pas possible de déterminer combien de pays africains ont officiellement signé des accords de défense avec la France lors de ce sommet.
+
+Le document mentionne que le président français a proposé une alliance pour faire face aux « prédateurs » venus piller les minerais critiques, mais il ne précise pas le nombre de pays signataires ni les détails des accords de défense spécifiques.",False,
+Qwen/Qwen3.5-2B,free,macron_africa_forward_lemonde_12mai2026.txt,Quel nouveau modèle de partenariat Macron et Ruto ont-ils promu lors du sommet ?,C,large + adapté,True,-0.3247,"D'après le texte, le nouveau modèle de partenariat promu par Emmanuel Macron et William Ruto lors du sommet de Nairobi est celui de l'**investissement** plutôt que de l'aide au développement.
+
+Le président français a explicitement déclaré : « Nous, on n'a plus totalement les moyens » de faire de l'aide au développement. Il a proposé un partenariat basé sur des investissements, en particulier avec les pays anglophones, afin de faire face aux « prédateurs » et de diversifier les partenariats de la France en Afrique.",False,
+Qwen/Qwen3.5-2B,free,macron_africa_forward_lemonde_12mai2026.txt,Quelles difficultés la France a-t-elle rencontrées en Afrique ces dix dernières années ?,C,large + adapté,True,-0.3324,"Selon le texte fourni, les difficultés rencontrées par la France en Afrique ces dix dernières années sont les suivantes :
+
+*   **Perte de parts de marché :** Les pays africains, notamment la Chine, ont pris de plus en plus de parts de marché, menaçant l'influence de la France.
+*   **Manifestations anti-françaises :** Dans les pays francophones, des manifestations anti-françaises ont essaimé, portées par la propagande russe.
+*   **Perte de l'alliance au Sahel :** Au Mali, au Burkina Faso et au Niger, les juntes arrivées au pouvoir entre 2020 et 2023 ont rompu leur alliance avec Paris et prié les soldats français de partir.
+*   **Perte de la légitimité :** Le sommet de Nairobi a été perçu comme un « testament » et a infligé à la France de lourds revers, marquant une fin de la « politique africaine de la France ».",False,
+Qwen/Qwen3.5-2B,free,macron_africa_forward_lemonde_12mai2026.txt,Pourquoi ce sommet a-t-il des « airs de testament » pour Macron ?,C,large + adapté,True,-0.3399,"Selon l'article, le sommet de Nairobi a des « airs de testament » pour Emmanuel Macron pour plusieurs raisons :
+
+1.  **Le contexte de départ imminent :** Le président quittera l'Elysée dans moins d'un an.
+2.  **La fin d'une période de revers :** L'Afrique a donné du fil à retordre à la France et infligé de lourds revers aux dernières décennies.
+3.  **La perte d'influence :** Le président a balayé l'idée d'une perte d'influence hexagonale sur le continent, affirmant que « c'est terminé » et vantant la diversification des partenariats, notamment avec les pays anglophones.
+4.  **La nature de l'opération :** Il s'agit d'une « opération séduction » où les chefs d'État sont invités à signer des accords d'investissements (14 milliards d'investissements français annoncés) plutôt que d'aides au développement, marquant un changement de stratégie.",False,
+Qwen/Qwen3.5-2B,free,macron_africa_forward_lemonde_12mai2026.txt,Quelle est la position de Macron sur la représentation de l'Afrique au Conseil de sécurité de l'ONU ?,C,large + adapté,True,-0.2461,"Selon le texte fourni, Emmanuel Macron a promis à son homologue kenyan, William Ruto, de poursuivre ses efforts pour que l'Afrique obtienne **deux sièges au Conseil de sécurité des Nations unies**.
+
+Il a estimé que l'absence d'une « voix à la table » du continent était une iniquité qui érodait la légitimité et sapait la crédibilité du système multilatéral.",False,
+Qwen/Qwen3.5-2B,free,macron_africa_forward_lemonde_12mai2026.txt,Quel est le chiffre d'affaires de CMA CGM en 2025 ?,B,précis + non-adapté,False,-0.186,"D'après le contexte fourni, il n'est pas possible de répondre à cette question.
+
+Le texte mentionne que Rodolphe Saadé, patron de l'armateur CMA CGM, a signé un accord de partenariat stratégique pour développer des infrastructures logistiques et de transport d'une valeur de **700 millions d'euros**, mais il ne donne aucun chiffre d'affaires pour l'année 2025.",False,
+Qwen/Qwen3.5-2B,free,macron_africa_forward_lemonde_12mai2026.txt,Quel est le PIB du Kenya en 2026 ?,B,précis + non-adapté,False,-0.2979,"Il n'est pas possible de répondre à cette question en utilisant uniquement le contexte fourni.
+
+Le texte mentionne que le sommet Africa Forward a eu lieu le **11 et 12 mai 2026** à Nairobi, mais il ne contient aucune information concernant le PIB du Kenya en 2026.",False,
+Qwen/Qwen3.5-2B,free,macron_africa_forward_lemonde_12mai2026.txt,Combien de raffineries Aliko Dangote possède-t-il au total en Afrique ?,B,précis + non-adapté,False,-0.3232,"Selon l'article fourni, Aliko Dangote est mentionné comme étant venu signer un accord pour l'installation d'une importante raffinerie au Kenya. Cependant, l'article ne précise pas le nombre total de raffineries que possède Aliko Dangote en Afrique.",False,
+Qwen/Qwen3.5-2B,free,macron_africa_forward_lemonde_12mai2026.txt,Quelle est la situation politique générale en Afrique de l'Ouest depuis 2020 ?,D,large + non-adapté,False,-0.386,"D'après le contexte fourni, la situation politique générale en Afrique de l'Ouest depuis 2020 est marquée par une instabilité et des tensions croissantes, notamment dans les pays du Sahel.
+
+Les éléments clés mentionnés sont :
+*   **Instabilité et changements de pouvoir :** Les juntes (gouvernements locaux) ont pris le pouvoir entre 2020 et 2023.
+*   **Tensions avec la France :** Ces nouvelles autorités ont rompu leur alliance avec Paris et ont prié les soldats français de partir.
+*   **Propagande :** Ces changements de pouvoir sont portés par la propagande russe.
+*   **Contexte plus large :** L'article note également que l'Afrique a donné du fil à retordre à la France, avec des manifestations anti-françaises dans les pays francophones et une perte de parts de marché par rapport à la Chine.",False,
+Qwen/Qwen3.5-2B,free,macron_africa_forward_lemonde_12mai2026.txt,Comment fonctionne le mécanisme d'aide au développement internationale en général ?,D,large + non-adapté,False,-0.2917,"D'après le contexte fourni, il n'est pas possible de répondre à la question sur le fonctionnement du mécanisme d'aide au développement international en général.
+
+Le texte mentionne uniquement que la France a réduit son budget d'aide au développement (de 10 % entre 2024 et 2025) et que Donald Trump a fermé l'agence d'aide au développement américaine en juillet 2025, mais cela ne décrit pas le mécanisme d'aide en général.",False,
+Qwen/Qwen3.5-2B,free,macron_africa_forward_lemonde_12mai2026.txt,Quelles sont les causes profondes de l'influence croissante de la Chine en Afrique ?,D,large + non-adapté,False,-0.4048,"D'après le contexte fourni, il n'est pas possible de répondre à cette question.
+
+Le texte mentionne que la Chine est le principal concurrent de la France en Afrique, mais il ne fournit aucune information sur les **causes profondes** de cette influence croissante. Il se concentre uniquement sur les conséquences de cette situation (perte d'influence hexagonale, prise de parts de marché) et sur les actions de la France (diversification des partenariats, alliances avec les pays anglophones).",False,
+Qwen/Qwen3.5-2B,free,macron_africa_forward_lemonde_12mai2026.txt,Quels sont les grands enjeux géopolitiques de la présence militaire française en Afrique subsaharienne ?,D,large + non-adapté,False,-0.4013,"D'après le texte fourni, il n'est pas possible de répondre à votre question sur les grands enjeux géopolitiques de la présence militaire française en Afrique subsaharienne.
+
+Le document mentionne uniquement la présence de **soldats français** dans le cadre d'une **alliance** avec les gouvernements du Mali, du Burkina Faso et du Niger, et note que ces autorités ont rompu cette alliance. Cependant, il ne contient aucune information concernant les enjeux géopolitiques liés à la présence militaire française.",False,

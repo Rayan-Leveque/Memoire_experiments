@@ -1,0 +1,97 @@
+\chapter{Traduction automatique --- NLLB-600M}
+
+\section{Identification}
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Modèle         & \texttt{facebook/nllb-200-distilled-600M} \\
+Beam search    & $B = 5$ faisceaux \\
+Statut scoring & \textbf{Implémenté} \\
+Fichier        & \texttt{DataPipelines/TranslationModel.py} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Benchmark FLORES+ (200 phrases, 8 paires de langues)}
+
+\begin{center}
+\begin{tabular}{lrrrrr}
+\toprule
+\textbf{Modèle} & FR$\to$EN & EN$\to$FR & FR$\to$AR & AR$\to$FR & ms/phrase \\
+\midrule
+\textbf{NLLB-600M} & 41.0 & \textbf{46.3} & 13.9 & \textbf{29.7} & \textbf{130--180} \\
+Qwen3.5-4B & \textbf{41.2} & 44.7 & 14.5 & 29.3 & 660--900 \\
+TGemma-4B  & 37.9 & 40.4 & \textbf{14.5} & 26.4 & 620--940 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+NLLB retenu : gagne 5--6/8 directions, 4--5$\times$ plus rapide.
+Résultats complets dans \texttt{scoring\_rayan/\_archive/}.
+
+\section{Fonction de scoring de confiance}
+
+\noindent\textit{Implémentation dans \texttt{TranslationModel.compute\_confidence()}.}
+
+\medskip
+Soit $K$ le nombre de chunks, $\ell_k$ le log-prob normalisé best-beam,
+$p_k = \exp(\ell_k)$, et $r_k = \text{output\_len}_k / \text{input\_len}_k$
+le ratio de longueur.
+%definir P(barre)
+
+\begin{equation}
+  \phi = 1 - \frac{|\{k : r_k < 0.3 \;\text{ou}\; r_k > 4\}|}{K} \cdot 0.5
+  \label{eq:trad_penalty}
+\end{equation}
+
+\begin{equation}
+  s_{\text{trad}}(x, \hat{y})
+  = \bigl(0.7 \cdot \bar{p} + 0.3 \cdot \min_k p_k\bigr) \cdot \phi
+  \;\in (0, 1]
+  \label{eq:trad}
+\end{equation}
+
+\paragraph{Seuils.}
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+$s \geq 0.70$ & Traduction fiable & Exploitable \\
+$0.40 \leq s < 0.70$ & Traduction incertaine & Vérification recommandée \\
+$s < 0.40$ & Très incertaine & Relecture humaine \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Métadonnées loguées :} \texttt{num\_chunks}, \texttt{src\_lang},
+\texttt{tgt\_lang}, \texttt{mean\_beam\_prob}, \texttt{min\_beam\_prob},
+\texttt{outlier\_chunks}.
+
+\section{Justification scientifique}
+
+NLLB~\cite{nllb2022} ; calibration beam NMT~\cite{ott2018analyzing} ;
+Quality Estimation non supervisée~\cite{fomicheva2020unsupervised}.
+
+\section{Validation empirique}
+
+Aucun dataset d'évaluation annoté n'est disponible à ce jour. Le
+\texttt{compute\_confidence()} est actuellement validé par inspection manuelle
+sur des cas réels et des scénarios limites (\textit{smoke testing}).
+
+\noindent\textbf{Métriques à mesurer lors de la constitution du dataset :}
+\begin{itemize}
+  \item Corrélation entre le score de confiance et la métrique de qualité
+    appropriée (ex. BLEU, chrF++) ;
+  \item Calibration (ECE) : un score de confiance de 0.8 correspond-il à
+    environ 80\,\% de réussite sur le dataset ?
+  \item Pouvoir discriminant (AUC-ROC) : le score sépare-t-il les traductions
+    correctes des incorrectes ?
+\end{itemize}
+
+\noindent\textbf{Statut :} \textit{À implémenter.}
+
+
+% # Composite: mean weighted 0.7, min weighted 0.3 (penalises worst-case chunks)
+%        score = (0.7 * mean_beam_prob + 0.3 * min_beam_prob) * outlier_penalty
+% la formule de calcul est aussi composite a étudié

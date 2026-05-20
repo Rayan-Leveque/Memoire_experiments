@@ -1,0 +1,133 @@
+# Questions pour l'évaluation des log-probs — Qwen3-4B
+# Article source : Le Monde, 12 mai 2026 — Macron / Sommet Africa Forward, Nairobi
+# Fichier : articles/macron_africa_forward_lemonde_12mai2026.txt
+#
+# Quadrants :
+#   A = information précise + question adaptée     → logprobs élevés attendus
+#   B = information précise + question non-adaptée → logprobs bas attendus
+#   C = information large   + question adaptée     → logprobs moyens
+#   D = information large   + question non-adaptée → ALERTE si logprobs élevés
+#
+# human_score : laisser null, remplir après lecture (0 = faux, 0.5 = partiel, 1 = correct)
+
+# --- Quadrant A : précis + adapté ---
+
+- article: "macron_africa_forward_lemonde_12mai2026.txt"
+  question: "Quel est le montant de l'accord signé par CMA CGM au sommet Africa Forward ?"
+  quadrant: A
+  answerable: true
+  human_score: null
+
+- article: "macron_africa_forward_lemonde_12mai2026.txt"
+  question: "Quel est le montant total des investissements français en Afrique annoncés au sommet ?"
+  quadrant: A
+  answerable: true
+  human_score: null
+
+- article: "macron_africa_forward_lemonde_12mai2026.txt"
+  question: "Quel est le montant total des investissements africains annoncés au sommet ?"
+  quadrant: A
+  answerable: true
+  human_score: null
+
+- article: "macron_africa_forward_lemonde_12mai2026.txt"
+  question: "Combien de chefs d'entreprise ont participé au sommet Africa Forward ?"
+  quadrant: A
+  answerable: true
+  human_score: null
+
+- article: "macron_africa_forward_lemonde_12mai2026.txt"
+  question: "Quand Donald Trump a-t-il fermé l'agence d'aide au développement américaine ?"
+  quadrant: A
+  answerable: true
+  human_score: null
+
+- article: "macron_africa_forward_lemonde_12mai2026.txt"
+  question: "De quel pourcentage la France a-t-elle réduit son budget d'aide au développement entre 2024 et 2025 ?"
+  quadrant: A
+  answerable: true
+  human_score: null
+
+- article: "macron_africa_forward_lemonde_12mai2026.txt"
+  question: "Combien de morts la répression des manifestations au Kenya a-t-elle causées ?"
+  quadrant: A
+  answerable: true
+  human_score: null
+
+- article: "macron_africa_forward_lemonde_12mai2026.txt"
+  question: "Combien de pays africains ont officiellement signé des accords de défense avec la France lors de ce sommet ?"
+  quadrant: A
+  answerable: false
+  human_score: null
+
+# --- Quadrant C : large + adapté ---
+
+- article: "macron_africa_forward_lemonde_12mai2026.txt"
+  question: "Quel nouveau modèle de partenariat Macron et Ruto ont-ils promu lors du sommet ?"
+  quadrant: C
+  answerable: true
+  human_score: null
+
+- article: "macron_africa_forward_lemonde_12mai2026.txt"
+  question: "Quelles difficultés la France a-t-elle rencontrées en Afrique ces dix dernières années ?"
+  quadrant: C
+  answerable: true
+  human_score: null
+
+- article: "macron_africa_forward_lemonde_12mai2026.txt"
+  question: "Pourquoi ce sommet a-t-il des « airs de testament » pour Macron ?"
+  quadrant: C
+  answerable: true
+  human_score: null
+
+- article: "macron_africa_forward_lemonde_12mai2026.txt"
+  question: "Quelle est la position de Macron sur la représentation de l'Afrique au Conseil de sécurité de l'ONU ?"
+  quadrant: C
+  answerable: true
+  human_score: null
+
+# --- Quadrant B : précis + non-adapté ---
+
+- article: "macron_africa_forward_lemonde_12mai2026.txt"
+  question: "Quel est le chiffre d'affaires de CMA CGM en 2025 ?"
+  quadrant: B
+  answerable: false
+  human_score: null
+
+- article: "macron_africa_forward_lemonde_12mai2026.txt"
+  question: "Quel est le PIB du Kenya en 2026 ?"
+  quadrant: B
+  answerable: false
+  human_score: null
+
+- article: "macron_africa_forward_lemonde_12mai2026.txt"
+  question: "Combien de raffineries Aliko Dangote possède-t-il au total en Afrique ?"
+  quadrant: B
+  answerable: false
+  human_score: null
+
+# --- Quadrant D : large + non-adapté (signal d'alerte si logprobs élevés) ---
+
+- article: "macron_africa_forward_lemonde_12mai2026.txt"
+  question: "Quelle est la situation politique générale en Afrique de l'Ouest depuis 2020 ?"
+  quadrant: D
+  answerable: false
+  human_score: null
+
+- article: "macron_africa_forward_lemonde_12mai2026.txt"
+  question: "Comment fonctionne le mécanisme d'aide au développement internationale en général ?"
+  quadrant: D
+  answerable: false
+  human_score: null
+
+- article: "macron_africa_forward_lemonde_12mai2026.txt"
+  question: "Quelles sont les causes profondes de l'influence croissante de la Chine en Afrique ?"
+  quadrant: D
+  answerable: false
+  human_score: null
+
+- article: "macron_africa_forward_lemonde_12mai2026.txt"
+  question: "Quels sont les grands enjeux géopolitiques de la présence militaire française en Afrique subsaharienne ?"
+  quadrant: D
+  answerable: false
+  human_score: null

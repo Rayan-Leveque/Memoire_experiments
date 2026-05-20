@@ -1,0 +1,128 @@
+\documentclass[11pt,a4paper]{report}
+\input{preamble}
+
+\title{Dossier technique\\[0.4em]
+\large Scoring de confiance des composants IA\\[0.2em]
+\large Système IDeXtend}
+\author{Leveque Rayan}
+\date{Mai 2026}
+
+\begin{document}
+
+% --- Page de garde --------------------------------------------------------
+\begin{titlepage}
+\centering
+\vspace*{2cm}
+{\Large Gendarmerie nationale \par}
+\vspace{0.3cm}
+{\large Centre Forensique d'Intelligence Artificielle (CFIA) \par}
+\vspace{0.3cm}
+{\large Leveque Rayan \par}
+\vfill
+{\Huge\bfseries Scoring de confiance\\[0.4em]
+des composants IA\par}
+\vspace{0.8cm}
+{\Large Système IDeXtend\par}
+\vfill
+{\large\textit{Conformité AI Act --- Annexe III §6\\
+Système à haut risque --- Application de la loi}\par}
+\vspace{1cm}
+{\Large\textbf{Version 0.1 --- Brouillon}\par}
+\vspace*{2cm}
+\end{titlepage}
+
+\setcounter{tocdepth}{0}
+\tableofcontents
+\clearpage
+
+% --- Introduction ---------------------------------------------------------
+\chapter*{Introduction}
+\addcontentsline{toc}{chapter}{Introduction}
+
+IDeXtend est un système RAG (\textit{Retrieval-Augmented Generation}) d'aide à
+l'enquête judiciaire déployé au CFIA, Gendarmerie nationale. Il traite des
+documents hétérogènes (images, audio, vidéo, textes) pour permettre aux
+enquêteurs d'interroger leur corpus documentaire en langage naturel.
+
+En vertu de l'AI Act (Règlement UE 2024/1689), IDeXtend sera probablement classifié
+\textbf{système à haut risque} au titre de l'Annexe III §6 (application de la
+loi). Ce dossier documente scientifiquement le \textbf{système de scoring de
+confiance} de chaque brique du pipeline, avec pour chaque composant : la
+formule mathématique du score, sa justification par l'état de l'art.
+
+\bigskip
+\noindent\textbf{État d'implémentation (mai 2026) :}
+
+\begin{center}
+\begin{tabular}{llll}
+\toprule
+\textbf{Composant} & \textbf{Modèle} & \textbf{Scoring implémenté} & \textbf{Validé} \\
+\midrule
+Détection langue & FastText LID            & \textbf{Oui}  & Non \\
+Traduction       & NLLB-600M               & \textbf{Oui}  & Non \\
+Reranker         & BAAI/bge-reranker-v2-m3 & \textbf{Oui}  & Non \\
+OCR              & QwenVL 2.5-7B           & À définir     & Non \\
+ASR (Whisper)    & whisper-large-v3        & À implémenter & Non \\
+LLM (Qwen3)      & Qwen3-4B                & À implémenter & Non \\
+Embeddings       & BAAI/bge-m3             & N/A           & Non \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\clearpage
+
+% --- Composants -----------------------------------------------------------
+\input{chapters/07_detection_langue}
+\input{chapters/06_translation_nllb}
+\input{chapters/04_reranker}
+\input{chapters/01_ocr}
+\input{chapters/02_asr_whisper}
+\input{chapters/05_llm_qwen}
+\input{chapters/03_embeddings}
+
+% --- Synthèse -------------------------------------------------------------
+\chapter*{Synthèse et prochaines étapes}
+\addcontentsline{toc}{chapter}{Synthèse et prochaines étapes}
+
+Trois composants ont déjà leur \texttt{compute\_confidence()} implémentée :
+Reranker, Traduction (NLLB) et Détection de langue (FastText). Les quatre
+composants restants nécessitent une implémentation, dont le LLM qui requiert
+une approche composite (ancrage contextuel + confiance verbalisée).
+
+\paragraph{Actions prioritaires.}
+\begin{enumerate}
+  \item Constituer les datasets d'évaluation annotés (section 4 de chaque fiche).
+  \item Implémenter \texttt{compute\_confidence()} pour OCR, ASR, Embeddings et LLM.
+  \item Conduire les expériences de validation empirique : Spearman $\rho$, ECE, AUC-ROC.
+  \item Compléter le benchmark OCR : Marker et Docling vs QwenVL 2.5-7B.
+\end{enumerate}
+
+\paragraph{Limite structurelle : explicabilité et résistance au re-benchmark.}
+
+IDeXtend est conçu pour être modulaire : chaque composant est remplaçable
+indépendamment. Cette modularité est un atout technique, mais elle crée une
+tension avec les exigences d'explicabilité de l'AI Act.
+
+Valider un composant nécessite un dataset annoté, du temps d'annotation, et
+une infrastructure d'évaluation. En pratique, lorsqu'un utilisateur ou un
+opérateur souhaite substituer un modèle par une version plus récente --- même
+si le remplacement est techniquement transparent (\textit{plug and play}) ---
+la résistance métier et terrain à relancer un benchmark complet est réelle.
+Les raisons sont multiples : coût d'annotation, indisponibilité des données
+de test originales, pression opérationnelle, sentiment que ``le nouveau modèle
+est forcément meilleur''.
+
+Ce risque est structurel : un système peut dériver silencieusement dès lors
+qu'un composant est mis à jour sans re-validation. L'AI Act (Art.~9 et 15)
+exige pourtant une réévaluation à chaque changement substantiel.
+
+\textbf{Piste.} Définir contractuellement, pour chaque composant, un
+\textit{smoke test} minimal automatisé (quelques cas annotés en dur dans
+le dépôt) qui tourne à chaque mise à jour de modèle en CI/CD. Ce n'est pas
+une validation complète, mais c'est une barrière minimale contre les
+régressions silencieuses et un signal d'alerte si le comportement change.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
