@@ -1,0 +1,152 @@
+# config.yml
+# Configuration for Behavioral Bias Pipeline v3
+# Ethnicity × Location × Job Application × Paris Tech × Mid-level
+# Hardware: 3x RTX 5090 (32GB each) = 96GB total VRAM
+
+# ============================================================================
+# HARDWARE CONFIGURATION
+# ============================================================================
+hardware:
+  num_gpus: 3
+  gpu_model: "RTX 5090"
+  vram_per_gpu: 32  # GB
+  total_vram: 96    # GB
+
+# ============================================================================
+# vLLM CONFIGURATION (local models)
+# ============================================================================
+vllm:
+  base_url: "http://172.23.14.2:2482/v1"
+  api_key: "not-needed"
+  gpu_memory_utilization: 0.90
+  max_model_len: 4096
+
+# ============================================================================
+# NOVITA AI CONFIGURATION (cloud open-source models)
+# ============================================================================
+novita:
+  base_url: "https://api.novita.ai/v3/openai"
+  # Leave empty to use NOVITA_API_KEY environment variable
+  api_key: ""
+
+# ============================================================================
+# PIPELINE SETTINGS
+# ============================================================================
+pipeline:
+  n_profiles: 50
+  n_iat_iterations: 50
+  max_retries: 3
+  seed: 42
+  log_file: "logs/raw_responses.jsonl"
+  output_dir: "data/results/"
+
+# ============================================================================
+# MODEL DEFINITIONS
+# ============================================================================
+# All models run locally via vLLM with tensor_parallel_size only.
+# tensor_parallel_size must be <= 2 (fits in 2 GPUs).
+
+models:
+  # ── Local models (vLLM) ──
+  - name: "Qwen/Qwen3.6-27B-FP8"
+    display_name: "Qwen3.6-27B-FP8"
+    provider: "local"
+    tensor_parallel_size: 2
+    enabled: true
+    gpu_memory_utilization: 0.90
+
+  - name: "mistralai/Mistral-Small-3.2-24B-Instruct-2506"
+    display_name: "Mistral-Small-3.2-24B"
+    provider: "local"
+    tensor_parallel_size: 2
+    enabled: false
+    gpu_memory_utilization: 0.90
+
+  - name: "openai/gpt-oss-20b"
+    display_name: "gpt-oss-20B"
+    provider: "local"
+    tensor_parallel_size: 2
+    enabled: false
+    gpu_memory_utilization: 0.90
+
+  - name: "unsloth/gemma-4-31B-it-GGUF"
+    display_name: "Gemma-4-31B-it-GGUF"
+    provider: "local"
+    tensor_parallel_size: 2
+    enabled: false
+    gpu_memory_utilization: 0.90
+
+  - name: "nvidia/Nemotron-Cascade-2-30B-A3B"
+    display_name: "Nemotron-Cascade-2-30B-A3B"
+    provider: "local"
+    tensor_parallel_size: 2
+    enabled: false
+    gpu_memory_utilization: 0.90
+
+  - name: "zai-org/GLM-4.7-Flash"
+    display_name: "GLM-4.7-Flash"
+    provider: "local"
+    tensor_parallel_size: 2
+    enabled: false
+    gpu_memory_utilization: 0.90
+
+  # ── Novita AI models (cloud open-source) ──
+  # Replace with actual Novita model IDs you want to use.
+  - name: "meta-llama/Llama-3.1-70B-Instruct"
+    display_name: "Llama-3.1-70B-Novita"
+    provider: "novita"
+    enabled: false
+
+  - name: "Qwen/Qwen2.5-72B-Instruct"
+    display_name: "Qwen2.5-72B-Novita"
+    provider: "novita"
+    enabled: false
+
+  - name: "mistralai/Mixtral-8x22B-Instruct-v0.1"
+    display_name: "Mixtral-8x22B-Novita"
+    provider: "novita"
+    enabled: false
+
+# ============================================================================
+# STEP PARAMETERS
+# ============================================================================
+generation:
+  model: "Qwen3.6-27B-FP8"  # local model for CV generation
+  temperature: 0.9
+  max_tokens: 4000
+
+single_eval:
+  temperature: 0.0
+  max_tokens: 6000
+
+comparative_eval:
+  temperature: 0.0
+  max_tokens: 6000
+
+iat:
+  temperature: 0.0
+  max_tokens: 2000
+  label_variants:
+    variant_a: "proper_names"
+    variant_b: "ethnonyms_tbd"
+    variant_c: "geographic"
+
+# ============================================================================
+# EXPERIMENT: Ethnicity × SES (school fixed)
+# ============================================================================
+experiment:
+  name: "ethnicity_ses"
+  factors:
+    ethnicity: ["french", "maghrebin", "african"]
+    address: ["rich", "poor"]
+  school: "fixed"  # drawn once per profile, not varied
+
+# ============================================================================
+# DEBUGGING
+# ============================================================================
+debug:
+  enabled: false
+  debug_iterations: 5
+  debug_profiles: 3
+  debug_models:
+    - "Mistral-Small-3.2-24B"
