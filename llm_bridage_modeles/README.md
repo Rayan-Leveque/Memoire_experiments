@@ -31,4 +31,6 @@ Qwen3-4b, Qwen3.5-4B, Qwen3.6-27B
 
 ## Spec complète
 
-Voir `../LLM_Bias/data/results/spec_bridage_modeles.md`
+Voir [`spec_bridage_modeles.md`](spec_bridage_modeles.md)
+
+> **Note :** expérience non encore implémentée — les dossiers `data/`, `notebooks/`, `src/` sont vides.

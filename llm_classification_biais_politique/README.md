@@ -30,4 +30,6 @@ Qwen3-4b, Qwen3.5-4B, Qwen3.6-27B
 
 ## Spec complète
 
-Voir `../LLM_Bias/data/results/spec_classification_biais_politique.md`
+Voir [`../LLM_Bias/data/results/spec_classification_biais_politique.md`](../LLM_Bias/data/results/spec_classification_biais_politique.md)
+
+> **Note :** expérience non encore implémentée — les dossiers `data/`, `notebooks/`, `src/` sont vides.

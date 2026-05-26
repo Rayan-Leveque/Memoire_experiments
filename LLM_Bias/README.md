@@ -27,24 +27,28 @@ Ce pipeline teste exclusivement des modèles **open-weight** déployables locale
 ## Structure du projet
 
 ```
-├── docs/               # Documentation et design expérimental
+├── config.yml              # Configuration centrale (hardware, modèles, pipeline)
+├── run_pipeline.py         # Point d'entrée principal
+├── run_both_variants.sh    # Lance single + comparative
+├── requirements.txt
+├── docs/                   # Documentation et design expérimental
 ├── data/
-│   ├── templates/      # Templates de CV (stimuli)
-│   └── results/        # Résultats bruts des expériences
+│   ├── base_profiles/      # Profils de base générés (JSON)
+│   ├── profiles/           # Profils injectés (ethnie × SES)
+│   └── results/            # Résultats bruts des expériences
 ├── src/
-│   ├── generation/     # Génération des CV à partir des templates
-│   ├── evaluation/     # Appels LLM (conditions single & comparative)
-│   └── analysis/       # Analyse statistique (chi², Fisher, etc.)
-└── notebooks/          # Notebooks d'exploration et d'analyse
+│   ├── generation/         # Génération des profils de CV
+│   └── evaluation/         # Appels LLM (single, comparative, IAT)
+├── utils/                  # Clients LLM, lancement vLLM, parsing
+├── logs/                   # Réponses brutes (JSONL)
+└── paper/                  # Article LaTeX
 ```
-
-## Installation
-
-*À venir.*
 
 ## Usage
 
-*À venir.*
+```bash
+python run_pipeline.py
+```
 
 ## Références
 
