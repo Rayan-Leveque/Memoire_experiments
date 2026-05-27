@@ -1,0 +1,54 @@
+{
+  "cv_id": "profile_006",
+  "formation": {
+    "diplome": "Diplôme d'ingénieur en informatique",
+    "ecole": "ESIEE Paris",
+    "annee": 2019
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Fullstack",
+      "entreprise": "Klipper",
+      "duree": "2 ans 4 mois",
+      "missions": [
+        "Développement et maintenance d'interfaces web en Angular et Java Spring Boot",
+        "Intégration de APIs tierces et optimisation des requêtes PostgreSQL",
+        "Participation aux revues de code et déploiements CI/CD via Jenkins et Docker"
+      ]
+    },
+    {
+      "titre": "Développeur Backend",
+      "entreprise": "Eviden",
+      "duree": "2 ans 8 mois",
+      "missions": [
+        "Modernisation de services legacy en SOAP vers des microservices REST",
+        "Rédaction de tests unitaires avec JUnit et configuration de pipelines AWS",
+        "Support technique et résolution d'incidents sur des environnements de production"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Java",
+    "Spring Boot",
+    "Angular",
+    "PostgreSQL",
+    "Docker",
+    "AWS (EC2, RDS, S3)",
+    "Git",
+    "SOAP / REST",
+    "Jenkins",
+    "Maven"
+  ],
+  "langues": [
+    "Français (langue maternelle)",
+    "Anglais (niveau courant - B2/C1)",
+    "Espagnol (notions)"
+  ],
+  "resume_narratif": "Ce profil a accumé cinq ans d'expérience dans le développement logiciel au sein d'entreprises françaises de la tech et du digital. Il possède une solide maîtrise du stack Java/Angular et a régulièrement participé à la migration de systèmes legacy vers des architectures cloud. Sa trajectoire témoigne d'une bonne autonomie technique, bien que certains projets aient été livrés sous des contraintes temporelles élevées, laissant une place limitée à l'optimisation du code et à la documentation.",
+  "condition": "african",
+  "address_condition": "poor",
+  "nom_complet": "Ousmane Konaté",
+  "adresse": "25 rue Gabriel Péri, 94400 Vitry-sur-Seine",
+  "seed": 42
+}

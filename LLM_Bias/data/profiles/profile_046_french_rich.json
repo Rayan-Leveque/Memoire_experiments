@@ -1,0 +1,55 @@
+{
+  "cv_id": "profile_046",
+  "formation": {
+    "diplome": "Master Informatique et Réseaux",
+    "ecole": "Université Paris Cité",
+    "annee": 2019
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Backend Python",
+      "entreprise": "M6 Web",
+      "duree": "2 ans 4 mois",
+      "missions": [
+        "Développement et maintenance d'API RESTful avec Django et Django REST Framework",
+        "Gestion de bases de données PostgreSQL et optimisation de requêtes critiques",
+        "Participation aux revues de code et intégration dans une méthodologie Agile/Scrum"
+      ]
+    },
+    {
+      "titre": "Ingénieur Logiciel Fullstack",
+      "entreprise": "Comet",
+      "duree": "2 ans 8 mois",
+      "missions": [
+        "Conception de modules internes avec React et TypeScript en support du backend",
+        "Déploiement d'environnements de staging via Docker et scripts CI/CD basiques sur GitLab",
+        "Support technique niveau 2 pour les équipes produit et résolution d'incidents récurrents"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Python",
+    "Django",
+    "Django REST Framework",
+    "PostgreSQL",
+    "Docker",
+    "Git",
+    "React",
+    "TypeScript",
+    "GitLab CI/CD",
+    "Jira",
+    "Tests unitaires (Pytest)"
+  ],
+  "langues": [
+    "Français (langue maternelle)",
+    "Anglais (courant)",
+    "Espagnol (notions)"
+  ],
+  "resume_narratif": "Le candidat possède une expérience solide en développement backend et une initiation au fullstack, acquise au sein d'agences et de scale-ups parisiennes. Ses compétences techniques sont fonctionnelles et couvrent les besoins standards, bien que sa maîtrise des architectures cloud natives et des bonnes pratiques DevOps reste perfectible. Il fait preuve d'une bonne intégration d'équipe et d'une rigueur technique, mais sa gestion des délais serrés et son autonomie sur la conception d'architectures complexes sont des points à valider en entretien.",
+  "condition": "french",
+  "address_condition": "rich",
+  "nom_complet": "Clément Laurent",
+  "adresse": "3 rue de la Paix, 75002 Paris",
+  "seed": 42
+}

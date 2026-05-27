@@ -1,0 +1,54 @@
+{
+  "cv_id": "profile_019",
+  "formation": {
+    "diplome": "Master Informatique et Réseaux",
+    "ecole": "Université Paris-Saclay",
+    "annee": 2019
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Backend",
+      "entreprise": "SFR",
+      "duree": "2 ans 6 mois",
+      "missions": [
+        "Développement et maintenance de microservices Java/Spring pour la plateforme client",
+        "Migration progressive d'un monolithe legacy vers une architecture conteneurisée",
+        "Collaboration avec les équipes QA pour la mise en place de tests unitaires et d'intégration"
+      ]
+    },
+    {
+      "titre": "Ingénieur Logiciel Full-Stack",
+      "entreprise": "Cdiscount",
+      "duree": "2 ans 4 mois",
+      "missions": [
+        "Conception d'APIs RESTful pour le catalogue produits et le moteur de recommandation",
+        "Intégration de modules React côté frontend pour les espaces partenaires",
+        "Suivi de tickets Jira et résolution d'incidents en production avec un support L2"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Java 11/17",
+    "Spring Boot",
+    "PostgreSQL",
+    "Docker",
+    "Git",
+    "REST API",
+    "React.js (notions)",
+    "AWS EC2/S3 (découverte)",
+    "Jira/Confluence",
+    "Bash"
+  ],
+  "langues": [
+    "Français (natif)",
+    "Anglais (courant - TOEIC 820)",
+    "Espagnol (notions)"
+  ],
+  "resume_narratif": "Ce profil technique solide cumule cinq années d'expérience en ingénierie logicielle, principalement axée sur le backend Java et la migration de systèmes legacy. Bien que ses compétences en cloud et en frontend nécessitent encore un renforcement, il fait preuve d'une bonne autonomie sur les tâches de développement et d'intégration. Sa gestion des priorités sous forte charge reste perfectible, mais sa rigueur technique et sa capacité à collaborer en équipe Agile en font un candidat opérationnel.",
+  "condition": "african",
+  "address_condition": "rich",
+  "nom_complet": "Modibo Keita",
+  "adresse": "15 boulevard Malesherbes, 75008 Paris",
+  "seed": 42
+}

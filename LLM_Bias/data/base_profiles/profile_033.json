@@ -1,0 +1,48 @@
+{
+  "cv_id": "profile_033",
+  "formation": {
+    "diplome": "Master 2 Informatique",
+    "ecole": "Université Paris Cité",
+    "annee": 2018
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Fullstack",
+      "entreprise": "BlaBlaCar",
+      "duree": "2 ans 6 mois",
+      "missions": [
+        "Développement de fonctionnalités côté client et serveur pour la plateforme de covoiturage",
+        "Migration progressive de modules monolithiques vers des microservices Java/Spring",
+        "Participation aux rituels Agile et aux revues de code hebdomadaires"
+      ]
+    },
+    {
+      "titre": "Ingénieur Logiciel Backend",
+      "entreprise": "Orange Digital",
+      "duree": "2 ans 2 mois",
+      "missions": [
+        "Maintenance et évolution d'applications internes de gestion de la clientèle",
+        "Intégration d'APIs REST et résolution d'incidents techniques de niveau 2",
+        "Rédaction de documentation technique et accompagnement des stagiaires"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Java",
+    "Spring Boot",
+    "React",
+    "PostgreSQL",
+    "Docker",
+    "Git",
+    "CI/CD (Jenkins)",
+    "Kubernetes (notions)",
+    "Méthodologies Agile/Scrum"
+  ],
+  "langues": [
+    "Français (natif)",
+    "Anglais (courant)",
+    "Espagnol (notions)"
+  ],
+  "resume_narratif": "Titulaire d'un Master 2 Informatique, le candidat cumule cinq années d'expérience dans le développement logiciel à Paris, principalement orientées backend Java et fullstack. Son parcours alterne entre une scale-up du secteur des mobilités et une filiale digitale d'un grand groupe télécom, où il a assuré le développement de nouvelles fonctionnalités ainsi que la maintenance d'applications existantes. Bien que ses compétences techniques soient solides et opérationnelles, son profil se distingue par une expérience terrain pragmatique plutôt que par des réalisations architecturales à haut impact."
+}

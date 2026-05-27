@@ -1,0 +1,54 @@
+{
+  "cv_id": "profile_010",
+  "formation": {
+    "diplome": "Diplôme d'ingénieur en informatique",
+    "ecole": "EPITA (École pour l'informatique et les techniques avancées)",
+    "annee": 2018
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Fullstack",
+      "entreprise": "Doctolib",
+      "duree": "2 ans 6 mois",
+      "missions": [
+        "Développement et maintenance de fonctionnalités frontend en React et TypeScript",
+        "Intégration d'APIs REST et résolution de bugs sur la plateforme de prise de rendez-vous",
+        "Participation aux revues de code et rédaction de tests unitaires"
+      ]
+    },
+    {
+      "titre": "Ingénieur Logiciel Backend",
+      "entreprise": "Qonto",
+      "duree": "2 ans 4 mois",
+      "missions": [
+        "Conception et déploiement de microservices en Java/Spring Boot",
+        "Mise en place et optimisation de pipelines CI/CD sur AWS",
+        "Accompagnement technique et intégration de développeurs juniors"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Java",
+    "Spring Boot",
+    "React",
+    "TypeScript",
+    "PostgreSQL",
+    "Docker",
+    "AWS (EC2, RDS, S3)",
+    "Git",
+    "Tests unitaires (JUnit, Jest)",
+    "REST/GraphQL"
+  ],
+  "langues": [
+    "Français (langue maternelle)",
+    "Anglais (courant - TOEIC 825)",
+    "Espagnol (notions)"
+  ],
+  "resume_narratif": "Le candidat cumule cinq ans d'expérience dans le développement logiciel au sein d'entreprises technologiques françaises parisiennes. Il a progressé d'un poste fullstack vers une spécialisation backend, en acquérant une maîtrise opérationnelle de la stack Java/Spring et des environnements cloud. Son parcours est technique et cohérent, mais il n'a pas encore assumé de responsabilités d'architecture globale ni de pilotage de projets à très grande échelle.",
+  "condition": "african",
+  "address_condition": "rich",
+  "nom_complet": "Modibo Keita",
+  "adresse": "19 rue Nationale, 92100 Boulogne-Billancourt",
+  "seed": 42
+}

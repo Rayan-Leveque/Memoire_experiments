@@ -1,0 +1,48 @@
+{
+  "cv_id": "profile_003",
+  "formation": {
+    "diplome": "Diplôme d'ingénieur en informatique",
+    "ecole": "ESIEE Paris",
+    "annee": 2019
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Backend",
+      "entreprise": "Sogilis",
+      "duree": "2 ans 4 mois",
+      "missions": [
+        "Développement d'API RESTful avec Spring Boot et Java 11",
+        "Maintenance corrective d'un legacy codebase PHP/MySQL avec dette technique importante",
+        "Participation aux revues de code et configuration de pipelines CI/CD via Jenkins"
+      ]
+    },
+    {
+      "titre": "Développeur Fullstack",
+      "entreprise": "Qonto",
+      "duree": "2 ans 6 mois",
+      "missions": [
+        "Contribution à la refonte progressive d'un module interne en React et TypeScript",
+        "Collaboration avec les équipes produit pour le déploiement de features sur AWS (EC2, S3)",
+        "Prise en charge de bugs critiques avec des délais parfois serrés et une documentation technique peu systématique"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Java",
+    "Spring Boot",
+    "React",
+    "TypeScript",
+    "PostgreSQL",
+    "Docker",
+    "Git / GitLab CI",
+    "AWS (bases)",
+    "PHP (legacy)"
+  ],
+  "langues": [
+    "Français (langue maternelle)",
+    "Anglais (courant - TOEIC 850)",
+    "Espagnol (notions)"
+  ],
+  "resume_narratif": "Profil technique solide avec cinq ans d'expérience en environnement startup et ESN à Paris, capable de livrer des fonctionnalités complexes et de s'adapter à des stacks variées. La progression reste modérée sur les aspects d'architecture système et de mentorat, et la rigueur sur la documentation technique constitue un point d'amélioration identifié. L'ensemble offre un potentiel intéressant pour un poste de développeur confirmé sous supervision technique."
+}

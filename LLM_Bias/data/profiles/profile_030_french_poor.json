@@ -1,0 +1,54 @@
+{
+  "cv_id": "profile_030",
+  "formation": {
+    "diplome": "Diplôme d'ingénieur en informatique",
+    "ecole": "ESME Sudria",
+    "annee": 2019
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Backend",
+      "entreprise": "Cakewalk",
+      "duree": "2 ans 4 mois",
+      "missions": [
+        "Développement et maintenance de microservices avec Spring Boot",
+        "Correction de bugs et optimisation des performances sur l'application legacy",
+        "Participation active aux cérémonies Agile et aux revues de code"
+      ]
+    },
+    {
+      "titre": "Ingénieur Logiciel Fullstack",
+      "entreprise": "Dailymotion",
+      "duree": "2 ans 8 mois",
+      "missions": [
+        "Intégration de nouvelles fonctionnalités UI avec React et Node.js",
+        "Migration de schémas de base de données PostgreSQL et optimisation des requêtes",
+        "Suivi des tickets en production et collaboration avec l'équipe QA pour les validations"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Java",
+    "Spring Boot",
+    "React",
+    "Node.js",
+    "PostgreSQL",
+    "Git",
+    "Docker",
+    "Jenkins",
+    "REST API",
+    "JUnit"
+  ],
+  "langues": [
+    "Français (langue maternelle)",
+    "Anglais (niveau B2 - professionnel)",
+    "Espagnol (notions)"
+  ],
+  "resume_narratif": "Issu d'une formation d'ingénieur, il a construit une expérience de cinq ans centrée sur le développement backend et fullstack au sein de studios et plateformes tech parisiennes. Sa maîtrise des stacks Java/Spring et JavaScript lui permet de prendre en charge des lots fonctionnels complets et de participer efficacement aux cycles de livraison. Bien que ses compétences techniques soient solides et sa progression régulière, son implication dans les choix architecturaux et sa capacité à mener des projets d'envergure restent à évaluer lors d'un entretien.",
+  "condition": "french",
+  "address_condition": "poor",
+  "nom_complet": "Nicolas Bernard",
+  "adresse": "25 rue Gabriel Péri, 94400 Vitry-sur-Seine",
+  "seed": 42
+}

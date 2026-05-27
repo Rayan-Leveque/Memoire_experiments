@@ -1,0 +1,54 @@
+{
+  "cv_id": "profile_047",
+  "formation": {
+    "diplome": "Diplôme d'ingénieur en informatique",
+    "ecole": "EPITECH Paris",
+    "annee": 2019
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Backend Java",
+      "entreprise": "IZLY",
+      "duree": "2 ans 6 mois",
+      "missions": [
+        "Développement et maintenance d'API RESTful avec Spring Boot pour la gestion des abonnements utilisateurs",
+        "Optimisation des requêtes PostgreSQL et mise en place de scripts d'automatisation de tests unitaires",
+        "Collaboration en méthodologie Agile/Scrum avec les équipes produit et DevOps"
+      ]
+    },
+    {
+      "titre": "Ingénieur Logiciel Fullstack",
+      "entreprise": "Malt",
+      "duree": "2 ans 4 mois",
+      "missions": [
+        "Conception de modules frontend en React et TypeScript pour le tableau de bord freelance",
+        "Intégration de services cloud AWS (Lambda, S3) et configuration de pipelines CI/CD GitLab",
+        "Code reviews et documentation technique des nouveaux workflows de déploiement"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Java 11/17",
+    "Spring Boot",
+    "React",
+    "TypeScript",
+    "PostgreSQL",
+    "Docker",
+    "Git",
+    "CI/CD (GitLab/Jenkins)",
+    "API REST",
+    "AWS (notions opérationnelles)"
+  ],
+  "langues": [
+    "Français (langue maternelle)",
+    "Anglais (courant opérationnel)",
+    "Allemand (notions)"
+  ],
+  "resume_narratif": "Ce profil cumule cinq années d'expérience dans le développement logiciel au sein d'éditeurs SaaS et de plateformes digitales parisiennes. Il affiche une bonne maîtrise technique des stacks Java/Spring et React, ainsi qu'une appétence pour les bonnes pratiques DevOps, tout en restant perfectionniste sur l'architecture système et la communication technique en anglais dans un contexte international.",
+  "condition": "african",
+  "address_condition": "poor",
+  "nom_complet": "Cheikh Ndiaye",
+  "adresse": "18 rue Édouard Vaillant, 93500 Pantin",
+  "seed": 42
+}

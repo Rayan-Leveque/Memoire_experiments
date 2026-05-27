@@ -1,0 +1,53 @@
+{
+  "cv_id": "profile_011",
+  "formation": {
+    "diplome": "Master Informatique",
+    "ecole": "EPITECH Paris",
+    "annee": 2019
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Back-End",
+      "entreprise": "Clever Cloud",
+      "duree": "2 ans 6 mois",
+      "missions": [
+        "Maintenance et correction de bugs sur des services cloud en Node.js et TypeScript",
+        "Participation à des sprints Agile avec rédaction de documentation technique",
+        "Intégration de tests unitaires et collaboration avec les équipes DevOps"
+      ]
+    },
+    {
+      "titre": "Ingénieur Full Stack",
+      "entreprise": "Qonto",
+      "duree": "2 ans 6 mois",
+      "missions": [
+        "Conception et développement de fonctionnalités API REST en Java et Spring Boot",
+        "Suivi de tickets et résolution d'incidents en production avec une autonomie variable",
+        "Code reviews et mentoring occasionnel des développeurs juniors"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Java",
+    "Spring Boot",
+    "Node.js",
+    "TypeScript",
+    "PostgreSQL",
+    "Docker",
+    "Git",
+    "CI/CD",
+    "Agile/Scrum"
+  ],
+  "langues": [
+    "Français (natif)",
+    "Anglais (courant technique)",
+    "Espagnol (notions)"
+  ],
+  "resume_narratif": "Le candidat possède une expérience de cinq années en développement logiciel, principalement sur des stacks Java et JavaScript, au sein d'entreprises parisiennes en pleine croissance. Bien que ses compétences techniques soient opérationnelles et qu'il maîtrise les méthodologies Agile, son profil présente une progression en autonomie parfois irrégulière et un manque de recul sur les choix architecturaux. Il cherche désormais à intégrer une équipe structurée capable de l'accompagner vers plus de responsabilités techniques et une meilleure planification des livrables.",
+  "condition": "french",
+  "address_condition": "rich",
+  "nom_complet": "Baptiste Girard",
+  "adresse": "31 avenue de la République, 94160 Saint-Mandé",
+  "seed": 42
+}

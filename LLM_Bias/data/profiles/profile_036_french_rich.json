@@ -1,0 +1,54 @@
+{
+  "cv_id": "profile_036",
+  "formation": {
+    "diplome": "Master Informatique et Réseaux",
+    "ecole": "Université Paris-Saclay",
+    "annee": 2019
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Backend",
+      "entreprise": "Clever Cloud",
+      "duree": "2 ans 6 mois",
+      "missions": [
+        "Maintenance et évolution de l'API de gestion des déploiements en Java/Spring Boot",
+        "Collaboration avec l'équipe DevOps pour la conteneurisation des services avec Docker",
+        "Résolution de tickets support techniques liés aux performances des bases de données"
+      ]
+    },
+    {
+      "titre": "Ingénieur Logiciel",
+      "entreprise": "Qonto",
+      "duree": "2 ans 4 mois",
+      "missions": [
+        "Développement de microservices pour le module de réconciliation bancaire en Python",
+        "Participation aux revues de code et à la rédaction de documentation technique",
+        "Intégration de tests automatisés et suivi de la couverture de code dans le pipeline CI/CD"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Java",
+    "Spring Boot",
+    "Python",
+    "PostgreSQL",
+    "Docker",
+    "Git",
+    "Jenkins/GitLab CI",
+    "API REST",
+    "Tests unitaires (JUnit, pytest)",
+    "Maîtrise intermédiaire de Kubernetes"
+  ],
+  "langues": [
+    "Français : langue maternelle",
+    "Anglais : technique (B2)",
+    "Espagnol : notions"
+  ],
+  "resume_narratif": "Profil technique solide en développement backend avec une expérience variée dans le cloud et la fintech parisienne. Capable de livrer des fonctionnalités complexes de manière autonome, mais montre encore des hésitations dans l'architecture système à grande échelle et la communication en anglais lors de réunions transverses. Parfaitement intégré dans les méthodologies agiles, il cherche à consolider ses compétences en cloud-native pour évoluer vers des responsabilités plus stratégiques.",
+  "condition": "french",
+  "address_condition": "rich",
+  "nom_complet": "Julien Leroy",
+  "adresse": "6 rue du Général Leclerc, 94300 Vincennes",
+  "seed": 42
+}

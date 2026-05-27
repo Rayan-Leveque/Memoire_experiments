@@ -1,0 +1,50 @@
+{
+  "cv_id": "profile_045",
+  "formation": {
+    "diplome": "Diplôme d'ingénieur en informatique et systèmes numériques",
+    "ecole": "Epitech Paris",
+    "annee": 2018
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Full Stack",
+      "entreprise": "Datera",
+      "duree": "2 ans 2 mois",
+      "missions": [
+        "Développement et maintenance d'API REST avec Python et Flask",
+        "Intégration de bases de données PostgreSQL et optimisation des requêtes",
+        "Participation aux cycles de tests unitaires et d'intégration continue"
+      ]
+    },
+    {
+      "titre": "Ingénieur Logiciel Backend",
+      "entreprise": "Mirakl",
+      "duree": "2 ans 6 mois",
+      "missions": [
+        "Conception de microservices Java avec le framework Spring Boot",
+        "Déploiement et orchestration de conteneurs via Docker et Kubernetes sur AWS",
+        "Collaboration en méthodologie Scrum et rédaction de documentation technique"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Python",
+    "Java",
+    "Spring Boot",
+    "PostgreSQL",
+    "Docker",
+    "Kubernetes",
+    "AWS (EC2, S3)",
+    "Git",
+    "Jenkins",
+    "React (notions)",
+    "Agile/Scrum"
+  ],
+  "langues": [
+    "Français (natif)",
+    "Anglais (courant - TOEIC 850)",
+    "Espagnol (notions)"
+  ],
+  "resume_narratif": "Ce profil démontre une expérience technique cohérente en développement backend et en déploiement cloud, avec une maîtrise fonctionnelle de Python et Java. Bien que les compétences front-end demeurent limitées et que la prise d'initiatives architecturales reste à consolider, la capacité à intégrer des équipes agiles et à livrer des fonctionnalités stables est avérée. Le parcours révèle une progression régulière, bien que certaines transitions technologiques aient nécessité un temps d'adaptation supérieur à la moyenne."
+}

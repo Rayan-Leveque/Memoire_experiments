@@ -1,0 +1,54 @@
+{
+  "cv_id": "profile_004",
+  "formation": {
+    "diplome": "Diplôme d'ingénieur en informatique",
+    "ecole": "ESIEE Paris",
+    "annee": 2019
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Fullstack",
+      "entreprise": "Cegid",
+      "duree": "2 ans 6 mois",
+      "missions": [
+        "Développement et maintenance d'applications métier internes en Java/Spring Boot",
+        "Intégration de modules frontend avec Angular et TypeScript",
+        "Participation aux revues de code et résolution de bugs en production"
+      ]
+    },
+    {
+      "titre": "Ingénieur Logiciel",
+      "entreprise": "Qonto",
+      "duree": "2 ans 3 mois",
+      "missions": [
+        "Conception d'API RESTful pour les services de gestion de compte",
+        "Migration progressive de composants legacy vers une architecture microservices",
+        "Suivi des sprints Scrum et collaboration avec les équipes produit et QA"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "TypeScript",
+    "JavaScript",
+    "React",
+    "Node.js",
+    "Java",
+    "Spring Boot",
+    "PostgreSQL",
+    "Docker",
+    "Git",
+    "Jenkins"
+  ],
+  "langues": [
+    "Français (natif)",
+    "Anglais (courant)",
+    "Espagnol (notions)"
+  ],
+  "resume_narratif": "Le candidat possède une expérience solide en développement fullstack au sein de l'écosystème tech français, avec une bonne maîtrise des frameworks modernes et des méthodologies agiles. Bien qu'efficace sur les tâches opérationnelles et la maintenance d'applications métier, son profil montre des limites sur l'architecture de systèmes distribués et la gestion de la dette technique à grande échelle. Il fait preuve de curiosité technique et d'une bonne intégration d'équipe, mais nécessite un encadrement sur les prises de décision techniques complexes.",
+  "condition": "maghrebin",
+  "address_condition": "poor",
+  "nom_complet": "Bilal Chaoui",
+  "adresse": "19 avenue Verdun, 93390 Clichy-sous-Bois",
+  "seed": 42
+}

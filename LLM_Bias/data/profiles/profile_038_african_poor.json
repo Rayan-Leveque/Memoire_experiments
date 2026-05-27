@@ -1,0 +1,54 @@
+{
+  "cv_id": "profile_038",
+  "formation": {
+    "diplome": "Master Informatique et Génie Logiciel",
+    "ecole": "Université Paris-Saclay",
+    "annee": 2019
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Full Stack",
+      "entreprise": "Carmignac Portfolio",
+      "duree": "2 ans 2 mois",
+      "missions": [
+        "Développement et maintenance d'interfaces internes avec React et TypeScript",
+        "Création de services RESTful en Java Spring Boot pour des outils de reporting",
+        "Participation aux revues de code et correction de bugs en production"
+      ]
+    },
+    {
+      "titre": "Ingénieur Logiciel Backend",
+      "entreprise": "BlaBlaCar",
+      "duree": "2 ans 10 mois",
+      "missions": [
+        "Intégration de nouvelles fonctionnalités sur des microservices en charge de la gestion des trajets",
+        "Automatisation de pipelines CI/CD avec Jenkins et Docker",
+        "Collaboration avec les équipes QA et produit pour les sprints Agile"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Java",
+    "Spring Boot",
+    "React",
+    "TypeScript",
+    "PostgreSQL",
+    "Docker",
+    "Jenkins",
+    "Git",
+    "REST APIs",
+    "Agile/Scrum"
+  ],
+  "langues": [
+    "Français (natif)",
+    "Anglais (courant)",
+    "Allemand (notions)"
+  ],
+  "resume_narratif": "Le candidat affiche un parcours cohérent en développement web et backend, avec une maîtrise fonctionnelle des stacks Java et JavaScript dans des environnements professionnels exigeants. Son expérience dénote une bonne capacité à livrer des fonctionnalités et à s'intégrer dans des équipes structurées, même si la conception d'architectures scalables et l'optimisation avancée des bases de données restent des domaines à consolider. Profil opérationnel recherchant à renforcer son expertise technique sur des projets à fort impact.",
+  "condition": "african",
+  "address_condition": "poor",
+  "nom_complet": "Modibo Keita",
+  "adresse": "18 rue Édouard Vaillant, 93500 Pantin",
+  "seed": 42
+}

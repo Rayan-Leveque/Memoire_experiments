@@ -1,0 +1,47 @@
+{
+  "cv_id": "profile_014",
+  "formation": {
+    "diplome": "Master Informatique et Réseaux",
+    "ecole": "Université Paris-Saclay",
+    "annee": 2018
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Backend Java",
+      "entreprise": "M6 Web",
+      "duree": "2 ans 6 mois",
+      "missions": [
+        "Développement et maintenance de modules backend pour des clients e-commerce",
+        "Intégration d'APIs REST et optimisation de requêtes PostgreSQL",
+        "Participation aux revues de code et correction de bugs récurrents"
+      ]
+    },
+    {
+      "titre": "Ingénieur Logiciel",
+      "entreprise": "Kazoo",
+      "duree": "2 ans 8 mois",
+      "missions": [
+        "Conception de microservices avec Spring Boot pour la gestion des abonnements",
+        "Migration progressive d'une base de données legacy vers une architecture containerisée",
+        "Rédaction de documentation technique et support niveau 2 pour les équipes produit"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Java 11/17",
+    "Spring Boot",
+    "PostgreSQL",
+    "Docker",
+    "Git",
+    "APIs REST",
+    "CI/CD basique (Jenkins)",
+    "Tests unitaires (JUnit)"
+  ],
+  "langues": [
+    "Français (natif)",
+    "Anglais (courant)",
+    "Espagnol (notions)"
+  ],
+  "resume_narratif": "Profil backend solide avec cinq ans d'expérience dans des environnements Java/Spring et PostgreSQL. Démontre une bonne capacité à maintenir et évoluer des systèmes existants, mais montre un intérêt limité pour les technologies cloud natives avancées et une adoption parfois lente des nouvelles méthodologies DevOps. Travaillerait efficacement dans une équipe structurée avec des processus clairs et un encadrement technique régulier."
+}

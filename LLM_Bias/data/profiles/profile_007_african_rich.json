@@ -1,0 +1,56 @@
+{
+  "cv_id": "profile_007",
+  "formation": {
+    "diplome": "Diplôme d'ingénieur en informatique",
+    "ecole": "École pour l'informatique et les techniques avancées (EITA)",
+    "annee": 2018
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Backend",
+      "entreprise": "Société Générale Digital",
+      "duree": "3 ans",
+      "missions": [
+        "Développement et maintenance d'API REST avec Java/Spring Boot",
+        "Intégration de pipelines CI/CD via Jenkins et GitLab",
+        "Optimisation des requêtes SQL et migration de bases PostgreSQL"
+      ]
+    },
+    {
+      "titre": "Ingénieur Logiciel Fullstack",
+      "entreprise": "Boulanger",
+      "duree": "2 ans",
+      "missions": [
+        "Conception d'interfaces utilisateur avec React et TypeScript",
+        "Développement de microservices Node.js pour la plateforme e-commerce",
+        "Animation de revues de code et mentoring de développeurs juniors"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Java",
+    "Spring Boot",
+    "React",
+    "Node.js",
+    "TypeScript",
+    "Docker",
+    "Kubernetes",
+    "PostgreSQL",
+    "Git",
+    "CI/CD",
+    "Méthodes Agiles",
+    "Tests unitaires et d'intégration"
+  ],
+  "langues": [
+    "Français (natif)",
+    "Anglais (courant)",
+    "Espagnol (intermédiaire)"
+  ],
+  "resume_narratif": "Professionnel de l'ingénierie logicielle avec 5 ans d'expérience dans le développement backend et fullstack. Solide expertise en Java/Spring et JavaScript/React, avec une bonne maîtrise des architectures microservices et des bonnes pratiques DevOps. Capacité à travailler en équipe agile et à former des juniors, mais recherche à approfondir ses compétences en optimisation des performances cloud.",
+  "condition": "african",
+  "address_condition": "rich",
+  "nom_complet": "Lamine Camara",
+  "adresse": "8 avenue Victor Hugo, 75016 Paris",
+  "seed": 42
+}

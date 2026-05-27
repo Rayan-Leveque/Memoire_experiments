@@ -1,0 +1,55 @@
+{
+  "cv_id": "profile_031",
+  "formation": {
+    "diplome": "Diplôme d'Ingénieur en Informatique et Systèmes Numériques",
+    "ecole": "ESIEE Paris",
+    "annee": 2019
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Backend",
+      "entreprise": "Allyouneed",
+      "duree": "2 ans 6 mois",
+      "missions": [
+        "Conception et développement de microservices en Java/Spring Boot",
+        "Maintenance d'applications legacy et migration progressive vers une architecture conteneurisée",
+        "Participation à des sprints Agile et code reviews hebdomadaires"
+      ]
+    },
+    {
+      "titre": "Développeur Fullstack",
+      "entreprise": "Cockpit",
+      "duree": "2 ans 4 mois",
+      "missions": [
+        "Développement d'interfaces React et TypeScript pour des outils internes",
+        "Intégration d'APIs REST et gestion de bases de données PostgreSQL",
+        "Suivi de bugs et documentation technique parfois à jour"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Java",
+    "Spring Boot",
+    "React",
+    "TypeScript",
+    "PostgreSQL",
+    "Docker",
+    "Git",
+    "Jenkins",
+    "AWS (EC2, S3)",
+    "Maven",
+    "AngularJS (maintenance)"
+  ],
+  "langues": [
+    "Français (langue maternelle)",
+    "Anglais (courant - TOEIC 820)",
+    "Espagnol (notions)"
+  ],
+  "resume_narratif": "Ce profil dispose de cinq ans d'expérience en développement logiciel, principalement orienté backend Java et fullstack dans des environnements agiles parisiens. Il démontre une bonne maîtrise des technologies modernes ainsi qu'une capacité à maintenir des systèmes legacy, même si la documentation et la veille technique restent parfois perfectibles. Son parcours chez des acteurs tech français reconnus lui permet de s'adapter rapidement à des projets variés, bien que son expertise sur les architectures cloud natives soit encore en cours de consolidation.",
+  "condition": "maghrebin",
+  "address_condition": "poor",
+  "nom_complet": "Youssef Messaoudi",
+  "adresse": "19 avenue Verdun, 93390 Clichy-sous-Bois",
+  "seed": 42
+}

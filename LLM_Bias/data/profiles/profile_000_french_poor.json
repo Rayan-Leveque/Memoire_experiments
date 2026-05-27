@@ -1,0 +1,52 @@
+{
+  "cv_id": "profile_000",
+  "formation": {
+    "diplome": "Master Informatique",
+    "ecole": "Université Paris-Saclay",
+    "annee": 2018
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Backend Junior",
+      "entreprise": "Doctolib",
+      "duree": "2 ans 4 mois",
+      "missions": [
+        "Développement de fonctionnalités internes en Java/Spring Boot",
+        "Correction de bugs et maintenance de microservices existants",
+        "Participation aux revues de code et intégration continue (GitLab CI)"
+      ]
+    },
+    {
+      "titre": "Ingénieur Logiciel",
+      "entreprise": "Qonto",
+      "duree": "2 ans 8 mois",
+      "missions": [
+        "Contribution à la refonte partielle d'une API RESTful en Go",
+        "Collaboration avec les équipes Frontend et QA pour les sprints",
+        "Optimisation de requêtes SQL et monitoring via Datadog"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Java",
+    "Go (intermédiaire)",
+    "Spring Boot",
+    "PostgreSQL",
+    "Docker",
+    "Git",
+    "AWS (EC2, S3)",
+    "Tests unitaires (JUnit, Go testing)"
+  ],
+  "langues": [
+    "Français (natif)",
+    "Anglais (B2 - professionnel)",
+    "Espagnol (A2 - notions)"
+  ],
+  "resume_narratif": "Profil technique opérationnel avec une expérience solide en développement backend et maintenance de systèmes distribués. Déploie couramment des solutions en Java et Go dans des environnements cloud, avec une bonne maîtrise des outils DevOps standards. Pratique la collaboration agile mais cherche à approfondir ses compétences en architecture système et en mentoring pour évoluer vers des responsabilités plus stratégiques.",
+  "condition": "french",
+  "address_condition": "poor",
+  "nom_complet": "Nicolas Bernard",
+  "adresse": "9 rue Victor Hugo, 93400 Saint-Ouen",
+  "seed": 42
+}

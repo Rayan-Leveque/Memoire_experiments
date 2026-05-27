@@ -1,0 +1,66 @@
+{
+  "cv_id": "profile_044",
+  "formation": {
+    "diplome": "Diplôme d'ingénieur en génie logiciel",
+    "ecole": "ESIEE Paris",
+    "annee": 2018
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Fullstack Junior",
+      "entreprise": "Ekino",
+      "duree": "1 an 6 mois",
+      "missions": [
+        "Développement d'applications web en Java/Spring pour des clients secteur bancaire",
+        "Intégration de tests unitaires et correction de bugs en environnement Agile",
+        "Participation à des revues de code et rédaction de documentation technique"
+      ]
+    },
+    {
+      "titre": "Développeur Backend",
+      "entreprise": "Qonto",
+      "duree": "2 ans",
+      "missions": [
+        "Maintenance et évolution de microservices en Node.js et TypeScript",
+        "Optimisation de requêtes PostgreSQL et mise en place de dashboards de monitoring",
+        "Collaboration avec les équipes DevOps pour automatiser les pipelines CI/CD"
+      ]
+    },
+    {
+      "titre": "Ingénieur Logiciel",
+      "entreprise": "Clever Cloud",
+      "duree": "1 an 8 mois",
+      "missions": [
+        "Contribution au SDK client en Python et Go",
+        "Refactoring de modules legacy et amélioration des temps de réponse API",
+        "Support technique niveau 2 et accompagnement des équipes internes sur les bonnes pratiques"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Java",
+    "Spring Boot",
+    "Node.js",
+    "TypeScript",
+    "Python",
+    "Go",
+    "PostgreSQL",
+    "Docker",
+    "Git",
+    "CI/CD (GitLab)",
+    "Linux",
+    "Méthodologies Agile/Scrum"
+  ],
+  "langues": [
+    "Français (langue maternelle)",
+    "Anglais (courant - TOEIC 850)",
+    "Espagnol (notions)"
+  ],
+  "resume_narratif": "Le candidat possède une expérience technique variée couvrant le développement backend et fullstack sur des projets B2B et B2C. Sa maîtrise des outils modernes est fonctionnelle, bien que son parcours révèle une polyvalence parfois au détriment de la spécialisation profonde sur une stack unique. Il fait preuve d'une bonne capacité d'adaptation et d'un esprit d'équipe solide, cherchant à se stabiliser sur un périmètre technique plus ciblé au sein d'un environnement produit.",
+  "condition": "french",
+  "address_condition": "poor",
+  "nom_complet": "Thomas Martin",
+  "adresse": "7 avenue Jean Jaurès, 93300 Aubervilliers",
+  "seed": 42
+}

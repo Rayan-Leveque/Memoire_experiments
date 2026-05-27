@@ -1,0 +1,52 @@
+{
+  "cv_id": "profile_022",
+  "formation": {
+    "diplome": "Master Informatique et Génie Logiciel",
+    "ecole": "École pour l'informatique et les techniques avancées (EIPA)",
+    "annee": 2019
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Backend Junior",
+      "entreprise": "TechNova Solutions",
+      "duree": "2 ans 2 mois",
+      "missions": [
+        "Développement et maintenance d'API RESTful en Java/Spring Boot pour une plateforme SaaS de gestion logistique.",
+        "Rédaction de tests unitaires et d'intégration avec JUnit et Mockito, atteignant une couverture de code de 70%.",
+        "Collaboration en méthode Agile (Scrum) avec des équipes UX et DevOps pour des livraisons bi-mensuelles."
+      ]
+    },
+    {
+      "titre": "Développeur Logiciel",
+      "entreprise": "L'Oréal IT (SSII interne)",
+      "duree": "2 ans 8 mois",
+      "missions": [
+        "Refonte partielle d'un module e-commerce interne en migrant d'une architecture monolithique vers des microservices Dockerisés.",
+        "Optimisation de requêtes PostgreSQL et mise en place d'indexation, réduisant les temps de réponse de 30%.",
+        "Mentorat de 2 développeurs juniors sur les bonnes pratiques de code et l'utilisation de GitLab CI/CD."
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Java",
+    "Spring Boot",
+    "PostgreSQL",
+    "Docker",
+    "Git",
+    "CI/CD (GitLab)",
+    "Angular (niveau intermédiaire)",
+    "AWS (EC2, S3 - usage basique)"
+  ],
+  "langues": [
+    "Français (natif)",
+    "Anglais (B2 professionnel)",
+    "Espagnol (A2)"
+  ],
+  "resume_narratif": "Ce profil cumule cinq ans d'expérience en développement backend, principalement sur des stacks Java/Spring. Le candidat a démontré une capacité technique solide sur la conception d'API et l'optimisation de bases de données, avec une progression vers des architectures plus modulaires. Cependant, la maîtrise des environnements cloud avancés et l'expérience en architecture système restent à consolider pour des rôles plus seniors.",
+  "condition": "french",
+  "address_condition": "rich",
+  "nom_complet": "Quentin Michel",
+  "adresse": "5 rue Gambetta, 92200 Neuilly-sur-Seine",
+  "seed": 42
+}

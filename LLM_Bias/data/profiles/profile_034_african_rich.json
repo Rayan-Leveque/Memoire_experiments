@@ -1,0 +1,53 @@
+{
+  "cv_id": "profile_034",
+  "formation": {
+    "diplome": "Master Ingénierie Logicielle et Systèmes d'Information",
+    "ecole": "EPITA",
+    "annee": 2019
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Backend Java",
+      "entreprise": "Cegid",
+      "duree": "2 ans 6 mois",
+      "missions": [
+        "Développement et maintenance de microservices Java/Spring Boot pour la solution SaaS RH",
+        "Participation aux revues de code et intégration de tests unitaires avec JUnit",
+        "Migration progressive d'une base Oracle vers PostgreSQL avec minimisation des temps d'arrêt"
+      ]
+    },
+    {
+      "titre": "Ingénieur Logiciel Fullstack",
+      "entreprise": "Qonto",
+      "duree": "2 ans 4 mois",
+      "missions": [
+        "Conception d'interfaces utilisateur en React et TypeScript pour le dashboard client",
+        "Implémentation de pipelines CI/CD avec Jenkins et déploiements sur AWS ECS",
+        "Collaboration en équipe Agile pour la livraison de fonctionnalités de conformité bancaire"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Java 11/17",
+    "Spring Boot",
+    "React",
+    "TypeScript",
+    "PostgreSQL",
+    "Docker",
+    "AWS (ECS, S3)",
+    "Git",
+    "Jenkins",
+    "Maven"
+  ],
+  "langues": [
+    "Français (langue maternelle)",
+    "Anglais (niveau B2/C1, technique)"
+  ],
+  "resume_narratif": "Profil technique opérationnel avec un parcours équilibré entre le développement backend Java et l'intégration front-end moderne. Capable de maintenir des applications existantes et de livrer des fonctionnalités dans un cadre Agile, mais dont la maîtrise des architectures distribuées complexes et le sens de l'initiative technique restent à affiner. Bonne compréhension des bonnes pratiques DevOps et des environnements cloud, avec une trajectoire cohérente dans le secteur des services SaaS français.",
+  "condition": "african",
+  "address_condition": "rich",
+  "nom_complet": "Lamine Camara",
+  "adresse": "15 boulevard Malesherbes, 75008 Paris",
+  "seed": 42
+}

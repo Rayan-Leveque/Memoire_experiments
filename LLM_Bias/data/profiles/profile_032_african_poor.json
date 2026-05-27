@@ -1,0 +1,55 @@
+{
+  "cv_id": "profile_032",
+  "formation": {
+    "diplome": "Diplôme d'ingénieur en informatique",
+    "ecole": "ISEN Paris",
+    "annee": 2019
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Backend Java",
+      "entreprise": "Sogilis",
+      "duree": "2 ans 1 mois",
+      "missions": [
+        "Développement et maintenance d'interfaces de paiement sécurisées avec Spring Boot",
+        "Rédaction de tests unitaires et d'intégration avec JUnit et Mockito",
+        "Participation aux revues de code et aux rituels Scrum hebdomadaires"
+      ]
+    },
+    {
+      "titre": "Développeur Fullstack",
+      "entreprise": "Qonto",
+      "duree": "2 ans 11 mois",
+      "missions": [
+        "Intégration d'API REST et développement de modules front-end avec React et TypeScript",
+        "Migration progressive d'une application monolithique vers une architecture modulaire",
+        "Documentation technique et accompagnement des développeurs juniors sur les bonnes pratiques"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Java 11/17",
+    "Spring Boot",
+    "React",
+    "TypeScript",
+    "Node.js",
+    "PostgreSQL",
+    "Git",
+    "Docker",
+    "Jenkins (CI/CD)",
+    "Agile/Scrum",
+    "Architecture microservices (notions)"
+  ],
+  "langues": [
+    "Français (langue maternelle)",
+    "Anglais (courant - support technique et documentation)",
+    "Espagnol (notions)"
+  ],
+  "resume_narratif": "Le candidat dispose de cinq années d'expérience en développement logiciel, avec une spécialisation initiale sur le backend Java avant une évolution vers des postes fullstack. Il a assuré plusieurs livraisons opérationnelles dans des environnements agiles, maîtrisant les stacks Spring Boot et React, tout en démontrant une bonne capacité d'analyse et de documentation. Son profil présente un niveau technique solide mais nécessite encore un encadrement sur les problématiques d'optimisation des performances et la conception d'architectures distribuées complexes.",
+  "condition": "african",
+  "address_condition": "poor",
+  "nom_complet": "Ibrahima Traoré",
+  "adresse": "7 avenue Jean Jaurès, 93300 Aubervilliers",
+  "seed": 42
+}

@@ -1,0 +1,49 @@
+{
+  "cv_id": "profile_001",
+  "formation": {
+    "diplome": "Master Informatique - Spécialité Ingénierie Logicielle",
+    "ecole": "Université Paris Cité",
+    "annee": 2019
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Backend",
+      "entreprise": "Clever Cloud",
+      "duree": "2 ans 6 mois",
+      "missions": [
+        "Développement et maintenance de microservices REST en Java et Spring Boot",
+        "Rédaction de tests unitaires et d'intégration avec JUnit et Mockito",
+        "Participation aux revues de code et au suivi des sprints Agile"
+      ]
+    },
+    {
+      "titre": "Développeur Fullstack",
+      "entreprise": "Qonto",
+      "duree": "2 ans 8 mois",
+      "missions": [
+        "Implémentation de fonctionnalités front-end en React et TypeScript",
+        "Optimisation de requêtes SQL et modélisation de données PostgreSQL",
+        "Collaboration transverse avec les équipes produit et QA pour la livraison de features"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Java",
+    "Spring Boot",
+    "React",
+    "TypeScript",
+    "PostgreSQL",
+    "Docker",
+    "Git",
+    "CI/CD (GitLab CI)",
+    "AWS (EC2, S3)",
+    "Méthodes Agile/Scrum"
+  ],
+  "langues": [
+    "Français (langue maternelle)",
+    "Anglais (courant - B2)",
+    "Espagnol (notions - A2)"
+  ],
+  "resume_narratif": "Le candidat dispose d'un parcours technique cohérent centré sur le développement backend et une montée en compétence progressive en fullstack. Il maîtrise les stacks modernes et les bonnes pratiques de développement, mais son expérience sur l'architecture distribuée et le pilotage technique reste limitée. Ses livrables sont réguliers et fiables, sans démonstration marquante d'innovation ou de management d'équipe."
+}

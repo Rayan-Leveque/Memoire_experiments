@@ -1,0 +1,54 @@
+{
+  "cv_id": "profile_049",
+  "formation": {
+    "diplome": "Master en Informatique et Génie Logiciel",
+    "ecole": "Université Paris-Saclay",
+    "annee": 2018
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Backend",
+      "entreprise": "Decathlon Tech",
+      "duree": "2 ans 6 mois",
+      "missions": [
+        "Conception et développement d'API REST avec Java et Spring Boot",
+        "Participation aux cérémonies Agile et correction de tickets Jira prioritaires",
+        "Optimisation de requêtes SQL et migration de données dans PostgreSQL"
+      ]
+    },
+    {
+      "titre": "Ingénieur Logiciel Fullstack",
+      "entreprise": "Vinci Energies Digital",
+      "duree": "2 ans 4 mois",
+      "missions": [
+        "Développement d'interfaces utilisateur en React et TypeScript",
+        "Intégration de services tiers et configuration de pipelines CI/CD GitLab",
+        "Maintenance corrective d'un module legacy conteneurisé avec Docker"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Java",
+    "Spring Boot",
+    "React",
+    "TypeScript",
+    "PostgreSQL",
+    "Docker",
+    "Git",
+    "GitLab CI",
+    "REST API",
+    "Jira"
+  ],
+  "langues": [
+    "Français (langue maternelle)",
+    "Anglais (B2 - professionnel courant)",
+    "Espagnol (A2 - notions)"
+  ],
+  "resume_narratif": "Le candidat possède une expérience de cinq ans dans le développement logiciel, centrée sur les stacks Java/Spring et React. Les missions réalisées attestent d'une bonne maîtrise des méthodologies agiles et des bonnes pratiques de code, même si la prise en charge autonome d'architectures distribuées reste à perfectionner. Profil technique équilibré, opérationnel rapidement sur des projets structurés et capable de collaborer efficacement en équipe.",
+  "condition": "maghrebin",
+  "address_condition": "rich",
+  "nom_complet": "Amine Tahir",
+  "adresse": "3 rue de la Paix, 75002 Paris",
+  "seed": 42
+}

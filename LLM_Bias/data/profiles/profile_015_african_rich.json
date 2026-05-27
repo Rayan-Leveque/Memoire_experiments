@@ -1,0 +1,56 @@
+{
+  "cv_id": "profile_015",
+  "formation": {
+    "diplome": "Diplôme d'Ingénieur Informatique",
+    "ecole": "INSA Paris",
+    "annee": 2018
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Backend",
+      "entreprise": "Klipboard",
+      "duree": "2 ans 6 mois",
+      "missions": [
+        "Conception et développement d'API RESTful avec Java et Spring Boot",
+        "Participation aux revues de code et mise en place de pipelines CI/CD",
+        "Maintenance et requêtes d'optimisation sur PostgreSQL"
+      ]
+    },
+    {
+      "titre": "Développeur Fullstack",
+      "entreprise": "Carmila",
+      "duree": "2 ans 4 mois",
+      "missions": [
+        "Développement de modules fonctionnels couplant React et Python (FastAPI)",
+        "Support technique niveau 2 et résolution d'incidents production",
+        "Rédaction de la documentation technique et exécution de tests unitaires"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Java",
+    "Spring Boot",
+    "Python",
+    "React",
+    "Docker",
+    "PostgreSQL",
+    "Git",
+    "CI/CD (GitLab)",
+    "AWS (EC2, S3)",
+    "Méthodes Agiles/Scrum",
+    "REST",
+    "Tests unitaires"
+  ],
+  "langues": [
+    "Français (langue maternelle)",
+    "Anglais (courant, technique)",
+    "Espagnol (notions)"
+  ],
+  "resume_narratif": "Ce profil cumule une expérience de développement backend et fullstack au sein de structures parisiennes orientées SaaS et services numériques. Il démontre une bonne maîtrise des frameworks courants et des bonnes pratiques de déploiement, tout en assurant un suivi rigoureux des tickets incidents. Son profil présente une solide exécution opérationnelle, bien que son expertise en architecture cloud scalable et son expérience en encadrement technique restent à consolider.",
+  "condition": "african",
+  "address_condition": "rich",
+  "nom_complet": "Boubacar Sawadogo",
+  "adresse": "7 rue du Moulin, 78110 Le Vésinet",
+  "seed": 42
+}

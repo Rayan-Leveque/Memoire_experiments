@@ -1,0 +1,53 @@
+{
+  "cv_id": "profile_041",
+  "formation": {
+    "diplome": "Master 2 Ingénierie Logicielle",
+    "ecole": "Université Paris-Saclay",
+    "annee": 2019
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Backend Java",
+      "entreprise": "Meilleure Offre",
+      "duree": "2 ans 4 mois",
+      "missions": [
+        "Développement et maintenance d'APIs REST avec Spring Boot et Spring Data",
+        "Participation active aux rituels agiles (sprints, stand-ups, rétrospectives)",
+        "Rédaction de tests unitaires et d'intégration avec JUnit et Mockito"
+      ]
+    },
+    {
+      "titre": "Ingénieur Logiciel Fullstack",
+      "entreprise": "SFEIR",
+      "duree": "2 ans 8 mois",
+      "missions": [
+        "Conception et développement d'interfaces utilisateur avec React et TypeScript",
+        "Migration progressive d'une application monolithique vers une architecture microservices",
+        "Support technique niveau 2 et résolution d'incidents en production"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Java",
+    "Spring Boot",
+    "React",
+    "TypeScript",
+    "PostgreSQL",
+    "Docker",
+    "Git & GitLab CI",
+    "XML/SOAP",
+    "Méthodologies Agile/Scrum"
+  ],
+  "langues": [
+    "Français (Langue maternelle)",
+    "Anglais (Courant - B2)",
+    "Espagnol (Notions)"
+  ],
+  "resume_narratif": "Ce profil présente une expérience technique solide en développement backend et frontend, avec une bonne application des standards modernes et des pratiques agiles. Bien que fiable et rigoureux sur les tâches assignées, il fait preuve d'une autonomie encore limitée sur la conception architecturale et la prise de décision technique à grande échelle. Son parcours alterne entre entreprise produit et conseil, lui offrant une adaptabilité notable tout en nécessitant un accompagnement structuré pour évoluer vers des responsabilités lead.",
+  "condition": "african",
+  "address_condition": "rich",
+  "nom_complet": "Ibrahima Traoré",
+  "adresse": "3 rue de la Paix, 75002 Paris",
+  "seed": 42
+}

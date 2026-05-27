@@ -1,0 +1,53 @@
+{
+  "cv_id": "profile_002",
+  "formation": {
+    "diplome": "Master en Informatique",
+    "ecole": "École pour l'informatique et les techniques avancées (EITAP)",
+    "annee": 2019
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Backend Junior",
+      "entreprise": "Capgemini Engineering",
+      "duree": "2 ans 2 mois",
+      "missions": [
+        "Maintenance et évolution d'applications Java/Spring Boot",
+        "Rédaction de tests unitaires et d'intégration",
+        "Participation à des sprints Agile et code reviews"
+      ]
+    },
+    {
+      "titre": "Ingénieur Logiciel",
+      "entreprise": "Doctolib",
+      "duree": "3 ans",
+      "missions": [
+        "Développement de nouvelles fonctionnalités en Python/Flask",
+        "Optimisation de requêtes PostgreSQL et mise en cache",
+        "Collaboration avec les équipes DevOps pour le déploiement CI/CD"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Python",
+    "Java",
+    "Spring Boot",
+    "React",
+    "Docker",
+    "AWS",
+    "PostgreSQL",
+    "Git",
+    "CI/CD",
+    "Méthodologies Agiles"
+  ],
+  "langues": [
+    "Français (natif)",
+    "Anglais (courant)"
+  ],
+  "resume_narratif": "Profil technique solide avec une expérience progressive en développement backend et fullstack. Capable de concevoir des solutions robustes dans des environnements agiles, tout en maintenant une bonne collaboration inter-équipes. Intéressé par les défis d'évolutivité et l'amélioration continue des processus de développement.",
+  "condition": "maghrebin",
+  "address_condition": "poor",
+  "nom_complet": "Sami Mansouri",
+  "adresse": "22 boulevard Lénine, 93000 Bobigny",
+  "seed": 42
+}

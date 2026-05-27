@@ -1,0 +1,54 @@
+{
+  "cv_id": "profile_027",
+  "formation": {
+    "diplome": "Diplôme d'ingénieur en informatique",
+    "ecole": "EPITECH Paris",
+    "annee": 2018
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Fullstack",
+      "entreprise": "Malt",
+      "duree": "2 ans 4 mois",
+      "missions": [
+        "Développement et maintenance de fonctionnalités backend en Python/Django pour la plateforme freelance.",
+        "Intégration frontend en React et TypeScript selon les maquettes Figma.",
+        "Participation aux revues de code et résolution de bugs en production."
+      ]
+    },
+    {
+      "titre": "Développeur Backend",
+      "entreprise": "Klipartz",
+      "duree": "2 ans 6 mois",
+      "missions": [
+        "Refonte de microservices legacy vers une architecture Dockerisée sur AWS.",
+        "Optimisation des requêtes PostgreSQL et mise en place de tests unitaires (pytest).",
+        "Collaboration avec l'équipe produit pour la priorisation du backlog sprint."
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Python",
+    "Django",
+    "React",
+    "TypeScript",
+    "PostgreSQL",
+    "Docker",
+    "AWS (EC2, RDS)",
+    "Git",
+    "CI/CD (GitLab)",
+    "AngularJS (maintenance)"
+  ],
+  "langues": [
+    "Français (Langue maternelle)",
+    "Anglais (Courant - C1)",
+    "Espagnol (Intermédiaire - B1)"
+  ],
+  "resume_narratif": "Profil technique solide avec cinq ans d'expérience dans l'ingénierie logicielle au sein de startups françaises parisiennes. Maîtrise pratique du stack Python/React et des bonnes pratiques DevOps, avec une capacité avérée à livrer du code fonctionnel dans des environnements Agile. Recherche un poste à responsabilités techniques plus marquées, tout en devant encore consolider son expertise en architecture distribuée et en leadership technique.",
+  "condition": "french",
+  "address_condition": "rich",
+  "nom_complet": "Thomas Martin",
+  "adresse": "8 avenue Victor Hugo, 75016 Paris",
+  "seed": 42
+}

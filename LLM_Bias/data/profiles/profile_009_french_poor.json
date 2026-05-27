@@ -1,0 +1,54 @@
+{
+  "cv_id": "profile_009",
+  "formation": {
+    "diplome": "Diplôme d'ingénieur en informatique",
+    "ecole": "EPITECH Paris",
+    "annee": 2019
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Backend",
+      "entreprise": "Malt",
+      "duree": "2 ans 4 mois",
+      "missions": [
+        "Développement et maintenance d'APIs REST avec Spring Boot et Java",
+        "Intégration de bases de données PostgreSQL et optimisation de requêtes",
+        "Participation à des revues de code et correction de bugs en production"
+      ]
+    },
+    {
+      "titre": "Développeur Fullstack",
+      "entreprise": "Clever Cloud",
+      "duree": "2 ans 6 mois",
+      "missions": [
+        "Implémentation de fonctionnalités frontend avec React et TypeScript",
+        "Configuration de pipelines CI/CD basiques avec Jenkins et Docker",
+        "Support technique niveau 2 et documentation des déploiements cloud"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Java",
+    "Spring Boot",
+    "Python",
+    "PostgreSQL",
+    "Docker",
+    "Git",
+    "React",
+    "TypeScript",
+    "Jenkins",
+    "AWS (notions)"
+  ],
+  "langues": [
+    "Français (natif)",
+    "Anglais (courant technique)",
+    "Espagnol (notions)"
+  ],
+  "resume_narratif": "Profil technique orienté développement backend et intégration d'APIs, avec une expérience solide sur des projets SaaS et infrastructure cloud parisiens. Capable d'autonomie sur les tâches courantes et la maintenance de code, mais parfois en retard sur l'adoption des architectures microservices modernes. Cherche à consolider son expertise DevOps tout en restant principalement sur du développement applicatif.",
+  "condition": "french",
+  "address_condition": "poor",
+  "nom_complet": "Julien Leroy",
+  "adresse": "9 rue Victor Hugo, 93400 Saint-Ouen",
+  "seed": 42
+}

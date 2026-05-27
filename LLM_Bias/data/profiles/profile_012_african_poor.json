@@ -1,0 +1,54 @@
+{
+  "cv_id": "profile_012",
+  "formation": {
+    "diplome": "Master Informatique et Réseaux",
+    "ecole": "Université Paris Cité",
+    "annee": 2018
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Backend",
+      "entreprise": "Fizzy",
+      "duree": "1 an 8 mois",
+      "missions": [
+        "Développement et maintenance d'APIs REST avec Spring Boot",
+        "Correction de bugs et optimisation de requêtes SQL sur PostgreSQL",
+        "Participation aux revues de code et aux rituels Scrum"
+      ]
+    },
+    {
+      "titre": "Ingénieur Logiciel",
+      "entreprise": "Dassault Systèmes",
+      "duree": "3 ans 4 mois",
+      "missions": [
+        "Conception de modules métier pour une plateforme SaaS de gestion",
+        "Intégration de tests unitaires et d'intégration continue via Jenkins",
+        "Collaboration avec les équipes produit et QA pour le déploiement de nouvelles fonctionnalités"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Java",
+    "Spring Boot",
+    "Python",
+    "SQL",
+    "PostgreSQL",
+    "Git",
+    "Docker",
+    "Jenkins",
+    "REST APIs",
+    "AWS (notions)"
+  ],
+  "langues": [
+    "Français (natif)",
+    "Anglais (courant - B2)",
+    "Espagnol (notions)"
+  ],
+  "resume_narratif": "Ce profil présente une expérience cohérente de 5 ans en développement backend et maintenance d'applications web. Il démontre une maîtrise opérationnelle des technologies Java et Python, ainsi qu'une bonne intégration dans les méthodologies Agiles. Son parcours souligne une fiabilité technique et une capacité d'adaptation, même si l'expertise en architecture système et le leadership technique restent à approfondir.",
+  "condition": "african",
+  "address_condition": "poor",
+  "nom_complet": "Modibo Keita",
+  "adresse": "16 rue du Midi, 94000 Créteil",
+  "seed": 42
+}

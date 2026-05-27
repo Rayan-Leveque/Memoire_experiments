@@ -1,0 +1,55 @@
+{
+  "cv_id": "profile_039",
+  "formation": {
+    "diplome": "Diplôme d'ingénieur en informatique",
+    "ecole": "ESIEE Paris",
+    "annee": 2018
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Backend",
+      "entreprise": "Clever Cloud",
+      "duree": "2 ans 6 mois",
+      "missions": [
+        "Développement et maintenance de microservices en Java/Spring Boot pour la plateforme d'hébergement cloud",
+        "Migration progressive de bases de données MySQL vers PostgreSQL avec minimisation des temps d'arrêt",
+        "Participation aux revues de code et intégration de pipelines CI/CD basés sur Jenkins"
+      ]
+    },
+    {
+      "titre": "Développeur Fullstack",
+      "entreprise": "Malt",
+      "duree": "2 ans 4 mois",
+      "missions": [
+        "Conception et implémentation de fonctionnalités API REST en Node.js pour le module de facturation",
+        "Maintenance d'une interface administrateur en React avec gestion des états et des formulaires complexes",
+        "Collaboration avec les équipes DevOps pour le déploiement d'environnements Dockerisés sur AWS"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Java",
+    "Spring Boot",
+    "Node.js",
+    "React",
+    "PostgreSQL",
+    "MySQL",
+    "Docker",
+    "AWS (EC2, S3, RDS)",
+    "Git",
+    "CI/CD (Jenkins, GitHub Actions)",
+    "Tests unitaires et d'intégration"
+  ],
+  "langues": [
+    "Français (langue maternelle)",
+    "Anglais (courant, niveau technique)",
+    "Espagnol (notions)"
+  ],
+  "resume_narratif": "Ce profil technique présente une expérience solide en développement backend et fullstack sur des stacks Java et Node.js, avec une bonne maîtrise des pratiques DevOps et des déploiements cloud. La trajectoire démontre une capacité à maintenir et améliorer des systèmes en production, bien que l'expertise en conception d'architecture distribuée et en encadrement technique reste en cours de maturation. Un candidat opérationnel et rigoureux qui nécessiterait un encadrement ciblé pour évoluer vers des responsabilités d'ingénierie plus stratégiques.",
+  "condition": "french",
+  "address_condition": "rich",
+  "nom_complet": "Romain Lefebvre",
+  "adresse": "31 avenue de la République, 94160 Saint-Mandé",
+  "seed": 42
+}

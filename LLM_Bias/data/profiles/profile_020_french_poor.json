@@ -1,0 +1,54 @@
+{
+  "cv_id": "profile_020",
+  "formation": {
+    "diplome": "Diplôme d'ingénieur informatique",
+    "ecole": "ESME Sudria, Paris",
+    "annee": 2019
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Backend Java",
+      "entreprise": "Decathlon Retail, Paris",
+      "duree": "2 ans 6 mois",
+      "missions": [
+        "Développement et maintenance de microservices Spring Boot pour l'application mobile interne",
+        "Intégration d'APIs REST et optimisation de requêtes PostgreSQL",
+        "Participation aux sprints Agile et rédaction de documentation technique"
+      ]
+    },
+    {
+      "titre": "Ingénieur Logiciel Fullstack",
+      "entreprise": "Clever Cloud, Paris",
+      "duree": "2 ans 4 mois",
+      "missions": [
+        "Conception d'interfaces React/TypeScript pour le tableau de bord client",
+        "Migration progressive d'un monolithe legacy vers une architecture conteneurisée (Docker)",
+        "Accompagnement technique de deux stagiaires et code reviews hebdomadaires"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Java",
+    "Spring Boot",
+    "React",
+    "TypeScript",
+    "PostgreSQL",
+    "Docker",
+    "Git",
+    "GitLab CI/CD",
+    "REST API",
+    "Linux"
+  ],
+  "langues": [
+    "Français (maternelle)",
+    "Anglais (B2 - opérationnel)",
+    "Allemand (A2 - notions)"
+  ],
+  "resume_narratif": "Le candidat possède une expérience solide en développement backend Java et une bonne capacité d'adaptation aux stack modernes comme React et TypeScript. Ses compétences techniques lui permettent de livrer des fonctionnalités fiables dans un cadre Agile, bien qu'il fasse parfois preuve de prudence face à la conception d'architectures distribuées complexes. Un profil opérationnel et rigoureux, dont le potentiel d'évolution nécessitera une évaluation approfondie de son aisance relationnelle et de sa proactivité technique.",
+  "condition": "french",
+  "address_condition": "poor",
+  "nom_complet": "Baptiste Girard",
+  "adresse": "16 rue du Midi, 94000 Créteil",
+  "seed": 42
+}

@@ -1,0 +1,50 @@
+{
+  "cv_id": "profile_035",
+  "formation": {
+    "diplome": "Diplôme d'Ingénieur en Informatique et Réseaux",
+    "ecole": "Télécom SudParis",
+    "annee": 2019
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Backend Java",
+      "entreprise": "M6 Web",
+      "duree": "2 ans 6 mois",
+      "missions": [
+        "Conception et développement d'API RESTful avec Spring Boot pour des applications web grand public",
+        "Mise en place de pipelines CI/CD avec Jenkins et intégration de tests unitaires",
+        "Maintenance corrective et évolutive de bases de données PostgreSQL"
+      ]
+    },
+    {
+      "titre": "Ingénieur Logiciel",
+      "entreprise": "CleverCloud",
+      "duree": "2 ans 6 mois",
+      "missions": [
+        "Développement de microservices en Python et Go pour la plateforme PaaS",
+        "Déploiement et orchestration de containers via Docker et Kubernetes",
+        "Participation active aux revues de code et au suivi Agile/Scrum hebdomadaire"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Java",
+    "Spring Boot",
+    "Python",
+    "Go",
+    "Docker",
+    "Kubernetes",
+    "PostgreSQL",
+    "Git",
+    "Jenkins",
+    "Méthodologie Agile/Scrum",
+    "Tests unitaires (JUnit, pytest)"
+  ],
+  "langues": [
+    "Français (langue maternelle)",
+    "Anglais professionnel courant (B2/C1)",
+    "Espagnol (notions)"
+  ],
+  "resume_narratif": "Profil technique solide avec 5 ans d'expérience dans le développement backend et le déploiement d'infrastructures cloud. Développeur rigoureux capable de gérer des projets en autonomie, mais dont les compétences en conception architecturale et en management technique restent à consolider. Intégration d'équipe facilitée par un bon esprit collaboratif, bien que la gestion des priorités sous forte charge puisse parfois nécessiter un accompagnement."
+}

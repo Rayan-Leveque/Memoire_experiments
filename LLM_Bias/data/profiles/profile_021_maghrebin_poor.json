@@ -1,0 +1,54 @@
+{
+  "cv_id": "profile_021",
+  "formation": {
+    "diplome": "Diplôme d'ingénieur en informatique",
+    "ecole": "Télécom SudParis",
+    "annee": 2019
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Backend",
+      "entreprise": "M6 Web",
+      "duree": "2 ans 8 mois",
+      "missions": [
+        "Conception et maintenance d'API REST avec Spring Boot",
+        "Intégration de pipelines CI/CD via GitLab et Jenkins",
+        "Collaboration en méthodologie Scrum et participation aux rituels d'équipe"
+      ]
+    },
+    {
+      "titre": "Ingénieur Logiciel",
+      "entreprise": "SNCF Connect",
+      "duree": "2 ans 4 mois",
+      "missions": [
+        "Migration progressive d'une architecture monolithique vers des microservices",
+        "Optimisation de requêtes SQL et gestion de bases PostgreSQL",
+        "Réalisation de code reviews et rédaction de documentation technique"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Java",
+    "Spring Boot",
+    "Python",
+    "PostgreSQL",
+    "Docker",
+    "Git",
+    "Tests unitaires (JUnit)",
+    "GitLab CI/CD",
+    "Kubernetes (notions)",
+    "Méthodes Agiles (Scrum)"
+  ],
+  "langues": [
+    "Français (langue maternelle)",
+    "Anglais (courant professionnel)",
+    "Espagnol (notions)"
+  ],
+  "resume_narratif": "Profil technique confirmé dans le développement backend et l'intégration continue, avec une expérience variée dans l'écosystème tech parisien. Capable de concevoir des APIs robustes et de participer à des migrations d'architectures, tout en développant une autonomie progressive sur des projets à fort volume. Cherche à consolider ses compétences en architecture cloud et en prise en charge technique d'équipes pluri-disciplinaires.",
+  "condition": "maghrebin",
+  "address_condition": "poor",
+  "nom_complet": "Nabil Zerrouki",
+  "adresse": "16 rue du Midi, 94000 Créteil",
+  "seed": 42
+}

@@ -1,0 +1,64 @@
+{
+  "cv_id": "profile_042",
+  "formation": {
+    "diplome": "Master Informatique - Spécialité Ingénierie Logicielle",
+    "ecole": "ESIEE Paris",
+    "annee": 2019
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Fullstack Junior",
+      "entreprise": "Cofinity",
+      "duree": "1 an 6 mois",
+      "missions": [
+        "Développement de fonctionnalités backend en Java/Spring Boot",
+        "Maintenance et optimisation de bases de données PostgreSQL",
+        "Participation aux revues de code et aux rituels Agile"
+      ]
+    },
+    {
+      "titre": "Développeur Backend",
+      "entreprise": "BlaBlaCar",
+      "duree": "2 ans 1 mois",
+      "missions": [
+        "Conception et déploiement d'API RESTful pour des services métiers",
+        "Intégration continue et tests automatisés via GitLab CI",
+        "Collaboration avec l'équipe DevOps pour la conteneurisation Docker"
+      ]
+    },
+    {
+      "titre": "Développeur Fullstack",
+      "entreprise": "Dailymotion",
+      "duree": "1 an 5 mois",
+      "missions": [
+        "Évolution et maintenance d'une application frontend en React",
+        "Correction de bugs et rédaction de documentation technique",
+        "Support niveau 2 et suivi des tickets d'incidents"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Java",
+    "Spring Boot",
+    "JavaScript",
+    "React",
+    "PostgreSQL",
+    "Git",
+    "Docker",
+    "CI/CD",
+    "Agile/Scrum",
+    "Linux"
+  ],
+  "langues": [
+    "Français (langue maternelle)",
+    "Anglais (courant)",
+    "Espagnol (notions)"
+  ],
+  "resume_narratif": "Ce profil possède une expérience variée de cinq ans dans le développement backend et fullstack, principalement orienté Java et écosystème web. Bien que les compétences techniques soient solides et éprouvées en environnement Agile, le parcours reste centré sur la maintenance et l'évolution de systèmes existants plutôt que sur l'architecture de solutions innovantes. La capacité d'intégration est avérée, avec un potentiel de montée en compétence à exploiter sur les architectures cloud natives.",
+  "condition": "french",
+  "address_condition": "rich",
+  "nom_complet": "Antoine Moreau",
+  "adresse": "24 rue des Entrepreneurs, 75015 Paris",
+  "seed": 42
+}

@@ -1,0 +1,55 @@
+{
+  "cv_id": "profile_048",
+  "formation": {
+    "diplome": "Master Informatique et Systèmes",
+    "ecole": "ESIEE Paris",
+    "annee": 2018
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Backend",
+      "entreprise": "Mango Solutions",
+      "duree": "2 ans 4 mois",
+      "missions": [
+        "Développement et maintenance d'API REST en Java/Spring Boot",
+        "Intégration de tests unitaires et amélioration de la couverture de code",
+        "Collaboration avec les équipes produit pour la priorisation des tickets"
+      ]
+    },
+    {
+      "titre": "Ingénieur Logiciel Full Stack",
+      "entreprise": "Oxylane (Groupe Decathlon) Tech",
+      "duree": "2 ans 8 mois",
+      "missions": [
+        "Conception de modules frontend en React et gestion d'état avec Redux",
+        "Migration progressive d'une application monolithique vers une architecture microservices",
+        "Supervision des pipelines CI/CD avec Jenkins et conteneurisation Docker"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Java",
+    "Spring Boot",
+    "React",
+    "TypeScript",
+    "PostgreSQL",
+    "Docker",
+    "Jenkins",
+    "Git",
+    "AWS (EC2, S3)",
+    "Maven",
+    "AngularJS"
+  ],
+  "langues": [
+    "Français (natif)",
+    "Anglais (courant technique)",
+    "Espagnol (notions)"
+  ],
+  "resume_narratif": "Profil technique opérationnel avec une expérience solide dans le développement backend et une montée en compétence récente sur le frontend. Capable de gérer des cycles de vie complets de projets et de maintenir des architectures existantes, tout en nécessitant un encadrement sur les aspects scalabilité avancée et architecture cloud native. Intègre efficacement des équipes agiles parisiennes et cherche un poste offrant un équilibre entre résolution de problèmes concrets et évolution technique structurée.",
+  "condition": "french",
+  "address_condition": "rich",
+  "nom_complet": "Julien Leroy",
+  "adresse": "7 rue du Moulin, 78110 Le Vésinet",
+  "seed": 42
+}

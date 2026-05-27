@@ -1,0 +1,54 @@
+{
+  "cv_id": "profile_029",
+  "formation": {
+    "diplome": "Master 2 Informatique et Ingénierie Logicielle",
+    "ecole": "ESIEE Paris",
+    "annee": 2019
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Backend Python",
+      "entreprise": "Cegid",
+      "duree": "3 ans 2 mois",
+      "missions": [
+        "Développement et maintenance de modules backend avec Python/Django pour un ERP B2B",
+        "Migration progressive de services monolithiques vers des conteneurs Docker",
+        "Rédaction de tests unitaires et support technique niveau 2 aux équipes produit"
+      ]
+    },
+    {
+      "titre": "Développeur Fullstack",
+      "entreprise": "Alan",
+      "duree": "1 an 10 mois",
+      "missions": [
+        "Intégration de nouvelles fonctionnalités front-end avec React et TypeScript",
+        "Participation aux revues de code et à l'optimisation des temps de réponse API REST",
+        "Mise en place de pipelines CI/CD basiques sur GitLab et rédaction de documentation"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Python",
+    "Django",
+    "PostgreSQL",
+    "React",
+    "TypeScript",
+    "Docker",
+    "Git",
+    "GitLab CI/CD",
+    "API REST",
+    "Linux"
+  ],
+  "langues": [
+    "Français (langue maternelle)",
+    "Anglais (courant)",
+    "Espagnol (notions)"
+  ],
+  "resume_narratif": "Ce profil cumule cinq années d'expérience en développement logiciel, principalement sur des stacks Python et JavaScript au sein d'entreprises parisiennes. Bien que solide sur les aspects backend et la maintenance de systèmes existants, sa maîtrise des architectures cloud natives et des méthodologies DevOps avancées reste à consolider. Il fait preuve d'une bonne autonomie sur les tâches courantes mais nécessite un encadrement ponctuel pour les projets à forte complexité technique.",
+  "condition": "french",
+  "address_condition": "poor",
+  "nom_complet": "Maxime Simon",
+  "adresse": "31 avenue du Général de Gaulle, 93140 Bondy",
+  "seed": 42
+}

@@ -1,0 +1,54 @@
+{
+  "cv_id": "profile_023",
+  "formation": {
+    "diplome": "Master Informatique & Systèmes d'Information",
+    "ecole": "ESIEE Paris",
+    "annee": 2018
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Backend Java",
+      "entreprise": "Qonto",
+      "duree": "2 ans 2 mois",
+      "missions": [
+        "Développement de microservices RESTful avec Spring Boot",
+        "Migration progressive d'une monolithe vers une architecture conteneurisée (Docker/Kubernetes)",
+        "Participation à la revue de code et mise en place de tests d'intégration"
+      ]
+    },
+    {
+      "titre": "Ingénieur Logiciel Senior",
+      "entreprise": "Doctolib",
+      "duree": "2 ans 5 mois",
+      "missions": [
+        "Conception et déploiement de fonctionnalités critiques sur la plateforme de prise de rendez-vous",
+        "Optimisation des performances de bases de données PostgreSQL et mise en cache Redis",
+        "Mentorat de 2 développeurs juniors et coordination avec les équipes DevOps"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Java 11+",
+    "Spring Boot",
+    "Python",
+    "Docker",
+    "Kubernetes",
+    "PostgreSQL",
+    "AWS (EC2, RDS, S3)",
+    "Git",
+    "CI/CD (Jenkins/GitLab)",
+    "Méthodes Agiles (Scrum)"
+  ],
+  "langues": [
+    "Français (natif)",
+    "Anglais (courant)",
+    "Espagnol (bases)"
+  ],
+  "resume_narratif": "Ce profil possède 5 ans d'expérience dans le développement backend et l'ingénierie logiciel au sein de fintech et healthtech françaises. Solide maîtrise de l'écosystème Java/Spring et des pratiques DevOps modernes, avec une expérience notable dans la migration d'architectures et l'optimisation de performances. Apprécient le travail en équipe agile et la transmission technique aux juniors.",
+  "condition": "maghrebin",
+  "address_condition": "poor",
+  "nom_complet": "Rachid Hamdi",
+  "adresse": "9 rue Victor Hugo, 93400 Saint-Ouen",
+  "seed": 42
+}

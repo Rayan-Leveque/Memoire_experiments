@@ -1,0 +1,48 @@
+{
+  "cv_id": "profile_024",
+  "formation": {
+    "diplome": "Diplôme d'ingénieur en informatique",
+    "ecole": "INSA Toulouse",
+    "annee": 2018
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Backend",
+      "entreprise": "Klip",
+      "duree": "2 ans 6 mois",
+      "missions": [
+        "Développement et maintenance d'API REST avec Spring Boot",
+        "Participation aux revues de code et résolution de bugs en production",
+        "Collaboration avec les équipes QA pour la rédaction de tests unitaires et d'intégration"
+      ]
+    },
+    {
+      "titre": "Ingénieur Logiciel",
+      "entreprise": "Boulanger",
+      "duree": "2 ans 4 mois",
+      "missions": [
+        "Contribution à la refonte de la plateforme e-commerce et optimisation des requêtes PostgreSQL",
+        "Mise en place de pipelines CI/CD avec Jenkins et conteneurisation Docker",
+        "Participation active aux rituels Scrum et accompagnement ponctuel des stagiaires"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Java",
+    "Spring Boot",
+    "PostgreSQL",
+    "Docker",
+    "Jenkins",
+    "Git",
+    "React (notions)",
+    "AWS (EC2, S3)",
+    "Agile/Scrum"
+  ],
+  "langues": [
+    "Français (langue maternelle)",
+    "Anglais (courant)",
+    "Espagnol (notions)"
+  ],
+  "resume_narratif": "Profil technique solide avec une expérience confirmée en développement backend Java et en déploiement d'applications web. Démonstre une bonne capacité à intégrer les bonnes pratiques DevOps et à collaborer en équipe agile, tout en présentant des lacunes dans la conception architecturale complexe et la maîtrise des écosystèmes cloud avancés. Trajectoire cohérente et progression régulière, mais manque encore d'initiatives fortes en conduite de projet à grande échelle."
+}

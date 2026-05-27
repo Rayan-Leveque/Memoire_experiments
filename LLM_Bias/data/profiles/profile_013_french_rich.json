@@ -1,0 +1,54 @@
+{
+  "cv_id": "profile_013",
+  "formation": {
+    "diplome": "Diplôme d'ingénieur en informatique",
+    "ecole": "Epitech Paris",
+    "annee": 2019
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Backend",
+      "entreprise": "Zenika",
+      "duree": "1 an 6 mois",
+      "missions": [
+        "Développement et maintenance d'applications Java/Spring pour des clients du secteur bancaire",
+        "Participation à des sprints Agile et rédaction de documentation technique",
+        "Correction de bugs et intégration de fonctionnalités sur des codebases legacy"
+      ]
+    },
+    {
+      "titre": "Ingénieur Logiciel",
+      "entreprise": "Kooz",
+      "duree": "3 ans",
+      "missions": [
+        "Conception et développement d'API RESTful en Python et FastAPI pour une plateforme SaaS",
+        "Mise en place de pipelines CI/CD avec Docker et GitHub Actions",
+        "Collaboration avec les équipes produit pour prioriser les tickets et gérer partiellement la dette technique"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Java",
+    "Spring Boot",
+    "Python",
+    "FastAPI",
+    "PostgreSQL",
+    "Docker",
+    "Git",
+    "CI/CD",
+    "AWS (S3, EC2)",
+    "Méthodologies Agiles"
+  ],
+  "langues": [
+    "Français (langue maternelle)",
+    "Anglais (courant professionnel)",
+    "Allemand (notions)"
+  ],
+  "resume_narratif": "Issu d'une école d'ingénieurs parisiennes, ce profil a exercé en conseil puis en éditeur de logiciels, acquérant une expérience polyvalente sur les stacks Java et Python. Il maîtrise correctement les pratiques DevOps de base et travaille efficacement en Agile, mais n'a pas encore piloté d'architectures distribuées à grande échelle. Son approche reste pragmatique et orientée résolution de problèmes, avec une marge de progression sur la conception système et l'automatisation avancée des tests.",
+  "condition": "french",
+  "address_condition": "rich",
+  "nom_complet": "Nicolas Bernard",
+  "adresse": "6 rue du Général Leclerc, 94300 Vincennes",
+  "seed": 42
+}

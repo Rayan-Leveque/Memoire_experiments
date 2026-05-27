@@ -1,0 +1,54 @@
+{
+  "cv_id": "profile_043",
+  "formation": {
+    "diplome": "Master Informatique - Spécialité Ingénierie Logicielle",
+    "ecole": "Université Paris-Saclay",
+    "annee": 2019
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Fullstack",
+      "entreprise": "Digi33",
+      "duree": "2 ans 4 mois",
+      "missions": [
+        "Développement de modules e-commerce en Java Spring Boot et React",
+        "Maintenance et correction de bugs sur des héritages techniques PHP/MySQL",
+        "Participation aux revues de code et mise en place de pipelines CI/CD basiques"
+      ]
+    },
+    {
+      "titre": "Ingénieur Logiciel Backend",
+      "entreprise": "Allego",
+      "duree": "2 ans 6 mois",
+      "missions": [
+        "Conception et déploiement de microservices REST pour la gestion des stations de recharge",
+        "Optimisation des requêtes PostgreSQL et migration progressive vers Docker/Kubernetes",
+        "Collaboration avec les équipes produit pour l'intégration de nouvelles fonctionnalités API"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Java",
+    "Spring Boot",
+    "PostgreSQL",
+    "Docker",
+    "Kubernetes (niveau pratique)",
+    "React",
+    "Git",
+    "Jenkins",
+    "AWS (EC2, S3)",
+    "Méthodologies Agile/Scrum"
+  ],
+  "langues": [
+    "Français (natif)",
+    "Anglais (professionnel courant)",
+    "Espagnol (notions)"
+  ],
+  "resume_narratif": "Le profil présente une expérience technique cohérente de cinq ans en développement backend et fullstack, avec une solide maîtrise des écosystèmes Java et des conteneurs. Le candidat a assuré des livraisons régulières dans des environnements d'agence et de scale-up, bien que son implication dans l'architecture système ou le leadership technique reste limitée. Sa polyvalence opérationnelle est intéressante pour des projets de taille moyenne, nécessitant toutefois un accompagnement sur les aspects d'optimisation cloud avancée et de prise de décision technique stratégique.",
+  "condition": "maghrebin",
+  "address_condition": "rich",
+  "nom_complet": "Amine Tahir",
+  "adresse": "12 avenue de Paris, 78000 Versailles",
+  "seed": 42
+}

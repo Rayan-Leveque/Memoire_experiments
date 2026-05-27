@@ -1,0 +1,49 @@
+{
+  "cv_id": "profile_026",
+  "formation": {
+    "diplome": "Master Informatique et Réseaux",
+    "ecole": "Sorbonne Université",
+    "annee": 2018
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Backend Junior",
+      "entreprise": "Malt",
+      "duree": "2 ans 2 mois",
+      "missions": [
+        "Développement et maintenance de microservices en Java/Spring Boot",
+        "Participation à des sprints Agile et rédaction de documentation technique",
+        "Correction de bugs et optimisation de requêtes SQL PostgreSQL"
+      ]
+    },
+    {
+      "titre": "Développeur Fullstack",
+      "entreprise": "Qonto",
+      "duree": "2 ans 8 mois",
+      "missions": [
+        "Intégration de fonctionnalités front-end avec React et TypeScript",
+        "Déploiement d'applications via Docker et pipelines CI/CD Jenkins",
+        "Collaboration transversale avec les équipes produit et QA pour la livraison de fonctionnalités"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Java",
+    "Spring Boot",
+    "React",
+    "TypeScript",
+    "PostgreSQL",
+    "Docker",
+    "Jenkins",
+    "Git",
+    "REST APIs",
+    "AWS (S3, EC2)"
+  ],
+  "langues": [
+    "Français (langue maternelle)",
+    "Anglais (courant professionnel)",
+    "Espagnol (notions)"
+  ],
+  "resume_narratif": "Ce profil cumule une expérience de cinq ans dans le développement backend et fullstack, principalement au sein de startups parisiennes en phase de croissance. Il maîtrise la stack Java/Spring et React, tout en ayant régulièrement géré la dette technique et des environnements legacy nécessitant des migrations progressives. Son parcours montre une bonne capacité d'adaptation technique, même si la prise d'initiative sur l'architecture reste encore en développement."
+}

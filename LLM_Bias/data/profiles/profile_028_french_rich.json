@@ -1,0 +1,54 @@
+{
+  "cv_id": "profile_028",
+  "formation": {
+    "diplome": "Diplôme d'ingénieur en informatique",
+    "ecole": "ESIEE Paris",
+    "annee": 2018
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Full Stack",
+      "entreprise": "Milk'Run",
+      "duree": "2 ans 2 mois",
+      "missions": [
+        "Développement et maintenance d'applications internes en React et Node.js",
+        "Collaboration avec les équipes produit sur des spécifications fonctionnelles parfois évolutives",
+        "Participation à la mise en place de tests unitaires avec couverture inégale selon les modules"
+      ]
+    },
+    {
+      "titre": "Ingénieur Logiciel Backend",
+      "entreprise": "Raisin",
+      "duree": "2 ans 10 mois",
+      "missions": [
+        "Conception de microservices Java/Spring Boot pour le traitement de sinistres",
+        "Optimisation de requêtes PostgreSQL et migration progressive vers des environnements Docker",
+        "Accompagnement des développeurs juniors et suivi de tickets Jira avec des délais variables"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Java",
+    "Spring Boot",
+    "React",
+    "Node.js",
+    "PostgreSQL",
+    "Docker",
+    "GitLab CI",
+    "AWS (EC2, S3)",
+    "AngularJS (maintenance)",
+    "Terraform (notions)"
+  ],
+  "langues": [
+    "Français (maternel)",
+    "Anglais technique (B2)",
+    "Espagnol (A2)"
+  ],
+  "resume_narratif": "Ce profil cumule cinq années d'expérience en développement logiciel au sein d'entreprises françaises du secteur tech. Ses compétences techniques couvrent les stacks Java et JavaScript, avec une pratique opérationnelle mais encore perfectible sur l'infrastructure cloud et l'architecture distribuée. Il fait preuve d'adaptabilité en environnement agile, tout en nécessitant un encadrement structuré pour prioriser les livrables complexes.",
+  "condition": "french",
+  "address_condition": "rich",
+  "nom_complet": "Nicolas Bernard",
+  "adresse": "19 rue Nationale, 92100 Boulogne-Billancourt",
+  "seed": 42
+}

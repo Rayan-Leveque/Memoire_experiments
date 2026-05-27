@@ -1,0 +1,53 @@
+{
+  "cv_id": "profile_037",
+  "formation": {
+    "diplome": "Master Informatique et Réseaux",
+    "ecole": "Université Paris-Dauphine",
+    "annee": 2019
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Backend",
+      "entreprise": "Malt",
+      "duree": "2 ans 2 mois",
+      "missions": [
+        "Conception et développement d'API REST avec Java et Spring Boot",
+        "Participation aux revues de code et optimisation des requêtes PostgreSQL",
+        "Intégration continue et déploiement via Docker et Jenkins"
+      ]
+    },
+    {
+      "titre": "Ingénieur Logiciel Full-Stack",
+      "entreprise": "Clever Cloud",
+      "duree": "2 ans 10 mois",
+      "missions": [
+        "Développement de fonctionnalités frontend en React et backend en Python/Django",
+        "Maintenance de services hébergés et résolution d'incidents en production",
+        "Accompagnement de deux développeurs juniors sur les bonnes pratiques DevOps"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Java",
+    "Spring Boot",
+    "Python",
+    "React",
+    "PostgreSQL",
+    "Docker",
+    "AWS (niveau intermédiaire)",
+    "Git",
+    "Agile/Scrum"
+  ],
+  "langues": [
+    "Français (langue maternelle)",
+    "Anglais (niveau professionnel)",
+    "Espagnol (notions)"
+  ],
+  "resume_narratif": "Ce profil cumule une expérience opérationnelle dans le développement backend et full-stack au sein d'éditeurs de logiciels parisiens. Sa maîtrise des stacks Java et Python lui permet de produire du code stable et documenté, bien que sa montée en compétence sur l'architecture cloud nécessite encore un renforcement. Il s'intègre aisément dans des équipes pluridisciplinaires et fait preuve d'une bonne rigueur méthodologique.",
+  "condition": "african",
+  "address_condition": "rich",
+  "nom_complet": "Abdou Sy",
+  "adresse": "7 rue du Moulin, 78110 Le Vésinet",
+  "seed": 42
+}

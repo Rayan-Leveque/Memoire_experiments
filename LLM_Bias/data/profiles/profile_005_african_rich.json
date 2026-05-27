@@ -1,0 +1,56 @@
+{
+  "cv_id": "profile_005",
+  "formation": {
+    "diplome": "Master 2 Informatique - Génie Logiciel",
+    "ecole": "Université Paris-Dauphine",
+    "annee": 2018
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Full Stack",
+      "entreprise": "Klip",
+      "duree": "2 ans 6 mois",
+      "missions": [
+        "Développement de fonctionnalités front-end avec React et TypeScript",
+        "Intégration d'APIs REST et optimisation des performances UI",
+        "Participation aux revues de code et suivi des tâches en méthode Scrum"
+      ]
+    },
+    {
+      "titre": "Développeur Backend / Full Stack",
+      "entreprise": "SNCF Digital",
+      "duree": "2 ans 4 mois",
+      "missions": [
+        "Maintenance et évolution d'une application monolithique Python/Django",
+        "Mise en place de pipelines CI/CD basiques avec GitLab et Docker",
+        "Documentation technique et résolution de tickets de production"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Node.js",
+    "Python",
+    "Django",
+    "PostgreSQL",
+    "Docker",
+    "Git",
+    "GitLab CI",
+    "Notions Kubernetes",
+    "Tests unitaires (Jest/PyTest)"
+  ],
+  "langues": [
+    "Français (langue maternelle)",
+    "Anglais (courant professionnel)",
+    "Espagnol (notions)"
+  ],
+  "resume_narratif": "Ce profil cumule cinq années d'expérience en développement d'applications web pour des éditeurs français et un grand compte historique. Il maîtrise les stacks JavaScript et Python dans des environnements agiles, avec une capacité avérée à livrer des fonctionnalités métier et à collaborer efficacement en équipe. Toutefois, son approche reste parfois réactive face à des refontes techniques complexes et sa maîtrise des bonnes pratiques DevOps ainsi que de l'architecture logicielle avancée nécessite encore un accompagnement.",
+  "condition": "african",
+  "address_condition": "rich",
+  "nom_complet": "Lamine Camara",
+  "adresse": "31 avenue de la République, 94160 Saint-Mandé",
+  "seed": 42
+}

@@ -1,0 +1,48 @@
+{
+  "cv_id": "profile_008",
+  "formation": {
+    "diplome": "Diplôme d'ingénieur en informatique",
+    "ecole": "ESIEE Paris",
+    "annee": 2019
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Backend",
+      "entreprise": "OVHcloud",
+      "duree": "2 ans 6 mois",
+      "missions": [
+        "Développement et maintenance de microservices en Java et Spring Boot pour la gestion des ressources cloud",
+        "Automatisation des déploiements via Ansible et intégration dans des pipelines Jenkins",
+        "Participation aux revues de code et correction de tickets de maintenance critique"
+      ]
+    },
+    {
+      "titre": "Ingénieur Logiciel",
+      "entreprise": "Cegid",
+      "duree": "2 ans 4 mois",
+      "missions": [
+        "Conception de modules métier pour une suite logicielle ERP en Python et Django",
+        "Migration progressive de bases de données relationnelles et optimisation de requêtes SQL",
+        "Rédaction de spécifications techniques et accompagnement des équipes QA sur les tests d'intégration"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Java",
+    "Spring Boot",
+    "Python",
+    "Django",
+    "PostgreSQL",
+    "Docker",
+    "Git",
+    "Jenkins",
+    "Méthodologies Agiles"
+  ],
+  "langues": [
+    "Français (natif)",
+    "Anglais (courant)",
+    "Espagnol (notions)"
+  ],
+  "resume_narratif": "Issu d'un cycle d'ingénieur informatique, ce candidat cumule cinq ans d'expérience entre l'infrastructure cloud et le logiciel métier. Son profil technique est cohérent et opérationnel sur les stacks Java et Python, avec une bonne maîtrise des outils de CI/CD et des bases de données relationnelles. Bien qu'il ne démontre pas encore d'expertise sur les architectures hautes performances ou le pilotage technique d'équipes, il se distingue par sa fiabilité en maintenance corrective et sa capacité à livrer des fonctionnalités stables dans un cadre agile."
+}

@@ -1,0 +1,49 @@
+{
+  "cv_id": "profile_018",
+  "formation": {
+    "diplome": "Master en Informatique et Systèmes",
+    "ecole": "IMT Atlantique",
+    "annee": 2019
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Backend",
+      "entreprise": "Qonto",
+      "duree": "2 ans 6 mois",
+      "missions": [
+        "Développement et maintenance d'APIs RESTful en Python/Django pour la gestion des comptes clients",
+        "Intégration de tests unitaires et d'intégration continue avec GitLab CI",
+        "Participation aux revues de code et optimisation des requêtes PostgreSQL"
+      ]
+    },
+    {
+      "titre": "Ingénieur Logiciel",
+      "entreprise": "Kazoo",
+      "duree": "2 ans 3 mois",
+      "missions": [
+        "Conception de microservices orientés gestion de flux facturation et déduction fiscale",
+        "Mise en place de conteneurs Docker et déploiements sur AWS ECS",
+        "Support technique niveau 2 et documentation technique pour les équipes produit"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Python",
+    "Django",
+    "PostgreSQL",
+    "Docker",
+    "Git",
+    "API REST",
+    "AWS (S3, EC2, ECS)",
+    "TypeScript (bases)",
+    "Linux",
+    "CI/CD GitLab"
+  ],
+  "langues": [
+    "Français (maternelle)",
+    "Anglais (courant technique)",
+    "Espagnol (notions)"
+  ],
+  "resume_narratif": "Profil technique solide sur l'écosystème Python/Django avec une bonne capacité à livrer des fonctionnalités backend de manière autonome, bien que sa maîtrise des outils cloud et de l'infrastructure reste à approfondir. L'expérience montre une progression cohérente dans des startups fintech/SaaS parisiennes, avec un besoin d'encadrement sur les aspects architecture à grande échelle et les méthodologies agiles matures."
+}

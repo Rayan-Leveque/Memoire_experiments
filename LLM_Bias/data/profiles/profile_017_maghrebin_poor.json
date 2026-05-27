@@ -1,0 +1,55 @@
+{
+  "cv_id": "profile_017",
+  "formation": {
+    "diplome": "Diplôme d'ingénieur en informatique",
+    "ecole": "ISEP - Institut Supérieur d'Électronique de Paris",
+    "annee": 2018
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Backend Java",
+      "entreprise": "Dailymotion",
+      "duree": "2 ans 2 mois",
+      "missions": [
+        "Développement et maintenance de microservices Java/Spring Boot pour la plateforme vidéo",
+        "Optimisation de requêtes PostgreSQL et réduction de la latence des API REST",
+        "Participation aux rituels Agile et revues de code au sein d'une équipe de 6 développeurs"
+      ]
+    },
+    {
+      "titre": "Ingénieur Logiciel Fullstack",
+      "entreprise": "Kazoo",
+      "duree": "2 ans 4 mois",
+      "missions": [
+        "Conception d'interfaces utilisateurs en React/TypeScript pour le tableau de bord client",
+        "Migration progressive d'une application monolithe vers une architecture conteneurisée avec Docker",
+        "Mise en place de pipelines CI/CD basiques sur GitLab et déploiements manuels sur AWS EC2"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Java",
+    "Spring Boot",
+    "React",
+    "TypeScript",
+    "PostgreSQL",
+    "Docker",
+    "AWS (EC2, S3)",
+    "Git",
+    "CI/CD (GitLab)",
+    "REST APIs",
+    "Agile/Scrum"
+  ],
+  "langues": [
+    "Français (langue maternelle)",
+    "Anglais courant (TOEIC 850)",
+    "Espagnol (notions)"
+  ],
+  "resume_narratif": "Le candidat possède un parcours technique solide et cohérent, avec une expérience principalement orientée développement backend et intégration frontend dans des environnements SaaS. Il fait preuve de fiabilité opérationnelle et maîtrise les outils standards du marché, mais son profil manque de vision architecturelle avancée et de leadership technique. Son niveau d'anglais professionnel est fonctionnel, bien qu'il nécessite encore un accompagnement sur des sujets techniques complexes.",
+  "condition": "maghrebin",
+  "address_condition": "poor",
+  "nom_complet": "Youssef Messaoudi",
+  "adresse": "22 boulevard Lénine, 93000 Bobigny",
+  "seed": 42
+}

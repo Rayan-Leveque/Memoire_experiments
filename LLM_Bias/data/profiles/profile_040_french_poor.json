@@ -1,0 +1,55 @@
+{
+  "cv_id": "profile_040",
+  "formation": {
+    "diplome": "Master 2 Informatique",
+    "ecole": "Université Paris-Saclay",
+    "annee": 2018
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Backend",
+      "entreprise": "Clever Cloud",
+      "duree": "2 ans 4 mois",
+      "missions": [
+        "Développement et maintenance d'API RESTful en Node.js et Python",
+        "Intégration de bases de données PostgreSQL et optimisation des requêtes",
+        "Participation à la mise en place de tests unitaires et d'intégration continue"
+      ]
+    },
+    {
+      "titre": "Ingénieur Logiciel Full-Stack",
+      "entreprise": "Malt",
+      "duree": "2 ans 8 mois",
+      "missions": [
+        "Conception et déploiement de fonctionnalités front-end en React et TypeScript",
+        "Accompagnement technique de deux développeurs juniors et revue de code hebdomadaire",
+        "Migration progressive de services monolithiques vers une architecture micro-services avec Docker et AWS"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "JavaScript",
+    "TypeScript",
+    "Node.js",
+    "React",
+    "Python",
+    "PostgreSQL",
+    "Docker",
+    "AWS (EC2, S3)",
+    "Git",
+    "Jira",
+    "CI/CD (GitLab CI)"
+  ],
+  "langues": [
+    "Français (natif)",
+    "Anglais (courant - B2)",
+    "Espagnol (notions)"
+  ],
+  "resume_narratif": "Ce profil cumule cinq ans d'expérience en développement logiciel, principalement sur des stacks JavaScript et Python, avec une orientation claire vers le backend et le full-stack. Il a démontré une bonne capacité d'intégration dans des équipes agiles et une maîtrise opérationnelle des outils DevOps courants, tout en affichant des limites sur l'optimisation des performances à haute charge et la conception d'architectures distribuées complexes. Son parcours est solide et fiable, mais son évolution récente suggère un besoin de consolidation technique sur les pratiques cloud natives avancées.",
+  "condition": "french",
+  "address_condition": "poor",
+  "nom_complet": "Pierre Dupont",
+  "adresse": "22 boulevard Lénine, 93000 Bobigny",
+  "seed": 42
+}

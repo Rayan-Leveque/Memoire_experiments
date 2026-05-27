@@ -1,0 +1,49 @@
+{
+  "cv_id": "profile_025",
+  "formation": {
+    "diplome": "Diplôme d'ingénieur en informatique",
+    "ecole": "Epitech Paris",
+    "annee": 2019
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Développeur Backend",
+      "entreprise": "Raisin",
+      "duree": "2 ans 8 mois",
+      "missions": [
+        "Développement et maintenance de microservices en Python et Django",
+        "Participation à la refonte de l'API REST pour améliorer les temps de réponse",
+        "Collaboration avec l'équipe DevOps pour l'intégration continue"
+      ]
+    },
+    {
+      "titre": "Ingénieur Logiciel",
+      "entreprise": "Klip",
+      "duree": "2 ans 4 mois",
+      "missions": [
+        "Conception de fonctionnalités métier en Go et PostgreSQL",
+        "Mise en place de pipelines CI/CD avec GitLab et Docker",
+        "Documentation technique et support aux équipes front-end"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Python",
+    "Go",
+    "PostgreSQL",
+    "Docker",
+    "Kubernetes",
+    "AWS",
+    "Git",
+    "API REST",
+    "GitLab CI",
+    "Agile/Scrum"
+  ],
+  "langues": [
+    "Français (langue maternelle)",
+    "Anglais (professionnel)",
+    "Espagnol (notions)"
+  ],
+  "resume_narratif": "Candidat issu d'une formation ingénieur, possédant une expérience solide en développement backend et en architecture de microservices. Ses compétences techniques sont adaptées aux environnements modernes, bien que son parcours montre une alternance entre projets autonomes et collaborations en équipe. Le profil démontre une bonne capacité d'adaptation aux méthodologies agiles et une volonté d'évoluer sur des défis techniques plus complexes."
+}

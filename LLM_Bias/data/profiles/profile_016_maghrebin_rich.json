@@ -1,0 +1,54 @@
+{
+  "cv_id": "profile_016",
+  "formation": {
+    "diplome": "Master Informatique",
+    "ecole": "EPITA",
+    "annee": 2018
+  },
+  "experience_annees": 5,
+  "postes": [
+    {
+      "titre": "Ingénieur Full-Stack",
+      "entreprise": "1001logiciels",
+      "duree": "2 ans 6 mois",
+      "missions": [
+        "Développement de modules métier en Java et React pour des clients du secteur bancaire",
+        "Optimisation des requêtes SQL et migration de bases de données legacy",
+        "Participation au mentorat de 2 stagiaires en développement web"
+      ]
+    },
+    {
+      "titre": "Développeur Backend",
+      "entreprise": "Doctolib",
+      "duree": "2 ans 4 mois",
+      "missions": [
+        "Conception d'API RESTful en Python pour des services de prise de rendez-vous médicaux",
+        "Migration progressive d'un monolithe vers une architecture microservices avec Docker",
+        "Optimisation des performances de traitement de fichiers CSV volumineux"
+      ]
+    }
+  ],
+  "competences_techniques": [
+    "Python",
+    "Java",
+    "React",
+    "PostgreSQL",
+    "Docker",
+    "AWS",
+    "Git",
+    "CI/CD",
+    "Kubernetes",
+    "GraphQL"
+  ],
+  "langues": [
+    "Français (natif)",
+    "Anglais (courant)",
+    "Espagnol (bases)"
+  ],
+  "resume_narratif": "Profil technique avec 5 ans d'expérience en développement logiciel, alliant solidité backend et compétences front-end. A participé à la modernisation d'architectures et à l'optimisation de performances dans des contextes variés (fintech, santé). Recherche un poste offrant des défis techniques concrets et une collaboration d'équipe structurée.",
+  "condition": "maghrebin",
+  "address_condition": "rich",
+  "nom_complet": "Mohamed Bouazza",
+  "adresse": "15 boulevard Malesherbes, 75008 Paris",
+  "seed": 42
+}
