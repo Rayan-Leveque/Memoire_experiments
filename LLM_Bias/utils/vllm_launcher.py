@@ -55,6 +55,8 @@ def start_vllm(model_display_name: str, timeout: int = 300) -> subprocess.Popen:
     hf_name = mcfg["name"]
     tp = mcfg.get("tensor_parallel_size", 1)
     gpu_mem = mcfg.get("gpu_memory_utilization", GPU_MEM_UTIL)
+    quantization = mcfg.get("quantization", None)
+    max_num_batched_tokens = mcfg.get("max_num_batched_tokens", None)
     host, port = _parse_host_port()
 
     cmd = [
@@ -67,6 +69,10 @@ def start_vllm(model_display_name: str, timeout: int = 300) -> subprocess.Popen:
         "--port", str(port),
         "--dtype", "auto",
     ]
+    if quantization:
+        cmd += ["--quantization", quantization]
+    if max_num_batched_tokens:
+        cmd += ["--max-num-batched-tokens", str(max_num_batched_tokens)]
 
     print(f"[vLLM] Starting: {hf_name} (tp={tp}, port={port})")
     print(f"[vLLM] Command: {' '.join(cmd)}")

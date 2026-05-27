@@ -1,0 +1,63 @@
+\documentclass{article}
+
+% Configure natbib for numeric citations (must come before any package loads natbib)
+\PassOptionsToPackage{square,numbers,sort&compress}{natbib}
+
+% Set to true for anonymous submission, false for camera-ready/arxiv
+\newif\ifanonymous
+\anonymousfalse
+
+\input{packages}
+\input{commands}
+
+% Define contribution markers
+\newcommand{\equalContribution}{*}
+
+\title{Biases in the Blind Spot: Detecting What LLMs Fail to Mention}
+
+\author{%
+  Iv\'{a}n Arcuschin\textsuperscript{\equalContribution} \\
+  University of Buenos Aires \\
+  \texttt{iarcuschin@dc.uba.ar} \\
+  \And
+  David Chanin\textsuperscript{\equalContribution} \\
+  University College London \\
+  \texttt{david.chanin.22@ucl.ac.uk} \\
+  \And
+  Adri\`{a} Garriga-Alonso \\
+  Independent \\
+  \And
+  Oana-Maria Camburu \\
+  Imperial College London \\
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\input{abstract}
+\end{abstract}
+
+\input{intro}
+
+\input{approach}
+
+\input{evaluation}
+
+\input{related_work}
+
+\input{limitations}
+
+\input{conclusion}
+
+% \section*{Acknowledgements}
+
+% We would like to thank ...
+
+\bibliography{references}
+\bibliographystyle{unsrtnat}
+
+\input{appendix}
+
+\end{document}

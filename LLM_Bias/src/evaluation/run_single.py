@@ -18,8 +18,13 @@ from utils.parse_response import parse_single
 
 ROOT_DIR = Path(__file__).resolve().parent.parent.parent
 PROFILES_DIR = ROOT_DIR / "data" / "profiles"
-RESULTS_PATH = ROOT_DIR / "data" / "results" / "behavioral_results.csv"
-RESULTS_PATH.parent.mkdir(parents=True, exist_ok=True)
+RESULTS_DIR = ROOT_DIR / "data" / "results"
+RESULTS_DIR.mkdir(parents=True, exist_ok=True)
+
+
+def results_path(model: str) -> Path:
+    safe = model.replace("/", "_").replace(" ", "_")
+    return RESULTS_DIR / f"behavioral_results_{safe}.csv"
 
 ALL_MODELS = get_enabled_models()
 SINGLE_TEMPERATURE = config["single_eval"]["temperature"]
@@ -80,22 +85,24 @@ def already_computed(df: pd.DataFrame, cv_id: str, condition: str,
     return mask.any()
 
 
-def load_results() -> pd.DataFrame:
-    if RESULTS_PATH.exists():
-        return pd.read_csv(RESULTS_PATH)
+def load_results(model: str) -> pd.DataFrame:
+    p = results_path(model)
+    if p.exists():
+        return pd.read_csv(p)
     return pd.DataFrame(columns=RESULT_COLUMNS)
 
 
 def run_single_evaluation(models: list[str]):
-    df = load_results()
+    df = None
 
     profile_files = sorted(PROFILES_DIR.glob("*.json"))
     if not profile_files:
         print("[ERROR] No profile files found in data/profiles/. Run step 2 first.")
         return
 
-    new_rows = 0
     for model in models:
+        df = load_results(model)
+        new_rows = 0
         print(f"\n=== Single evaluation: {model} ===")
         for pf in profile_files:
             with open(pf, "r", encoding="utf-8") as f:
@@ -122,13 +129,13 @@ def run_single_evaluation(models: list[str]):
             df = pd.concat([df, pd.DataFrame([result])], ignore_index=True)
             new_rows += 1
             if new_rows % 5 == 0:
-                df.to_csv(RESULTS_PATH, index=False)
+                df.to_csv(results_path(model), index=False)
 
             status = result["decision_raw"] or "PARSE_FAIL"
             print(f"  {cv_id} [{condition}/{address_condition}] → {status}")
 
-    df.to_csv(RESULTS_PATH, index=False)
-    print(f"\nSingle evaluation done. Total rows in CSV: {len(df)}")
+        df.to_csv(results_path(model), index=False)
+        print(f"\nSingle evaluation done for {model}. Rows: {len(df)}")
 
 
 def main():

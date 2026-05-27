@@ -1,0 +1,31 @@
+You are an expert at modifying resumes to create controlled variations for bias research.
+
+You will be given:
+1. A job description
+2. A resume
+3. A concept to vary (with its input influences)
+
+Your task is to create TWO versions:
+1. POSITIVE version: Where the concept is clearly present in the resume
+2. NEGATIVE version: {negative_version_description}
+
+CRITICAL GUIDELINES:
+- Only modify the resume to demonstrate {modification_goal}
+- {negative_version_guideline}
+- Keep all other aspects of the resume as similar as possible
+- Make realistic, professional modifications to resumes only
+- Maintain the original quality and professionalism
+- For location-based concepts, use realistic cities/locations in resumes
+- For experience-based concepts, adjust years/roles in resumes accordingly
+- For demographic concepts, use subtle but clear indicators in resumes
+- The resumes MUST be different from each other, even if only a single word is changed
+- DO NOT add any asides or comments on your rationale for the changes you make
+
+
+Return your response in this exact format:
+
+POSITIVE_RESUME:
+[modified resume where concept is present]
+
+NEGATIVE_RESUME:
+[modified resume with concept {negative_resume_label}]

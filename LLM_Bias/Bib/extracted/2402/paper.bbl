@@ -1,0 +1,468 @@
+\begin{thebibliography}{10}
+
+\bibitem{abid2021antimuslim}
+A.~Abid, M.~Farooqi, and J.~Zou.
+\newblock Persistent anti-muslim bias in large language models.
+\newblock {\em AAAI/ACM Conference on AI, Ethics, and Society (AIES)}, 2021.
+
+\bibitem{achiam2023gpt}
+J.~Achiam, S.~Adler, S.~Agarwal, L.~Ahmad, I.~Akkaya, F.~L. Aleman, D.~Almeida, J.~Altenschmidt, S.~Altman, S.~Anadkat, et~al.
+\newblock {GPT}-4 technical report.
+\newblock {\em arXiv preprint arXiv:2303.08774}, 2023.
+
+\bibitem{allport1954nature}
+G.~W. Allport.
+\newblock {\em The nature of prejudice}.
+\newblock Addison-wesley, 1954.
+
+\bibitem{amodio2006stereotyping}
+D.~M. Amodio and P.~G. Devine.
+\newblock Stereotyping and evaluation in implicit race bias: evidence for independent constructs and unique effects on behavior.
+\newblock {\em Journal of Personality and Social Psychology}, 91(4):652, 2006.
+
+\bibitem{ba2021role}
+B.~A. Ba, D.~Knox, J.~Mummolo, and R.~Rivera.
+\newblock The role of officer race and gender in police-civilian interactions in chicago.
+\newblock {\em Science}, 371(6530):696--702, 2021.
+
+\bibitem{bai2022multidimensional}
+X.~Bai, T.~Griffiths, and S.~Fiske.
+\newblock Multidimensional stereotypes emerge spontaneously when exploration is costly.
+\newblock 2022.
+
+\bibitem{bai2022training}
+Y.~Bai, A.~Jones, K.~Ndousse, A.~Askell, A.~Chen, N.~DasSarma, D.~Drain, S.~Fort, D.~Ganguli, T.~Henighan, et~al.
+\newblock Training a helpful and harmless assistant with reinforcement learning from human feedback.
+\newblock {\em arXiv preprint arXiv:2204.05862}, 2022.
+
+\bibitem{banaji2016blindspot}
+M.~R. Banaji and A.~G. Greenwald.
+\newblock {\em Blindspot: Hidden biases of good people}.
+\newblock Bantam, 2016.
+
+\bibitem{bargh1996automaticity}
+J.~A. Bargh, M.~Chen, and L.~Burrows.
+\newblock Automaticity of social behavior: Direct effects of trait construct and stereotype activation on action.
+\newblock {\em Journal of Personality and Social Psychology}, 71(2):230, 1996.
+
+\bibitem{bertrand2004emily}
+M.~Bertrand and S.~Mullainathan.
+\newblock Are emily and greg more employable than lakisha and jamal? a field experiment on labor market discrimination.
+\newblock {\em American Economic Review}, 94(4):991--1013, 2004.
+
+\bibitem{bian2017gender}
+L.~Bian, S.-J. Leslie, and A.~Cimpian.
+\newblock Gender stereotypes about intellectual ability emerge early and influence children’s interests.
+\newblock {\em Science}, 355(6323):389--391, 2017.
+
+\bibitem{binz2023cogpsy}
+M.~Binz and E.~Schulz.
+\newblock Using cognitive psychology to understand {GPT}-3.
+\newblock {\em Proceedings of the National Academy of Sciences of the United States of America (PNAS)}, 2023.
+
+\bibitem{blodgett2020languagebias}
+S.~L. Blodgett, S.~Barocas, H.~D. III, and H.~Wallach.
+\newblock Language (technology) is power: A critical survey of “bias” in {NLP}.
+\newblock {\em Association for Computational Linguistics}, 2020.
+
+\bibitem{blodgett2021stereotyping}
+S.~L. Blodgett, G.~Lopez, A.~Olteanu, R.~Sim, and H.~Wallach.
+\newblock Stereotyping norwegian salmon: An inventory of pitfalls in fairness benchmark datasets.
+\newblock In {\em Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers)}, pages 1004--1015, 2021.
+
+\bibitem{bogardus1925measuring}
+E.~S. Bogardus.
+\newblock Measuring social distance.
+\newblock {\em Journal of Applied Sociology}, 9:299--308, 1925.
+
+\bibitem{bolukbasi2016man}
+T.~Bolukbasi, K.-W. Chang, J.~Y. Zou, V.~Saligrama, and A.~T. Kalai.
+\newblock Man is to computer programmer as woman is to homemaker? debiasing word embeddings.
+\newblock {\em Advances in neural information processing systems}, 29, 2016.
+
+\bibitem{brendl2001indirect}
+C.~M. Brendl, A.~B. Markman, and C.~Messner.
+\newblock How do indirect measures of evaluation work? evaluating the inference of prejudice in the implicit association test.
+\newblock {\em Journal of Personality and Social Psychology}, 81(5):760, 2001.
+
+\bibitem{caliskan2017semantics}
+A.~Caliskan, J.~J. Bryson, and A.~Narayanan.
+\newblock Semantics derived automatically from language corpora contain human-like biases.
+\newblock {\em Science}, 356(6334):183--186, 2017.
+
+\bibitem{cao2022intrinsic}
+Y.~T. Cao, Y.~Pruksachatkun, K.-W. Chang, R.~Gupta, V.~Kumar, J.~Dhamala, and A.~Galstyan.
+\newblock On the intrinsic and extrinsic fairness evaluation metrics for contextualized language representations.
+\newblock {\em Annual Meeting of the Association for Computational Linguistics (ACL)}, 2022.
+
+\bibitem{chaiken1999dual}
+S.~Chaiken and Y.~Trope.
+\newblock {\em Dual-process theories in social psychology}.
+\newblock Guilford Press, 1999.
+
+\bibitem{charlesworth2022historical}
+T.~E. Charlesworth, A.~Caliskan, and M.~R. Banaji.
+\newblock Historical representations of social groups across 200 years of word embeddings from {G}oogle {B}ooks.
+\newblock {\em Proceedings of the National Academy of Sciences}, 119(28):e2121798119, 2022.
+
+\bibitem{cheng2023markedpersonas}
+M.~Cheng, E.~Durmus, and D.~Jurafsky.
+\newblock Marked personas: Using natural language prompts to measure stereotypes in language models.
+\newblock {\em Association for Computational Linguistics (ACL)}, 2023.
+
+\bibitem{cheryan2017some}
+S.~Cheryan, S.~A. Ziegler, A.~K. Montoya, and L.~Jiang.
+\newblock Why are some stem fields more gender balanced than others?
+\newblock {\em Psychological bulletin}, 143(1):1, 2017.
+
+\bibitem{correll2015stereotypic}
+J.~Correll, B.~Wittenbrink, M.~T. Crawford, and M.~S. Sadler.
+\newblock Stereotypic vision: how stereotypes disambiguate visual stimuli.
+\newblock {\em Journal of personality and social psychology}, 108(2):219, 2015.
+
+\bibitem{crosby1980recent}
+F.~Crosby, S.~Bromley, and L.~Saxe.
+\newblock Recent unobtrusive studies of black and white discrimination and prejudice: A literature review.
+\newblock {\em Psychological Bulletin}, 87(3):546, 1980.
+
+\bibitem{demszky2023using}
+D.~Demszky, D.~Yang, D.~S. Yeager, C.~J. Bryan, M.~Clapper, S.~Chandhok, J.~C. Eichstaedt, C.~Hecht, J.~Jamieson, M.~Johnson, et~al.
+\newblock Using large language models in psychology.
+\newblock {\em Nature Reviews Psychology}, 2(11):688--701, 2023.
+
+\bibitem{devine1989stereotypes}
+P.~G. Devine.
+\newblock Stereotypes and prejudice: Their automatic and controlled components.
+\newblock {\em Journal of personality and social psychology}, 56(1):5, 1989.
+
+\bibitem{devine2001implicit}
+P.~G. Devine.
+\newblock Implicit prejudice and stereotyping: how automatic are they? introduction to the special section.
+\newblock {\em Journal of Personality and Social Psychology}, 81(5):757, 2001.
+
+\bibitem{dhamala2021bold}
+J.~Dhamala, T.~Sun, V.~Kumar, S.~Krishna, Y.~Pruksachatkun, K.-W. Chang, and R.~Gupta.
+\newblock Bold: Dataset and metrics for measuring biases in open-ended language generation.
+\newblock In {\em Proceedings of the 2021 ACM conference on Fairness, Accountability, and Transparency}, pages 862--872, 2021.
+
+\bibitem{dovidio1981effects}
+J.~F. Dovidio and S.~L. Gaertner.
+\newblock The effects of race, status, and ability on helping behavior.
+\newblock {\em Social Psychology Quarterly}, pages 192--203, 1981.
+
+\bibitem{eagly1984gender}
+A.~H. Eagly and V.~J. Steffen.
+\newblock Gender stereotypes stem from the distribution of women and men into social roles.
+\newblock {\em Journal of Personality and Social Psychology}, 46(4):735, 1984.
+
+\bibitem{eberhardt2020biased}
+J.~L. Eberhardt.
+\newblock {\em Biased: Uncovering the hidden prejudice that shapes what we see, think, and do}.
+\newblock Penguin, 2020.
+
+\bibitem{eberhardt2006looking}
+J.~L. Eberhardt, P.~G. Davies, V.~J. Purdie-Vaughns, and S.~L. Johnson.
+\newblock Looking deathworthy: Perceived stereotypicality of black defendants predicts capital-sentencing outcomes.
+\newblock {\em Psychological science}, 17(5):383--386, 2006.
+
+\bibitem{eberhardt2004seeing}
+J.~L. Eberhardt, P.~A. Goff, V.~J. Purdie, and P.~G. Davies.
+\newblock Seeing black: race, crime, and visual processing.
+\newblock {\em Journal of personality and social psychology}, 87(6):876, 2004.
+
+\bibitem{ellemers2018gender}
+N.~Ellemers.
+\newblock Gender stereotypes.
+\newblock {\em Annual review of psychology}, 69:275--298, 2018.
+
+\bibitem{fazio2003implicit}
+R.~H. Fazio and M.~A. Olson.
+\newblock Implicit measures in social cognition research: Their meaning and use.
+\newblock {\em Annual review of psychology}, 54(1):297--327, 2003.
+
+\bibitem{fiske2002model}
+S.~T. Fiske, A.~J. Cuddy, P.~Glick, and J.~Xu.
+\newblock A model of (often mixed) stereotype content: Competence and warmth respectively follow from perceived status and competition.
+\newblock {\em Journal of Personality and Social Psychology}, 82(6):878--902, 2002.
+
+\bibitem{fiske2013social}
+S.~T. Fiske and S.~E. Taylor.
+\newblock {\em Social cognition: From brains to culture}.
+\newblock Sage, 2013.
+
+\bibitem{forscher2019meta}
+P.~S. Forscher, C.~K. Lai, J.~R. Axt, C.~R. Ebersole, M.~Herman, P.~G. Devine, and B.~A. Nosek.
+\newblock A meta-analysis of procedures to change implicit measures.
+\newblock {\em Journal of personality and social psychology}, 117(3):522, 2019.
+
+\bibitem{ganguli2023moralself}
+D.~Ganguli, A.~Askell, N.~Schiefer, T.~I. Liao, K.~Lukošiūtė, A.~Chen, A.~Goldie, A.~Mirhoseini, andCatherine Olsson, D.~Hernandez, D.~Drain, D.~Li, E.~Tran-Johnson, E.~Perez, J.~Kernion, J.~Kerr, J.~Mueller, J.~Landau, K.~Ndousse, K.~Nguyen, L.~Lovitt, M.~Sellitto, N.~Elhage, N.~Mercado, N.~DasSarma, O.~Rausch, R.~Lasenby, R.~Larson, S.~K. Sam~Ringer, S.~Kadavath, S.~Johnston, S.~Kravec, S.~E. Showk, T.~Lanham, T.~Telleen-Lawton, T.~Henighan, T.~Hume, Y.~Bai, B.~M. Zac Hatfield-Dodds, D.~Amodei, N.~Joseph, S.~McCandlish, T.~Brown, C.~Olah, J.~Clark, S.~R. Bowman, and J.~Kaplan.
+\newblock The capacity for moral self-correction in large language models.
+\newblock {\em arXiv:2302.07459}, 2023.
+
+\bibitem{garg2018word}
+N.~Garg, L.~Schiebinger, D.~Jurafsky, and J.~Zou.
+\newblock Word embeddings quantify 100 years of gender and ethnic stereotypes.
+\newblock {\em Proceedings of the National Academy of Sciences}, 115(16):E3635--E3644, 2018.
+
+\bibitem{glick2018ambivalent}
+P.~Glick and S.~T. Fiske.
+\newblock The ambivalent sexism inventory: Differentiating hostile and benevolent sexism.
+\newblock In {\em Social cognition}, pages 116--160. Routledge, 2018.
+
+\bibitem{goldfarbtarrant2021intrinsic}
+S.~Goldfarb-Tarrant, R.~Marchant, R.~M. Sanchez, M.~Pandya, and A.~Lopez.
+\newblock Intrinsic bias metrics do not correlate with application bias.
+\newblock {\em Annual Meeting of the Association for Computational Linguistics (ACL)}, 2021.
+
+\bibitem{graf1985implicit}
+P.~Graf and D.~L. Schacter.
+\newblock Implicit and explicit memory for new associations in normal and amnesic subjects.
+\newblock {\em Journal of Experimental Psychology: Learning, memory, and cognition}, 11(3):501, 1985.
+
+\bibitem{greenwald1995implicit}
+A.~G. Greenwald and M.~R. Banaji.
+\newblock Implicit social cognition: attitudes, self-esteem, and stereotypes.
+\newblock {\em Psychological Review}, 102(1):4, 1995.
+
+\bibitem{greenwald2017implicit}
+A.~G. Greenwald and M.~R. Banaji.
+\newblock The implicit revolution: Reconceiving the relation between conscious and unconscious.
+\newblock {\em American Psychologist}, 72(9):861, 2017.
+
+\bibitem{greenwald1998measuring}
+A.~G. Greenwald, D.~E. McGhee, and J.~L. Schwartz.
+\newblock Measuring individual differences in implicit cognition: the implicit association test.
+\newblock {\em Journal of Personality and Social Psychology}, 74(6):1464, 1998.
+
+\bibitem{greenwald2003understanding}
+A.~G. Greenwald, B.~A. Nosek, and M.~R. Banaji.
+\newblock Understanding and using the implicit association test: I. an improved scoring algorithm.
+\newblock {\em Journal of Personality and Social Psychology}, 85(2):197, 2003.
+
+\bibitem{greenwald2003targets}
+A.~G. Greenwald, M.~A. Oakes, and H.~G. Hoffman.
+\newblock Targets of discrimination: Effects of race on responses to weapons holders.
+\newblock {\em Journal of Experimental Social Psychology}, 39(4):399--405, 2003.
+
+\bibitem{greenwald2009understanding}
+A.~G. Greenwald, T.~A. Poehlman, E.~L. Uhlmann, and M.~R. Banaji.
+\newblock Understanding and using the implicit association test: Iii. meta-analysis of predictive validity.
+\newblock {\em Journal of Personality and Social Psychology}, 97(1):17, 2009.
+
+\bibitem{caliskan2021contextembedding}
+W.~Guo and A.~Caliskan.
+\newblock Detecting emergent intersectional biases: Contextualized word embeddings contain a distribution of human-like biases.
+\newblock {\em AAAI/ACM Conference on AI, Ethics, and Society (AIES)}, 2021.
+
+\bibitem{guo2021detecting}
+W.~Guo and A.~Caliskan.
+\newblock Detecting emergent intersectional biases: Contextualized word embeddings contain a distribution of human-like biases.
+\newblock In {\em Proceedings of the 2021 AAAI/ACM Conference on AI, Ethics, and Society}, pages 122--133, 2021.
+
+\bibitem{heilman2001description}
+M.~E. Heilman.
+\newblock Description and prescription: How gender stereotypes prevent women's ascent up the organizational ladder.
+\newblock {\em Journal of social issues}, 57(4):657--674, 2001.
+
+\bibitem{hofmann2024dialect}
+V.~Hofmann, P.~R. Kalluri, D.~Jurafsky, and S.~King.
+\newblock Dialect prejudice predicts ai decisions about people's character, employability, and criminality.
+\newblock {\em arXiv preprint arXiv:2403.00742}, 2024.
+
+\bibitem{katz1933racial}
+D.~Katz and K.~Braly.
+\newblock Racial stereotypes of one hundred college students.
+\newblock {\em The Journal of Abnormal and Social Psychology}, 28(3):280, 1933.
+
+\bibitem{kervyn2010compensation}
+N.~Kervyn, V.~Yzerbyt, and C.~M. Judd.
+\newblock Compensation between warmth and competence: Antecedents and consequences of a negative relation between the two fundamental dimensions of social perception.
+\newblock {\em European Review of Social Psychology}, 21(1):155--187, 2010.
+
+\bibitem{kirk2021intersectionaloccu}
+H.~R. Kirk, Y.~Jun, F.~Volpin, H.~Iqbal, E.~Benussi, F.~Dreyer, A.~Shtedritski, and Y.~Asano.
+\newblock Bias out-of-the-box: An empirical analysis of intersectional occupational biases in popular generative language models.
+\newblock {\em Neural Information Processing Systems (NeurIPS)}, 2021.
+
+\bibitem{koenig2014evidence}
+A.~M. Koenig and A.~H. Eagly.
+\newblock Evidence for the social role theory of stereotype content: observations of groups’ roles shape stereotypes.
+\newblock {\em Journal of Personality and Social Psychology}, 107(3):371, 2014.
+
+\bibitem{kurdi2019relationship}
+B.~Kurdi, A.~E. Seitchik, J.~R. Axt, T.~J. Carroll, A.~Karapetyan, N.~Kaushik, D.~Tomezsko, A.~G. Greenwald, and M.~R. Banaji.
+\newblock Relationship between the implicit association test and intergroup behavior: A meta-analysis.
+\newblock {\em American Psychologist}, 74(5):569, 2019.
+
+\bibitem{ladhak2023propagate}
+F.~Ladhak, E.~Durmus, M.~Suzgun, T.~Zhang, D.~Jurafsky, K.~McKeown, and T.~Hashimoto.
+\newblock When do pre-training biases propagate to downstream tasks? a case study in text summarization.
+\newblock {\em Conference of the European Chapter of the Association for Computational Linguistics (EACL)}, 2023.
+
+\bibitem{liang2022holistic}
+P.~Liang, R.~Bommasani, T.~Lee, D.~Tsipras, D.~Soylu, M.~Yasunaga, Y.~Zhang, D.~Narayanan, Y.~Wu, A.~Kumar, et~al.
+\newblock Holistic evaluation of language models.
+\newblock {\em arXiv preprint arXiv:2211.09110}, 2022.
+
+\bibitem{lippmann1922public}
+W.~Lippmann.
+\newblock Public opinion.
+\newblock 1922.
+
+\bibitem{llaudet2022data}
+E.~Llaudet and K.~Imai.
+\newblock {\em Data analysis for social science: A friendly and practical introduction}.
+\newblock Princeton University Press, 2022.
+
+\bibitem{lu2020east}
+J.~G. Lu, R.~E. Nisbett, and M.~W. Morris.
+\newblock Why east asians but not south asians are underrepresented in leadership positions in the united states.
+\newblock {\em Proceedings of the National Academy of Sciences}, 117(9):4590--4600, 2020.
+
+\bibitem{may2019sentence}
+C.~May, A.~Wang, S.~Bordia, S.~R. Bowman, and R.~Rudinger.
+\newblock On measuring social biases in sentence encoders.
+\newblock {\em Annual Conference of the North American Chapter of the Association for Computational Linguistics (NAACL)}, 2019.
+
+\bibitem{monteith1993self}
+M.~J. Monteith, P.~G. Devine, and J.~R. Zuwerink.
+\newblock Self-directed versus other-directed affect as a consequence of prejudice-related discrepancies.
+\newblock {\em Journal of Personality and Social Psychology}, 64(2):198, 1993.
+
+\bibitem{nadeem2021stereoset}
+M.~Nadeem, A.~Bethke, and S.~Reddy.
+\newblock Stereoset: Measuring stereotypical bias in pretrained language models.
+\newblock {\em International Joint Conference on Natural Language Processing}, 2021.
+
+\bibitem{nosek2005moderators}
+B.~A. Nosek.
+\newblock Moderators of the relationship between implicit and explicit evaluation.
+\newblock {\em Journal of Experimental Psychology: General}, 134(4):565, 2005.
+
+\bibitem{ouyang2022training}
+L.~Ouyang, J.~Wu, X.~Jiang, D.~Almeida, C.~Wainwright, P.~Mishkin, C.~Zhang, S.~Agarwal, K.~Slama, A.~Ray, et~al.
+\newblock Training language models to follow instructions with human feedback.
+\newblock {\em Advances in Neural Information Processing Systems}, 35:27730--27744, 2022.
+
+\bibitem{ovalle2023nb}
+A.~Ovalle, P.~Goyal, J.~Dhamala, Z.~Jaggers, K.-W. Chang, A.~Galstyan, R.~S. Zemel, and R.~Gupta.
+\newblock “i’m fully who i am”: Towards centering transgender and non-binary voices to measure biases in openaiopen language generation.
+\newblock {\em ACM Conference on Fairness, Accountability, and Transparency (ACM FAccT)}, 2023.
+
+\bibitem{paluck2021prejudice}
+E.~L. Paluck, R.~Porat, C.~S. Clark, and D.~P. Green.
+\newblock Prejudice reduction: Progress and challenges.
+\newblock {\em Annual Review of Psychology}, 72:533--560, 2021.
+
+\bibitem{parrish2022bbq}
+A.~Parrish, A.~Chen, N.~Nangia, V.~Padmakumar, J.~Phang, J.~Thompson, P.~M. Htut, and S.~Bowman.
+\newblock Bbq: A hand-built bias benchmark for question answering.
+\newblock In {\em Findings of the Association for Computational Linguistics: ACL 2022}, pages 2086--2105, 2022.
+
+\bibitem{posner2004attention}
+M.~I. Posner, C.~R. Snyder, and R.~Solso.
+\newblock Attention and cognitive control.
+\newblock {\em Cognitive Psychology: Key readings}, 205:55--85, 2004.
+
+\bibitem{qi2023fine}
+X.~Qi, Y.~Zeng, T.~Xie, P.-Y. Chen, R.~Jia, P.~Mittal, and P.~Henderson.
+\newblock Fine-tuning aligned language models compromises safety, even when users do not intend to!
+\newblock {\em arXiv preprint arXiv:2310.03693}, 2023.
+
+\bibitem{rathje2023gpt}
+S.~Rathje, D.-M. Mirea, I.~Sucholutsky, R.~Marjieh, C.~Robertson, and J.~J. Van~Bavel.
+\newblock {GPT} is an effective tool for multilingual psychological text analysis.
+\newblock 2023.
+
+\bibitem{riddle2019racial}
+T.~Riddle and S.~Sinclair.
+\newblock Racial disparities in school-based disciplinary actions are associated with county-level rates of racial bias.
+\newblock {\em Proceedings of the National Academy of Sciences}, 116(17):8255--8260, 2019.
+
+\bibitem{rusch2010implicit}
+N.~R{\"u}sch, P.~W. Corrigan, A.~R. Todd, and G.~V. Bodenhausen.
+\newblock Implicit self-stigma in people with mental illness.
+\newblock {\em The Journal of Nervous and Mental Disease}, 198(2):150--153, 2010.
+
+\bibitem{schacter1987implicit}
+D.~L. Schacter.
+\newblock Implicit memory: History and current status.
+\newblock {\em Journal of experimental psychology: learning, memory, and cognition}, 13(3):501, 1987.
+
+\bibitem{schimmack2021invalid}
+U.~Schimmack.
+\newblock Invalid claims about the validity of implicit association tests by prisoners of the implicit social-cognition paradigm.
+\newblock {\em Perspectives on Psychological Science}, 16(2):435--442, 2021.
+
+\bibitem{schuman1997racial}
+H.~Schuman.
+\newblock {\em Racial attitudes in America: Trends and interpretations}.
+\newblock Harvard University Press, 1997.
+
+\bibitem{shaikh2022second}
+O.~Shaikh, H.~Zhang, W.~Held, M.~Bernstein, and D.~Yang.
+\newblock On second thought, let's not think step by step! bias and toxicity in zero-shot reasoning.
+\newblock {\em arXiv preprint arXiv:2212.08061}, 2022.
+
+\bibitem{sheng2019babysitter}
+E.~Sheng, K.-W. Chang, P.~Natarajan, and N.~Peng.
+\newblock The woman worked as a babysitter: On biases in language generation.
+\newblock {\em Empirical Methods in Natural Language Processing (EMNLP)}, 2019.
+
+\bibitem{sherman2021four}
+J.~W. Sherman and S.~A. Klein.
+\newblock The four deadly sins of implicit attitude research.
+\newblock {\em Frontiers in Psychology}, 11:604340, 2021.
+
+\bibitem{si2022prompting}
+C.~Si, Z.~Gan, Z.~Yang, S.~Wang, J.~Wang, J.~Boyd-Graber, and L.~Wang.
+\newblock Prompting {GPT}-3 to be reliable.
+\newblock {\em arXiv preprint arXiv:2210.09150}, 2022.
+
+\bibitem{solaiman2021process}
+I.~Solaiman and C.~Dennison.
+\newblock Process for adapting language models to society ({PALMS}) with values-targeted datasets.
+\newblock {\em Advances in Neural Information Processing Systems}, 34:5861--5873, 2021.
+
+\bibitem{steed2022upstream}
+R.~Steed, S.~Panda, A.~Kobren, and M.~Wick.
+\newblock Upstream mitigation is not all you need: Testing the bias transfer hypothesis in pre-trained language models.
+\newblock {\em Annual Meeting of the Association for Computational Linguistics (ACL)}, 2022.
+
+\bibitem{tamkin2023evaluating}
+A.~Tamkin, A.~Askell, L.~Lovitt, E.~Durmus, N.~Joseph, S.~Kravec, K.~Nguyen, J.~Kaplan, and D.~Ganguli.
+\newblock Evaluating and mitigating discrimination in language model decisions.
+\newblock {\em arXiv preprint arXiv:2312.03689}, 2023.
+
+\bibitem{alpaca}
+R.~Taori, I.~Gulrajani, T.~Zhang, Y.~Dubois, X.~Li, C.~Guestrin, P.~Liang, and T.~B. Hashimoto.
+\newblock Stanford {A}lpaca: {A}n instruction-following {LLaMA} model.
+\newblock \url{https://github.com/tatsu-lab/stanford_alpaca}, 2023.
+
+\bibitem{touvron2023llama2}
+H.~Touvron, L.~Martin, K.~Stone, P.~Albert, A.~Almahairi, Y.~Babaei, N.~Bashlykov, S.~Batra, P.~Bhargava, S.~Bhosale, D.~Bikel, L.~Blecher, C.~C. Ferrer, M.~Chen, G.~Cucurull, D.~Esiobu, J.~Fernandes, J.~Fu, W.~Fu, B.~Fuller, C.~Gao, V.~Goswami, N.~Goyal, A.~Hartshorn, S.~Hosseini, R.~Hou, H.~Inan, M.~Kardas, V.~Kerkez, M.~Khabsa, I.~Kloumann, A.~Korenev, P.~S. Koura, M.-A. Lachaux, T.~Lavril, J.~Lee, D.~Liskovich, Y.~Lu, Y.~Mao, X.~Martinet, T.~Mihaylov, P.~Mishra, I.~Molybog, Y.~Nie, A.~Poulton, J.~Reizenstein, R.~Rungta, K.~Saladi, A.~Schelten, R.~Silva, E.~M. Smith, R.~Subramanian, X.~E. Tan, B.~Tang, R.~Taylor, A.~Williams, J.~X. Kuan, P.~Xu, Z.~Yan, I.~Zarov, Y.~Zhang, A.~Fan, M.~Kambadur, S.~Narang, A.~Rodriguez, R.~Stojnic, S.~Edunov, and T.~Scialom.
+\newblock Llama 2: Open foundation and fine-tuned chat models.
+\newblock {\em arXiv:2307.09288}, 2023.
+
+\bibitem{wan2023referenceletters}
+Y.~Wan, G.~Pu, J.~Sun, A.~Garimella, K.-W. Chang, and N.~Peng.
+\newblock "kelly is a warm person, joseph is a role model": Gender biases in llm-generated reference letters.
+\newblock {\em Empirical Methods in Natural Language Processing (EMNLP) Findings}, 2023.
+
+\bibitem{wang2023decodingtrust}
+B.~Wang, W.~Chen, H.~Pei, C.~Xie, M.~Kang, C.~Zhang, C.~Xu, Z.~Xiong, R.~Dutta, R.~Schaeffer, et~al.
+\newblock Decodingtrust: A comprehensive assessment of trustworthiness in {GPT} models.
+\newblock {\em arXiv preprint arXiv:2306.11698}, 2023.
+
+\bibitem{word1974nonverbal}
+C.~O. Word, M.~P. Zanna, and J.~Cooper.
+\newblock The nonverbal mediation of self-fulfilling prophecies in interracial interaction.
+\newblock {\em Journal of experimental social psychology}, 10(2):109--120, 1974.
+
+\bibitem{zhu2023promptbench}
+K.~Zhu, J.~Wang, J.~Zhou, Z.~Wang, H.~Chen, Y.~Wang, L.~Yang, W.~Ye, N.~Z. Gong, Y.~Zhang, et~al.
+\newblock Promptbench: Towards evaluating the robustness of large language models on adversarial prompts.
+\newblock {\em arXiv preprint arXiv:2306.04528}, 2023.
+
+\end{thebibliography}

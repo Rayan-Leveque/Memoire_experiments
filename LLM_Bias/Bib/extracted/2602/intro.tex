@@ -1,0 +1,30 @@
+\section{Introduction}
+
+\input{flipped_pair_figure}
+
+Chain-of-thought (CoT) reasoning has proven to be a powerful technique for improving the performance of Large Language Models (LLMs) on complex tasks~\citep{wei2022chain}. When tasks are sufficiently complex, CoT can be used for monitoring model behavior~\citep{cot-monitors-2025}.
+%
+However, there is ample evidence that \emph{models can be influenced by artificial or natural biases} that affect their CoT and responses. These biases influence the CoT in subtle ways, sometimes leading to conditional arguments or fact manipulation to nudge answers toward preferred outcomes~\citep{cot-wild-2025, llm-fairness-2025}. This undermines the reliability of CoT for monitoring purposes and raises concerns about whether the stated reasoning faithfully represents the actual decision-making process.
+
+A key challenge is that biases often operate implicitly. Models may make decisions based on concepts that are never cited as justification in their responses, making traditional CoT-based monitoring insufficient. We call these \textbf{unverbalized biases}: decision factors that systematically influence the model's outputs but are not cited as justification in its CoT. 
+This constitutes a form of \emph{unfaithful} reasoning, where the CoT fails to reflect how the model actually arrives at its conclusions~\citep{turpin2024language, lanham2023measuring, cot-wild-2025, reasoning-faithful-2025, faithfulness-tests-2023, probabilities-matter-2024}. For instance, a model might exhibit demographic biases in hiring decisions based on subtle contextual cues without ever citing those attributes as reasons for its decision~\citep{llm-fairness-2025}.
+
+Importantly, throughout this work, we use \emph{bias} in a descriptive sense: a \emph{systematic} decision shift caused by the presence or absence of specific attributes in the input. This notion is different from \emph{normative} (sociological) bias, i.e., unfairness or discrimination~\citep{blodgett2020language}.
+Accordingly, we use ``bias'' as shorthand for systematic ``preferences'' or ``aversions'' in the models. Whether a detected factor is normatively inappropriate for a given task is context-dependent and may require downstream audit.
+
+Additionally, we treat the model's CoT as an \emph{output} that can be monitored, not as ground truth about internal computations. Our goal is to find factors that influence decisions but are not cited as justification in the model's reasoning. This gap undermines CoT-based oversight regardless of whether the omission is due to deliberate concealment or not.
+
+We propose an approach for detecting these unverbalized biases through a fully automated, black-box pipeline. Our method uses a multi-stage pipeline that systematically generates concept hypotheses using LLM autoraters~\citep{zheng2023judging}, tests these concepts through controlled input variations, and identifies concepts that show statistically significant performance differences while remaining largely unverbalized in model responses. By clustering inputs and progressively testing concepts across stages, our approach efficiently discovers biases without requiring predefined categories or manual hypothesis generation.
+
+Our main contributions are:
+\begin{itemize}
+    \item A fully automated, black-box pipeline for detecting unverbalized biases. Unlike prior work~\citep{llm-fairness-2025} that manually hypothesizes biases, our method automatically generates concept hypotheses using LLM autoraters. 
+    \item We extend counterfactual faithfulness testing~\citep{faithfulness-tests-2023} via LLM-based concept variation, removing the need for per-task trained editors and enabling semantic verbalization checking.
+    \item We introduce an efficient multi-stage design with input clustering, staged sampling, and statistical early stopping (O'Brien-Fleming alpha spending~\citep{obrien1979multiple}, futility analysis) to manage computational costs, achieving roughly one-third savings over exhaustive evaluation.
+    \item We evaluate the pipeline on three decision tasks (hiring, loan approval, and university admissions) across seven LLMs from different providers. On these datasets, our pipeline both rediscovers biases that were manually identified by prior work (gender and race) and uncovers new ones (e.g., Spanish fluency, English proficiency, writing formality) that were not covered by manual analysis.
+    \item We demonstrate the generalizability of our pipeline by applying it to experimental setups from four prior bias studies \citep{john-vs-ahmed-2024, muslim-violence-2023, political-compass-2023, salt-2024}, showing that it can be adapted to different bias dimensions and task contexts while providing additional insights about verbalization patterns.
+\end{itemize}
+
+The remainder of the paper describes our detection pipeline, evaluates it across tasks and models, and discusses related work and limitations.
+
+To support reproducibility and future research, we release two synthetic evaluation datasets for loan approval and university admissions, derived from public data sources \citep{LoanApprovalKaggle, openintro_satgpa}, along with our codebase and raw results\footnote{\repourl}. We hope this work encourages further investigation into the factors that influence LLM decisions beyond their stated reasoning, and contributes to more robust monitoring of model behavior.

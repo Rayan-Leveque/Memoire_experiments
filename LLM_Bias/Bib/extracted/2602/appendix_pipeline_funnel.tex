@@ -1,0 +1,106 @@
+\section{Pipeline Filtering Statistics}\label{appsec:pipeline-funnel}
+
+To provide transparency into the concept filtering process, we present detailed statistics showing how many concepts are filtered at each stage of our pipeline. These ``funnel'' tables demonstrate the progressive filtering of candidate biases, from initial concept generation through to the final set of statistically significant unfaithful biases.
+
+Our pipeline filters concepts through several mechanisms:
+\begin{enumerate}
+    \item \textbf{Baseline verbalization check}: Concepts that the model naturally verbalizes in its reasoning (without any prompt variation) are filtered out, as these represent faithful reasoning rather than hidden biases.
+    \item \textbf{Futility stopping}: At each stage, concepts with insufficient statistical power to reach significance (based on conditional power analysis) are stopped early to conserve compute.
+    \item \textbf{Variation verbalization check}: Concepts where the model verbalizes the concept when presented with the variation prompts are filtered, as these also represent faithful (albeit prompted) reasoning.
+\end{enumerate}
+
+\Cref{tab:concept-preparation} summarizes the concept preparation pipeline that precedes the main filtering stages. The per-model filtering statistics are then shown in \Cref{tab:funnel-llm_bias,tab:funnel-loan_approval,tab:funnel-university_admission}.
+
+\begin{table}[h]
+\centering
+\small
+\caption{Concept preparation statistics for each dataset. Generated = total candidate concepts produced by the generation step. Dedup Drop = concepts removed by deduplication. Qual.\ Drop = concepts removed by variation quality checking. Pipeline Input = concepts entering the main pipeline.}
+\label{tab:concept-preparation}
+\begin{tabular}{l|rrrr}
+\toprule
+Dataset & Generated & Dedup Drop & Qual.\ Drop & Pipeline Input \\
+\midrule
+LLM Bias & 260 & 3 & 167 & 90 \\
+Loan Approval & 256 & 65 & 39 & 152 \\
+University Admission & 131 & 23 & 29 & 79 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering
+\small
+\caption{Concept filtering funnel for LLM Bias (90 concepts entering pipeline; see \Cref{tab:concept-preparation}). Baseline=dropped by baseline verbalization check. For each stage, Fut.=dropped by futility, Var.=dropped by variation verbalization. Final=significant unfaithful concepts detected.}
+\label{tab:funnel-llm_bias}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{l|rrrrrrrrrrr|r}
+\toprule
+Model & Baseline & \multicolumn{2}{c}{Stage 1} & \multicolumn{2}{c}{Stage 2} & \multicolumn{2}{c}{Stage 3} & \multicolumn{2}{c}{Stage 4} & \multicolumn{2}{c|}{Stage 5} & Final \\
+ & Drop & Fut. & Var. & Fut. & Var. & Fut. & Var. & Fut. & Var. & Fut. & Var. & Sig. \\
+\midrule
+Gemma3-12B & 8 & 0 & 54 & 9 & 1 & 6 & 0 & 4 & 0 & 0 & 0 & 2 \\
+Gemma3-27B & 10 & 0 & 47 & 6 & 0 & 20 & 0 & 5 & 0 & 0 & 0 & 2 \\
+Gemini2.5 & 18 & 0 & 45 & 10 & 0 & 11 & 0 & 4 & 0 & 0 & 0 & 1 \\
+GPT-4.1 & 14 & 0 & 42 & 0 & 3 & 19 & 0 & 5 & 0 & 0 & 0 & 9 \\
+Grok4.1 & 23 & 0 & 48 & 0 & 2 & 11 & 0 & 3 & 0 & 0 & 0 & 3 \\
+QwQ-32B & 11 & 0 & 34 & 20 & 2 & 11 & 0 & 4 & 0 & 0 & 0 & 8 \\
+Claude4 & 19 & 0 & 43 & 0 & 1 & 13 & 2 & 5 & 0 & 0 & 0 & 10 \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\begin{table}[h]
+\centering
+\small
+\caption{Concept filtering funnel for Loan Approval (152 concepts entering pipeline; see \Cref{tab:concept-preparation}). Baseline=dropped by baseline verbalization check. For each stage, Fut.=dropped by futility, Var.=dropped by variation verbalization. Final=significant unfaithful concepts detected.}
+\label{tab:funnel-loan_approval}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{l|rrrrrrrrrrrrr|r}
+\toprule
+Model & Baseline & \multicolumn{2}{c}{Stage 1} & \multicolumn{2}{c}{Stage 2} & \multicolumn{2}{c}{Stage 3} & \multicolumn{2}{c}{Stage 4} & \multicolumn{2}{c}{Stage 5} & \multicolumn{2}{c|}{Stage 6} & Final \\
+ & Drop & Fut. & Var. & Fut. & Var. & Fut. & Var. & Fut. & Var. & Fut. & Var. & Fut. & Var. & Sig. \\
+\midrule
+Gemma3-12B & 75 & 0 & 56 & 8 & 0 & 2 & 0 & 3 & 0 & 3 & 0 & 0 & 0 & 7 \\
+Gemma3-27B & 77 & 0 & 54 & 3 & 0 & 6 & 1 & 3 & 0 & 4 & 0 & 0 & 0 & 4 \\
+Gemini2.5 & 75 & 0 & 55 & 1 & 0 & 5 & 0 & 5 & 0 & 6 & 0 & 0 & 0 & 5 \\
+GPT-4.1 & 70 & 0 & 58 & 0 & 1 & 9 & 0 & 4 & 0 & 5 & 0 & 0 & 0 & 2 \\
+Grok4.1 & 86 & 0 & 45 & 0 & 0 & 9 & 0 & 4 & 0 & 5 & 0 & 0 & 0 & 2 \\
+QwQ-32B & 53 & 0 & 70 & 0 & 1 & 12 & 0 & 2 & 0 & 9 & 0 & 0 & 0 & 5 \\
+Claude4 & 68 & 0 & 59 & 7 & 0 & 7 & 0 & 2 & 0 & 4 & 0 & 0 & 0 & 6 \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\begin{table}[h]
+\centering
+\small
+\caption{Concept filtering funnel for University Admission (79 concepts entering pipeline; see \Cref{tab:concept-preparation}). Baseline=dropped by baseline verbalization check. For each stage, Fut.=dropped by futility, Var.=dropped by variation verbalization. Final=significant unfaithful concepts detected.}
+\label{tab:funnel-university_admission}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{l|rrrrrrrrrrr|r}
+\toprule
+Model & Baseline & \multicolumn{2}{c}{Stage 1} & \multicolumn{2}{c}{Stage 2} & \multicolumn{2}{c}{Stage 3} & \multicolumn{2}{c}{Stage 4} & \multicolumn{2}{c|}{Stage 5} & Final \\
+ & Drop & Fut. & Var. & Fut. & Var. & Fut. & Var. & Fut. & Var. & Fut. & Var. & Sig. \\
+\midrule
+Gemma3-12B & 63 & 4 & 6 & 1 & 0 & 1 & 0 & 2 & 0 & 0 & 0 & 2 \\
+Gemma3-27B & 63 & 0 & 9 & 3 & 0 & 0 & 0 & 2 & 0 & 0 & 0 & 2 \\
+Gemini2.5 & 63 & 3 & 8 & 1 & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 2 \\
+GPT-4.1 & 63 & 0 & 10 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 8 \\
+Grok4.1 & 69 & 0 & 7 & 0 & 0 & 0 & 2 & 1 & 0 & -- & -- & 0 \\
+QwQ-32B & 62 & 2 & 9 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 2 \\
+Claude4 & 63 & 0 & 8 & 2 & 0 & 2 & 0 & 1 & 0 & 0 & 0 & 2 \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+Several patterns emerge from these statistics:
+\begin{itemize}
+    \item \textbf{Quality checking is a major filter}: The variation quality check removes $65\%$ of concepts for LLM Bias, $20\%$ for Loan Approval, and $27\%$ for University Admission (\Cref{tab:concept-preparation}). This step ensures that only concepts with well-formed variation prompts proceed to the pipeline.
+
+    \item \textbf{Baseline verbalization varies strongly by dataset and model}: The baseline verbalization check filters $9$-$26\%$ of pipeline-input concepts for LLM Bias, $35$-$57\%$ for Loan Approval, and $78$-$87\%$ for University Admission. Grok 4.1 Fast consistently has the highest baseline filter rate across all three datasets ($26\%$, $57\%$, $87\%$), indicating it mentions demographic factors in its chain-of-thought more freely than other models. This suggests that models vary not only in their biases but also in how openly they acknowledge bias-relevant factors in their reasoning.
+
+    \item \textbf{Variation verbalization acts as a secondary filter}: The variation verbalization check primarily operates in Stage 1, filtering concepts where the model begins to verbalize the concept when explicitly prompted with variations.
+
+    \item \textbf{Futility stopping increases with stages}: As the pipeline progresses, futility stopping becomes more common in later stages as the effect sizes of remaining concepts become clearer.
+
+\end{itemize}

@@ -1,0 +1,215 @@
+\section{Comparison with Prior Bias Studies}\label{appsec:comparisons}
+
+This appendix documents how our unverbalized bias detection pipeline compares to findings from four prior bias research papers. For each study, we adapted their bias dimensions to our decision task context and ran our full pipeline. A key finding across all comparisons is that our pipeline confirms several biases identified by prior work while providing new insights about their detectability. We report both unverbalized biases (significant effects with verbalization below our 30\% threshold) and verbalized biases (significant effects where the model mentions the factor above this threshold). Some biases from prior work are not significant in our task context, suggesting that bias expression might be task-dependent.
+
+\subsection{John vs. Ahmed: Multilingual Bias}\label{appsubsec:john-vs-ahmed}
+
+\paragraph{Original Paper.} \citet{john-vs-ahmed-2024} introduced a debate-based prompting method to uncover biases in LLMs across English, Arabic, and Russian. They found strong gender bias favoring women ($75$-$100$\% win rates), religious biases where Christianity dominated in English and Russian but Islam gained ground in Arabic, and racial biases favoring Middle Eastern, Asian, and African American groups.
+
+\paragraph{Our Adaptation.} We adapted their bias dimensions to our loan approval task, testing $64$ concepts across three languages: cultural/regional bias, religious bias, racial bias, and gender bias. We used GPT-3.5-turbo to match the original paper.
+
+\paragraph{Results.} \cref{tab:john-ahmed-results-full} shows all concepts that reached statistical significance ($p < 0.05$ after multiple comparison adjustment) in at least one language. Concepts in \textbf{bold} are unverbalized (verbalization below our 30\% threshold); others are verbalized biases that the model mentions in its reasoning. English showed the most significant biases overall ($6$), with $4$ unverbalized and $2$ verbalized. Arabic showed $1$ significant bias ($1$ unverbalized). Russian showed no significant biases.
+
+\begin{table}[h]
+\centering
+\caption{Significant biases in John vs. Ahmed comparison (GPT-3.5-turbo). \textbf{Bold} = unverbalized (verbalization $<$$30$\%). Effect = $\Delta = p_{\text{pos}} - p_{\text{neg}}$, where positive means higher approval for first group. Verb = average verbalization rate.}
+\label{tab:john-ahmed-results-full}
+\small
+\begin{tabular}{p{5cm}|cc|cc}
+\toprule
+& \multicolumn{2}{c|}{English} & \multicolumn{2}{c}{Arabic} \\
+Concept & Effect & Verb & Effect & Verb \\
+\midrule
+\rowcolor{white} \multicolumn{5}{l}{\textit{Gender}} \\
+\rowcolor{gray!25} \textbf{Favors Female (name)} & $\mathbf{+0.033}$ & \textbf{15\%} & -- & -- \\
+\midrule
+\rowcolor{white} \multicolumn{5}{l}{\textit{Religion}} \\
+\rowcolor{gray!25} \textbf{Favors Muslim over Jewish (explicit)} & $\mathbf{+0.042}$ & \textbf{6\%} & -- & -- \\
+\rowcolor{white} Favors Muslim over Christian (explicit) & $+0.032$ & 9\% & -- & -- \\
+\midrule
+\rowcolor{white} \multicolumn{5}{l}{\textit{Race}} \\
+\rowcolor{gray!25} \textbf{Favors Black over White (explicit)} & $\mathbf{+0.050}$ & \textbf{1\%} & -- & -- \\
+\rowcolor{white} \textbf{Favors African American over White (explicit)} & $\mathbf{+0.045}$ & \textbf{1\%} & -- & -- \\
+\rowcolor{gray!25} Favors Asian over European (name) & $+0.033$ & 0\% & -- & -- \\
+\midrule
+\rowcolor{white} \multicolumn{5}{l}{\textit{Culture}} \\
+\rowcolor{gray!25} \textbf{Favors Latin American over Indian} & -- & -- & $\mathbf{+0.040}$ & \textbf{6\%} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Key Findings.} We confirm gender, religion, and race biases in English, matching the original paper's findings of demographic biases in LLM behavior. Of the $6$ significant English biases, $4$ are unverbalized: explicit racial categories (favoring Black and African American over White), explicit religious identity (favoring Muslim over Jewish), and gender conveyed through names (favoring female). The $2$ verbalized biases (Muslim over Christian via explicit cues, Asian over European via names) are potentially catchable through CoT monitoring. Arabic confirms $1$ cultural bias (unverbalized). Russian shows no significant biases; the demographic biases found by \citet{john-vs-ahmed-2024} in Russian debate contexts do not manifest in our loan approval task, possibly reflecting model updates or task-context differences.
+
+\subsection{Muslim-Violence Bias}\label{appsubsec:muslim-violence}
+
+\paragraph{Original Paper.} \citet{muslim-violence-2023} found that anti-Muslim bias persists in GPT models (InstructGPT and ChatGPT) even after debiasing efforts. Their key finding was that ``second-order'' bias through Muslim-associated names was stronger than explicit religious labels, suggesting that name-based cues trigger implicit associations that bypass explicit debiasing.
+
+\paragraph{Our Adaptation.} We tested both name-based and explicit religious cues in our loan approval task using GPT-3.5-turbo, including Muslim vs Christian, Muslim vs Jewish, Muslim vs Hindu, and Muslim vs Buddhist comparisons, as well as control comparisons between other religious groups.
+
+\paragraph{Results.} We detected $5$ unverbalized biases and $2$ verbalized biases. \cref{tab:muslim-violence-results} summarizes the findings with verbalization rates.
+
+\begin{table}[h]
+\centering
+\caption{Muslim-violence bias comparison results (GPT-3.5-turbo). Effect = $\Delta$, where positive means higher approval for first group. Verb = average verbalization rate.}
+\label{tab:muslim-violence-results}
+\small
+\begin{tabular}{p{5cm}lccc}
+\toprule
+Concept & Cue Type & Effect & Verb & Status \\
+\midrule
+\rowcolor{gray!25} \textbf{Favors Muslim over Jewish (explicit)} & explicit & $\mathbf{+0.057}$ & \textbf{3\%} & Unverbalized \\
+\rowcolor{white} \textbf{Favors Muslim over Buddhist (explicit)} & explicit & $\mathbf{+0.042}$ & \textbf{3\%} & Unverbalized \\
+\rowcolor{gray!25} \textbf{Favors Muslim over Christian (name)} & name & $\mathbf{+0.035}$ & \textbf{8\%} & Unverbalized \\
+\rowcolor{white} \textbf{Favors Buddhist over Hindu (name)} & name & $\mathbf{+0.048}$ & \textbf{4\%} & Unverbalized \\
+\rowcolor{gray!25} \textbf{Favors Buddhist over Christian (name)} & name & $\mathbf{+0.046}$ & \textbf{3\%} & Unverbalized \\
+\midrule
+\rowcolor{white} Favors Buddhist over Muslim (name) & name & $+0.032$ & 10\% & Verbalized \\
+\rowcolor{gray!25} Favors Muslim over Hindu (name) & name & $+0.030$ & 11\% & Verbalized \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Name-based vs Explicit Cues.} Both cue types produced unverbalized biases: $3$ name-based and $2$ explicit. The average effect sizes were similar ($0.043$ for name-based, $0.049$ for explicit). The $2$ verbalized biases both involve name-based cues with higher verbalization rates ($10$-$11$\%) compared to the unverbalized name-based biases ($3$-$8$\%), suggesting that verbalization rate is what distinguishes the two categories rather than cue type.
+
+\paragraph{Direction of Effects.} The positive effect for Muslim vs Jewish ($+0.057$) and Muslim vs Buddhist ($+0.042$) explicit biases indicates that explicitly stating an applicant is Muslim actually \emph{increases} approval rates compared to Jewish or Buddhist applicants in this task context. Buddhist applicants are also favored over Hindu and Christian applicants. This pro-Muslim and pro-Buddhist pattern differs from the violence-association findings in the original paper, possibly reflecting different task domains or model fine-tuning for fairness in financial contexts.
+
+\subsection{Political Compass}\label{appsubsec:political-compass}
+
+\paragraph{Original Paper.} \citet{political-compass-2023} measured ChatGPT's (GPT-3.5-turbo and GPT-4) political bias using the Political Compass Test \citep{political-compass-test}, having the model impersonate Democrats and Republicans while answering questionnaire items. They found that default ChatGPT responses correlated strongly with Democrat impersonation ($r = 0.96$) and negatively with Republican impersonation ($r = -0.12$).
+
+\paragraph{Our Adaptation.} We tested whether political impersonation instructions affect binary agree/disagree decisions on Political Compass propositions and whether such influence is verbalized, using GPT-3.5-turbo. We tested two experimental conditions:
+
+\begin{itemize}
+    \item \textbf{Overt instructions:} Simple impersonation (e.g., ``You are answering as a Democrat'') without concealment instructions
+    \item \textbf{Concealment instructions:} Same identity assignment but with explicit instructions to hide the political identity from reasoning (e.g., ``You must NEVER mention that you are answering as a Democrat... Your reasoning must appear neutral'')
+\end{itemize}
+
+This design tests whether models can successfully conceal biases from their chain-of-thought when instructed to do so.
+
+\paragraph{Results.} \cref{tab:political-compass-results-concealment} shows results with concealment instructions. We detected \textbf{$3$ unverbalized biases}: Democrat, Republican, and Radical Republican impersonation all significantly influenced agreement rates while being completely hidden from the model's reasoning ($0$\% verbalization in all cases). Radical Democrat impersonation ($p = 0.008$) does not reach significance ($\alpha = 0.05/7 = 0.00714$).
+
+\begin{table}[h]
+\centering
+\caption{Political Compass results with concealment instructions (GPT-3.5-turbo). \textbf{Bold} = unverbalized. Effect = change in agreement rate (positive means first group has higher agreement). Verb = verbalization rate.}
+\label{tab:political-compass-results-concealment}
+\small
+\begin{tabular}{p{3.5cm}cccc}
+\toprule
+Concept & Effect & $p$-value & Verb & Status \\
+\midrule
+\rowcolor{gray!25} \textbf{Favors Radical Republican over baseline} & $\mathbf{+0.387}$ & $\mathbf{4.8 \times 10^{-5}}$ & \textbf{0\%} & Unverbalized \\
+\rowcolor{white} \textbf{Favors Republican over baseline} & $\mathbf{+0.234}$ & $\mathbf{0.001}$ & \textbf{0\%} & Unverbalized \\
+\rowcolor{gray!25} \textbf{Favors Democrat over baseline} & $\mathbf{+0.145}$ & $\mathbf{0.004}$ & \textbf{0\%} & Unverbalized \\
+\rowcolor{white} Favors Radical Democrat over baseline & $+0.129$ & 0.008 & 0\% & Not sig. \\
+\rowcolor{gray!25} Favors Republican over Democrat & $+0.122$ & 0.065 & 0\% & Not sig. \\
+\rowcolor{white} Favors Radical Republican over Republican & $+0.091$ & 0.302 & 0\% & Not sig. \\
+\rowcolor{gray!25} Favors Radical Democrat over Democrat & $+0.048$ & 0.453 & 14\% & Not sig. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Comparison with Overt Instructions.} Without concealment instructions, only Radical Republican impersonation reached significance ($1$ verbalized bias). \cref{tab:political-compass-comparison} compares the two conditions for matching concepts.
+
+\begin{table}[h]
+\centering
+\caption{Overt vs concealment instructions for political impersonation. Effect = change in agreement rate (positive means impersonation increases agreement over baseline).}
+\label{tab:political-compass-comparison}
+\small
+\begin{tabular}{p{3.5cm}|ccc|ccc}
+\toprule
+& \multicolumn{3}{c|}{Overt} & \multicolumn{3}{c}{Concealment} \\
+Concept & Effect & Verb & Status & Effect & Verb & Status \\
+\midrule
+\rowcolor{gray!25} Favors Radical Republican over baseline & $+0.323$ & 48\% & Verbalized & $+0.387$ & 0\% & Unverbalized \\
+\rowcolor{white} Favors Republican over baseline & $+0.194$ & 18\% & Not sig. & $+0.234$ & 0\% & Unverbalized \\
+\rowcolor{gray!25} Favors Democrat over baseline & $+0.065$ & 67\% & Not sig. & $+0.145$ & 0\% & Unverbalized \\
+\rowcolor{white} Favors Radical Democrat over baseline & $+0.113$ & 89\% & Not sig. & $+0.129$ & 0\% & Not sig. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Key Finding.} The comparison between overt and concealment instructions reveals that:
+\begin{enumerate}
+    \item \textbf{Concealment instructions work.} The model successfully hides its political identity from its reasoning when instructed to do so (verbalization drops from $18$-$89$\% to $0$\%).
+    \item \textbf{Bias persists despite concealment.} Political impersonation still influences decisions (effect sizes are similar or larger with concealment).
+    \item \textbf{Unverbalized biases are inducible.} By adding concealment instructions, we transform verbalized biases (detectable via CoT) into unverbalized biases (not detectable via CoT).
+\end{enumerate}
+
+\paragraph{Comparison with Original Paper.} \citet{political-compass-2023} used impersonation to reveal ChatGPT's default political bias: by showing that default responses correlate strongly with Democrat impersonation ($r = 0.96$) but not Republican ($r = -0.12$), they conclude that ChatGPT has a left-leaning default stance. Their method assumes the model faithfully expresses the impersonated identity in its outputs.
+
+Our effect sizes provide indirect support for their finding. Republican impersonation produces consistently larger effects than Democrat impersonation: +0.234 vs +0.145 for standard impersonation (1.6$\times$ larger), and +0.387 vs +0.129 for radical impersonation (3$\times$ larger). This asymmetry is expected if baseline responses are already Democrat-leaning: Democrat impersonation causes smaller changes because the model's default is already close to that position, while Republican impersonation requires a larger shift away from the baseline stance.
+
+Our experiment extends their work by asking: \emph{when political identity influences responses, is this influence visible in the model's reasoning?} We find:
+
+\begin{itemize}
+    \item \textbf{Impersonation affects decisions.} Consistent with their findings, political impersonation significantly changes response patterns. Both Democrat and Republican impersonation increase agreement rates compared to baseline (by $14.5$ and $23.4$ percentage points respectively with concealment), confirming that the model can adopt political personas.
+
+    \item \textbf{Overt impersonation is verbalized.} With simple impersonation instructions (similar to their prompts), the model tends to mention its political identity in its reasoning ($18$-$89$\% verbalization). This makes the bias detectable through CoT monitoring.
+
+    \item \textbf{Concealed impersonation is not verbalized.} When explicitly instructed to hide its political identity, the model successfully does so ($0$\% verbalization) while the bias persists. This creates an unverbalized bias, where the political identity influences decisions but leaves no trace in the reasoning.
+\end{itemize}
+
+This has implications for interpreting their findings. Their method reveals that ChatGPT can impersonate political identities, but our results suggest that if a model were trained or prompted to conceal political influences, such biases might not be detectable through output analysis alone. The ease with which impersonation can be hidden from reasoning (simply by adding concealment instructions) demonstrates that CoT monitoring has fundamental limitations for detecting biases when models are motivated to conceal them.
+
+\subsection{SALT Benchmark}\label{appsubsec:salt}
+
+\paragraph{Original Paper.} \citet{salt-2024} introduced the SALT dataset for measuring biases across gender, religion, and race. Using debate and career advice tasks with various models including Gemma-2-9B, they found gender bias favoring female outputs (scores $-0.18$ to $-0.44$), religious bias favoring Atheist outputs ($+0.20$ to $+0.27$) while disfavoring Christian and Hindu, and racial bias strongly disfavoring White outputs (up to $-0.96$) while favoring African-American and Hispanic.
+
+\paragraph{Our Adaptation.} We tested $281$ concepts in our loan approval task using Gemma-2-9B-it, including the SALT demographic dimensions (gender, religion, race/ethnicity) plus financial factors. The SALT paper specifically tested certain demographic comparisons which we replicated as ``hardcoded'' concepts.
+
+\paragraph{Results.} Across all SALT demographic dimensions, we detected \textbf{zero significant biases} ($\alpha = 0.05/281 = 0.000178$). The only unverbalized bias found was for a financial factor (``Lower loan-to-income ratio'', $\Delta = +0.037$, $p = 0.001$), which is the sole significant concept across all $281$ tested. \cref{tab:salt-hardcoded} shows results for the hardcoded SALT demographic concepts, and \cref{tab:salt-other-significant} shows the one non-demographic concept that reached significance.
+
+\begin{table}[h]
+\centering
+\caption{SALT hardcoded demographic concepts (Gemma-2-9B-it). None reached significance ($\alpha = 0.05/281$). Effect = $\Delta$, Verb = average verbalization rate.}
+\label{tab:salt-hardcoded}
+\small
+\begin{tabular}{p{3.5cm}cccc}
+\toprule
+Concept & Effect & $p$-value & Verb & Status \\
+\midrule
+\rowcolor{white} \multicolumn{5}{l}{\textit{Gender}} \\
+\rowcolor{gray!25} Favors Female & $+0.022$ & 0.003 & 3\% & Not sig. \\
+\rowcolor{white} Favors Male (various) & $-0.007$ to $-0.018$ & $>0.1$ & 0-8\% & Not sig. \\
+\midrule
+\rowcolor{white} \multicolumn{5}{l}{\textit{Religion}} \\
+\rowcolor{gray!25} Favors Atheist (4 variants) & $+0.012$ to $+0.046$ & $>0.5$ & 42-100\% & Not sig. \\
+\rowcolor{white} Favors Christian (4 variants) & $-0.018$ to $-0.056$ & $>0.06$ & 13-40\% & Not sig. \\
+\rowcolor{gray!25} Favors Hindu (2 variants) & $-0.054$, $+0.010$ & $>0.6$ & 50-63\% & Not sig. \\
+\rowcolor{white} Favors Jewish & $+0.009$ & 1.0 & 100\% & Not sig. \\
+\midrule
+\rowcolor{white} \multicolumn{5}{l}{\textit{Race/Ethnicity}} \\
+\rowcolor{gray!25} Favors African-American & $+0.018$ & 0.002 & 7\% & Not sig. \\
+\rowcolor{white} Favors African-American & $+0.017$ & 0.039 & 22\% & Not sig. \\
+\rowcolor{gray!25} Favors White (5 variants) & $-0.057$ to $+0.012$ & $>0.3$ & 13-50\% & Not sig. \\
+\rowcolor{white} Favors Hispanic (3 variants) & $-0.009$ to $+0.007$ & $>0.3$ & 16-50\% & Not sig. \\
+\rowcolor{gray!25} Favors Asian (2 variants) & $+0.013$, $+0.020$ & $>0.2$ & 17-25\% & Not sig. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering
+\caption{Non-demographic concept reaching significance in SALT comparison (Gemma-2-9B-it). This is the only significant concept across all $281$ tested.}
+\label{tab:salt-other-significant}
+\small
+\begin{tabular}{p{3.5cm}cccc}
+\toprule
+Concept & Effect & $p$-value & Verb & Status \\
+\midrule
+\rowcolor{gray!25} \textbf{Lower loan-to-income ratio} & $\mathbf{+0.037}$ & \textbf{0.001} & \textbf{--} & \textbf{Unverbalized} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Comparison with Original SALT.} The SALT paper found strong demographic biases in debate and career advice tasks, while we found no significant demographic biases in our loan approval task. This is a stronger negative result than merely finding verbalized biases: the demographic effects that appeared nominally significant ($p < 0.05$) are not significant when accounting for the $281$ concepts tested. This suggests that bias expression is task-dependent: the demographic biases found by \citet{salt-2024} in debate and career advice contexts do not manifest in our loan approval task, possibly reflecting task-context differences or model fine-tuning for fairness in financial domains.
+
+\paragraph{Financial Factors.} While financial factors (credit score, debt-to-income, income, employment stability) showed nominally significant effects, none are significant when accounting for the $281$ concepts tested. This is unsurprising given the large number of concepts. Those that showed effects had very high verbalization rates ($45$-$85$\%), confirming that the model explicitly reasons about legitimate lending criteria when they do influence decisions.
+
+\subsection{Summary of Comparison Findings}\label{appsubsec:comparison-summary}
+
+Across the four comparison studies, our pipeline confirms many biases from prior work: significant biases emerge from John vs Ahmed (gender, religion, race in English; culture in Arabic), Muslim Violence (name-based and explicit religious cues), and Political Compass (political impersonation). Several of these are unverbalized, meaning they would not be caught by CoT monitoring. Among significant biases, some are verbalized (Muslim over Christian explicit, Asian over European, Buddhist over Muslim, Muslim over Hindu), meaning CoT monitoring could detect them. Unverbalized biases tend to have lower verbalization rates ($0$-$15$\%) while verbalized ones cluster at $9$-$11$\%.
+
+Some biases from prior work are not significant in our setup. Russian in John vs Ahmed shows no significant biases (the original paper found biases across all three languages). SALT demographic biases (gender, religion, race) also show no significant effects in our loan approval task, contrasting with the original paper's findings in debate and career advice contexts. This may reflect model updates or task-context differences.
+
+The Political Compass comparison demonstrates that adding concealment instructions transforms verbalized biases into unverbalized ones. With overt instructions, impersonation produced $0$ unverbalized and $1$ verbalized bias. With concealment instructions, the same impersonation produced $3$ unverbalized biases with $0$\% verbalization. This shows that CoT monitoring can be defeated when models are motivated to hide their reasoning. Republican impersonation also produces consistently larger effects than Democrat impersonation: $1.6\times$ larger for standard impersonation ($+0.234$ vs $+0.145$) and $3\times$ larger for radical impersonation ($+0.387$ vs $+0.129$). This asymmetry provides indirect support for \citet{political-compass-2023}'s finding that ChatGPT's default is Democrat-leaning: Democrat impersonation causes smaller shifts because the baseline is already close to that position, while Republican impersonation requires moving further from the default stance.

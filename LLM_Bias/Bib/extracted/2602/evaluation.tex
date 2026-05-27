@@ -1,0 +1,142 @@
+\section{Evaluation}
+
+ \begin{table*}[t]
+\centering
+\caption{Unverbalized biases detected in the hiring task. Values show effect size ($\Delta$). ``--'' indicates the concept was not flagged as significant or was filtered due to verbalization. Asterisk (*) indicates early stopping due to strong evidence.}
+\label{tab:results-hiring}
+\small
+\begin{tabular}{p{1.9cm}ccccccc}
+\toprule
+Concept & \makecell{Gemma 3\\12B} & \makecell{Gemma 3\\27B} & \makecell{Gemini 2.5\\Flash} & GPT-4.1 & \makecell{Grok 4.1\\Fast} & QwQ-32B & \makecell{Claude\\Sonnet 4} \\
+\midrule
+\rowcolor{white} \multicolumn{8}{l}{\textit{Gender}} \\
+\rowcolor{gray!25} Favors Male -- Gender & -- & $-$0.050* & -- & -- & -- & -- & $-$0.028 \\
+\rowcolor{white} Favors male -- gender & -- & -- & $-$0.029 & $-$0.030* & -- & -- & $-$0.051* \\
+\rowcolor{gray!25} Favors Male -- gender & -- & -- & -- & $-$0.028 & -- & -- & -- \\
+\rowcolor{white} Favors Male -- gender identity & -- & -- & -- & -- & -- & -- & $-$0.032* \\
+\rowcolor{gray!25} Favors Female -- Gender & -- & -- & -- & +0.029 & -- & +0.037 & -- \\
+\rowcolor{white} Favors Female -- Gender Identity & -- & -- & -- & -- & -- & +0.031 & +0.028* \\
+\midrule
+\rowcolor{white} \multicolumn{8}{l}{\textit{Race / Ethnicity}} \\
+\rowcolor{gray!25} Favors Black -- Race & -- & -- & -- & -- & -- & +0.051* & -- \\
+\rowcolor{white} Favors Black -- name racial association & -- & -- & -- & +0.034* & +0.031 & +0.035 & +0.030 \\
+\rowcolor{gray!25} Favors Black -- race/ethnicity & -- & -- & -- & +0.030 & -- & -- & -- \\
+\rowcolor{white} Favors Black-sounding -- Name ethnicity & -- & -- & -- & -- & +0.027* & -- & +0.037* \\
+\rowcolor{gray!25} Favors Black-sounding -- name ethnicity cue & -- & -- & -- & +0.028* & -- & +0.036 & -- \\
+\rowcolor{white} Favors AfricanAmerican -- Name Ethnicity Cue & +0.033* & -- & -- & -- & -- & -- & -- \\
+\midrule
+\rowcolor{white} \multicolumn{8}{l}{\textit{Other}} \\
+\rowcolor{gray!25} Higher -- Spanish language ability & -- & -- & -- & -- & -- & +0.040* & -- \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+Our main evaluation consists of applying our proposed approach to \textbf{three diverse tasks} where unverbalized biases may influence model behavior: hiring decisions, loan approval decisions, and university admission decisions. We first describe the experimental setup, then present main results, evaluate on four prior bias study setups, and validate key pipeline components through ablation~studies.
+
+For the \textbf{hiring} task, the model acts as a candidate screening agent that decides whether to interview each candidate (yes/no) given a resume and job description. We use the resume dataset from \citet{llm-fairness-2025}, which pairs professional resumes with job descriptions ($1{,}336$ inputs). For the \textbf{loan approval} task, the model acts as a loan officer that decides whether to approve or reject each application. We use a synthetic dataset of loan applications with financial and demographic information, generated based on the Kaggle loan approval dataset \citep{LoanApprovalKaggle} ($2{,}500$ inputs). For the \textbf{university admissions} task, the model acts as an admissions officer that decides whether to admit or reject each applicant. We use a synthetic dataset of student applications with academic records and personal statements, generated based on the OpenIntro SATGPA dataset \citep{openintro_satgpa} ($1{,}500$ inputs). See \cref{appsubsec:dataset-prompts} for the complete task and variation prompts.
+
+We test each task on \textbf{seven models}: Gemma 3 12B \citep{gemma3}, Gemma 3 27B \citep{gemma3}, Gemini 2.5 Flash \citep{gemini2.5flash}, GPT-4.1 \citep{gpt41}, Grok 4.1 Fast \citep{grok41fast}, QwQ-32B \citep{QwQ2024Nov} (a model specifically designed for reasoning tasks), and Claude Sonnet 4 \citep{claudeSonnet4}. Across all experiments, we cluster inputs into $10$ representative groups, selecting $3$ representative inputs from each cluster for concept hypothesis generation (see \cref{appsubsec:concept-hypothesis} for the prompt). We start with $20$ inputs per representative cluster, doubling this at each stage.
+
+Throughout the pipeline, we use \textbf{LLM autoraters} for various tasks, selecting each model based on the tradeoff between reasoning capabilities and cost. For input clustering, we use OpenAI's text-embedding-3-large~\citep{openai2024textembedding3}. For concept hypothesis generation, we use OpenAI's o3 model \citep{openAIo3} to identify potential unverbalized biases from representative inputs. We choose the most capable model available for this task since we only send a small number of requests, making cost negligible. For generating positive and negative input variations for each concept, we use GPT-4.1-mini \citep{gpt41mini}, which provides sufficient creativity while keeping output costs low, which is important since the generated variations can be lengthy. For verbalization detection, we use GPT-5-mini \citep{gpt5} to check whether concepts are cited as decision factors in model responses. This task requires low input costs since we process many responses, while output cost is not a concern as the detector produces only binary yes/no answers. Detailed decoding settings (temperature, top-p, seeds) for all models are provided in \cref{appsec:eval-details}, and a detailed cost breakdown with a budget-to-yield analysis in \cref{appsec:compute-costs}.
+
+For statistical testing, we set a target significance level of $\alpha = 0.05$. We use a verbalization threshold of $\tau = 0.3$, which balances strictness (identifying concepts that are largely unmentioned) against robustness to LLM autorater noise and edge cases.
+% where related terms appear incidentally. 
+% This threshold is deliberately lenient for the baseline filter: its purpose is only to remove concepts the model routinely discusses, and concepts that slip through will be caught by the authoritative variation verbalization check. 
+Our verbalization detection validation (\cref{appsec:verbalization-eval}) shows this threshold achieves good separation between truly verbalized and unverbalized concepts, and analyzes sensitivity to both threshold choice and detector model selection. We use a futility threshold of $\gamma = 0.01$ for conditional power analysis. Each input receives one baseline response and one response per variation.
+
+\subsection{Results}
+
+\begin{table*}[t]
+\centering
+\caption{Unverbalized biases detected in the loan approval task. Values show effect size ($\Delta$). ``--'' indicates the concept was not flagged as significant or was filtered due to verbalization. Asterisk (*) indicates early stopping.}
+\label{tab:results-loan}
+\small
+\begin{tabular}{p{1.9cm}ccccccc}
+\toprule
+Concept & \makecell{Gemma 3\\12B} & \makecell{Gemma 3\\27B} & \makecell{Gemini 2.5\\Flash} & GPT-4.1 & \makecell{Grok 4.1\\Fast} & QwQ-32B & \makecell{Claude\\Sonnet 4} \\
+\midrule
+\rowcolor{white} \multicolumn{8}{l}{\textit{Gender}} \\
+\rowcolor{gray!25} Favors Female -- Gender & +0.021 & -- & +0.028* & +0.017 & +0.021* & +0.022* & -- \\
+\rowcolor{white} Favors male -- Applicant gender & -- & -- & $-$0.027* & -- & -- & -- & -- \\
+\rowcolor{gray!25} Favors male -- gender & -- & -- & -- & $-$0.015 & -- & -- & -- \\
+\midrule
+\rowcolor{white} \multicolumn{8}{l}{\textit{Language / Tone}} \\
+\rowcolor{gray!25} Favors English-proficient -- Language proficiency & +0.035* & +0.048* & +0.021 & -- & -- & -- & -- \\
+\rowcolor{white} Favors formal -- Application tone & +0.033* & +0.044* & -- & -- & -- & -- & -- \\
+\midrule
+\rowcolor{white} \multicolumn{8}{l}{\textit{Race / Ethnicity / Religion}} \\
+\rowcolor{gray!25} Favors Minority -- Ethnicity & -- & -- & -- & -- & -- & -- & +0.060* \\
+\rowcolor{white} Favors Minority-sounding -- Applicant name ethnicity & -- & -- & -- & -- & -- & +0.022* & -- \\
+\rowcolor{gray!25} Favors Majority Race -- Race/Ethnicity & -- & -- & -- & -- & -- & $-$0.020 & $-$0.037* \\
+\rowcolor{white} Favors Majority religion -- Religious affiliation & -- & -- & -- & -- & -- & -- & $-$0.037* \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\caption{Unverbalized biases detected in the university admissions task. Values show effect size ($\Delta$). ``--'' indicates the concept was not flagged as significant or was filtered due to verbalization. Asterisk (*) indicates early stopping.}
+\label{tab:results-university}
+\small
+\begin{tabular}{p{1.9cm}ccccccc}
+\toprule
+Concept & \makecell{Gemma 3\\12B} & \makecell{Gemma 3\\27B} & \makecell{Gemini 2.5\\Flash} & GPT-4.1 & \makecell{Grok 4.1\\Fast} & QwQ-32B & \makecell{Claude\\Sonnet 4} \\
+\midrule
+\rowcolor{white} \multicolumn{8}{l}{\textit{Gender}} \\
+\rowcolor{gray!25} Favors Female -- Gender & -- & -- & +0.043* & +0.027* & -- & +0.060* & -- \\
+\rowcolor{white} Favors Male -- Applicant gender & -- & -- & -- & $-$0.026* & -- & -- & -- \\
+\midrule
+\rowcolor{white} \multicolumn{8}{l}{\textit{Race / Ethnicity}} \\
+\rowcolor{gray!25} Favors White-sounding -- Applicant name ethnicity & $-$0.058* & $-$0.047* & -- & $-$0.029* & -- & -- & $-$0.046* \\
+\rowcolor{white} Favors perceived minority -- Race & +0.049* & +0.051* & -- & +0.026* & -- & -- & -- \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\Cref{tab:results-hiring,tab:results-loan,tab:results-university} present the results for each dataset in our evaluation, showing concepts that were flagged as significant unverbalized biases in at least one model. They also report the effect size (bias strength) of each concept: the difference between acceptance rates under positive versus negative variations ($\Delta = p_{\text{pos}} - p_{\text{neg}}$). Thus, an effect size of $0.05$ means that the model accepts $5$ percentage points more applications under the positive variation compared to the negative variation. A positive value indicates the model favors the concept's positive variation, while a negative value indicates the opposite direction (e.g., ``Favors Male'' with $\Delta < 0$ means the model actually favors female candidates). Across all detected biases, $67$\% have $95$\% confidence intervals that exclude zero. Full confidence intervals and power analysis are provided in \cref{appsubsec:power-analysis}. Representative discordant pairs for each bias group are shown in \cref{appsec:discordant-pairs}.
+
+Several concepts appear with similar titles but different operationalizations (distinct addition/removal actions and verbalization checks). This occurs because our concept hypothesis generation produces multiple ways to test the same underlying bias, and different operationalizations may survive the pipeline independently. For example, in \cref{tab:results-hiring}, gender bias is captured by six different concepts: some operationalizations signal gender by swapping pronouns (``He/him'' to ``She/her''), others by changing first names (``Neil'' to ``Neila''), and others by adding explicit markers (``male Director''). We report all surviving concepts rather than manually deduplicating, as different operationalizations may capture subtly different aspects of a bias. Detailed statistics on concept filtering at each pipeline stage are provided in \cref{appsec:pipeline-funnel}.
+
+\paragraph{Hiring Decisions.}
+
+\Cref{tab:results-hiring} shows results for the hiring task. Gender bias is detected in five of seven models, all favoring female candidates (\cref{tab:results-hiring}). These variations are narrowly targeted, modifying only names and pronouns while leaving resume content unchanged (see \cref{appsubsec:case-study-gender}). Race and ethnicity biases favoring Black-sounding names are detected in five models, where these variations also change only names or affiliations (see \cref{appsubsec:case-study-race}). QwQ-32B additionally shows bias toward Spanish language ability (see \cref{appsubsec:case-study-other}). Grok 4.1 Fast's only \emph{unverbalized} biases in hiring are race-related, and it is the most transparent model overall, with the highest baseline verbalization rates across all tasks, openly speculating and calling out demographic factors that other models leave unmentioned in their reasoning.
+
+Notably, the gender and race biases we detect align with findings from \citet{llm-fairness-2025}, who manually identified these biases on the same dataset. Our pipeline automatically rediscovers these biases, validating our approach, while also uncovering a novel bias (Spanish language ability). Our effect sizes ($3$-$5$\%) are smaller than theirs ($6$-$12$\%), consistent with their finding that chain-of-thought reasoning reduces bias magnitude.
+
+Many other concepts showed statistically significant effects but were correctly filtered because models explicitly discussed them in their reasoning (e.g., geographic proximity, international experience). See \cref{appsubsec:case-study-filtered} for examples.
+
+\paragraph{Loan Approval.}
+
+\Cref{tab:results-loan} shows results for the loan approval task. Gender bias favoring female applicants is detected in five models. Language proficiency biases appear in both Gemma models and Gemini 2.5 Flash, and formal tone bias in both Gemma models. Race and ethnicity biases favoring minority applicants are detected in Claude Sonnet 4 and QwQ-32B, with Claude also showing bias toward minority religious affiliations.
+
+\paragraph{University Admissions.}
+
+\Cref{tab:results-university} shows results for the university admissions task. Race-related biases favoring minority applicants are detected in both Gemma models, GPT-4.1, and Claude Sonnet 4. Gender bias favoring female applicants appears in Gemini 2.5 Flash, GPT-4.1, and QwQ. Grok 4.1 Fast is the only model with no detected unverbalized biases in this task, as its high baseline verbalization rate ($87$\% of concepts filtered) indicates it mentions most demographic factors in its reasoning, though the underlying biases still exist.
+
+\paragraph{Cross-Dataset Patterns.}
+
+Two biases appear consistently across all three tasks: gender bias (favoring female candidates/applicants) and race/ethnicity bias (favoring minority-associated applicants). This cross-task consistency suggests that the detected biases reflect genuine model behavior rather than task-specific artifacts.
+
+\paragraph{Model Transparency: Grok's Verbalization Patterns.}
+
+An unexpected finding is that Grok 4.1 Fast mentions and speculates about demographic factors in its chain-of-thought far more often than other models. Of 30 concepts flagged as unverbalized biases across the other six models, 27 are filtered for Grok, 13 because it mentions them. For a race-related concept that GPT-4.1 mentions in only $6$\% of baseline responses, Grok mentions it in $67.5$\%, with statements such as \emph{``Demographics: Shanice (likely underrepresented minority based on name).''} In admissions, Grok cites demographics as a positive argument (\emph{``adds diversity value''}), while in loans it explicitly disclaims their relevance (\emph{``noted but irrelevant to financial underwriting''}). Further analysis and examples are provided in \cref{app:grok-verbalization}.
+
+\subsection{Generalization to Prior Bias Study Setups}
+
+To show that our pipeline can provide additional insights on top of prior bias studies, we adapted bias categories from four prior works: gender, racial, and cultural biases across three languages \citep{john-vs-ahmed-2024}, anti-Muslim bias through name-based vs.\ explicit religious cues \citep{muslim-violence-2023}, political bias via Democrat and Republican impersonation \citep{political-compass-2023}, and the SALT benchmark for demographic biases \citep{salt-2024}. For each study, we tested their bias dimensions in a decision task context and tracked both effect sizes and verbalization rates.
+
+Our pipeline confirms several biases while adding verbalization insights. For the multilingual study \citep{john-vs-ahmed-2024} on GPT-3.5-turbo, we found $6$ significant biases in English ($4$ unverbalized, $2$ verbalized), $1$ unverbalized cultural bias in Arabic, and none in Russian. For the religious bias study \citep{muslim-violence-2023}, $5$ of $7$ significant biases were unverbalized. The SALT comparison \citep{salt-2024} on Gemma-2-9B-it found no significant demographic biases, contrasting with the original findings in debate and career advice tasks and suggesting bias expression might be task-dependent. The political bias comparison \citep{political-compass-2023} reveals that Republican impersonation produces $1.6$--$3$ times larger shifts in agreement rates than Democrat impersonation, suggesting the model's default stance is already Democrat-leaning. Full results are provided in \cref{appsec:comparisons}.
+
+We also compare QwQ-32B (RLVR) against its SFT counterpart Qwen2.5-32B-Instruct on loan approval and find nearly identical verbalization filter rates ($97.0$\% vs $97.2$\%) and the same number of unverbalized biases, suggesting reasoning training shifts which biases emerge rather than improving faithfulness (\cref{appsubsec:case-study-reasoning}).
+
+\subsection{Ablation Studies}
+
+\paragraph{Consistency across random seeds.} To measure consistency, we run the loan approval task on five different seeds for Gemma-3-12b-it. While the pipeline does not detect identical concepts across every run due to its conservative design, it finds semantically similar concepts in most runs (e.g., gender bias in all runs, English proficiency in 4/5 runs). Importantly, we never observe contradictory biases across runs. Full results are in \cref{appsubsec:consistency}.
+
+\paragraph{Intentionally biased models.} To validate detection capability, we inject biases into Gemma-3-27B-it's system prompt in two modes: \emph{secret} (bias hidden from CoT) and \emph{overt} (bias stated in reasoning). Across $80$ test cases ($20$ concepts $\times$ $2$ modes $\times$ $2$ directions), the pipeline achieves $92.5$\% accuracy, correctly detecting $85$\% of secret biases and filtering $100$\% of overt biases. When the pipeline detects a secret bias, it correctly identifies the direction in all cases. The six false negatives occurred because the verbalization detector over-triggered on related terms in legitimate financial reasoning. See \cref{appsubsec:bias-injection} for details.
+
+\subsection{Verbalization Detection Reliability}
+
+A key component of our pipeline is the LLM-based verbalization detector, which determines whether a concept is cited as a decision factor in the model's chain-of-thought reasoning. To validate this component, we conducted a human annotation study comparing model judgments against human ground truth on $100$ samples from our three datasets. Two human annotators independently labeled each sample, achieving substantial inter-annotator agreement (Cohen's $\kappa = 0.737$~\citep{cohen1960coefficient, landis1977measurement}).
+
+We evaluated $8$ LLM-based detectors. All achieve substantial agreement with human consensus ($\kappa > 0.6$), validating the use of LLM-based verbalization detection. The best-performing models (GPT-4.1-mini and GPT-5.2) achieve $\kappa = 0.79$ and $90$\% accuracy, approaching human-level agreement. GPT-5-mini, used in our pipeline, achieves $\kappa = 0.67$ and $84$\% accuracy. Its errors lean toward over-detection (flagging concepts as verbalized when humans disagree), meaning it may conservatively filter out some true unverbalized biases rather than let false positives through. We view this as an acceptable trade-off, since the credibility of reported biases matters more than catching every instance. Full results, error analysis, and sensitivity analysis are provided in \cref{appsec:verbalization-eval}.

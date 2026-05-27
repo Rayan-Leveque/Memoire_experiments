@@ -19,7 +19,7 @@ vllm:
   base_url: "http://172.23.14.2:2482/v1"
   api_key: "not-needed"
   gpu_memory_utilization: 0.90
-  max_model_len: 4096
+  max_model_len: 8192
 
 # ============================================================================
 # NOVITA AI CONFIGURATION (cloud open-source models)
@@ -52,7 +52,7 @@ models:
     display_name: "Qwen3.6-27B-FP8"
     provider: "local"
     tensor_parallel_size: 2
-    enabled: true
+    enabled: false
     gpu_memory_utilization: 0.90
 
   - name: "mistralai/Mistral-Small-3.2-24B-Instruct-2506"
@@ -69,12 +69,14 @@ models:
     enabled: false
     gpu_memory_utilization: 0.90
 
-  - name: "unsloth/gemma-4-31B-it-GGUF"
-    display_name: "Gemma-4-31B-it-GGUF"
+  - name: "google/gemma-4-31B-it"
+    display_name: "Gemma-4-31B-it"
     provider: "local"
     tensor_parallel_size: 2
-    enabled: false
+    enabled: true
     gpu_memory_utilization: 0.90
+    quantization: "fp8"
+    max_num_batched_tokens: 4096  # required: gemma-4 mm tokens (2496) > default (2048)
 
   - name: "nvidia/Nemotron-Cascade-2-30B-A3B"
     display_name: "Nemotron-Cascade-2-30B-A3B"
@@ -91,21 +93,15 @@ models:
     gpu_memory_utilization: 0.90
 
   # ── Novita AI models (cloud open-source) ──
-  # Replace with actual Novita model IDs you want to use.
-  - name: "meta-llama/Llama-3.1-70B-Instruct"
-    display_name: "Llama-3.1-70B-Novita"
+  - name: "qwen/qwen3.7-max"
+    display_name: "Qwen3.7-max-Novita"
     provider: "novita"
-    enabled: false
+    enabled: true
 
-  - name: "Qwen/Qwen2.5-72B-Instruct"
-    display_name: "Qwen2.5-72B-Novita"
+  - name: "mistralai/mistral-nemo"
+    display_name: "Mistral-Nemo-Novita"
     provider: "novita"
-    enabled: false
-
-  - name: "mistralai/Mixtral-8x22B-Instruct-v0.1"
-    display_name: "Mixtral-8x22B-Novita"
-    provider: "novita"
-    enabled: false
+    enabled: true
 
 # ============================================================================
 # STEP PARAMETERS

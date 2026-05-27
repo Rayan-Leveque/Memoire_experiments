@@ -1,0 +1,179 @@
+\usepackage[T1]{fontenc}
+
+% This assumes your files are encoded as UTF8
+\usepackage[utf8]{inputenc}
+
+% This is not strictly necessary, and may be commented out,
+% but it will improve the layout of the manuscript,
+% and will typically save some space.
+\usepackage{microtype}
+
+% This is also not strictly necessary, and may be commented out.
+% However, it will improve the aesthetics of text in
+% the typewriter font.
+\usepackage{inconsolata}
+
+%Including images in your LaTeX document requires adding
+%additional package(s)
+\usepackage{graphicx}
+
+% Recommended, but optional, packages for figures and better typesetting:
+\usepackage{graphbox} %loads graphicx package
+\usepackage{subcaption} % for subfigures
+\usepackage{paralist}
+% Load xcolor with the table option before colortbl for proper \rowcolors support
+\usepackage[table]{xcolor}
+\usepackage{booktabs} % for professional tables
+\usepackage{colortbl} % For coloring rows in tables
+\usepackage{makecell} % For customizing table cells
+\usepackage{multirow} % For multirow cells in tables
+% \usepackage{color} % removed: xcolor (loaded above with [table]) supersedes color
+\usepackage{amsmath}
+\usepackage[normalem]{ulem} % for strikethrough
+
+\usepackage{longtable}
+
+% hyperref makes hyperlinks in the resulting PDF.
+% If your build breaks (sometimes temporarily if a hyperlink spans a page)
+% please comment out the following usepackage line and replace
+\usepackage{hyperref}
+
+% Algorithm packages
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+% Attempt to make hyperref and algorithmic work together better:
+% (algorithm package already defines \theHalgorithm, so we skip the manual definition)
+
+% NeurIPS 2025 Conference style
+\usepackage[preprint]{neurips_2025}
+
+% For theorems and such
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{amsthm}
+
+\usepackage{verbatimbox}
+\usepackage{fvextra}
+
+% if you use cleveref..
+\usepackage[capitalize,noabbrev]{cleveref}
+
+% Add alltt package for verbatim text with special characters
+\usepackage{alltt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% THEOREMS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Assumption}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% Todonotes is useful during development; simply uncomment the next line
+%    and comment out the line below the next line to turn off comments
+\usepackage[disable,textsize=tiny]{todonotes}
+% \usepackage[textsize=tiny]{todonotes}
+
+% Boxes for results
+\usepackage{boxedminipage}
+
+% Add packages for code listings
+\usepackage{listings}
+\lstset{
+    breaklines=true,
+    basicstyle=\ttfamily,
+    keepspaces=true,
+}
+
+\usepackage{xspace}
+% \usepackage{longtable} % removed: duplicate of line 34
+
+% TikZ for pipeline diagrams
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, fit, backgrounds, calc, shadows.blur}
+
+% Custom environment for prompts
+\usepackage[breakable,skins]{tcolorbox}
+\usepackage{adjustbox}
+
+% Define a custom environment for prompts
+\newtcolorbox{promptbox}[1][]{
+    colback=gray!10,
+    colframe=gray!20,
+    boxrule=0pt,
+    arc=0pt,
+    outer arc=0pt,
+    left=2pt,
+    right=2pt,
+    top=2pt,
+    bottom=2pt,
+    boxsep=2pt,
+    % Change to a smaller font:
+    before upper={\scriptsize\ttfamily},
+    breakable,
+    #1
+}
+
+% We will caption outside the float environment:
+\usepackage{capt-of}  % for \captionof{figure}
+\usepackage{float}
+
+% Configure fancyvrb default settings
+\usepackage{fancyvrb}
+\fvset{
+  frame=none,
+  numbers=left,
+  numbersep=3pt,
+  formatcom=\color{black}
+}
+
+% Disable special character handling in verbatim
+\makeatletter
+\def\FV@ProcessLine#1{\hbox to \linewidth{\hskip\@totalleftmargin\FV@LeftListNumber\FV@LeftListFrame \FancyVerbFormatLine{#1}\hfil\FV@RightListFrame\FV@RightListNumber}}
+\makeatother
+
+% Configure listings for better line number display with preserved empty lines
+\lstdefinestyle{numberedcode}{
+  basicstyle=\ttfamily\scriptsize,
+  numbers=left,
+  numberstyle=\tiny\color{black},
+  stepnumber=1,
+  numbersep=5pt,
+  backgroundcolor=\color{gray!10},
+  frame=none,
+  breaklines=true,
+  showstringspaces=false,
+  columns=fullflexible,
+  keepspaces=true,
+  emptylines=1,
+  xleftmargin=15pt,
+  escapechar=@
+}
+
+% Completely redesigned promptverbatim environment
+\newenvironment{promptverbatim}{%
+  \begin{figure}[t]
+  \begin{minipage}{\linewidth}
+}{%
+  \end{minipage}
+  \end{figure}
+}
+
+\newcommand{\captionprompt}[1]{%
+  \caption{#1}
+  \label{prompt:#1}
+}
+
+% New command to include code with line numbers
+\newcommand{\codewithlinenumbers}[1]{%
+  \begin{lstlisting}[style=numberedcode]
+#1
+  \end{lstlisting}
+}

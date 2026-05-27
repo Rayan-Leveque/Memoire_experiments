@@ -44,11 +44,54 @@ Ce pipeline teste exclusivement des modèles **open-weight** déployables locale
 └── paper/                  # Article LaTeX
 ```
 
-## Usage
+## Setup
 
 ```bash
-python run_pipeline.py
+uv sync --group pipeline --group analysis
 ```
+
+## Usage
+
+### Novita AI (cloud — `Qwen3.7-max-Novita`, `Mistral-Nemo-Novita`)
+
+`--models` prend les **display names** (pas les model IDs). La clé API doit être exportée manuellement à chaque session.
+
+```bash
+export NOVITA_API_KEY=sk-<your_key>
+nohup .venv/bin/python run_pipeline.py \
+  --no-auto-vllm \
+  --step all \
+  --models "Qwen3.7-max-Novita,Mistral-Nemo-Novita" \
+  > logs/pipeline.log 2>&1 &
+tail -f logs/pipeline.log
+```
+
+### Local (vLLM — `Gemma-4-31B-it`, etc.)
+
+Le serveur vLLM est démarré et arrêté automatiquement entre chaque modèle.
+
+```bash
+.venv/bin/python run_pipeline.py --step all
+```
+
+### Steps disponibles
+
+| Flag | Description |
+|------|-------------|
+| `--step 1` | Génération des profils de base |
+| `--step 2` | Injection des identités (ethnie × SES) |
+| `--step 3a` | Évaluation individuelle |
+| `--step 3b` | Évaluation comparative |
+| `--step 3c` | IAT |
+| `--step all` | Pipeline complet (défaut) |
+
+### Display names des modèles activés
+
+| Display name | Provider | Model ID |
+|---|---|---|
+| `Qwen3.7-max-Novita` | novita | `qwen/qwen3.7-max` |
+| `Mistral-Nemo-Novita` | novita | `mistralai/mistral-nemo` |
+| `Gemma-4-31B-it` | local (vLLM) | `google/gemma-4-31B-it` |
 
 ## Références
 

@@ -1,0 +1,116 @@
+\section{Prompts}\label{appsec:prompts}
+
+In this section, we provide all prompts used in our pipeline for detecting unverbalized biases.
+
+\subsection{Generic Pipeline Prompts}\label{appsubsec:generic-prompts}
+
+These prompts are used across all tasks in our pipeline.
+
+\subsubsection{Concept Hypothesis Generation}\label{appsubsec:concept-hypothesis}
+
+This prompt is used to generate candidate concept hypotheses from representative inputs. The prompt instructs the model to identify high-level, generalizable concepts that might influence model behavior without being explicitly verbalized.
+
+\lstinputlisting[
+  style=numberedcode,
+  basicstyle=\ttfamily\scriptsize,
+  caption={Prompt used for concept hypothesis generation},
+  captionpos=b,
+  label={fig:concept-hypothesis-prompt},
+  breaklines=true,
+  breakatwhitespace=false,
+  linewidth=\textwidth
+]{prompts/concept_hypothesis.tex}
+
+\subsection{Dataset-Specific Prompts}\label{appsubsec:dataset-prompts}
+
+Each task requires specific prompts for the task itself and for generating input variations.
+
+\subsubsection{Hiring Bias Task}\label{appsubsec:llm-bias-prompts}
+
+The hiring bias task uses resumes and job descriptions to evaluate whether models exhibit biases in hiring decisions.
+
+\paragraph{Task Prompt}
+
+\lstinputlisting[
+  style=numberedcode,
+  basicstyle=\ttfamily\scriptsize,
+  caption={Task prompt for hiring bias evaluation},
+  captionpos=b,
+  label={fig:task-llm-bias-prompt},
+  breaklines=true,
+  breakatwhitespace=false,
+  linewidth=\textwidth
+]{prompts/task_llm_bias.tex}
+
+\paragraph{Variations Generation Prompt}
+
+\lstinputlisting[
+  style=numberedcode,
+  basicstyle=\ttfamily\scriptsize,
+  caption={Prompt for generating resume variations},
+  captionpos=b,
+  label={fig:variations-llm-bias-prompt},
+  breaklines=true,
+  breakatwhitespace=false,
+  linewidth=\textwidth
+]{prompts/variations_generation_llm_bias.tex}
+
+\subsubsection{Loan Approval Task}\label{appsubsec:loan-approval-prompts}
+
+The loan approval task evaluates whether models exhibit biases in loan approval decisions based on financial and demographic information.
+
+\paragraph{Task Prompt}
+
+\lstinputlisting[
+  style=numberedcode,
+  basicstyle=\ttfamily\scriptsize,
+  caption={Task prompt for loan approval evaluation},
+  captionpos=b,
+  label={fig:task-loan-approval-prompt},
+  breaklines=true,
+  breakatwhitespace=false,
+  linewidth=\textwidth
+]{prompts/task_loan_approval.tex}
+
+\paragraph{Variations Generation Prompt}
+
+\lstinputlisting[
+  style=numberedcode,
+  basicstyle=\ttfamily\scriptsize,
+  caption={Prompt for generating loan application variations},
+  captionpos=b,
+  label={fig:variations-loan-approval-prompt},
+  breaklines=true,
+  breakatwhitespace=false,
+  linewidth=\textwidth
+]{prompts/variations_generation_loan_approval.tex}
+
+\subsubsection{University Admissions Task}\label{appsubsec:university-admissions-prompts}
+
+The university admissions task evaluates whether models exhibit biases in admissions decisions based on academic records and personal statements.
+
+\paragraph{Task Prompt}
+
+\lstinputlisting[
+  style=numberedcode,
+  basicstyle=\ttfamily\scriptsize,
+  caption={Task prompt for university admissions evaluation},
+  captionpos=b,
+  label={fig:task-university-admissions-prompt},
+  breaklines=true,
+  breakatwhitespace=false,
+  linewidth=\textwidth
+]{prompts/task_university_admissions.tex}
+
+\paragraph{Variations Generation Prompt}
+
+\lstinputlisting[
+  style=numberedcode,
+  basicstyle=\ttfamily\scriptsize,
+  caption={Prompt for generating university application variations},
+  captionpos=b,
+  label={fig:variations-university-admissions-prompt},
+  breaklines=true,
+  breakatwhitespace=false,
+  linewidth=\textwidth
+]{prompts/variations_generation_university_admissions.tex}

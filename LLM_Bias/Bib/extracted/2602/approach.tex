@@ -1,0 +1,65 @@
+\section{Detection of Unverbalized Biases via Automated Black-Box Pipeline}
+
+% \input{pipeline_figure}
+% \begin{figure*}[t]
+%     \centering
+%     \includegraphics[width=\linewidth]{assets/main_fig_placeholder.png}
+%     \caption{Overview of our pipeline for detecting unverbalized biases. The pipeline clusters task inputs, generates concept hypotheses, and iteratively tests them through controlled variations to identify statistically significant biases that remain unverbalized in model responses.}
+%     \label{fig:pipeline}
+% \end{figure*}
+
+Given a target model $M$ and a dataset $\mathcal{D}$ of task inputs, our goal is to detect biases in $M$ that affect its responses but are not stated as justification for or against the response. This requires testing many candidate concepts across many inputs, but naively testing all concepts on all inputs is infeasible. We address this through a multi-stage pipeline (\cref{alg:pipeline}) that progressively tests and filters concept hypotheses, using statistical early stopping to reduce computation while controlling error rates.
+
+We start by formally defining the notion of an unverbalized bias, and then proceed to describe the components of our detection pipeline.
+
+\begin{definition}[Unverbalized Bias]\label{def:unverbalized-bias}
+Let $c$ be a concept with paired interventions that transform input $x$ into positive variant $x^+_c$ (promoting $c$) and negative variant $x^-_c$ (diminishing $c$). Let $M(x) \in \{0,1\}$ denote the model's binary decision for a given task and $r(x)$ its reasoning. Define the verbalization indicator $V(c, r) = 1$ if concept $c$ is cited as justification in reasoning $r$, whether through direct mention, paraphrase, or implicit reference (e.g., dismissing the concept as ``not a factor'' still counts as verbalization). A concept $c$ is an \textbf{unverbalized bias} if:
+\begin{enumerate}
+    \item \textbf{Causal influence:} The discordant pairs $D^+ = \{x : M(x^+_c) = 1, M(x^-_c) = 0\}$ and $D^- = \{x : M(x^+_c) = 0, M(x^-_c) = 1\}$ satisfy $|D^+| \neq |D^-|$ with statistical significance (McNemar's test~\citep{mcnemar1947note}, $p < \alpha$).
+    \item \textbf{Non-verbalization:} On discordant pairs, the verbalization rate is below a desired threshold: $\frac{1}{|D^+ \cup D^-|}\sum_{x \in D^+ \cup D^-} V(c, r(x^+_c) \cup r(x^-_c)) \leq \tau$.
+\end{enumerate}
+\end{definition}
+
+\begin{algorithm}[t]
+\caption{Unverbalized Bias Detection Pipeline}
+\label{alg:pipeline}
+\begin{algorithmic}[1]
+\REQUIRE Task inputs $\mathcal{D}$, target model $M$, significance level $\alpha$, verbalization threshold $\tau$, futility threshold $\gamma$
+\ENSURE Set of detected unverbalized biases
+\STATE Cluster $\mathcal{D}$ into $k$ groups; sample representatives
+\STATE Generate concept hypotheses $\mathcal{C}$ from representatives via LLM
+\STATE Set corrected threshold $\alpha' = \alpha / |\mathcal{C}|$ (Bonferroni)
+\STATE Collect baseline responses; filter concepts verbalized with rate $>\tau$
+\FOR{stage $s = 1, 2, \ldots$ until stopping}
+    \FOR{each surviving concept $c \in \mathcal{C}$}
+        \STATE Generate positive/negative input variations
+        \STATE Collect $M$'s responses to both variations
+        \STATE Check verbalization rate on discordant pairs; if verbalization rate $>\tau$, drop $c$
+        \STATE Update McNemar's test statistic
+        \STATE \textbf{Efficacy stop:} if $p < \alpha'_s$ (O'Brien-Fleming), mark significant
+        \STATE \textbf{Futility stop:} if conditional power $< \gamma$, drop $c$
+    \ENDFOR
+\ENDFOR
+\STATE \textbf{return} Significant concepts
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Pipeline Components}
+
+\paragraph{Input clustering and concept generation.} In order to generate a diverse set of candidate concepts without manually specifying them, we embed inputs using a text embedding model and apply k-means clustering to group semantically similar inputs. From each cluster, we sample a small number of representative inputs and prompt an LLM to hypothesize concepts that might influence the target model's behavior. Crucially, the hypothesis-generating LLM sees only the task inputs, not the target model's responses, so it generates concepts based on what attributes in the input could plausibly affect decisions. Whether a concept is actually verbalized is determined separately by the verbalization filter (described below). In our experiments, this uses only $30$ inputs total ($<1$\% of the dataset) for hypothesis generation, while statistical testing is performed on $766$--$2{,}493$ inputs per concept, providing clear separation between the hypothesis generation and inference stages.
+
+For each concept, the LLM generates: a verbalization check guide, an addition action (how to make the concept more prominent), and a removal action (how to remove the concept from the input). Using these actions, we generate paired input variations for each concept: a positive variation promoting the concept and a negative variation removing it. An LLM judge then filters concepts whose variations introduce confounds beyond the target concept (\cref{appsec:variations-quality}). This is a key contribution: we automatically generate test cases instead of requiring manually curated datasets for each bias.
+
+\paragraph{Baseline verbalization filter.} Before testing, we collect baseline responses ($M$'s responses on the original task inputs) and check whether each concept is already cited as a decision factor in $M$'s chain-of-thought. Importantly, merely stating a concept (e.g., repeating the input) without using the concept as justification for the decision does not count as verbalization. Concepts verbalized in $>\tau$ of baseline responses are filtered out as a cost-saving prefilter: if a concept is routinely cited as justification, it is by definition not an unverbalized bias.
+
+\paragraph{Collecting variation responses.} For each surviving concept, we collect $M$'s responses to both the positive and negative variations.
+
+\paragraph{Variation verbalization filter.} At each stage, after collecting responses, we check whether each concept is cited as a decision factor in the variation responses on discordant pairs (cases where $M$'s decision flipped between variations). Again, merely stating a concept without using the concept as justification for the decision does not count as verbalization. Concepts verbalized in $>\tau$ of discordant-pair responses are dropped before statistical testing. We focus on discordant pairs because these are the cases providing evidence for the bias: if the concept caused the decision to flip, we need to verify the model did not cite the concept as justification when making that flipped decision. Concordant pairs (where decisions matched) provide no evidence of influence, and checking them would dilute the signal.
+
+\paragraph{Statistical testing.} We test whether each concept influences $M$'s behavior using McNemar's test~\citep{mcnemar1947note} on paired binary outcomes (accept/reject under positive vs.\ negative variations). The test compares discordant pairs: the proportion of cases where $M$ accepts under the positive variation but rejects under the negative, against the reverse. Family-wise error rate (FWER) is controlled at $\alpha = 0.05$ via Bonferroni correction: after generating $|\mathcal{C}|$ concept hypotheses, we set the per-concept threshold to $\alpha' = \alpha / |\mathcal{C}|$. \Cref{fig:flipped-pair} shows an example discordant pair: the only difference between two loan applications is a single sentence about religious affiliation, yet the model rejects one and approves the other. Religion is never cited as a factor in either response; instead, the model constructs different framings of identical financial information to justify opposite decisions.
+
+\paragraph{Early stopping.} To reduce computation while controlling error rates, we implement two stopping rules. \emph{Efficacy stopping} uses O'Brien-Fleming alpha spending~\citep{obrien1979multiple}: at each stage $s$, the spending threshold is $\alpha_s = 2(1 - \Phi(z_{\alpha'/2} / \sqrt{t_s}))$, where $t_s = n_{\text{used}} / n_{\text{total}}$ is the fraction of available inputs used and $\alpha'$ is the Bonferroni-corrected threshold. This applies conservative thresholds early (when evidence is sparse) that progressively relax as more data accumulates, allowing us to detect significant effects early while preserving FWER control. Stages continue until all inputs are exhausted or all concepts are filtered; in practice, this yields 4-6 stages.
+
+\emph{Futility stopping} estimates conditional power~\citep{proschan2006statistical} via Monte Carlo simulation: if a concept's probability of reaching significance given current effect size falls below $\gamma$ (after observing at least 25 discordant pairs), we drop it. Importantly, FWER control is maintained because the Bonferroni denominator counts all concepts that enter statistical testing (those passing the baseline verbalization filter), regardless of subsequent filtering for futility or variation verbalization. A concept is reported as an unverbalized bias only if it (1) passes the verbalization filter (verbalized in $\leq\tau$ of discordant-pair responses), and (2) reaches statistical significance after correction. Together, these stopping rules achieve roughly \textbf{one-third savings} over exhaustive evaluation (\cref{appsec:compute-costs}).
+
+For remaining concepts, the pipeline advances to the next stage, sampling additional inputs across clusters. This progressively expands the evidence base while maintaining diversity across the input space. Concepts surviving all stages are reported as unverbalized biases when their Bonferroni-corrected McNemar p-value satisfies $p < \alpha'$.

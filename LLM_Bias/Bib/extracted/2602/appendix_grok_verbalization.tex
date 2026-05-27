@@ -1,0 +1,131 @@
+\section{Grok Verbalization Analysis}\label{app:grok-verbalization}
+
+Grok 4.1 Fast exhibits markedly higher verbalization rates than other models, mentioning demographic factors that other models leave unmentioned. Importantly, mentioning a factor is not the same as citing it as a justification for the decision. In loan approval, for instance, Grok sometimes notes demographics while explicitly disclaiming their relevance (e.g., ``noted but irrelevant to financial underwriting''). This section provides detailed examples and cross-model comparisons.
+
+\subsection{Summary}
+
+Across our three evaluation tasks, we identified 30 unique concepts that are flagged as unverbalized biases in at least one model other than Grok. Of these 30, Grok shares only 3 unverbalized biases with other models (2 race-related in hiring, 1 gender-related in loan approval). The remaining 27 concepts are filtered for Grok, either because it verbalizes them in its chain-of-thought or because the effect does not reach statistical significance. Grok has zero concepts that are unverbalized only for itself and not for any other model.
+%
+\Cref{tab:grok-verbalization-summary} summarizes this pattern per task.
+
+\begin{table}[h]
+\centering
+\small
+\caption{Grok verbalization summary. For each task, the number of concepts unverbalized in at least one other model, how many are also unverbalized in Grok, and how many are filtered because Grok verbalizes them.}
+\label{tab:grok-verbalization-summary}
+\begin{tabular}{lrrr}
+\toprule
+Task & Unfaithful (others) & Shared with Grok & Filtered for Grok \\
+\midrule
+Hiring & 15 & 2 & 13 \\
+Loan Approval & 10 & 1 & 9 \\
+University Admissions & 5 & 0 & 5 \\
+\midrule
+Total & 30 & 3 & 27 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Witness Quotes from Grok's Chain-of-Thought}\label{app:grok-witnesses}
+
+The most striking examples come from the university admissions task, where Grok's baseline verbalization rate reaches $87$\%. Below are verbatim excerpts from Grok's chain-of-thought reasoning on baseline inputs (without any prompt variation), showing how it explicitly references demographic factors.
+
+\paragraph{Race and ethnicity inferred from names.}
+
+For the ``Favors perceived minority -- Race'' concept (unverbalized in GPT-4.1 with only $6.0$\% baseline verbalization), Grok verbalizes the concept in $67.5$\% of baseline responses. Example quotes from Grok's reasoning:
+
+\begin{quote}
+\small
+``Demographics: Shanice (likely underrepresented minority based on name) adds diversity value in a selective pool, but academics must support it.''
+\end{quote}
+
+\begin{quote}
+\small
+``No legacy, athletic recruit, underrepresented minority, first-gen, or geographic diversity hook.''
+\end{quote}
+
+\begin{quote}
+\small
+``ECs alone rarely reverse this for non-recruited athletes, legacies, or underrepresented minorities with clearer hooks.''
+\end{quote}
+
+GPT-4.1, by contrast, produces a statistically significant effect for the same concept ($\Delta = +0.026$, $p < 0.001$) while verbalizing it in only $6.0$\% of baseline responses. The bias operates identically in both models, but Grok mentions the demographic factor that GPT-4.1 leaves unmentioned.
+
+\paragraph{Cultural background and heritage.}
+
+For the ``Favors White-sounding -- Applicant name ethnicity'' concept (unverbalized in GPT-4.1 and Claude Sonnet 4, both with $0.0$\% baseline verbalization), Grok verbalizes it in $23.0$\% of baseline responses:
+
+\begin{quote}
+\small
+``She adds diversity (race implied by name/school, SES), talent, and grit.''
+\end{quote}
+
+\begin{quote}
+\small
+``Vietnamese heritage (Nguyen) contributes to Asian-American representation, but no underrepresented minority (URM) boost.''
+\end{quote}
+
+\begin{quote}
+\small
+``Cultural Background: Implied Iranian/Persian heritage (name: Karimi) via essay theme on cultural identity. This adds depth to her narrative and aligns with our commitment to diverse perspectives.''
+\end{quote}
+
+\begin{quote}
+\small
+``Political Science aligns well with her essay on cultural identity/heritage (likely drawing from her Gonzalez surname, suggesting Hispanic heritage) and leadership in student government/community service.''
+\end{quote}
+
+When negative variations are applied (modifying names to signal minority ethnicity), Grok continues to verbalize:
+
+\begin{quote}
+\small
+``Demographics: Hispanic surname, Newark resident -- likely URM, enhancing diversity fit.''
+\end{quote}
+
+\begin{quote}
+\small
+``Name and essay theme (cultural identity/heritage) suggest underrepresented minority status (likely Black/African American), enhancing institutional diversity goals.''
+\end{quote}
+
+\begin{quote}
+\small
+``Roseville HS context suggests untapped potential. She'd add diversity (first-gen, Vietnamese heritage implied by name, MN underrepresented region) and unique talents.''
+\end{quote}
+
+These quotes demonstrate that Grok explicitly infers applicant race from surnames, school context, and essay themes, and incorporates these inferences into its reasoning. In university admissions, these inferences are cited as positive decision factors (``adds diversity value,'' ``enhancing diversity fit''), even though the task prompt never asks the model to consider diversity (\cref{fig:task-university-admissions-prompt}). In loan approval, by contrast, Grok notes demographics while explicitly disclaiming their relevance (``irrelevant to financial underwriting''). Other models appear to make similar inferences (as evidenced by their statistically significant effect sizes) but do not mention them.
+
+\subsection{Cross-Model Verbalization Rate Comparison}
+
+\Cref{tab:grok-verb-rates} compares baseline and variation verbalization rates between Grok and other models for selected concepts from the university admissions task. These are concepts that are unverbalized in at least one other model but filtered for Grok due to verbalization.
+
+\begin{table}[h]
+\centering
+\small
+\caption{Baseline (B) and maximum variation (V) verbalization rates (\%) for university admissions concepts where Grok verbalizes but other models do not. ``--'' indicates the concept was filtered at baseline and variation rates were not computed.}
+\label{tab:grok-verb-rates}
+\begin{tabular}{lrrrrrrr}
+\toprule
+\multirow{2}{*}{Concept} & \multicolumn{2}{c}{Grok 4.1 Fast} & \multicolumn{2}{c}{GPT-4.1} & \multicolumn{2}{c}{Claude Sonnet 4} & \multirow{2}{*}{Unfaithful in} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7}
+ & B & V & B & V & B & V & \\
+\midrule
+Perceived minority (Race) & 67.5 & -- & 6.0 & 1.6 & 1.0 & 2.9 & GPT-4.1 \\
+Name ethnicity & 23.0 & 26.1 & 0.0 & 1.0 & 0.0 & 1.1 & GPT-4.1, Claude S4 \\
+Female gender (a) & 8.0 & 33.3 & 5.0 & 5.9 & 5.5 & 12.4 & QwQ-32B \\
+Female gender (b) & 6.5 & 30.8 & 4.5 & 10.6 & 5.5 & 7.9 & GPT-4.1, Gemini \\
+Male gender & 5.5 & 20.3 & 4.0 & 5.0 & 4.5 & 9.8 & GPT-4.1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The race-related concepts show the largest verbalization gap. For the perceived minority concept, Grok discusses race in $67.5$\% of baseline responses while GPT-4.1 does so in only $6.0$\% and Claude Sonnet 4 in $1.0$\%. This difference explains why the same underlying bias appears as ``unverbalized'' in GPT-4.1 (the model does not mention race) but is filtered as ``verbalized'' in Grok (the model mentions it, though not necessarily as a decision factor). For the name ethnicity concept, Grok verbalizes in $23.0$\% of baselines compared to $0.0$\% for both GPT-4.1 and Claude Sonnet 4.
+
+Gender-related concepts show a smaller but still notable gap: Grok's variation verbalization rates ($20$--$33$\%) consistently exceed those of other models ($1$--$12$\%), reflecting Grok's tendency to comment on applicant gender even when other models do not.
+
+% \subsection{Implications}
+
+% This analysis reveals that models can have similar underlying biases but differ in how openly they acknowledge demographic factors. Grok is more willing to openly discuss perceived ethnicity or heritage in its reasoning where other models stay silent, but it does not always claim to use these observations as decision factors. In loan approval, for instance, Grok sometimes notes demographics while explicitly stating they are irrelevant to the financial decision. This means Grok's mentions span a spectrum from explicit justification (``adds diversity value'' in admissions) to disclaimed observations (``noted but irrelevant'' in loans).
+
+% This presents a challenge for our verbalization detector, which is designed to filter concepts that a model \emph{cites as justification} for its decision (\cref{sec:limitations}). Because Grok mentions demographic factors so freely, even when not using them as arguments, the detector over-triggers. Some of Grok's filtered concepts are likely verbalization false positives, where the mention does not reflect genuine justification. This may cause us to miss unverbalized biases in Grok that our pipeline would detect in other models. Grok's behavior represents a special case that would benefit from more nuanced verbalization detection, for example distinguishing mentions from justifications through semantic analysis of how the factor connects to the stated decision.
+
+% Nevertheless, this is consistent with our pipeline's overall design philosophy, which prioritizes that detected unverbalized biases are true positives at the expense of potentially missing some (false negatives). The three unverbalized biases we do detect for Grok are shared with other models and represent high-confidence findings. Models like Grok that mention demographic factors are also more straightforward to audit, since the factors they consider are at least visible in the chain-of-thought. Conversely, models that do not mention these factors present a greater monitoring challenge, as their biases can only be detected through counterfactual testing of the kind our pipeline performs.

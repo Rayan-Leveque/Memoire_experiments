@@ -1,0 +1,130 @@
+\section{Verbalization Detection Evaluation}
+\label{appsec:verbalization-eval}
+
+To validate the reliability of our LLM-based verbalization detection, we conducted a human annotation study comparing model judgments against human ground truth. This appendix provides detailed results and analysis.
+
+\subsection{Dataset and Methodology}
+
+We sampled $100$ evaluation instances from the three datasets used in our main experiments (loan approval, university admissions, and hiring). Each sample consists of a model response and a concept to check for verbalization. We balanced the dataset to include examples that were marked as both verbalized and unverbalized across diverse concept types during our evaluation.
+
+Two human annotators, authors of the paper, independently labeled each sample using a $4$-point scale:
+\begin{itemize}
+    \item \textbf{Clearly verbalized}: The concept is explicitly mentioned as a factor in the decision
+    \item \textbf{Maybe verbalized}: The concept appears to be mentioned, but with some ambiguity
+    \item \textbf{Maybe not verbalized}: The concept does not appear to be mentioned, but with some ambiguity
+    \item \textbf{Clearly not verbalized}: The concept is clearly not mentioned as a decision factor
+\end{itemize}
+
+For binary evaluation, we collapse these into verbalized (clearly/maybe yes) and not verbalized (clearly/maybe no). We evaluate $8$ LLM-based detectors: GPT-5-mini (used in our main pipeline), GPT-4.1-mini, GPT-4o, GPT-5.2, GPT-5.2-pro, GPT-5-nano, Claude Sonnet 4, and Gemini 2.5 Flash.
+
+\subsection{Inter-Annotator Agreement}
+
+Human annotators showed substantial agreement, achieving Cohen's $\kappa = 0.737$ and establishing a reliable ground truth. Cohen's kappa measures inter-rater reliability while accounting for chance agreement. Values are typically interpreted as follows \citep{landis1977measurement}: $< 0.00$ (poor), $0.00$-$0.20$ (slight), $0.21$-$0.40$ (fair), $0.41$-$0.60$ (moderate), $0.61$-$0.80$ (substantial), and $0.81$-$1.00$ (almost perfect). In annotation studies, $\kappa > 0.67$ is typically considered acceptable for drawing research conclusions.
+
+Both annotators showed high confidence in their judgments, with $79$-$81$\% of verdicts being ``clear'' (not ``maybe''). The Fleiss' kappa across both annotators is $0.734$, indicating substantial agreement.
+
+\subsection{Model Performance}
+
+\Cref{tab:model-vs-consensus} shows each model's agreement with human consensus (majority vote). All models achieve substantial agreement ($\kappa > 0.6$), with the best models approaching the human-human agreement level.
+
+\begin{table}[h]
+\centering
+\caption{Model agreement with human consensus. All models fall within the ``substantial agreement'' range ($\kappa$ 0.61-0.80), with top performers approaching human-level agreement.}
+\label{tab:model-vs-consensus}
+\begin{tabular}{lccc}
+\toprule
+Model & $\kappa$ & Accuracy & F1 \\
+\midrule
+GPT-4.1-mini & 0.791 & 90.0\% & 0.872 \\
+GPT-5.2 & 0.786 & 90.0\% & 0.865 \\
+GPT-5.2-pro & 0.703 & 86.0\% & 0.816 \\
+Claude Sonnet 4 & 0.688 & 85.0\% & 0.810 \\
+Gemini 2.5 Flash & 0.680 & 85.0\% & 0.800 \\
+GPT-5-nano & 0.680 & 85.0\% & 0.800 \\
+GPT-5-mini & 0.673 & 84.0\% & 0.805 \\
+GPT-4o & 0.657 & 84.0\% & 0.784 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Notably, model size does not predict performance: GPT-4.1-mini (a smaller model) outperforms GPT-5.2-pro, and GPT-5.2 outperforms its ``pro'' variant. This suggests verbalization detection depends more on instruction-following ability than raw model capability.
+
+\subsection{Error Analysis by Confidence Level}
+
+Models are substantially more reliable on samples where humans are confident. \Cref{tab:error-by-confidence} shows error rates on ``clear'' cases (where human annotators were confident) versus ``maybe'' cases (where humans expressed uncertainty).
+
+\begin{table}[h]
+\centering
+\caption{Model error rates by human confidence level. Models are much more reliable on clear-cut cases.}
+\label{tab:error-by-confidence}
+\begin{tabular}{lcccc}
+\toprule
+Model & \multicolumn{2}{c}{Clear Cases (N=79)} & \multicolumn{2}{c}{Uncertain Cases (N=21)} \\
+ & Errors & Error \% & Errors & Error \% \\
+\midrule
+GPT-5.2 & 3 & 3.8\% & 6 & 28.6\% \\
+GPT-4.1-mini & 4 & 5.1\% & 5 & 23.8\% \\
+Claude Sonnet 4 & 4 & 5.1\% & 10 & 47.6\% \\
+Gemini 2.5 Flash & 5 & 6.3\% & 9 & 42.9\% \\
+GPT-5-mini & 8 & 10.1\% & 7 & 33.3\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+On clear cases, error rates range from $3.8$\% (GPT-5.2) to $10.1$\% (GPT-5-mini). On uncertain cases, error rates are substantially higher ($23.8$-$47.6$\%), reflecting the inherent ambiguity in these samples.
+
+\subsection{Common Disagreement Patterns}
+
+Analysis of disagreement samples reveals systematic patterns in model errors.
+
+\paragraph{False Positives (Over-detection).} Models tend to over-detect verbalization for:
+\begin{itemize}
+    \item \textbf{Loan purpose details}: Models treat any mention of loan purpose (e.g., ``debt consolidation'', ``home refinance'') as verbalization of a bias toward that purpose
+    \item \textbf{Education credentials}: Mentioning education is conflated with explicitly favoring higher education
+    \item \textbf{Professional experience}: Any discussion of work history counts as verbalization of experience-based preferences
+\end{itemize}
+
+\paragraph{False Negatives (Under-detection).} Models tend to miss verbalizations of:
+\begin{itemize}
+    \item \textbf{Academic field preferences}: When models explicitly favor Arts or STEM majors, detectors often miss it
+    \item \textbf{Professional domain}: Healthcare profession or technical domain preferences are under-detected
+    \item \textbf{Socioeconomic factors}: First-generation college status and similar background factors
+\end{itemize}
+
+These patterns reflect the core challenge for verbalization detection: distinguishing between \emph{mentioning} a concept in passing and \emph{citing it as a decision factor}. The intended criterion is whether the concept is used as justification, not whether it is mentioned at all.
+
+\subsection{GPT-5-mini Analysis}
+
+GPT-5-mini, used in our main pipeline, achieves $\kappa = 0.673$ and $84$\% accuracy, placing it solidly within the ``substantial agreement'' range. Its verbalization rate of $46$\% aligns reasonably with the human annotators' range of $37$-$48$\%.
+
+\Cref{tab:gpt5mini-comparison} compares GPT-5-mini with the best-performing model (GPT-4.1-mini).
+
+\begin{table}[h]
+\centering
+\caption{Comparison of GPT-5-mini with GPT-4.1-mini.}
+\label{tab:gpt5mini-comparison}
+\begin{tabular}{lcc}
+\toprule
+Metric & GPT-5-mini & GPT-4.1-mini \\
+\midrule
+Accuracy vs consensus & 84.0\% & 90.0\% \\
+Cohen's $\kappa$ & 0.673 & 0.791 \\
+Clear case errors & 8 & 4 \\
+Verbalization rate & 46\% & 42\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+While GPT-4.1-mini shows a $6$ percentage point improvement in accuracy, both models fall within acceptable ranges for the verbalization detection task. The gap is notable but does not fundamentally change the pipeline's reliability, and switching models would provide incremental improvement rather than a transformative change. All evaluated models achieve ``substantial'' agreement with human annotators, and human-human agreement ($0.737$), the best model-human agreement ($0.791$), and GPT-5-mini ($0.673$) all exceed the $0.67$ acceptability threshold.
+
+\subsection{Sensitivity Analysis}
+
+\paragraph{Detector model sensitivity.} To quantify the impact of detector choice, we compare pipeline behavior under GPT-5-mini versus GPT-4.1-mini (our best-performing detector with $\kappa = 0.791$). On our $100$-sample evaluation set, the models disagree on $8$ samples ($8$\%). Of these disagreements, $5$ involve GPT-5-mini over-detecting verbalization (false positives) and $3$ involve under-detection (false negatives). Since our pipeline uses verbalization detection as a \emph{filter} (concepts above the threshold are removed), the practical effect of switching to GPT-4.1-mini would be: (1) fewer false positives means fewer legitimate unverbalized biases incorrectly filtered out, and (2) fewer false negatives means fewer verbalized concepts incorrectly retained. Both effects would modestly improve pipeline precision, but the $8$\% disagreement rate suggests the overall impact on final results would be limited.
+
+\paragraph{Threshold sensitivity.} The verbalization threshold $\tau = 0.3$ determines when a concept is considered ``verbalized'' and filtered from further analysis. This threshold is applied per-concept: if more than 30\% of responses for a given concept mention it as a decision factor, the concept is filtered.
+
+To quantify threshold sensitivity, we analyzed verbalization rate distributions across all $1{,}926$ concept-model pairs in our experiments. For baseline verbalization, $42$\% of concepts have rates $\leq$$0.1$ (rarely mentioned) and $36$\% have rates $>$$0.5$ (consistently mentioned). Only $12$\% of concepts fall in the sensitive zone near the threshold ($0.2$--$0.4$). Changing $\tau$ from $0.3$ to $0.2$ would filter $7$\% more concepts, and changing to $0.4$ would retain $5$\% more.
+
+For variation verbalization (applied to $1{,}042$ concepts with flipped pairs), the distribution is even more extreme: $27$\% have rates $\leq$$0.1$ and $55$\% have rates $>$$0.5$. Only $8$\% fall in the sensitive zone. This bimodal distribution means most concepts are clearly either verbalized or unverbalized, making the exact threshold choice less critical than it might appear.
+
+Our choice of $\tau = 0.3$ is deliberately lenient for the baseline filter, whose purpose is only to remove concepts the model routinely verbalizes; concepts that slip through are caught by the stricter variation verbalization check. The 0.3 threshold balances filtering effectiveness while providing robustness to detector noise.

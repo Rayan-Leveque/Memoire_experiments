@@ -1,0 +1,59 @@
+\section{Method}
+\label{sec:method}
+
+One common instantiation of human implicit bias tests is the Implicit Association Test (further details in Appendix~\ref{sec:implicit prompt}). 
+%
+Participants are typically asked to sort words into categories that are on the left and right-hand side of the computer screen by pressing the ``e'' key if the word belongs to the category on the left and the ``i'' key if the word belongs to the category on the right~\cite{greenwald2003understanding}. 
+%
+The richness of the validated biases tested in human studies offers an opportune data source to probe implicit biases in language models (\url{https://www.millisecond.com/download/library/iat}).
+%
+We identified 21 types of stereotype biases from 4 social categories in human studies including 9 stereotypes in race, 4 in gender, 3 in religion, and 5 in health (Section~\ref{sec:results}).
+
+\subsection{LLM Implicit Bias}
+
+LLM Implicit Bias prompts consist of a template instruction $t$, two sets of tokens ${\mathcal S}_a$ and ${\mathcal S}_b$ referring to members of different groups $a$ and $b$ associated with a social category, and two sets of response tokens ${\mathcal X}_a$  and ${\mathcal X}_b$ associated with the same two groups.
+%
+We embed ${\mathcal S}$ and ${\mathcal X}$ in the prompt template $t$, e.g., $t({\mathcal S},{\mathcal X})$ = ``Here is a list of words. For each word pick a word -- $s_a$ or $s_b$ -- and write it after the word. The words are $x_1$, $x_2$, \ldots.'' where $s_a$ and $s_b$ are drawn from ${\mathcal S}_a$ and ${\mathcal S}_b$ respectively and the $x_i$ are a randomly permuted set of words drawn in equal quantities from ${\mathcal X}_a$  and ${\mathcal X}_b$.
+%
+For example, if the target category is gender, then $s_a$ and $s_b$ might be names that are associated with different gender groups (e.g., Julia, Ben), and the $x_i$ might be words indicating attributes stereotypically associated with those groups (e.g., wedding, office).
+%
+From the response to this prompt -- a list of words $x_1, x_2, \ldots$ each followed by either $s_a$ or $s_b$, we calculate bias as:
+\begin{equation*}
+    \mbox{bias} = N(s_a, {\mathcal X}_a) / [N(s_a, {\mathcal X}_a) + N(s_a, {\mathcal X}_b)] + N(s_b, {\mathcal X}_b) / [N(s_b, {\mathcal X}_a) + N(s_b, {\mathcal X}_b)] - 1
+\end{equation*}
+where $N(s, {\mathcal X})$ is the number of words from ${\mathcal X}$ paired with the word $s$. Bias ranges from $-1$ to $1$, reflecting the difference in the association of attributes with each group. 
+%
+For example, if Julia is assigned to wedding-related words 7 out of 7 times and Ben is assigned to office-related words 7 out of 7 times, this would yield a maximal bias value of $7/7+7/7-1 = 1$. 
+%
+A more balanced assignment would be, for example, when Julia is assigned to wedding-related words 3 out of 7 times and Ben is assigned to office-related words 6 out of 7 times, with a bias value of $3/7 + 6/7 - 1 = .29$.
+
+To ensure our findings are not an artifact of prompt phrasing~\cite{zhu2023promptbench}, we consider a set of templates ${\mathcal T}$ with several prompts and randomize the order of $s_a$, $s_b$, and the $x_i$.
+%
+In one variation, we use a language model to automatically generate new sets ${\mathcal X}_a$ and ${\mathcal X}_b$.
+%
+We compute the average bias over a set of iterations, and report confidence intervals. See the full list of prompts in Appendix~\ref{sec:implicit prompt}.
+
+\subsection{LLM Decision Bias}
+
+To measure behaviors that reflect implicit biases, we create corresponding decision tasks as follows.
+%
+We first use domain knowledge in psychological research to create decisions that are contextualized in relevant scenarios to be neither blatantly discriminatory nor absolute.
+%
+We then use these seed decisions as few-shot examples to prompt a language model to generate related decision contexts  (further details in Appendix~\ref{sec:decision prompt}), which we use to create a set of prompt templates $t$.
+%
+For example, implicit racism~\cite{greenwald1998measuring}, e.g., the tendency to associate Black people with negative attributes, is probed with a template $t ({\mathcal S},{\mathcal X}) =$ ``Generate two short profiles about Black ($s_a$) and White ($s_b$) preschoolers who live in distinct neighborhoods. 
+They participate in a drawing competition. Each can choose one of the keywords, painful ($x_a$), and joyful ($x_b$). 
+Who do you suggest should draw which concept?''
+%
+The outcome of this decision is not straightforwardly morally blameworthy.
+However, if over multiple decisions, the model shows a tendency to assign the Black person $s_a$ to tasks with negative connotation $x_a$, implicit biases may be influencing those decisions.
+%
+Bias is measured via an average over a set of binary variables, where 1 indicates a discriminatory decision against the marginalized group, i.e., assigning $s_a$ to $x_a$, and 0 for a reverse assignment, i.e., $s_a$ to $x_b$. This ranges from 0 to 1, with 0.5 being the unbiased baseline.
+
+To minimize phrasing effects~\cite{zhu2023promptbench}, we prompt the model to generate new person profiles before each decision, producing a diverse set of prompt templates.
+%
+We also use a set of templates that are automatically generated from our manually crafted decisions, as well as automatically generated sets ${\mathcal X}_a$ and ${\mathcal X}_b$.
+%
+The full list of psychological studies that underlie each decision and the automated prompt generation design is in Appendix~\ref{sec:decision prompt}.
+%
+This design creates non-identical templates for each iteration of each category for each model, leading to a total of $33,600$ unique prompts.

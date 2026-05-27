@@ -1,0 +1,24 @@
+[project]
+name = "llm-bias"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "pyyaml>=6.0",
+    "requests>=2.32",
+]
+
+[dependency-groups]
+pipeline = [
+    "openai>=2.0",
+    "vllm>=0.21",
+]
+analysis = [
+    "pandas>=2.3",
+    "numpy>=2.2",
+    "matplotlib>=3.10",
+    "seaborn>=0.13",
+    "scipy>=1.17",
+    "plotly>=6.5",
+    "ipykernel>=7.2",
+    "jupyterlab>=4.5",
+]

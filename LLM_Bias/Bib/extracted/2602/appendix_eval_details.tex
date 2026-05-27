@@ -1,0 +1,127 @@
+\section{Evaluation Details}\label{appsec:eval-details}
+
+This section documents the decoding settings used throughout our experiments for reproducibility.
+
+\subsection{Target Model Settings}
+
+For all target models evaluated (Gemma 3 12B, Gemma 3 27B, Gemini 2.5 Flash, GPT-4.1, Grok 4.1 Fast, QwQ-32B, and Claude Sonnet 4), we use temperature \(0.7\), top-p \(0.95\), seed \(42\), and a maximum of \(6000\) tokens.
+We use temperature sampling rather than greedy decoding to allow natural variation in model responses while maintaining reproducibility through a fixed seed.
+
+\subsection{Autorater Settings}
+
+Different pipeline components use different LLM autoraters, each configured for their specific task:
+
+\paragraph{Concept hypothesis generation (o3).} Temperature 1, max tokens 20000 to accommodate detailed concept descriptions.
+
+\paragraph{Variation generation (GPT-4.1-mini).} Temperature 0.7, top-p 0.95, max tokens 6000. These settings balance creativity in generating realistic input variations with consistency.
+
+\paragraph{Verbalization detection (GPT-5-mini).} Temperature 1, max tokens 6000. The output is a simple binary classification (YES/NO) parsed deterministically.
+
+\paragraph{Concept deduplication (GPT-5-mini).} Temperature 1, max tokens 1000. Used for pairwise semantic similarity judgments.
+
+\paragraph{Variation quality checking (GPT-5.2).} Temperature 1, max tokens 2000. Sampling seed 42 for reproducible input sampling when subsampling variation pairs.
+
+\medskip
+\noindent\textit{Note:} OpenAI reasoning models (o-series and GPT-5 series) only support temperature 1; other values are not permitted by the API.
+
+\subsection{Statistical Power and Confidence Intervals}\label{appsubsec:power-analysis}
+
+This section provides confidence intervals for reported effect sizes and analyzes the minimal detectable effects under our staged experimental design.
+
+\subsubsection{Confidence Intervals for Effect Sizes}
+
+We compute 95\% confidence intervals for each reported effect size $\Delta = p_{\text{pos}} - p_{\text{neg}}$ using the Agresti-Caffo method, which adds pseudo-observations to improve coverage for small samples and extreme proportions. \Cref{tab:ci-summary} shows representative confidence intervals for detected biases across all models.
+
+\begin{table}[h]
+\centering
+\small
+\caption{Representative effect sizes with $95$\% confidence intervals across all tasks (27 of 52 detected biases shown, selecting 1--2 per model per task). Asterisk (*) indicates early stopping via O'Brien-Fleming threshold.}
+\label{tab:ci-summary}
+\begin{tabular}{llcrc}
+\toprule
+Task & Model & Concept & $\Delta$ & 95\% CI \\
+\midrule
+\multirow{9}{*}{Hiring}
+& Gemma 3 12B & African-American names & $+$0.033* & [$-$0.002, $+$0.068] \\
+& Gemma 3 27B & Male gender & $-$0.050* & [$-$0.086, $-$0.013] \\
+& Gemini 2.5 Flash & Male gender & $-$0.029 & [$-$0.061, $+$0.004] \\
+& GPT-4.1 & Black name racial assoc. & $+$0.034* & [$+$0.003, $+$0.065] \\
+& GPT-4.1 & Male gender & $-$0.030* & [$-$0.062, $+$0.003] \\
+& Grok 4.1 Fast & Black name racial assoc. & $+$0.031 & [$+$0.009, $+$0.054] \\
+& Grok 4.1 Fast & Black-sounding names & $+$0.027* & [$+$0.006, $+$0.049] \\
+& QwQ-32B & Black race & $+$0.051* & [$+$0.008, $+$0.093] \\
+& QwQ-32B & Spanish language & $+$0.040* & [$+$0.003, $+$0.077] \\
+& Claude Sonnet 4 & Male gender & $-$0.051* & [$-$0.073, $-$0.028] \\
+& Claude Sonnet 4 & Black-sounding names & $+$0.037* & [$+$0.019, $+$0.054] \\
+\midrule
+\multirow{8}{*}{Loan}
+& Gemma 3 12B & English proficiency & $+$0.035* & [$+$0.011, $+$0.060] \\
+& Gemma 3 12B & Formal tone & $+$0.033* & [$+$0.009, $+$0.057] \\
+& Gemma 3 27B & English proficiency & $+$0.048* & [$+$0.018, $+$0.078] \\
+& Gemma 3 27B & Formal tone & $+$0.044* & [$+$0.014, $+$0.073] \\
+& Gemini 2.5 Flash & Female gender & $+$0.028* & [$+$0.001, $+$0.055] \\
+& GPT-4.1 & Female gender & $+$0.017 & [$-$0.009, $+$0.042] \\
+& Grok 4.1 Fast & Female gender & $+$0.021* & [$-$0.004, $+$0.046] \\
+& Claude Sonnet 4 & Minority ethnicity & $+$0.060* & [$+$0.027, $+$0.093] \\
+& Claude Sonnet 4 & Majority religion & $-$0.037* & [$-$0.070, $-$0.004] \\
+\midrule
+\multirow{7}{*}{Univ.}
+& Gemma 3 12B & White-sounding names & $-$0.058* & [$-$0.092, $-$0.024] \\
+& Gemma 3 27B & Perceived minority & $+$0.051* & [$+$0.014, $+$0.087] \\
+& Gemini 2.5 Flash & Female gender & $+$0.043* & [$+$0.010, $+$0.076] \\
+& GPT-4.1 & White-sounding names & $-$0.029* & [$-$0.054, $-$0.005] \\
+& GPT-4.1 & Perceived minority & $+$0.026* & [$+$0.002, $+$0.050] \\
+& QwQ-32B & Female gender & $+$0.060* & [$+$0.023, $+$0.098] \\
+& Claude Sonnet 4 & White-sounding names & $-$0.046* & [$-$0.078, $-$0.013] \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Across all $52$ detected biases, $35$ ($67$\%) have confidence intervals that exclude zero, confirming statistical significance at the $95$\% level. The mean absolute effect size is $3.4$ percentage points (median: $3.1$pp, range: $1.5$--$6.0$pp). The mean CI width is $5.7$pp (median: $5.9$pp), reflecting the precision achievable with our sample sizes of $766$--$2{,}500$ input pairs per concept.
+
+\subsubsection{Minimal Detectable Effect Analysis}
+
+Our experimental design uses McNemar's test with Bonferroni correction and O'Brien-Fleming alpha spending for staged testing. We analyze the minimal detectable effect (MDE), the smallest effect size detectable with $80$\% power at our significance levels.
+
+The key parameters are:
+\begin{itemize}
+    \item Base significance level: $\alpha = 0.05$
+    \item Bonferroni correction: $\alpha' = \alpha / |\mathcal{C}|$ where $|\mathcal{C}|$ is the number of concepts tested (typically 30--190 per model)
+    \item Effective per-concept $\alpha$: 0.0003--0.0016 after correction
+    \item Sample sizes: 766--2,500 input pairs at final stage
+    \item Observed discordant rate: 5--20\% of pairs
+\end{itemize}
+
+\Cref{tab:mde} shows the MDE for various sample sizes and significance levels. At our typical final-stage sample sizes ($1{,}000$--$2{,}000$ pairs) with Bonferroni-corrected $\alpha \approx 0.001$, the MDE is approximately $4$--$5$ percentage points. This aligns with our observed effect sizes: the smallest detected effects ($1.5$--$2.2$pp) were found in experiments with larger sample sizes or less stringent correction, while stronger effects ($5$--$6$pp) were detected even with conservative thresholds.
+
+\begin{table}[h]
+\centering
+\small
+\caption{Minimal detectable effect (MDE) at $80$\% power for McNemar's test. Values show $\Delta$ (difference in acceptance rates) assuming $20$\% discordant pair rate.}
+\label{tab:mde}
+\begin{tabular}{rrrrrr}
+\toprule
+$n$ & $\alpha=0.05$ & $\alpha=0.01$ & $\alpha=0.005$ & $\alpha=0.001$ & $\alpha=0.0005$ \\
+\midrule
+200 & 0.089 & 0.108 & 0.115 & 0.131 & 0.137 \\
+400 & 0.063 & 0.076 & 0.082 & 0.092 & 0.097 \\
+800 & 0.044 & 0.054 & 0.058 & 0.065 & 0.068 \\
+1600 & 0.031 & 0.038 & 0.041 & 0.046 & 0.048 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Practical Significance}
+
+The $2$--$5$ percentage point effects we detect are smaller than those reported in prior human bias studies (e.g., \citet{bertrand2004emily} found $50$\% callback gaps for resumes with Black vs.\ White names). This difference is expected for several reasons:
+
+\begin{enumerate}
+    \item \textbf{Focus on unverbalized biases}: Our pipeline specifically filters out concepts that models discuss in their reasoning. Larger, more obvious biases tend to be verbalized and thus excluded from our analysis.
+
+    \item \textbf{Chain-of-thought reasoning}: As noted by \citet{llm-fairness-2025}, CoT prompting reduces bias magnitude compared to direct prompting. Our effects ($3$--$5$\%) are consistent with their finding that CoT reduces biases from $6$--$12$\% to smaller magnitudes.
+
+    \item \textbf{Practical impact at scale}: A $3$\% effect means approximately $30$ decisions per $1{,}000$ applications are influenced by unverbalized factors. For high-stakes domains like hiring or lending, this represents meaningful disparate impact.
+\end{enumerate}
+
+The confidence intervals provide important context: a majority of detected biases ($67$\%) have intervals that exclude zero, indicating these are not merely noise. The narrowest intervals ($3.4$pp width for Claude Sonnet 4 on hiring) reflect both larger sample sizes and more concentrated effects.
+

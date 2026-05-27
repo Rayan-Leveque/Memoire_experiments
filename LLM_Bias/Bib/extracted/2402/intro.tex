@@ -1,0 +1,73 @@
+\section{Introduction}
+\label{sec:intro}
+
+In response to widespread attention around bias and fairness in artificial intelligence systems, there is enormous scrutiny on deployed models.
+Thus, large language models (LLMs) are often aligned with human values before deployment~\cite{ouyang2022training, si2022prompting, solaiman2021process}. 
+%
+While the resulting models are less likely to exhibit biases (here we focus on biases reflecting stereotypes~\cite{blodgett2020languagebias, fiske2013social, greenwald1995implicit})\footnote{We note that there are disciplinary differences in defining what ``bias'' means. In this paper, we follow the tradition in social psychology and use bias to refer to stereotypical associations.} or generate harmful content, these effects may be superficial \cite{qi2023fine, shaikh2022second, wang2023decodingtrust}.
+%
+Existing benchmarks tend to focus on \textit{explicit} forms of bias that are easy-to-see and relatively blatant~\cite{dhamala2021bold, parrish2022bbq, tamkin2023evaluating, wang2023decodingtrust}. 
+However, there is a separate form of bias that is often overlooked: \textit{implicit} bias.
+%
+In contrast to explicit biases that are deliberate and controllable, implicit biases are automatic and unintentional~\cite{posner2004attention, devine1989stereotypes, chaiken1999dual, greenwald1995implicit}.
+%
+Psychological studies have found these harder-to-see biases can be potent sources of discrimination~\cite{banaji2016blindspot, crosby1980recent, riddle2019racial}.
+We provide two psychology-inspired prompt-based methods that can successfully unveil implicit biases that correlate with discriminatory behaviors in LLMs. 
+%
+This approach extends work on \textit{measuring} implicit bias from humans to LLMs, but we note that we do \textit{not} intend to anthropomorphize these systems or draw on psychological findings to speculate about the mechanisms underlying their biases.
+
+To motivate the importance of measuring implicit bias, we studied one of the largest and best-performing LLMs, GPT-4~\citep{achiam2023gpt}, on three state-of-the-art bias benchmarks. We found little to no bias:
+%
+on ambiguous question-answering tasks in BBQ~\cite{parrish2022bbq}, GPT-4 correctly chose ``not enough info" on 98\% of the questions when there is insufficient information; 
+on open generation prompts from BOLD~\cite{dhamala2021bold}, GPT-4 generated texts with similar levels of sentiment and emotions between sensitive groups;
+on 70 binary decision questions across scenarios~\cite{tamkin2023evaluating}, GPT-4 displayed minimal differential treatment (further details in Appendix~\ref{sec:explicit}).
+%
+Our results are consistent with prior findings on a fourth benchmark~\cite{wang2023decodingtrust} showing GPT-4 largely refused to agree with stereotypical statements.
+%
+Despite the absence of bias under existing benchmarks, our proposed measurements find implicit bias in even this explicitly unbiased model.
+These implicit biases can be indicators of undiscovered discriminatory behaviors. 
+%
+We find that
+GPT-4 is more likely to recommend candidates with African, Asian, Hispanic, and Arabic names for clerical work and candidates with Caucasian names for supervisor positions; suggest women study humanities while men study science; and invite Jewish friends to religious service but Christian friends to a party (one example illustration in Figure~\ref{fig:fig1}).
+%
+These results mirror many well-known stereotype biases in humans that perpetuate inequality~\cite{bian2017gender,fiske2002model, koenig2014evidence}.
+
+\textbf{Implicit Bias in Explicitly Unbiased Humans.}
+Our approach is inspired by a century of psychological studies on human stereotypes~\cite{allport1954nature, katz1933racial, lippmann1922public}. 
+%
+Psychologists have long recognized that explicit bias and implicit bias differ~\cite{bargh1996automaticity, greenwald1995implicit}.
+%
+For example, while present-day Americans express strong support for integrated school systems and equal work opportunities \cite{bogardus1925measuring, schuman1997racial}, they nonetheless behave differently in deciding who to help, to date, to hire, to discipline, or to sit next to~\cite{bertrand2004emily, crosby1980recent, dovidio1981effects, word1974nonverbal}. 
+%
+Functionally, these two forms of bias operate differently: implicit bias is unintentional, uncontrollable, and purely stimulus-driven, whereas explicit bias is intentional, controllable, and moderated by internal and external motivations~\cite{fiske2013social, bargh1996automaticity, greenwald2017implicit, nosek2005moderators}.
+%
+Methodologically, explicit bias can be elicited by asking people to express their opinions. In contrast, implicit bias measures bypass deliberation and are likely to be free of influence from social desirability~\cite{fazio2003implicit, posner2004attention}.
+%
+One classic method for quantifying these implicit biases is the Implicit Association Test (IAT).
+The IAT measures the strength of associations between groups and evaluations via how quickly people react to pairs of concepts (Appendix ~\ref{sec:implicit prompt})~\cite{graf1985implicit, greenwald1995implicit, posner2004attention}.
+People react faster and more accurately when they see negative rather than positive attributes paired with marginalized groups, even among those who espouse egalitarian values \cite{monteith1993self}. 
+%
+Implicit biases can be particularly useful in predicting people's behaviors in relative, not absolute, decision contexts (e.g., comparing between two candidates rather than independently assessing each)~\cite{devine2001implicit, kurdi2019relationship}. 
+
+\textbf{Implicit Bias in Explicitly Unbiased LLMs.} 
+If alignment and safety guardrails in LLMs are functionally similar to norm socialization in humans, regulating behavior to align with egalitarian norms,
+then stereotype biases in LLMs may also have evolved from overt expressions to subtle nuances. 
+%
+Similar to how the human IAT bypasses explicit deliberation, we designed a test to bypass explicit forms of LLM alignment.
+In this paper, we propose a prompt-based method, \textbf{LLM Implicit Bias}, that can be used to measure these implicit biases even in proprietary models whose internal states may not be accessible.
+%
+As in humans, implicit bias can serve as a first indicator of possible discriminatory behaviors.
+We created a corresponding decision task, \textbf{LLM Decision Bias}, that is designed to capture model behaviors that reflect these implicit biases.
+%
+Drawing on the psychological finding that relative comparisons are particularly diagnostic of implicit biases~\cite{kurdi2019relationship, crosby1980recent}, we designed decision prompts that use relative and subtle, rather than absolute or blatant, decisions.
+%
+Though we take inspiration from psychology~\cite{binz2023cogpsy, demszky2023using, rathje2023gpt}, our goal is not to anthropomorphize models, but to highlight transferable ideas. 
+Psychology offers insights from decades of research on human stereotype biases, and methods for measuring those biases based purely on observable behavior.
+
+Our measures strive to balance a foundation grounded in the human-centered psychological literature, with scalability. 
+%
+We take a two-pronged approach, starting with prompt-based measures based on existing experiments validated with human participants, then automating the generation of prompts for measuring implicit and decision bias under human supervision (Section~\ref{sec:method}).
+%
+We study eight value-aligned language models, across a set of prompt variations in 4 social categories for 21 stereotypes, leading to a total of over 33,000 unique prompts (Section~\ref{sec:results}).
+%
+In striking contrast to prior benchmarks which show little to no explicit bias, we find widespread and consequential implicit biases.

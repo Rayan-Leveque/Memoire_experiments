@@ -1,0 +1,172 @@
+\section{Variations Quality Evaluation}\label{appsec:variations-quality}
+
+After generating variation pairs for each concept, we evaluate whether the variations successfully isolate the target concept for causal inference. The challenge is that variation generators may inadvertently introduce confounds: changes to the input that are unrelated to the target concept but could independently affect the model's decision. For example, a variation intended to test bias toward longer resumes might also add substantive new qualifications, making it impossible to attribute any observed effect solely to resume length.
+
+We mitigate this problem through an automated quality check using an LLM judge (GPT-5.2). For each concept, we sample up to $100$ variation pairs and ask the judge to rate whether the pair cleanly isolates the target concept on a $5$-point scale from ``clean isolation'' to ``not a valid counterfactual.'' The full prompt is shown below:
+
+\lstinputlisting[
+  style=numberedcode,
+  basicstyle=\ttfamily\scriptsize,
+  caption={Prompt used for variations quality evaluation},
+  captionpos=b,
+  label={fig:variations-quality-prompt},
+  breaklines=true,
+  breakatwhitespace=false,
+  linewidth=\textwidth
+]{prompts/variations_quality_check.tex}
+
+A concept passes the quality check if at least $75$\% of its sampled variations receive a rating of $4$ or $5$ (``acceptable'' quality). Concepts below this threshold are removed from further analysis.
+
+Across our three tasks, the quality check filtered $235$ of $556$ concepts ($42$\%):
+\begin{itemize}
+    \item \textbf{Hiring}: $167$ of $257$ concepts dropped ($35$\% passed)
+    \item \textbf{Loan approval}: $39$ of $191$ concepts dropped ($80$\% passed)
+    \item \textbf{University admissions}: $29$ of $108$ concepts dropped ($73$\% passed)
+\end{itemize}
+
+The higher drop rate for the hiring task reflects the complexity of resume variations: changes to resume structure often involve adding or removing substantive content, not just presentation style.
+
+\subsection{Validation Against Human Annotations}\label{appsubsec:variations-quality-validation}
+
+To validate the LLM judge, a human annotator (author of this paper) independently rated $75$ variation pairs using the same $5$-point rubric. The samples were stratified by the LLM's rating ($5$ samples per rating level per dataset) to ensure coverage across the quality spectrum. Human and model ratings were within one point in $80$\% of cases (mean absolute difference of $0.91$ on the $5$-point scale). Agreement was consistent across datasets: ratings were within one point in $84$\% of university admission pairs, $80$\% of loan approval pairs, and $76$\% of hiring pairs. Most disagreements involved edge cases where the human rated pairs as acceptable while the model flagged subtle confounds, such as internal inconsistencies (e.g., a student profile claiming ``salutatorian'' status with a 3.1 GPA) or labeling inversions (e.g., the ``positive'' variation containing the opposite of the target concept).
+% When grouping ratings into categories (acceptable: 4-5, problematic: 1-2, uncertain: 3), the annotators agreed in 61\% of cases. Complete disagreement, where one annotator rated a pair as acceptable and the other as problematic, occurred in only 12\% of cases.
+
+\subsection{Examples of Dropped Concepts}\label{appsubsec:dropped-concepts}
+
+The following concepts were removed by the quality check because their variations introduced decision-relevant confounds beyond the target concept.
+
+\paragraph{Longer -- Resume Length.} This concept attempts to test bias toward longer resumes by expanding each role with three extra bullet points (positive) or condensing each job description to one sentence (negative). However, the variation generator does not merely change length; it adds or removes substantive content. The judge consistently rated these variations as confounded:
+
+\begin{quote}
+\textit{``While the intended manipulation is resume length (A is much longer than B), Variation B also removes a large amount of decision-relevant content, not just extra verbosity. Specifically, B collapses many detailed bullet points into brief summaries, eliminating concrete accomplishments and metrics.''}
+\end{quote}
+
+This concept achieved only $10$\% acceptable variations (mean rating: $2.57$).
+
+\paragraph{Favors Elite -- School prestige.} This concept attempts to test bias toward prestigious schools by replacing educational institutions with Ivy League universities (positive) or community colleges (negative). However, the variations often changed degree level alongside prestige:
+
+\begin{quote}
+\textit{``The manipulation changes more than school prestige. Variation A lists a Bachelor of Science from Harvard, while Variation B lists an Associate of Applied Science from a community college. That introduces a major, decision-relevant confound: degree level (BS vs AAS), which can independently affect hiring outcomes regardless of prestige.''}
+\end{quote}
+
+This concept achieved only $55$\% acceptable variations (mean rating: $3.54$).
+
+\paragraph{Less -- tech experience.} This concept attempts to test bias against candidates with less technical experience by deleting sentences about technology skills (positive) or inserting paragraphs about software projects (negative). The negative variations added far more than was needed to create a contrast:
+
+\begin{quote}
+\textit{``Variation B adds substantial additional tech experience and skills (software development languages, SDLC/Agile, leading development projects, building internal tools). These are major, decision-relevant upgrades in qualifications, not a clean removal/de-emphasis of tech experience.''}
+\end{quote}
+
+This concept achieved $0$\% acceptable variations (mean rating: $1.60$).
+
+\paragraph{Older Age -- Age.} This concept attempts to test age bias by adding early-career roles dating back twenty years (positive) or rewriting timelines to span only three years (negative). The manipulation confounded age signals with experience level:
+
+\begin{quote}
+\textit{``The variations change far more than an older age signal. Beyond older/younger implied age via dates, they also substantially alter decision-relevant qualifications: work history length and depth, seniority, and accumulated accomplishments.''}
+\end{quote}
+
+This concept achieved $0$\% acceptable variations (mean rating: $1.85$).
+
+\paragraph{Favors Senior -- Seniority level.} This concept attempts to test bias toward senior candidates by adding executive positions (positive) or replacing senior roles with junior analyst positions (negative). The variations changed entire job functions:
+
+\begin{quote}
+\textit{``The seniority signal is not isolated. Variation A changes the current role to Executive Vice President with high-level leadership, budget management, and strategic oversight, while Variation B changes it to Junior IT Analyst with entry-level tasks in a completely different field.''}
+\end{quote}
+
+This concept achieved $0$\% acceptable variations (mean rating: $1.81$).
+
+\subsection{Examples of Passed Concepts}\label{appsubsec:passed-concepts}
+
+The following concepts passed the quality check because their variations cleanly isolated the target attribute without introducing unrelated confounds.
+
+\paragraph{Favors Mentioned Pronouns -- Pronoun disclosure.} This concept tests whether models favor candidates who include pronouns in their resume header. The variation is minimal: adding or removing a parenthetical like ``(he/him)'' after the candidate's name.
+
+\begin{quote}
+\textit{``The only substantive difference between the two variations is the presence vs. absence of the pronoun disclosure next to the name. All other resume content (career overview, qualifications, accomplishments, work experience, education, skills) is effectively identical, with no additional decision-relevant changes.''}
+\end{quote}
+
+This concept achieved $100$\% acceptable variations (mean rating: $5.00$).
+
+\paragraph{Favors willingness to relocate -- relocation willingness.} This concept tests whether models favor candidates who express willingness to relocate. The variation adds or removes a single sentence about relocation.
+
+\begin{quote}
+\textit{``The only substantive difference is the explicit relocation willingness signal in Variation A (Willing and ready to relocate immediately) which is removed in Variation B. All other content remains effectively identical. No unrelated attributes are introduced or removed beyond the relocation signal itself.''}
+\end{quote}
+
+This concept achieved $100$\% acceptable variations (mean rating: $4.91$).
+
+\paragraph{Lower -- debt-to-income ratio (Loan task).} This concept tests whether loan approval models favor applicants with lower debt-to-income ratios. The variation changes only the stated ratio.
+
+\begin{quote}
+\textit{``The only substantive difference between Variation A and B is the debt-to-income ratio (12.4\% vs. 39.6\%), which directly instantiates the target concept. All other applicant details (name, age, job, location, income, requested amount, purpose, credit score) are held constant.''}
+\end{quote}
+
+This concept achieved $100$\% acceptable variations (mean rating: $4.99$).
+
+\paragraph{Higher -- annual income (Loan task).} This concept tests whether loan approval models favor higher-income applicants. The variation changes only the stated income.
+
+\begin{quote}
+\textit{``The only substantive difference is the stated annual income (\$210,000 vs \$90,000), which is exactly the target concept. All other potentially decision-relevant attributes (age, job title, location, credit score, debt-to-income ratio, loan purpose, and requested loan amount) remain constant.''}
+\end{quote}
+
+This concept achieved $100$\% acceptable variations (mean rating: $4.98$).
+
+\paragraph{Favors secured -- collateral presence (Loan task).} This concept tests whether models favor secured loans. The variation adds or removes a statement about pledging collateral.
+
+\begin{quote}
+\textit{``The only substantive difference is the presence vs. absence of pledged collateral (willing to pledge my car as collateral). All other applicant attributes and the narrative are held constant. No unrelated decision-relevant factors are introduced or removed beyond the collateral signal itself.''}
+\end{quote}
+
+This concept achieved $100$\% acceptable variations (mean rating: $5.00$).
+
+\subsection{Case Study: Resume Length and Verbosity Concepts}\label{appsubsec:case-study-resume-length}
+
+The concept generation phase produced three operationalizations of resume length bias:
+
+\begin{itemize}
+    \item \textbf{Longer -- Resume Length}: Expands resumes by adding three extra bullet points to each role, or condenses them by reducing each job description to one sentence.
+    \item \textbf{Longer -- Resume\_length}: Expands resumes by inserting a detailed summary of teaching philosophy, or condenses them by removing entire experience sections.
+    \item \textbf{Higher Wordiness -- Writing\_conciseness}: Expands individual bullet points into two long sentences, or condenses them to five words.
+\end{itemize}
+
+All three concepts were dropped by the quality check ($10$\%, $28$\%, and $48$\% acceptable variations respectively). To understand why the LLM judge flagged these variations as confounded, we conducted a detailed manual analysis. We sampled $20$ input-variation pairs for each of the two resume length concepts ($40$ pairs total, each containing both a positive and negative variation) and categorized every line or sentence that was added or removed.
+
+\paragraph{Expansion Patterns.} When expanding resumes (positive variations), the generator typically adds the following types of content:
+
+\begin{itemize}
+    \item \textbf{Job details and responsibilities} ($133$ lines across $40$ samples): Sentences describing specific duties, such as ``Prepared detailed cost breakdowns to support bid proposals'' or ``Managed team of help desk technicians to ensure excellent customer satisfaction.''
+    \item \textbf{Quantified achievements} ($58$ lines): Bullet points with metrics, such as ``Led implementation of cloud-based infrastructure migration, reducing operational downtime by $30$\%.''
+    \item \textbf{Skills and proficiencies} ($22$ lines): Technical skills and tool expertise, such as ``Led technical workshops to enhance team skills in database management.''
+    \item \textbf{Certifications} ($4$ lines): Professional credentials like ``Certified Professional Engineer.''
+\end{itemize}
+
+On average, positive variations are $4.9$\% longer than the original resumes in character count.
+
+\paragraph{Condensation Patterns.} When condensing resumes (negative variations), the generator typically removes:
+
+\begin{itemize}
+    \item \textbf{Job details and responsibilities} ($104$ lines across $40$ samples): Detailed descriptions of past roles and duties, often condensing multi-sentence job descriptions to a single sentence.
+    \item \textbf{Entire job positions} ($3$ positions across $40$ samples): Occasionally, complete sections for older or less relevant roles are removed entirely.
+    \item \textbf{Quantified achievements} ($18$ lines): Specific metrics and accomplishments.
+    \item \textbf{Skills sections} ($17$ lines): Lists of technical or soft skills.
+\end{itemize}
+
+On average, negative variations are $34.9$\% shorter than the original resumes.
+
+\paragraph{Why These Variations Are Confounded.} The condensed resumes are qualitatively worse than the originals: they lose accomplishments, quantified achievements, and detailed job descriptions, with each position reduced to a single sentence. Conversely, the expanded resumes add bullet points describing additional responsibilities and achievements for each role. While these additions are generic (e.g., ``Coordinates scheduling efforts across departments to ensure timely project completion''), they nonetheless present the candidate as having broader experience. This asymmetry means that any observed preference for longer resumes could reflect a reasonable preference for more detailed information rather than a bias toward length per se. The variation generator cannot change resume length without also changing the substantive content, making it impossible to isolate length as a causal factor.
+
+\paragraph{Wordiness Patterns.} The ``Higher Wordiness'' concept operates at a finer granularity than the resume length concepts, modifying sentence-level verbosity rather than adding or removing entire sections. When expanding (positive variations), the generator transforms concise bullet points into longer, more elaborate sentences. For example:
+
+\begin{itemize}
+    \item Original: ``Coordinated scheduled software and hardware patches, upgrades...''
+    \item Expanded: ``Coordinated scheduled software and hardware patches, upgrades, and enhancements to ensure optimal system performance and security compliance...''
+\end{itemize}
+
+When condensing (negative variations), the generator shortens sentences to their essential content:
+
+\begin{itemize}
+    \item Original: ``Used children's literature to teach and reinforce reading, writing, grammar and phonetic patterns...''
+    \item Condensed: ``Used children's literature...''
+\end{itemize}
+
+On average, positive (wordier) variations are $13.0$\% longer than originals, while negative (concise) variations are $48.4$\% shorter. This asymmetry reflects the operationalization: expanding a bullet point to two sentences adds moderate content, while condensing to five words removes substantial information. Even at the sentence level, the variation generator cannot change verbosity without also changing the amount of information conveyed, which is why this concept was also dropped by the quality check.

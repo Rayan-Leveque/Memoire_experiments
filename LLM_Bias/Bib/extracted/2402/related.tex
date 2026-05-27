@@ -1,0 +1,44 @@
+\section{Related Work and Limitations
+\label{sec:related}}
+
+{\bf Related work.}
+Other recent works~\cite{cheng2023markedpersonas, hofmann2024dialect, wan2023referenceletters} have found that language models can generate stereotypical personas and use them to activate stereotype biases. 
+%
+Numerous studies have explored bias measurement in language generation models, including benchmarks~\cite{liang2022holistic, nadeem2021stereoset}, specific tasks~\cite{kirk2021intersectionaloccu, wan2023referenceletters}, critical dimensions~\cite{sheng2019babysitter}, relevant groups~\cite{abid2021antimuslim, ovalle2023nb}, and critiques~\cite{blodgett2020languagebias, blodgett2021stereotyping}.
+%
+We find that recent models exhibit little bias according to existing benchmarks~\cite{dhamala2021bold, parrish2022bbq, tamkin2023evaluating, wang2023decodingtrust} (Appendix \ref{sec:explicit}).
+%
+In contrast to jailbreaking methods that try to elicit explicit biases~\cite{qi2023fine, wang2023decodingtrust}, 
+we hypothesize that the absence of bias stems not from a resolved issue but from a lack of measurement.
+Our work studies this previously neglected form of bias.
+%
+Static and contextualized word embeddings have been used to measure implicit bias in language~\cite{caliskan2017semantics, caliskan2021contextembedding, charlesworth2022historical, garg2018word, may2019sentence}. 
+These methods measure internal representations of language models, while our approach elicits word associations through prompts.
+%
+As these models become increasingly proprietary and restricted to API-only access, it will become harder to obtain embeddings.
+%
+Our approach can be rapidly and easily applied in these settings; see a further demonstration of implicit biases in the newly released GPT-4o in Appendix~\ref{sec:gpt4o}.
+
+{\bf Limitations.}
+The predictive value of implicit bias is debated, with mixed findings in both language models~\cite{cao2022intrinsic, goldfarbtarrant2021intrinsic, ladhak2023propagate, steed2022upstream} and in human psychology~\cite{amodio2006stereotyping, brendl2001indirect, greenwald2009understanding, rusch2010implicit, schimmack2021invalid}.
+%
+Given that it is hard to enumerate all possible decision biases, measuring implicit bias can serve as a first indicator of a problem.
+%
+On this issue, we agree with~\citep{kurdi2019relationship} that ``high degrees of heterogeneity indicates that instead of asking whether implicit measures of intergroup cognition are related to measures of intergroup behavior, it may be more appropriate to ask under what conditions the two are more or less highly correlated.'' 
+%
+Our work finds relative judgments in less blatant tasks effectively identify discriminatory behaviors in language models that previous bias benchmarks overlook.
+%
+We do not necessarily desire a model that exhibits no implicit bias, as this may signify a model that is incapable of detecting the presence of stereotypes. 
+Instead, our work shows that LLM implicit bias can be used as a diagnostic tool to identify areas for further inquiry.
+% 
+Future research can explore other moderating conditions, such as cultural norms or severity of regulations~\cite{nosek2005moderators}, to understand the mechanisms for generating implicit bias while suppressing explicit bias in both LLMs and humans.
+
+Although our studies are inspired by psychological research on humans, we caution against a direct comparison between human IAT and the LLM Implicit Bias~\cite{caliskan2017semantics}. There are real differences between these measures. 
+%
+For example, the human IAT relies on reaction times, while our task depends on explicit word associations. Therefore, it is not clear how to compare the resulting scores. 
+%
+We characterize implicit bias as a method for indirectly measuring associative concepts, which in turn correspond with discriminatory behaviors. 
+%
+It is important to note that indirect measurement does not imply or assess the conscious or unconscious state of either LLMs or human minds~\cite{greenwald2017implicit, sherman2021four}. 
+%
+Nonetheless, drawing qualitative connections between psychology and machine learning can inspire new research ideas~\cite{demszky2023using}, such as designing psychologically grounded interventions to reduce stereotypes in LLMs~\cite{bai2022multidimensional, forscher2019meta, paluck2021prejudice}. 

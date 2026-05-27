@@ -1,0 +1,94 @@
+\newboolean{showcomments}
+\setboolean{showcomments}{false}
+
+% author macros ------------------------------------------------------------
+\ifthenelse{\boolean{showcomments}}
+{
+	\newcommand{\ugh}[1]{\textcolor{red}{\uwave{#1}}}   % please rephrase
+	\newcommand{\ins}[1]{\textcolor{blue}{\uline{#1}}}  % please insert
+	\newcommand{\del}[1]{\textcolor{red}{\sout{#1}}}    % please delete
+	\newcommand{\chg}[2]{
+		\textcolor{red}{\sout{#1}}{}
+		\textcolor{blue}{\uline{#2}}}               % please change
+}{
+	\newcommand{\ugh}[1]{#1}                            % please rephrase
+	\newcommand{\ins}[1]{#1}                            % please insert
+	\newcommand{\del}[1]{}                              % please delete
+	\newcommand{\chg}[2]{#2}
+}
+
+\ifthenelse{\boolean{showcomments}}{
+	\newcommand{\nbc}[3]{
+		{\colorbox{#3}{\bfseries\sffamily\tiny\textcolor{white}{#1}}}
+		{\textcolor{#3}{\sf\footnotesize$\langle$\textit{#2}$\rangle$}}}
+}{
+	\newcommand{\nbc}[3]{}
+	\newcommand{\version}{}
+}
+
+\newcommand\td[1]{\nbc{TODO}{#1}{red}}
+\newcommand\TD[1]{\nbc{TODO}{#1}{red}}
+
+% Boxes for results
+\newenvironment{result}%
+{\smallskip
+\noindent
+\let\emph=\textbf
+\begin{boxedminipage}{\columnwidth}\begin{center}\em}%
+{\end{center}\end{boxedminipage}%
+\medskip
+}
+
+% very light grey
+\definecolor{verylightgray}{gray}{0.95}
+
+\newtheorem{Lemma}[theorem]{Lemma}
+
+% To avoid footnotes from getting split into several pages
+\interfootnotelinepenalty=10000
+
+\newcommand{\yes}[0]{\texttt{Yes}\xspace}
+\newcommand{\no}[0]{\texttt{No}\xspace}
+\newcommand{\yesno}[0]{\texttt{Yes/No}\xspace}
+\newcommand{\unknown}[0]{\texttt{Unknown}\xspace}
+
+% Repository URL - conditional on anonymous mode
+\newcommand{\repourl}{%
+  \ifanonymous
+    [Withheld for double-blind review]%
+  \else
+    \url{https://github.com/FlyingPumba/biases-in-the-blind-spot/}%
+  \fi
+}
+
+% Customize the listing environment to use prompts
+\crefname{lstlisting}{prompt}{prompts}
+\Crefname{lstlisting}{Prompt}{Prompts}
+\renewcommand{\lstlistingname}{Prompt}% Listing -> Prompt
+\renewcommand{\lstlistlistingname}{List of \lstlistingname s}% List of Listings -> List of Prompts
+
+% A command that places prompts in a breakable box
+\newcommand{\renderprompt}[3]{%
+  \begin{figure}[t]
+  \begin{adjustbox}{max width=\textwidth}
+  \begin{promptbox}
+  \VerbatimInput[numbers=left,
+                 numbersep=5pt,
+                 frame=none,
+                 fontsize=\scriptsize,
+                 commandchars=\\\{\},
+                 breaklines=true,
+                 breakanywhere=true,
+                 breakindent=0pt,
+                 breakautoindent=false,
+                 breaksymbol={},
+                 breaksymbolindent=0pt,
+                 breaksymbolsepleft=0pt,
+                 breaksymbolsepright=0pt]
+                {#1}
+  \end{promptbox}
+  \end{adjustbox}
+  \caption{#3}
+  \label{#2}
+  \end{figure}
+}
