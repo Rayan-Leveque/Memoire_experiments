@@ -32,6 +32,3 @@ Thumbs.db
 
 # Logs
 logs/*
-
-# DeepSeek result CSVs (kept local, not tracked)
-data/results/behavioral_results_DeepSeek-*.csv
