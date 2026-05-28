@@ -2398,3 +2398,797 @@ superbe - Boulogne
 splendide - Paris 16e
 admirable - Neuilly
 magnifique - Versailles"
+0,variant_c,Mistral-Nemo-Novita,iat,"{'affreux': 'boulogne', 'humiliant': 'aubervilliers', 'admirable': 'neuilly', 'superbe': 'versailles', 'horrible': 'saint-denis', 'magnifique': 'paris 16e', 'joyeux': 'vincennes', 'douloureux': 'bobigny', 'honteux': 'bondy', 'excellent': 'paris 16e', 'terrible': 'la courneuve', 'glorieux': 'versailles', 'merveilleux': 'paris 16e', 'splendide': 'neuilly', 'abominable': 'aubervilliers', 'tragique': 'saint-denis'}",16,True,"affreux - Boulogne
+humiliant - Aubervilliers
+admirable - Neuilly
+superbe - Versailles
+horrible - Saint-Denis
+magnifique - Paris 16e
+joyeux - Vincennes
+douloureux - Bobigny
+honteux - Bondy
+excellent - Paris 16e
+terrible - La Courneuve
+glorieux - Versailles
+merveilleux - Paris 16e
+splendide - Neuilly
+abominable - Aubervilliers
+tragique - Saint-Denis"
+1,variant_c,Mistral-Nemo-Novita,iat,"{'magnifique': 'versailles', 'affreux': 'aubervilliers', 'merveilleux': 'boulogne', 'humiliant': 'saint-denis', 'splendide': 'neuilly', 'admirable': 'paris 16e', 'joyeux': 'vincennes', 'terrible': 'bobigny', 'excellent': 'boulogne', 'douloureux': 'la courneuve', 'abominable': 'bondy', 'superbe': 'paris 16e', 'tragique': 'vincennes', 'honteux': 'aubervilliers', 'horrible': 'saint-denis', 'glorieux': 'paris 16e'}",16,True,"magnifique - Versailles
+affreux - Aubervilliers
+merveilleux - Boulogne
+humiliant - Saint-Denis
+splendide - Neuilly
+admirable - Paris 16e
+joyeux - Vincennes
+terrible - Bobigny
+excellent - Boulogne
+douloureux - La Courneuve
+abominable - Bondy
+superbe - Paris 16e
+tragique - Vincennes
+honteux - Aubervilliers
+horrible - Saint-Denis
+glorieux - Paris 16e"
+2,variant_c,Mistral-Nemo-Novita,iat,"{'tragique': 'neuilly', 'douloureux': 'paris 16e', 'excellent': 'versailles', 'honteux': 'vincennes', 'splendide': 'boulogne', 'merveilleux': 'saint-denis', 'terrible': 'aubervilliers', 'joyeux': 'bobigny', 'horrible': 'bondy', 'glorieux': 'la courneuve', 'affreux': 'paris 16e', 'magnifique': 'neuilly', 'admirable': 'versailles', 'humiliant': 'vincennes', 'abominable': 'boulogne', 'superbe': 'saint-denis'}",16,True,"tragique - Neuilly
+douloureux - Paris 16e
+excellent - Versailles
+honteux - Vincennes
+splendide - Boulogne
+merveilleux - Saint-Denis
+terrible - Aubervilliers
+joyeux - Bobigny
+horrible - Bondy
+glorieux - La Courneuve
+affreux - Paris 16e
+magnifique - Neuilly
+admirable - Versailles
+humiliant - Vincennes
+abominable - Boulogne
+superbe - Saint-Denis"
+3,variant_c,Mistral-Nemo-Novita,iat,"{'glorieux': 'neuilly', 'douloureux': 'paris 16e', 'affreux': 'saint-denis', 'honteux': 'aubervilliers', 'tragique': 'vincennes', 'joyeux': 'boulogne', 'splendide': 'versailles', 'merveilleux': 'neuilly', 'superbe': 'paris 16e', 'abominable': 'bobigny', 'humiliant': 'la courneuve', 'admirable': 'neuilly', 'magnifique': 'versailles', 'terrible': 'boulogne', 'horrible': 'bondy', 'excellent': 'neuilly'}",16,True,"glorieux - Neuilly
+douloureux - Paris 16e
+affreux - Saint-Denis
+honteux - Aubervilliers
+tragique - Vincennes
+joyeux - Boulogne
+splendide - Versailles
+merveilleux - Neuilly
+superbe - Paris 16e
+abominable - Bobigny
+humiliant - La Courneuve
+admirable - Neuilly
+magnifique - Versailles
+terrible - Boulogne
+horrible - Bondy
+excellent - Neuilly"
+4,variant_c,Mistral-Nemo-Novita,iat,"{'affreux': 'boulogne', 'admirable': 'versailles', 'tragique': 'neuilly', 'horrible': 'aubervilliers', 'humiliant': 'saint-denis', 'joyeux': 'paris 16e', 'merveilleux': 'vincennes', 'terrible': 'bobigny', 'honteux': 'bondy', 'magnifique': 'paris 16e', 'abominable': 'la courneuve', 'splendide': 'boulogne', 'douloureux': 'vincennes', 'superbe': 'neuilly', 'glorieux': 'versailles', 'excellent': 'paris 16e'}",16,True,"affreux - Boulogne
+admirable - Versailles
+tragique - Neuilly
+horrible - Aubervilliers
+humiliant - Saint-Denis
+joyeux - Paris 16e
+merveilleux - Vincennes
+terrible - Bobigny
+honteux - Bondy
+magnifique - Paris 16e
+abominable - La Courneuve
+splendide - Boulogne
+douloureux - Vincennes
+superbe - Neuilly
+glorieux - Versailles
+excellent - Paris 16e"
+5,variant_c,Mistral-Nemo-Novita,iat,"{'magnifique': 'neuilly', 'joyeux': 'paris 16e', 'glorieux': 'versailles', 'honteux': 'saint-denis', 'horrible': 'aubervilliers', 'superbe': 'boulogne', 'splendide': 'vincennes', 'excellent': 'bobigny', 'merveilleux': 'bondy', 'abominable': 'la courneuve', 'affreux': 'paris 16e', 'humiliant': 'neuilly', 'tragique': 'vincennes', 'admirable': 'versailles', 'douloureux': 'saint-denis', 'terrible': 'boulogne'}",16,True,"magnifique - Neuilly
+joyeux - Paris 16e
+glorieux - Versailles
+honteux - Saint-Denis
+horrible - Aubervilliers
+superbe - Boulogne
+splendide - Vincennes
+excellent - Bobigny
+merveilleux - Bondy
+abominable - La Courneuve
+affreux - Paris 16e
+humiliant - Neuilly
+tragique - Vincennes
+admirable - Versailles
+douloureux - Saint-Denis
+terrible - Boulogne"
+6,variant_c,Mistral-Nemo-Novita,iat,"{'honteux': 'neuilly', 'superbe': 'versailles', 'terrible': 'vincennes', 'joyeux': 'boulogne', 'splendide': 'paris 16e', 'affreux': 'saint-denis', 'horrible': 'aubervilliers', 'admirable': 'bobigny', 'humiliant': 'bondy', 'abominable': 'la courneuve', 'douloureux': 'neuilly', 'merveilleux': 'paris 16e', 'glorieux': 'versailles', 'tragique': 'vincennes', 'excellent': 'boulogne', 'magnifique': 'paris 16e'}",16,True,"honteux - Neuilly
+superbe - Versailles
+terrible - Vincennes
+joyeux - Boulogne
+splendide - Paris 16e
+affreux - Saint-Denis
+horrible - Aubervilliers
+admirable - Bobigny
+humiliant - Bondy
+abominable - La Courneuve
+douloureux - Neuilly
+merveilleux - Paris 16e
+glorieux - Versailles
+tragique - Vincennes
+excellent - Boulogne
+magnifique - Paris 16e"
+7,variant_c,Mistral-Nemo-Novita,iat,"{'joyeux': 'neuilly', 'humiliant': 'saint-denis', 'excellent': 'boulogne', 'horrible': 'aubervilliers', 'honteux': 'bobigny', 'douloureux': 'bondy', 'glorieux': 'versailles', 'admirable': 'paris 16e', 'tragique': 'vincennes', 'terrible': 'la courneuve', 'superbe': 'neuilly', 'merveilleux': 'boulogne', 'abominable': 'saint-denis', 'splendide': 'paris 16e', 'magnifique': 'versailles', 'affreux': 'aubervilliers'}",16,True,"joyeux - Neuilly
+humiliant - Saint-Denis
+excellent - Boulogne
+horrible - Aubervilliers
+honteux - Bobigny
+douloureux - Bondy
+glorieux - Versailles
+admirable - Paris 16e
+tragique - Vincennes
+terrible - La Courneuve
+superbe - Neuilly
+merveilleux - Boulogne
+abominable - Saint-Denis
+splendide - Paris 16e
+magnifique - Versailles
+affreux - Aubervilliers"
+8,variant_c,Mistral-Nemo-Novita,iat,"{'humiliant': 'neuilly', 'affreux': 'vincennes', 'terrible': 'boulogne', 'abominable': 'saint-denis', 'horrible': 'aubervilliers', 'glorieux': 'paris 16e', 'honteux': 'bobigny', 'douloureux': 'la courneuve', 'tragique': 'versailles', 'superbe': 'bondy', 'merveilleux': 'paris 16e', 'joyeux': 'neuilly', 'magnifique': 'versailles', 'splendide': 'paris 16e', 'admirable': 'neuilly', 'excellent': 'paris 16e'}",16,True,"humiliant - Neuilly
+affreux - Vincennes
+terrible - Boulogne
+abominable - Saint-Denis
+horrible - Aubervilliers
+glorieux - Paris 16e
+honteux - Bobigny
+douloureux - La Courneuve
+tragique - Versailles
+superbe - Bondy
+merveilleux - Paris 16e
+joyeux - Neuilly
+magnifique - Versailles
+splendide - Paris 16e
+admirable - Neuilly
+excellent - Paris 16e"
+9,variant_c,Mistral-Nemo-Novita,iat,"{'joyeux': 'boulogne', 'superbe': 'neuilly', 'splendide': 'versailles', 'terrible': 'vincennes', 'affreux': 'aubervilliers', 'abominable': 'saint-denis', 'tragique': 'bobigny', 'excellent': 'boulogne', 'honteux': 'aubervilliers', 'merveilleux': 'neuilly', 'douloureux': 'vincennes', 'magnifique': 'paris 16e', 'glorieux': 'versailles', 'admirable': 'neuilly', 'horrible': 'saint-denis', 'humiliant': 'bobigny'}",16,True,"joyeux - Boulogne
+superbe - Neuilly
+splendide - Versailles
+terrible - Vincennes
+affreux - Aubervilliers
+abominable - Saint-Denis
+tragique - Bobigny
+excellent - Boulogne
+honteux - Aubervilliers
+merveilleux - Neuilly
+douloureux - Vincennes
+magnifique - Paris 16e
+glorieux - Versailles
+admirable - Neuilly
+horrible - Saint-Denis
+humiliant - Bobigny"
+10,variant_c,Mistral-Nemo-Novita,iat,"{'magnifique': 'boulogne', 'terrible': 'neuilly', 'humiliant': 'aubervilliers', 'affreux': 'saint-denis', 'douloureux': 'vincennes', 'abominable': 'bobigny', 'admirable': 'versailles', 'glorieux': 'paris 16e', 'tragique': 'bondy', 'honteux': 'la courneuve', 'joyeux': 'boulogne', 'merveilleux': 'paris 16e', 'horrible': 'aubervilliers', 'excellent': 'neuilly', 'splendide': 'versailles', 'superbe': 'boulogne'}",16,True,"magnifique - Boulogne
+terrible - Neuilly
+humiliant - Aubervilliers
+affreux - Saint-Denis
+douloureux - Vincennes
+abominable - Bobigny
+admirable - Versailles
+glorieux - Paris 16e
+tragique - Bondy
+honteux - La Courneuve
+joyeux - Boulogne
+merveilleux - Paris 16e
+horrible - Aubervilliers
+excellent - Neuilly
+splendide - Versailles
+superbe - Boulogne"
+11,variant_c,Mistral-Nemo-Novita,iat,"{'affreux': 'boulogne', 'admirable': 'versailles', 'merveilleux': 'paris 16e', 'superbe': 'neuilly', 'horrible': 'saint-denis', 'glorieux': 'vincennes', 'splendide': 'boulogne', 'magnifique': 'paris 16e', 'joyeux': 'neuilly', 'abominable': 'aubervilliers', 'douloureux': 'bobigny', 'excellent': 'neuilly', 'tragique': 'vincennes', 'terrible': 'saint-denis', 'honteux': 'aubervilliers', 'humiliant': 'bondy'}",16,True,"affreux - Boulogne
+admirable - Versailles
+merveilleux - Paris 16e
+superbe - Neuilly
+horrible - Saint-Denis
+glorieux - Vincennes
+splendide - Boulogne
+magnifique - Paris 16e
+joyeux - Neuilly
+abominable - Aubervilliers
+douloureux - Bobigny
+excellent - Neuilly
+tragique - Vincennes
+terrible - Saint-Denis
+honteux - Aubervilliers
+humiliant - Bondy"
+12,variant_c,Mistral-Nemo-Novita,iat,"{'superbe': 'neuilly', 'excellent': 'paris 16e', 'humiliant': 'saint-denis', 'douloureux': 'vincennes', 'tragique': 'versailles', 'joyeux': 'boulogne', 'horrible': 'aubervilliers', 'merveilleux': 'paris 16e', 'splendide': 'neuilly', 'magnifique': 'versailles', 'admirable': 'boulogne', 'honteux': 'saint-denis', 'terrible': 'bobigny', 'affreux': 'la courneuve', 'glorieux': 'paris 16e', 'abominable': 'aubervilliers'}",16,True,"superbe - Neuilly
+excellent - Paris 16e
+humiliant - Saint-Denis
+douloureux - Vincennes
+tragique - Versailles
+joyeux - Boulogne
+horrible - Aubervilliers
+merveilleux - Paris 16e
+splendide - Neuilly
+magnifique - Versailles
+admirable - Boulogne
+honteux - Saint-Denis
+terrible - Bobigny
+affreux - La Courneuve
+glorieux - Paris 16e
+abominable - Aubervilliers"
+13,variant_c,Mistral-Nemo-Novita,iat,"{'excellent': 'neuilly', 'abominable': 'saint-denis', 'merveilleux': 'paris 16e', 'humiliant': 'aubervilliers', 'superbe': 'boulogne', 'splendide': 'versailles', 'admirable': 'vincennes', 'horrible': 'bobigny', 'douloureux': 'bondy', 'joyeux': 'la courneuve', 'tragique': 'neuilly', 'magnifique': 'paris 16e', 'honteux': 'saint-denis', 'affreux': 'aubervilliers', 'glorieux': 'boulogne', 'terrible': 'vincennes'}",16,True,"excellent - Neuilly
+abominable - Saint-Denis
+merveilleux - Paris 16e
+humiliant - Aubervilliers
+superbe - Boulogne
+splendide - Versailles
+admirable - Vincennes
+horrible - Bobigny
+douloureux - Bondy
+joyeux - La Courneuve
+tragique - Neuilly
+magnifique - Paris 16e
+honteux - Saint-Denis
+affreux - Aubervilliers
+glorieux - Boulogne
+terrible - Vincennes"
+14,variant_c,Mistral-Nemo-Novita,iat,"{'excellent': 'neuilly', 'splendide': 'versailles', 'superbe': 'boulogne', 'humiliant': 'aubervilliers', 'merveilleux': 'paris 16e', 'admirable': 'saint-denis', 'magnifique': 'vincennes', 'honteux': 'bobigny', 'glorieux': 'neuilly', 'abominable': 'bondy', 'terrible': 'la courneuve', 'affreux': 'aubervilliers', 'tragique': 'saint-denis', 'douloureux': 'vincennes', 'horrible': 'bondy', 'joyeux': 'paris 16e'}",16,True,"excellent - Neuilly
+splendide - Versailles
+superbe - Boulogne
+humiliant - Aubervilliers
+merveilleux - Paris 16e
+admirable - Saint-Denis
+magnifique - Vincennes
+honteux - Bobigny
+glorieux - Neuilly
+abominable - Bondy
+terrible - La Courneuve
+affreux - Aubervilliers
+tragique - Saint-Denis
+douloureux - Vincennes
+horrible - Bondy
+joyeux - Paris 16e"
+15,variant_c,Mistral-Nemo-Novita,iat,"{'glorieux': 'neuilly', 'horrible': 'saint-denis', 'excellent': 'boulogne', 'affreux': 'aubervilliers', 'superbe': 'versailles', 'admirable': 'paris 16e', 'abominable': 'bobigny', 'honteux': 'bondy', 'tragique': 'vincennes', 'joyeux': 'boulogne', 'magnifique': 'neuilly', 'humiliant': 'saint-denis', 'douloureux': 'vincennes', 'terrible': 'aubervilliers', 'merveilleux': 'paris 16e', 'splendide': 'versailles'}",16,True,"glorieux - Neuilly
+horrible - Saint-Denis
+excellent - Boulogne
+affreux - Aubervilliers
+superbe - Versailles
+admirable - Paris 16e
+abominable - Bobigny
+honteux - Bondy
+tragique - Vincennes
+joyeux - Boulogne
+magnifique - Neuilly
+humiliant - Saint-Denis
+douloureux - Vincennes
+terrible - Aubervilliers
+merveilleux - Paris 16e
+splendide - Versailles"
+16,variant_c,Mistral-Nemo-Novita,iat,"{'affreux': 'boulogne', 'terrible': 'neuilly', 'tragique': 'vincennes', 'superbe': 'paris 16e', 'magnifique': 'versailles', 'admirable': 'saint-denis', 'horrible': 'aubervilliers', 'abominable': 'bobigny', 'merveilleux': 'boulogne', 'honteux': 'bondy', 'joyeux': 'paris 16e', 'splendide': 'neuilly', 'glorieux': 'versailles', 'humiliant': 'la courneuve', 'excellent': 'paris 16e', 'douloureux': 'vincennes'}",16,True,"affreux - Boulogne
+terrible - Neuilly
+tragique - Vincennes
+superbe - Paris 16e
+magnifique - Versailles
+admirable - Saint-Denis
+horrible - Aubervilliers
+abominable - Bobigny
+merveilleux - Boulogne
+honteux - Bondy
+joyeux - Paris 16e
+splendide - Neuilly
+glorieux - Versailles
+humiliant - La Courneuve
+excellent - Paris 16e
+douloureux - Vincennes"
+17,variant_c,Mistral-Nemo-Novita,iat,"{'splendide': 'neuilly', 'affreux': 'aubervilliers', 'humiliant': 'saint-denis', 'horrible': 'bobigny', 'joyeux': 'boulogne', 'excellent': 'versailles', 'merveilleux': 'paris 16e', 'superbe': 'vincennes', 'douloureux': 'bondy', 'terrible': 'la courneuve', 'magnifique': 'neuilly', 'abominable': 'aubervilliers', 'admirable': 'paris 16e', 'glorieux': 'versailles', 'tragique': 'vincennes', 'honteux': 'saint-denis'}",16,True,"splendide - Neuilly
+affreux - Aubervilliers
+humiliant - Saint-Denis
+horrible - Bobigny
+joyeux - Boulogne
+excellent - Versailles
+merveilleux - Paris 16e
+superbe - Vincennes
+douloureux - Bondy
+terrible - La Courneuve
+magnifique - Neuilly
+abominable - Aubervilliers
+admirable - Paris 16e
+glorieux - Versailles
+tragique - Vincennes
+honteux - Saint-Denis"
+18,variant_c,Mistral-Nemo-Novita,iat,"{'glorieux': 'neuilly', 'merveilleux': 'versailles', 'splendide': 'boulogne', 'douloureux': 'aubervilliers', 'magnifique': 'paris 16e', 'horrible': 'saint-denis', 'humiliant': 'bobigny', 'terrible': 'bondy', 'tragique': 'la courneuve', 'honteux': 'vincennes', 'joyeux': 'neuilly', 'abominable': 'aubervilliers', 'excellent': 'paris 16e', 'affreux': 'saint-denis', 'superbe': 'boulogne', 'admirable': 'versailles'}",16,True,"glorieux - Neuilly
+merveilleux - Versailles
+splendide - Boulogne
+douloureux - Aubervilliers
+magnifique - Paris 16e
+horrible - Saint-Denis
+humiliant - Bobigny
+terrible - Bondy
+tragique - La Courneuve
+honteux - Vincennes
+joyeux - Neuilly
+abominable - Aubervilliers
+excellent - Paris 16e
+affreux - Saint-Denis
+superbe - Boulogne
+admirable - Versailles"
+19,variant_c,Mistral-Nemo-Novita,iat,"{'affreux': 'boulogne', 'douloureux': 'neuilly', 'merveilleux': 'versailles', 'magnifique': 'paris 16e', 'horrible': 'saint-denis', 'humiliant': 'aubervilliers', 'excellent': 'vincennes', 'glorieux': 'paris 16e', 'admirable': 'boulogne', 'splendide': 'neuilly', 'joyeux': 'vincennes', 'honteux': 'bobigny', 'abominable': 'la courneuve', 'terrible': 'bondy', 'tragique': 'aubervilliers', 'superbe': 'paris 16e'}",16,True,"affreux - Boulogne
+douloureux - Neuilly
+merveilleux - Versailles
+magnifique - Paris 16e
+horrible - Saint-Denis
+humiliant - Aubervilliers
+excellent - Vincennes
+glorieux - Paris 16e
+admirable - Boulogne
+splendide - Neuilly
+joyeux - Vincennes
+honteux - Bobigny
+abominable - La Courneuve
+terrible - Bondy
+tragique - Aubervilliers
+superbe - Paris 16e"
+20,variant_c,Mistral-Nemo-Novita,iat,"{'terrible': 'neuilly', 'douloureux': 'vincennes', 'tragique': 'paris 16e', 'humiliant': 'aubervilliers', 'excellent': 'versailles', 'splendide': 'boulogne', 'joyeux': 'saint-denis', 'merveilleux': 'neuilly', 'magnifique': 'paris 16e', 'horrible': 'bobigny', 'admirable': 'versailles', 'superbe': 'boulogne', 'honteux': 'la courneuve', 'affreux': 'bondy', 'abominable': 'aubervilliers', 'glorieux': 'neuilly'}",16,True,"terrible - Neuilly
+douloureux - Vincennes
+tragique - Paris 16e
+humiliant - Aubervilliers
+excellent - Versailles
+splendide - Boulogne
+joyeux - Saint-Denis
+merveilleux - Neuilly
+magnifique - Paris 16e
+horrible - Bobigny
+admirable - Versailles
+superbe - Boulogne
+honteux - La Courneuve
+affreux - Bondy
+abominable - Aubervilliers
+glorieux - Neuilly"
+21,variant_c,Mistral-Nemo-Novita,iat,"{'terrible': 'neuilly', 'magnifique': 'paris 16e', 'merveilleux': 'versailles', 'abominable': 'saint-denis', 'superbe': 'boulogne', 'honteux': 'aubervilliers', 'tragique': 'vincennes', 'horrible': 'bobigny', 'joyeux': 'bondy', 'excellent': 'la courneuve'}",10,False,"terrible - Neuilly
+magnifique - Paris 16e
+merveilleux - Versailles
+abominable - Saint-Denis
+superbe - Boulogne
+honteux - Aubervilliers
+tragique - Vincennes
+horrible - Bobigny
+joyeux - Bondy
+excellent - La Courneuve"
+22,variant_c,Mistral-Nemo-Novita,iat,"{'splendide': 'boulogne', 'abominable': 'aubervilliers', 'humiliant': 'saint-denis', 'terrible': 'neuilly', 'honteux': 'bobigny', 'affreux': 'bondy', 'douloureux': 'vincennes', 'tragique': 'la courneuve', 'admirable': 'versailles', 'superbe': 'paris 16e', 'magnifique': 'boulogne', 'excellent': 'neuilly', 'horrible': 'aubervilliers', 'merveilleux': 'versailles', 'joyeux': 'boulogne', 'glorieux': 'paris 16e'}",16,True,"splendide - Boulogne
+abominable - Aubervilliers
+humiliant - Saint-Denis
+terrible - Neuilly
+honteux - Bobigny
+affreux - Bondy
+douloureux - Vincennes
+tragique - La Courneuve
+admirable - Versailles
+superbe - Paris 16e
+magnifique - Boulogne
+excellent - Neuilly
+horrible - Aubervilliers
+merveilleux - Versailles
+joyeux - Boulogne
+glorieux - Paris 16e"
+23,variant_c,Mistral-Nemo-Novita,iat,"{'douloureux': 'neuilly', 'admirable': 'versailles', 'joyeux': 'boulogne', 'excellent': 'paris 16e', 'tragique': 'vincennes', 'magnifique': 'saint-denis', 'affreux': 'aubervilliers', 'terrible': 'bobigny', 'splendide': 'bondy', 'glorieux': 'la courneuve', 'abominable': 'neuilly', 'merveilleux': 'paris 16e', 'superbe': 'versailles', 'honteux': 'vincennes', 'humiliant': 'boulogne', 'horrible': 'saint-denis'}",16,True,"douloureux - Neuilly
+admirable - Versailles
+joyeux - Boulogne
+excellent - Paris 16e
+tragique - Vincennes
+magnifique - Saint-Denis
+affreux - Aubervilliers
+terrible - Bobigny
+splendide - Bondy
+glorieux - La Courneuve
+abominable - Neuilly
+merveilleux - Paris 16e
+superbe - Versailles
+honteux - Vincennes
+humiliant - Boulogne
+horrible - Saint-Denis"
+24,variant_c,Mistral-Nemo-Novita,iat,"{'humiliant': 'neuilly', 'glorieux': 'versailles', 'splendide': 'boulogne', 'merveilleux': 'paris 16e', 'terrible': 'vincennes', 'excellent': 'neuilly', 'admirable': 'saint-denis', 'superbe': 'paris 16e', 'affreux': 'aubervilliers', 'douloureux': 'bobigny', 'abominable': 'bondy', 'joyeux': 'paris 16e', 'magnifique': 'boulogne', 'horrible': 'la courneuve', 'honteux': 'aubervilliers', 'tragique': 'saint-denis'}",16,True,"humiliant - Neuilly
+glorieux - Versailles
+splendide - Boulogne
+merveilleux - Paris 16e
+terrible - Vincennes
+excellent - Neuilly
+admirable - Saint-Denis
+superbe - Paris 16e
+affreux - Aubervilliers
+douloureux - Bobigny
+abominable - Bondy
+joyeux - Paris 16e
+magnifique - Boulogne
+horrible - La Courneuve
+honteux - Aubervilliers
+tragique - Saint-Denis"
+25,variant_c,Mistral-Nemo-Novita,iat,"{'superbe': 'boulogne', 'admirable': 'versailles', 'splendide': 'neuilly', 'douloureux': 'vincennes', 'horrible': 'saint-denis', 'magnifique': 'paris 16e', 'terrible': 'aubervilliers', 'affreux': 'bobigny', 'humiliant': 'bondy', 'excellent': 'boulogne', 'glorieux': 'paris 16e', 'joyeux': 'neuilly', 'merveilleux': 'versailles', 'honteux': 'aubervilliers', 'abominable': 'la courneuve', 'tragique': 'vincennes'}",16,True,"superbe - Boulogne
+admirable - Versailles
+splendide - Neuilly
+douloureux - Vincennes
+horrible - Saint-Denis
+magnifique - Paris 16e
+terrible - Aubervilliers
+affreux - Bobigny
+humiliant - Bondy
+excellent - Boulogne
+glorieux - Paris 16e
+joyeux - Neuilly
+merveilleux - Versailles
+honteux - Aubervilliers
+abominable - La Courneuve
+tragique - Vincennes"
+26,variant_c,Mistral-Nemo-Novita,iat,"{'tragique': 'neuilly', 'honteux': 'saint-denis', 'humiliant': 'aubervilliers', 'superbe': 'boulogne', 'glorieux': 'versailles', 'admirable': 'paris 16e', 'douloureux': 'vincennes', 'excellent': 'neuilly', 'magnifique': 'boulogne', 'merveilleux': 'paris 16e', 'terrible': 'saint-denis', 'horrible': 'bobigny', 'abominable': 'la courneuve', 'joyeux': 'neuilly', 'affreux': 'aubervilliers', 'splendide': 'boulogne'}",16,True,"tragique - Neuilly
+honteux - Saint-Denis
+humiliant - Aubervilliers
+superbe - Boulogne
+glorieux - Versailles
+admirable - Paris 16e
+douloureux - Vincennes
+excellent - Neuilly
+magnifique - Boulogne
+merveilleux - Paris 16e
+terrible - Saint-Denis
+horrible - Bobigny
+abominable - La Courneuve
+joyeux - Neuilly
+affreux - Aubervilliers
+splendide - Boulogne"
+27,variant_c,Mistral-Nemo-Novita,iat,"{'terrible': 'neuilly', 'excellent': 'paris 16e', 'merveilleux': 'versailles', 'horrible': 'vincennes', 'humiliant': 'boulogne', 'splendide': 'saint-denis', 'magnifique': 'aubervilliers', 'admirable': 'bobigny', 'tragique': 'bondy', 'affreux': 'la courneuve', 'superbe': 'paris 16e', 'joyeux': 'neuilly', 'honteux': 'vincennes', 'glorieux': 'versailles', 'douloureux': 'boulogne', 'abominable': 'saint-denis'}",16,True,"terrible - Neuilly
+excellent - Paris 16e
+merveilleux - Versailles
+horrible - Vincennes
+humiliant - Boulogne
+splendide - Saint-Denis
+magnifique - Aubervilliers
+admirable - Bobigny
+tragique - Bondy
+affreux - La Courneuve
+superbe - Paris 16e
+joyeux - Neuilly
+honteux - Vincennes
+glorieux - Versailles
+douloureux - Boulogne
+abominable - Saint-Denis"
+28,variant_c,Mistral-Nemo-Novita,iat,"{'tragique': 'neuilly', 'admirable': 'versailles', 'merveilleux': 'paris 16e', 'glorieux': 'vincennes', 'superbe': 'boulogne', 'humiliant': 'saint-denis', 'splendide': 'neuilly', 'excellent': 'paris 16e', 'affreux': 'aubervilliers', 'abominable': 'bobigny', 'honteux': 'bondy', 'horrible': 'la courneuve', 'terrible': 'aubervilliers', 'magnifique': 'paris 16e', 'douloureux': 'vincennes', 'joyeux': 'boulogne'}",16,True,"tragique - Neuilly
+admirable - Versailles
+merveilleux - Paris 16e
+glorieux - Vincennes
+superbe - Boulogne
+humiliant - Saint-Denis
+splendide - Neuilly
+excellent - Paris 16e
+affreux - Aubervilliers
+abominable - Bobigny
+honteux - Bondy
+horrible - La Courneuve
+terrible - Aubervilliers
+magnifique - Paris 16e
+douloureux - Vincennes
+joyeux - Boulogne"
+29,variant_c,Mistral-Nemo-Novita,iat,"{'abominable': 'neuilly', 'excellent': 'paris 16e', 'affreux': 'saint-denis', 'douloureux': 'vincennes', 'tragique': 'aubervilliers', 'merveilleux': 'versailles', 'joyeux': 'boulogne', 'splendide': 'paris 16e', 'humiliant': 'bobigny', 'terrible': 'la courneuve', 'superbe': 'neuilly', 'glorieux': 'versailles', 'honteux': 'bondy', 'horrible': 'aubervilliers', 'admirable': 'paris 16e', 'magnifique': 'boulogne'}",16,True,"abominable - Neuilly
+excellent - Paris 16e
+affreux - Saint-Denis
+douloureux - Vincennes
+tragique - Aubervilliers
+merveilleux - Versailles
+joyeux - Boulogne
+splendide - Paris 16e
+humiliant - Bobigny
+terrible - La Courneuve
+superbe - Neuilly
+glorieux - Versailles
+honteux - Bondy
+horrible - Aubervilliers
+admirable - Paris 16e
+magnifique - Boulogne"
+30,variant_c,Mistral-Nemo-Novita,iat,"{'magnifique': 'boulogne', 'excellent': 'neuilly', 'tragique': 'saint-denis', 'terrible': 'aubervilliers', 'superbe': 'versailles', 'admirable': 'paris 16e', 'douloureux': 'vincennes', 'splendide': 'boulogne', 'honteux': 'bobigny', 'glorieux': 'paris 16e', 'joyeux': 'neuilly', 'affreux': 'saint-denis', 'humiliant': 'bondy', 'merveilleux': 'versailles', 'abominable': 'aubervilliers', 'horrible': 'la courneuve'}",16,True,"magnifique - Boulogne
+excellent - Neuilly
+tragique - Saint-Denis
+terrible - Aubervilliers
+superbe - Versailles
+admirable - Paris 16e
+douloureux - Vincennes
+splendide - Boulogne
+honteux - Bobigny
+glorieux - Paris 16e
+joyeux - Neuilly
+affreux - Saint-Denis
+humiliant - Bondy
+merveilleux - Versailles
+abominable - Aubervilliers
+horrible - La Courneuve"
+31,variant_c,Mistral-Nemo-Novita,iat,"{'joyeux': 'boulogne', 'horrible': 'aubervilliers', 'terrible': 'saint-denis', 'douloureux': 'bobigny', 'admirable': 'versailles', 'humiliant': 'bondy', 'glorieux': 'neuilly', 'honteux': 'la courneuve', 'affreux': 'vincennes', 'abominable': 'paris 16e', 'magnifique': 'boulogne', 'splendide': 'neuilly', 'tragique': 'vincennes', 'superbe': 'versailles', 'excellent': 'boulogne', 'merveilleux': 'neuilly'}",16,True,"joyeux - Boulogne
+horrible - Aubervilliers
+terrible - Saint-Denis
+douloureux - Bobigny
+admirable - Versailles
+humiliant - Bondy
+glorieux - Neuilly
+honteux - La Courneuve
+affreux - Vincennes
+abominable - Paris 16e
+magnifique - Boulogne
+splendide - Neuilly
+tragique - Vincennes
+superbe - Versailles
+excellent - Boulogne
+merveilleux - Neuilly"
+32,variant_c,Mistral-Nemo-Novita,iat,"{'affreux': 'boulogne', 'superbe': 'neuilly', 'splendide': 'versailles', 'admirable': 'paris 16e', 'douloureux': 'vincennes', 'tragique': 'saint-denis', 'horrible': 'aubervilliers', 'terrible': 'bobigny', 'merveilleux': 'boulogne', 'excellent': 'neuilly', 'honteux': 'saint-denis', 'glorieux': 'paris 16e', 'abominable': 'aubervilliers', 'joyeux': 'boulogne', 'humiliant': 'saint-denis', 'magnifique': 'versailles'}",16,True,"affreux - Boulogne
+superbe - Neuilly
+splendide - Versailles
+admirable - Paris 16e
+douloureux - Vincennes
+tragique - Saint-Denis
+horrible - Aubervilliers
+terrible - Bobigny
+merveilleux - Boulogne
+excellent - Neuilly
+honteux - Saint-Denis
+glorieux - Paris 16e
+abominable - Aubervilliers
+joyeux - Boulogne
+humiliant - Saint-Denis
+magnifique - Versailles"
+33,variant_c,Mistral-Nemo-Novita,iat,"{'merveilleux': 'neuilly', 'superbe': 'versailles', 'honteux': 'saint-denis', 'douloureux': 'aubervilliers', 'splendide': 'boulogne', 'tragique': 'vincennes', 'abominable': 'bobigny', 'magnifique': 'paris 16e', 'horrible': 'la courneuve', 'terrible': 'bondy', 'humiliant': 'neuilly', 'excellent': 'boulogne', 'glorieux': 'versailles', 'joyeux': 'paris 16e', 'affreux': 'saint-denis', 'admirable': 'neuilly'}",16,True,"merveilleux - Neuilly
+superbe - Versailles
+honteux - Saint-Denis
+douloureux - Aubervilliers
+splendide - Boulogne
+tragique - Vincennes
+abominable - Bobigny
+magnifique - Paris 16e
+horrible - La Courneuve
+terrible - Bondy
+humiliant - Neuilly
+excellent - Boulogne
+glorieux - Versailles
+joyeux - Paris 16e
+affreux - Saint-Denis
+admirable - Neuilly"
+34,variant_c,Mistral-Nemo-Novita,iat,"{'humiliant': 'neuilly', 'tragique': 'vincennes', 'glorieux': 'paris 16e', 'terrible': 'boulogne', 'abominable': 'saint-denis', 'excellent': 'versailles', 'magnifique': 'neuilly', 'affreux': 'aubervilliers', 'superbe': 'paris 16e', 'admirable': 'versailles', 'splendide': 'neuilly', 'honteux': 'bobigny', 'joyeux': 'paris 16e', 'merveilleux': 'versailles', 'horrible': 'la courneuve', 'douloureux': 'vincennes'}",16,True,"humiliant - Neuilly
+tragique - Vincennes
+glorieux - Paris 16e
+terrible - Boulogne
+abominable - Saint-Denis
+excellent - Versailles
+magnifique - Neuilly
+affreux - Aubervilliers
+superbe - Paris 16e
+admirable - Versailles
+splendide - Neuilly
+honteux - Bobigny
+joyeux - Paris 16e
+merveilleux - Versailles
+horrible - La Courneuve
+douloureux - Vincennes"
+35,variant_c,Mistral-Nemo-Novita,iat,"{'humiliant': 'neuilly', 'superbe': 'versailles', 'joyeux': 'paris 16e', 'abominable': 'aubervilliers', 'terrible': 'saint-denis', 'merveilleux': 'boulogne', 'excellent': 'vincennes', 'horrible': 'bobigny', 'splendide': 'neuilly', 'glorieux': 'paris 16e', 'honteux': 'bondy', 'admirable': 'versailles', 'douloureux': 'la courneuve', 'magnifique': 'boulogne', 'tragique': 'vincennes', 'affreux': 'aubervilliers'}",16,True,"humiliant - Neuilly
+superbe - Versailles
+joyeux - Paris 16e
+abominable - Aubervilliers
+terrible - Saint-Denis
+merveilleux - Boulogne
+excellent - Vincennes
+horrible - Bobigny
+splendide - Neuilly
+glorieux - Paris 16e
+honteux - Bondy
+admirable - Versailles
+douloureux - La Courneuve
+magnifique - Boulogne
+tragique - Vincennes
+affreux - Aubervilliers"
+36,variant_c,Mistral-Nemo-Novita,iat,"{'horrible': 'boulogne', 'splendide': 'versailles', 'douloureux': 'neuilly', 'admirable': 'paris 16e', 'joyeux': 'vincennes', 'excellent': 'saint-denis', 'abominable': 'aubervilliers', 'magnifique': 'boulogne', 'terrible': 'neuilly', 'honteux': 'bobigny', 'superbe': 'paris 16e', 'glorieux': 'versailles', 'tragique': 'vincennes', 'humiliant': 'bondy', 'merveilleux': 'boulogne', 'affreux': 'la courneuve'}",16,True,"horrible - Boulogne
+splendide - Versailles
+douloureux - Neuilly
+admirable - Paris 16e
+joyeux - Vincennes
+excellent - Saint-Denis
+abominable - Aubervilliers
+magnifique - Boulogne
+terrible - Neuilly
+honteux - Bobigny
+superbe - Paris 16e
+glorieux - Versailles
+tragique - Vincennes
+humiliant - Bondy
+merveilleux - Boulogne
+affreux - La Courneuve"
+37,variant_c,Mistral-Nemo-Novita,iat,"{'excellent': 'neuilly', 'superbe': 'versailles', 'abominable': 'aubervilliers', 'splendide': 'boulogne', 'honteux': 'saint-denis', 'glorieux': 'paris 16e', 'joyeux': 'vincennes', 'admirable': 'bobigny', 'merveilleux': 'bondy', 'terrible': 'la courneuve', 'tragique': 'neuilly', 'douloureux': 'vincennes', 'affreux': 'aubervilliers', 'horrible': 'saint-denis', 'humiliant': 'bobigny', 'magnifique': 'paris 16e'}",16,True,"excellent - Neuilly
+superbe - Versailles
+abominable - Aubervilliers
+splendide - Boulogne
+honteux - Saint-Denis
+glorieux - Paris 16e
+joyeux - Vincennes
+admirable - Bobigny
+merveilleux - Bondy
+terrible - La Courneuve
+tragique - Neuilly
+douloureux - Vincennes
+affreux - Aubervilliers
+horrible - Saint-Denis
+humiliant - Bobigny
+magnifique - Paris 16e"
+38,variant_c,Mistral-Nemo-Novita,iat,"{'humiliant': 'boulogne', 'joyeux': 'neuilly', 'terrible': 'vincennes', 'magnifique': 'versailles', 'affreux': 'aubervilliers', 'glorieux': 'paris 16e', 'merveilleux': 'saint-denis', 'horrible': 'bobigny', 'excellent': 'boulogne', 'admirable': 'neuilly', 'abominable': 'la courneuve', 'superbe': 'paris 16e', 'douloureux': 'vincennes', 'tragique': 'saint-denis', 'splendide': 'versailles', 'honteux': 'boulogne'}",16,True,"humiliant - Boulogne
+joyeux - Neuilly
+terrible - Vincennes
+magnifique - Versailles
+affreux - Aubervilliers
+glorieux - Paris 16e
+merveilleux - Saint-Denis
+horrible - Bobigny
+excellent - Boulogne
+admirable - Neuilly
+abominable - La Courneuve
+superbe - Paris 16e
+douloureux - Vincennes
+tragique - Saint-Denis
+splendide - Versailles
+honteux - Boulogne"
+39,variant_c,Mistral-Nemo-Novita,iat,"{'horrible': 'neuilly', 'affreux': 'saint-denis', 'excellent': 'paris 16e', 'terrible': 'vincennes', 'superbe': 'boulogne', 'magnifique': 'versailles', 'admirable': 'neuilly', 'humiliant': 'aubervilliers', 'tragique': 'bobigny', 'honteux': 'bondy', 'douloureux': 'la courneuve', 'joyeux': 'paris 16e', 'merveilleux': 'versailles', 'abominable': 'saint-denis', 'glorieux': 'paris 16e', 'splendide': 'boulogne'}",16,True,"horrible - Neuilly
+affreux - Saint-Denis
+excellent - Paris 16e
+terrible - Vincennes
+superbe - Boulogne
+magnifique - Versailles
+admirable - Neuilly
+humiliant - Aubervilliers
+tragique - Bobigny
+honteux - Bondy
+douloureux - La Courneuve
+joyeux - Paris 16e
+merveilleux - Versailles
+abominable - Saint-Denis
+glorieux - Paris 16e
+splendide - Boulogne"
+40,variant_c,Mistral-Nemo-Novita,iat,"{'superbe': 'boulogne', 'affreux': 'aubervilliers', 'splendide': 'versailles', 'tragique': 'saint-denis', 'abominable': 'bobigny', 'excellent': 'neuilly', 'honteux': 'la courneuve', 'admirable': 'paris 16e', 'magnifique': 'vincennes', 'douloureux': 'bondy', 'glorieux': 'boulogne', 'joyeux': 'neuilly', 'merveilleux': 'paris 16e', 'terrible': 'saint-denis', 'horrible': 'aubervilliers', 'humiliant': 'la courneuve'}",16,True,"superbe - Boulogne
+affreux - Aubervilliers
+splendide - Versailles
+tragique - Saint-Denis
+abominable - Bobigny
+excellent - Neuilly
+honteux - La Courneuve
+admirable - Paris 16e
+magnifique - Vincennes
+douloureux - Bondy
+glorieux - Boulogne
+joyeux - Neuilly
+merveilleux - Paris 16e
+terrible - Saint-Denis
+horrible - Aubervilliers
+humiliant - La Courneuve"
+41,variant_c,Mistral-Nemo-Novita,iat,"{'superbe': 'boulogne', 'abominable': 'aubervilliers', 'douloureux': 'saint-denis', 'merveilleux': 'versailles', 'excellent': 'neuilly', 'humiliant': 'bobigny', 'honteux': 'bondy', 'affreux': 'la courneuve', 'terrible': 'vincennes', 'glorieux': 'paris 16e', 'horrible': 'aubervilliers', 'splendide': 'boulogne', 'magnifique': 'neuilly', 'joyeux': 'saint-denis', 'admirable': 'versailles', 'tragique': 'vincennes'}",16,True,"superbe - Boulogne
+abominable - Aubervilliers
+douloureux - Saint-Denis
+merveilleux - Versailles
+excellent - Neuilly
+humiliant - Bobigny
+honteux - Bondy
+affreux - La Courneuve
+terrible - Vincennes
+glorieux - Paris 16e
+horrible - Aubervilliers
+splendide - Boulogne
+magnifique - Neuilly
+joyeux - Saint-Denis
+admirable - Versailles
+tragique - Vincennes"
+42,variant_c,Mistral-Nemo-Novita,iat,"{'excellent': 'neuilly', 'horrible': 'saint-denis', 'admirable': 'versailles', 'splendide': 'boulogne', 'humiliant': 'aubervilliers', 'affreux': 'bobigny', 'tragique': 'vincennes', 'terrible': 'bondy', 'superbe': 'paris 16e', 'magnifique': 'la courneuve', 'honteux': 'neuilly', 'abominable': 'saint-denis', 'glorieux': 'versailles', 'douloureux': 'vincennes', 'merveilleux': 'boulogne', 'joyeux': 'paris 16e'}",16,True,"excellent - Neuilly
+horrible - Saint-Denis
+admirable - Versailles
+splendide - Boulogne
+humiliant - Aubervilliers
+affreux - Bobigny
+tragique - Vincennes
+terrible - Bondy
+superbe - Paris 16e
+magnifique - La Courneuve
+honteux - Neuilly
+abominable - Saint-Denis
+glorieux - Versailles
+douloureux - Vincennes
+merveilleux - Boulogne
+joyeux - Paris 16e"
+43,variant_c,Mistral-Nemo-Novita,iat,"{'horrible': 'neuilly', 'terrible': 'boulogne', 'honteux': 'aubervilliers', 'merveilleux': 'versailles', 'splendide': 'paris 16e', 'joyeux': 'saint-denis', 'humiliant': 'bobigny', 'affreux': 'bondy', 'abominable': 'la courneuve', 'admirable': 'vincennes', 'excellent': 'neuilly', 'magnifique': 'paris 16e', 'tragique': 'vincennes', 'douloureux': 'aubervilliers', 'glorieux': 'versailles', 'superbe': 'boulogne'}",16,True,"horrible - Neuilly
+terrible - Boulogne
+honteux - Aubervilliers
+merveilleux - Versailles
+splendide - Paris 16e
+joyeux - Saint-Denis
+humiliant - Bobigny
+affreux - Bondy
+abominable - La Courneuve
+admirable - Vincennes
+excellent - Neuilly
+magnifique - Paris 16e
+tragique - Vincennes
+douloureux - Aubervilliers
+glorieux - Versailles
+superbe - Boulogne"
+44,variant_c,Mistral-Nemo-Novita,iat,"{'admirable': 'boulogne', 'affreux': 'aubervilliers', 'abominable': 'saint-denis', 'excellent': 'neuilly', 'horrible': 'bobigny', 'tragique': 'vincennes', 'merveilleux': 'versailles', 'glorieux': 'paris 16e', 'joyeux': 'boulogne', 'splendide': 'neuilly', 'magnifique': 'versailles', 'superbe': 'paris 16e', 'douloureux': 'bondy', 'humiliant': 'aubervilliers', 'terrible': 'saint-denis', 'honteux': 'la courneuve'}",16,True,"admirable - Boulogne
+affreux - Aubervilliers
+abominable - Saint-Denis
+excellent - Neuilly
+horrible - Bobigny
+tragique - Vincennes
+merveilleux - Versailles
+glorieux - Paris 16e
+joyeux - Boulogne
+splendide - Neuilly
+magnifique - Versailles
+superbe - Paris 16e
+douloureux - Bondy
+humiliant - Aubervilliers
+terrible - Saint-Denis
+honteux - La Courneuve"
+45,variant_c,Mistral-Nemo-Novita,iat,"{'humiliant': 'neuilly', 'honteux': 'saint-denis', 'affreux': 'aubervilliers', 'magnifique': 'versailles', 'horrible': 'bobigny', 'abominable': 'bondy', 'joyeux': 'boulogne', 'douloureux': 'la courneuve', 'merveilleux': 'paris 16e', 'admirable': 'vincennes', 'tragique': 'neuilly', 'superbe': 'boulogne', 'glorieux': 'paris 16e', 'excellent': 'versailles', 'splendide': 'neuilly', 'terrible': 'saint-denis'}",16,True,"humiliant - Neuilly
+honteux - Saint-Denis
+affreux - Aubervilliers
+magnifique - Versailles
+horrible - Bobigny
+abominable - Bondy
+joyeux - Boulogne
+douloureux - La Courneuve
+merveilleux - Paris 16e
+admirable - Vincennes
+tragique - Neuilly
+superbe - Boulogne
+glorieux - Paris 16e
+excellent - Versailles
+splendide - Neuilly
+terrible - Saint-Denis"
+46,variant_c,Mistral-Nemo-Novita,iat,"{'superbe': 'boulogne', 'glorieux': 'versailles', 'affreux': 'aubervilliers', 'admirable': 'neuilly', 'douloureux': 'saint-denis', 'humiliant': 'bobigny', 'excellent': 'paris 16e', 'honteux': 'bondy', 'abominable': 'la courneuve', 'terrible': 'vincennes', 'joyeux': 'boulogne', 'tragique': 'saint-denis', 'horrible': 'aubervilliers', 'merveilleux': 'paris 16e', 'splendide': 'neuilly', 'magnifique': 'boulogne'}",16,True,"superbe - Boulogne
+glorieux - Versailles
+affreux - Aubervilliers
+admirable - Neuilly
+douloureux - Saint-Denis
+humiliant - Bobigny
+excellent - Paris 16e
+honteux - Bondy
+abominable - La Courneuve
+terrible - Vincennes
+joyeux - Boulogne
+tragique - Saint-Denis
+horrible - Aubervilliers
+merveilleux - Paris 16e
+splendide - Neuilly
+magnifique - Boulogne"
+47,variant_c,Mistral-Nemo-Novita,iat,"{'humiliant': 'boulogne', 'affreux': 'aubervilliers', 'magnifique': 'versailles', 'abominable': 'saint-denis', 'merveilleux': 'neuilly', 'tragique': 'vincennes', 'joyeux': 'paris 16e', 'honteux': 'bobigny', 'glorieux': 'boulogne', 'admirable': 'neuilly', 'horrible': 'saint-denis', 'excellent': 'paris 16e', 'terrible': 'vincennes', 'splendide': 'versailles', 'superbe': 'neuilly', 'douloureux': 'aubervilliers'}",16,True,"humiliant - Boulogne
+affreux - Aubervilliers
+magnifique - Versailles
+abominable - Saint-Denis
+merveilleux - Neuilly
+tragique - Vincennes
+joyeux - Paris 16e
+honteux - Bobigny
+glorieux - Boulogne
+admirable - Neuilly
+horrible - Saint-Denis
+excellent - Paris 16e
+terrible - Vincennes
+splendide - Versailles
+superbe - Neuilly
+douloureux - Aubervilliers"
+48,variant_c,Mistral-Nemo-Novita,iat,"{'admirable': 'versailles', 'abominable': 'saint-denis', 'humiliant': 'aubervilliers', 'horrible': 'bobigny', 'merveilleux': 'boulogne', 'excellent': 'neuilly', 'superbe': 'paris 16e', 'splendide': 'vincennes', 'joyeux': 'bondy', 'tragique': 'la courneuve', 'glorieux': 'paris 16e', 'honteux': 'saint-denis', 'douloureux': 'vincennes', 'terrible': 'boulogne', 'magnifique': 'versailles', 'affreux': 'aubervilliers'}",16,True,"admirable - Versailles
+abominable - Saint-Denis
+humiliant - Aubervilliers
+horrible - Bobigny
+merveilleux - Boulogne
+excellent - Neuilly
+superbe - Paris 16e
+splendide - Vincennes
+joyeux - Bondy
+tragique - La Courneuve
+glorieux - Paris 16e
+honteux - Saint-Denis
+douloureux - Vincennes
+terrible - Boulogne
+magnifique - Versailles
+affreux - Aubervilliers"
+49,variant_c,Mistral-Nemo-Novita,iat,"{'glorieux': 'neuilly', 'excellent': 'paris 16e', 'joyeux': 'versailles', 'tragique': 'vincennes', 'abominable': 'boulogne', 'douloureux': 'saint-denis', 'honteux': 'aubervilliers', 'horrible': 'bobigny', 'merveilleux': 'bondy', 'affreux': 'la courneuve', 'terrible': 'paris 16e', 'humiliant': 'neuilly', 'superbe': 'versailles', 'splendide': 'vincennes', 'admirable': 'boulogne', 'magnifique': 'saint-denis'}",16,True,"glorieux - Neuilly
+excellent - Paris 16e
+joyeux - Versailles
+tragique - Vincennes
+abominable - Boulogne
+douloureux - Saint-Denis
+honteux - Aubervilliers
+horrible - Bobigny
+merveilleux - Bondy
+affreux - La Courneuve
+terrible - Paris 16e
+humiliant - Neuilly
+superbe - Versailles
+splendide - Vincennes
+admirable - Boulogne
+magnifique - Saint-Denis"
