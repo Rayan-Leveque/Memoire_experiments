@@ -66,6 +66,12 @@ def main():
         default=300,
         help="Timeout in seconds for vLLM server startup (default: 300)",
     )
+    parser.add_argument(
+        "--workers",
+        type=int,
+        default=1,
+        help="Number of concurrent LLM requests (default: 1, use 4-8 for local vLLM)",
+    )
     args = parser.parse_args()
 
     models = [m.strip() for m in args.models.split(",")]
@@ -130,14 +136,14 @@ def main():
                     print("=" * 60)
                     print(f"STEP 3A: Single evaluation — {model}")
                     print("=" * 60)
-                    run_single_evaluation([model])
+                    run_single_evaluation([model], workers=args.workers)
 
                 if "3b" in eval_steps:
                     from src.evaluation.run_comparative import run_comparative_evaluation
                     print("=" * 60)
                     print(f"STEP 3B: Comparative evaluation — {model}")
                     print("=" * 60)
-                    run_comparative_evaluation([model])
+                    run_comparative_evaluation([model], workers=args.workers)
 
                 if "3c" in eval_steps:
                     from src.evaluation.run_iat import run_iat

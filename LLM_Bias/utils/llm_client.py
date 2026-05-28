@@ -119,7 +119,8 @@ def call_llm(model: str, system: str, user: str,
     client = _get_local_client() if provider == "local" else _get_novita_client()
 
     extra_body = None
-    if not _thinking_enabled:
+    is_qwen = "qwen" in model.lower()
+    if not _thinking_enabled and is_qwen:
         extra_body = {"chat_template_kwargs": {"enable_thinking": False}}
 
     for attempt in range(max_retries):

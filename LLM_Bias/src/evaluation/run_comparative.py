@@ -6,6 +6,8 @@ French is always the reference; both candidates share the same address condition
 
 import argparse
 import json
+import threading
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 import pandas as pd
@@ -102,29 +104,28 @@ def load_results(model: str) -> pd.DataFrame:
     return pd.DataFrame(columns=RESULT_COLUMNS)
 
 
-def run_comparative_evaluation(models: list[str]):
-    # Discover base profile IDs from the french profiles
+def run_comparative_evaluation(models: list[str], workers: int = 1):
     french_rich = sorted(PROFILES_DIR.glob("*_french_rich.json"))
     if not french_rich:
         print("[ERROR] No profile files found. Run step 2 first.")
         return
 
-    # Extract profile IDs
     profile_ids = [p.stem.replace("_french_rich", "") for p in french_rich]
 
     for model in models:
         df = load_results(model)
+        lock = threading.Lock()
         new_rows = 0
-        print(f"\n=== Comparative evaluation: {model} ===")
+        print(f"\n=== Comparative evaluation: {model} (workers={workers}) ===")
+
+        pending = []
         for cv_id in profile_ids:
             for addr_cond in ADDRESS_CONDITIONS:
-                # Load the French reference for this address condition
                 french_path = PROFILES_DIR / f"{cv_id}_french_{addr_cond}.json"
                 if not french_path.exists():
                     continue
                 with open(french_path, "r", encoding="utf-8") as f:
-                    french_profile = json.load(f)
-                french_text = render_cv_fr(french_profile)
+                    french_text = render_cv_fr(json.load(f))
 
                 for minority in MINORITY_CONDITIONS:
                     minority_path = PROFILES_DIR / f"{cv_id}_{minority}_{addr_cond}.json"
@@ -132,41 +133,43 @@ def run_comparative_evaluation(models: list[str]):
                         print(f"  [SKIP] {cv_id}_{minority}_{addr_cond} missing")
                         continue
                     with open(minority_path, "r", encoding="utf-8") as f:
-                        minority_profile = json.load(f)
-                    minority_text = render_cv_fr(minority_profile)
+                        minority_text = render_cv_fr(json.load(f))
 
                     for order in ORDERS:
                         if already_computed(df, cv_id, minority, addr_cond,
                                             model, "comparative", order):
                             continue
+                        pending.append((cv_id, minority, addr_cond, order,
+                                        french_text, minority_text))
 
-                        if order == "french_first":
-                            cv_a, cv_b = french_text, minority_text
-                        else:
-                            cv_a, cv_b = minority_text, french_text
+        def process(task):
+            cv_id, minority, addr_cond, order, french_text, minority_text = task
+            if order == "french_first":
+                cv_a, cv_b = french_text, minority_text
+            else:
+                cv_a, cv_b = minority_text, french_text
+            user_prompt = USER_PROMPT_TEMPLATE.format(
+                job_description=JOB_DESCRIPTION, cv_text_a=cv_a, cv_text_b=cv_b
+            )
+            response = call_llm(model, SYSTEM_PROMPT, user_prompt,
+                                temperature=COMP_TEMPERATURE,
+                                max_tokens=COMP_MAX_TOKENS)
+            result = parse_comparative(response, cv_id, minority, addr_cond, model, order)
+            result["prompt_language"] = "french"
+            return result
 
-                        user_prompt = USER_PROMPT_TEMPLATE.format(
-                            job_description=JOB_DESCRIPTION,
-                            cv_text_a=cv_a,
-                            cv_text_b=cv_b,
-                        )
-
-                        response = call_llm(model, SYSTEM_PROMPT, user_prompt,
-                                            temperature=COMP_TEMPERATURE,
-                                            max_tokens=COMP_MAX_TOKENS)
-
-                        result = parse_comparative(
-                            response, cv_id, minority, addr_cond, model, order
-                        )
-                        result["prompt_language"] = "french"
-                        df = pd.concat([df, pd.DataFrame([result])], ignore_index=True)
-                        new_rows += 1
-                        if new_rows % 5 == 0:
-                            df.to_csv(results_path(model), index=False)
-
-                        chose = result["chose_french"]
-                        status = f"chose_french={chose}" if result["flag"] else "PARSE_FAIL"
-                        print(f"  {cv_id} [{minority}/{addr_cond}/{order}] → {status}")
+        with ThreadPoolExecutor(max_workers=workers) as executor:
+            futures = {executor.submit(process, t): t for t in pending}
+            for future in as_completed(futures):
+                result = future.result()
+                chose = result["chose_french"]
+                status = f"chose_french={chose}" if result["flag"] else "PARSE_FAIL"
+                print(f"  {result['cv_id']} [{result['condition']}/{result['address_condition']}/{result['order']}] → {status}")
+                with lock:
+                    df = pd.concat([df, pd.DataFrame([result])], ignore_index=True)
+                    new_rows += 1
+                    if new_rows % 5 == 0:
+                        df.to_csv(results_path(model), index=False)
 
         df.to_csv(results_path(model), index=False)
         print(f"\nComparative evaluation done for {model}. Rows: {len(df)}")

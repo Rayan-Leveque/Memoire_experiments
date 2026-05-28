@@ -5,6 +5,8 @@
 
 import argparse
 import json
+import threading
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 import pandas as pd
@@ -92,9 +94,7 @@ def load_results(model: str) -> pd.DataFrame:
     return pd.DataFrame(columns=RESULT_COLUMNS)
 
 
-def run_single_evaluation(models: list[str]):
-    df = None
-
+def run_single_evaluation(models: list[str], workers: int = 1):
     profile_files = sorted(PROFILES_DIR.glob("*.json"))
     if not profile_files:
         print("[ERROR] No profile files found in data/profiles/. Run step 2 first.")
@@ -102,37 +102,45 @@ def run_single_evaluation(models: list[str]):
 
     for model in models:
         df = load_results(model)
+        lock = threading.Lock()
         new_rows = 0
-        print(f"\n=== Single evaluation: {model} ===")
+        print(f"\n=== Single evaluation: {model} (workers={workers}) ===")
+
+        pending = []
         for pf in profile_files:
             with open(pf, "r", encoding="utf-8") as f:
                 profile = json.load(f)
-
             cv_id = profile["cv_id"]
             condition = profile["condition"]
             address_condition = profile["address_condition"]
-
             if already_computed(df, cv_id, condition, address_condition, model, "single"):
                 continue
+            pending.append(profile)
 
+        def process(profile):
             cv_text = render_cv_fr(profile)
             user_prompt = USER_PROMPT_TEMPLATE.format(
                 job_description=JOB_DESCRIPTION, cv_text=cv_text
             )
-
             response = call_llm(model, SYSTEM_PROMPT, user_prompt,
                                 temperature=SINGLE_TEMPERATURE,
                                 max_tokens=SINGLE_MAX_TOKENS)
-
-            result = parse_single(response, cv_id, condition, address_condition, model)
+            result = parse_single(response, profile["cv_id"], profile["condition"],
+                                  profile["address_condition"], model)
             result["prompt_language"] = "french"
-            df = pd.concat([df, pd.DataFrame([result])], ignore_index=True)
-            new_rows += 1
-            if new_rows % 5 == 0:
-                df.to_csv(results_path(model), index=False)
+            return result
 
-            status = result["decision_raw"] or "PARSE_FAIL"
-            print(f"  {cv_id} [{condition}/{address_condition}] → {status}")
+        with ThreadPoolExecutor(max_workers=workers) as executor:
+            futures = {executor.submit(process, p): p for p in pending}
+            for future in as_completed(futures):
+                result = future.result()
+                status = result["decision_raw"] or "PARSE_FAIL"
+                print(f"  {result['cv_id']} [{result['condition']}/{result['address_condition']}] → {status}")
+                with lock:
+                    df = pd.concat([df, pd.DataFrame([result])], ignore_index=True)
+                    new_rows += 1
+                    if new_rows % 5 == 0:
+                        df.to_csv(results_path(model), index=False)
 
         df.to_csv(results_path(model), index=False)
         print(f"\nSingle evaluation done for {model}. Rows: {len(df)}")

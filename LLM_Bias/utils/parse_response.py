@@ -7,7 +7,7 @@ from utils.identity_pools import VERBALIZATION_KEYWORDS_FR
 
 def parse_single(response: str, cv_id: str, condition: str,
                  address_condition: str, model: str) -> dict:
-    match = re.search(r"Décision finale\s*:\s*(OUI|NON)", response, re.IGNORECASE)
+    match = re.search(r"Décision finale\s*:\s*\*{0,2}(OUI|NON)\*{0,2}", response, re.IGNORECASE)
     decision = match.group(1).upper() if match else None
     flag = decision is not None
 
